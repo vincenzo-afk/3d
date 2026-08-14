@@ -1,0 +1,141 @@
+{
+  "targetName": "01 Melee Karambit",
+  "targetId": "01-melee-karambit",
+  "schemaVersion": "2.1",
+  "generatedWith": "img2threejs skill · procedural weapon-v1.4 adaptation",
+  "sourceImage": "../../guns image models/01-melee.png",
+  "objectClass": {
+    "primaryType": "weapon-skin",
+    "primaryDomain": "object",
+    "formLanguage": ["hard-surface", "bladed", "curved-karambit"],
+    "structureKind": ["variable-thickness-blade", "three-panel-scale", "finger-ring", "fasteners", "medallion"],
+    "confidence": 0.94,
+    "notes": "Broadside reference is clear; thickness and hidden side remain inferred."
+  },
+  "qualityContract": {
+    "qualityBar": "ultra-complex",
+    "targetFidelity": 0.8,
+    "minimumSpecDepth": {
+      "macroComponents": 5,
+      "mesoComponents": 16,
+      "microFeatureGroups": 8,
+      "materialLayers": 4,
+      "repetitionSystems": 2,
+      "reviewViewpoints": 5
+    },
+    "definitionOfDone": [
+      "Curved blade silhouette, five spine serrations, three real blade holes, ivory panel layout, ring opening, and medallion read correctly from the reference camera.",
+      "Three-quarter and thickness-axis views show a real solid rather than a flat image plate.",
+      "Ruby, ivory, brass, seam, and cavity materials retain independent PBR responses under controlled lighting.",
+      "Named parts, sockets, colliders, destruction groups, and idle inspection motion are exposed through sculptRuntime."
+    ],
+    "reviewViewpoints": ["front", "three-quarter", "side", "thickness-axis", "long-axis"]
+  },
+  "silhouette": {
+    "boundingShape": "long hawkbill/karambit curve with tip at left, ivory handle and circular finger ring at right",
+    "aspectRatio": 3.36,
+    "symmetry": "broadside bilateral through thickness only; outline is intentionally asymmetric along the long axis",
+    "dominantCurves": ["concave lower cutting edge", "convex upper blade spine", "downward finger groove", "circular ring"],
+    "negativeSpaces": ["three blade holes", "open finger ring", "blade-to-handle lower concavity"],
+    "landmarks": ["left blade tip", "five serration peaks", "three hole centers", "two scale seams", "medallion center", "ring center"]
+  },
+  "detailInventory": {
+    "scanMethod": "component-zones",
+    "targetMinDetails": 16,
+    "details": [
+      {"id": "curved-blade-silhouette", "kind": "contour", "region": "blade", "affects": "geometry", "mapsTo": "bladeBody", "confidence": 0.96},
+      {"id": "five-spine-serrations", "kind": "ridge", "region": "blade-spine", "affects": "geometry", "mapsTo": "bladeBody", "count": 5, "confidence": 0.95},
+      {"id": "three-blade-holes", "kind": "hole", "region": "blade-shoulder", "affects": "geometry", "mapsTo": "bladeBody", "count": 3, "confidence": 0.98},
+      {"id": "ruby-marbled-finish", "kind": "decal", "region": "blade-and-ring", "affects": "material", "mapsTo": "ruby-marbled-anodized-coat", "confidence": 0.88},
+      {"id": "edge-bevel-highlight", "kind": "bevel", "region": "blade-edge", "affects": "geometry,material", "mapsTo": "bladeLowerEdgeAccent", "confidence": 0.81},
+      {"id": "red-tang-underlay", "kind": "ridge", "region": "handle-underside", "affects": "geometry,material", "mapsTo": "redTang", "confidence": 0.91},
+      {"id": "ivory-panel-a", "kind": "linework", "region": "handle-front", "affects": "geometry,material", "mapsTo": "ivoryScalePanelA", "confidence": 0.94},
+      {"id": "ivory-panel-b", "kind": "linework", "region": "handle-front", "affects": "geometry,material", "mapsTo": "ivoryScalePanelB", "confidence": 0.94},
+      {"id": "ivory-panel-c", "kind": "linework", "region": "handle-front", "affects": "geometry,material", "mapsTo": "ivoryScalePanelC", "confidence": 0.94},
+      {"id": "panel-seam-a", "kind": "seam", "region": "handle-front", "affects": "geometry,material", "mapsTo": "panelSeamA", "confidence": 0.91},
+      {"id": "panel-seam-b", "kind": "seam", "region": "handle-front", "affects": "geometry,material", "mapsTo": "panelSeamB", "confidence": 0.91},
+      {"id": "brass-fastener-row", "kind": "fastener", "region": "ivory-scale", "affects": "geometry,material", "mapsTo": "brassFastener1..6", "count": 6, "confidence": 0.93},
+      {"id": "flower-medallion-rim", "kind": "relief", "region": "middle-scale", "affects": "geometry,material", "mapsTo": "medallionRim", "confidence": 0.94},
+      {"id": "flower-medallion-spokes", "kind": "relief", "region": "middle-scale", "affects": "geometry,material", "mapsTo": "medallionSpoke1..5", "count": 5, "confidence": 0.90},
+      {"id": "curved-finger-groove", "kind": "contour", "region": "lower-handle", "affects": "geometry", "mapsTo": "lowerFingerGroove", "confidence": 0.88},
+      {"id": "open-finger-ring", "kind": "hole", "region": "pommel", "affects": "geometry,material", "mapsTo": "fingerRing", "confidence": 0.98},
+      {"id": "ring-inner-wall", "kind": "bevel", "region": "pommel", "affects": "geometry,material", "mapsTo": "fingerRingInnerWall", "confidence": 0.82},
+      {"id": "micro-wear", "kind": "scratch", "region": "all-painted-surfaces", "affects": "material", "mapsTo": "ruby-marbled-anodized-coat", "confidence": 0.68}
+    ]
+  },
+  "materials": [
+    {
+      "id": "ruby-marbled-anodized-coat",
+      "name": "Ruby marbled coated metal",
+      "shaderModel": "MeshPhysicalMaterial",
+      "assignedComponents": ["bladeBody", "redTang", "fingerRing", "fingerRingRubyHighlight"],
+      "albedo": {"dominant": "#9f0814", "secondary": ["#4f030a", "#d92132"], "source": "reference-derived procedural approximation"},
+      "roughness": {"base": 0.48, "variation": 0.20, "map": "independent-procedural-field"},
+      "metalness": {"base": 0.22, "variation": 0.16},
+      "clearcoat": {"base": 0.38, "roughness": 0.20},
+      "normal": {"map": "independent-procedural-field", "strength": 0.18},
+      "ambientOcclusion": {"response": "cavity and seam darkening"},
+      "surfaceFrequencyBands": [
+        {"id": "macro", "role": "broad ruby value breakup", "frequency": 3.2, "amplitude": 0.32},
+        {"id": "meso", "role": "marbled vein structure", "frequency": 17.0, "amplitude": 0.18},
+        {"id": "micro", "role": "fine wear and normal variation", "frequency": 93.0, "amplitude": 0.06}
+      ],
+      "notes": "Procedural finish is used because no de-lit reference texture crop or exact item metadata was supplied."
+    },
+    {
+      "id": "aged-ivory-scale",
+      "name": "Aged ivory scale",
+      "shaderModel": "MeshPhysicalMaterial",
+      "assignedComponents": ["ivoryScalePanelA", "ivoryScalePanelB", "ivoryScalePanelC", "lowerFingerGroove"],
+      "albedo": {"dominant": "#d8d5c8", "secondary": ["#b6b2a5"], "source": "reference-derived approximation"},
+      "roughness": {"base": 0.56, "variation": 0.16, "map": "independent-procedural-field"},
+      "metalness": {"base": 0.12, "variation": 0.05},
+      "normal": {"map": "independent-procedural-field", "strength": 0.12},
+      "surfaceFrequencyBands": ["macro", "meso", "micro"]
+    },
+    {
+      "id": "brass-hardware",
+      "name": "Aged brass fasteners and medallion",
+      "shaderModel": "MeshPhysicalMaterial",
+      "assignedComponents": ["brassFastener1..6", "centralFlowerMedallion"],
+      "albedo": {"dominant": "#b08a35", "secondary": ["#6b4f1a"]},
+      "roughness": {"base": 0.30, "variation": 0.08},
+      "metalness": {"base": 0.82, "variation": 0.08},
+      "surfaceFrequencyBands": ["macro", "meso", "micro"]
+    },
+    {
+      "id": "panel-seams-and-cavities",
+      "name": "Dark seams and recesses",
+      "shaderModel": "MeshPhysicalMaterial",
+      "assignedComponents": ["panelSeamA", "panelSeamB", "medallionInlay", "bladeHoleWall1..3"],
+      "albedo": {"dominant": "#1a1011"},
+      "roughness": {"base": 0.62, "variation": 0.10},
+      "metalness": {"base": 0.25, "variation": 0.05},
+      "surfaceFrequencyBands": ["macro", "meso", "micro"]
+    }
+  ],
+  "repetitionSystems": [
+    {"id": "blade-hole-system", "count": 3, "component": "bladeBody", "distribution": "measured increasing radii along upper shoulder"},
+    {"id": "brass-fastener-system", "count": 6, "component": "ivoryScaleAssembly", "distribution": "measured visible front-panel positions"},
+    {"id": "medallion-spoke-system", "count": 5, "component": "centralFlowerMedallion", "distribution": "radial equal-angle relief"}
+  ],
+  "runtimeContract": {
+    "root": "meleeKarambitRoot",
+    "nodes": ["bladeBody", "redTang", "ivoryScalePanelA", "ivoryScalePanelB", "ivoryScalePanelC", "fingerRing", "centralFlowerMedallion"],
+    "sockets": ["bladeBaseSocket", "ringAxisSocket", "scalePanelSocket"],
+    "colliders": ["bladeBody", "ivoryHandle", "fingerRing"],
+    "destructionGroups": ["bladeAssembly", "redTangAssembly", "ivoryScaleAssembly", "fingerRingAssembly"],
+    "idle": "9-second ring-axis inspection rotation"
+  },
+  "reviewTargets": {
+    "critical": ["curved silhouette", "five serrations", "three holes", "three ivory panels", "open ring", "ruby finish read"],
+    "important": ["brass fastener distribution", "flower medallion", "lower finger groove", "red underlay strip"],
+    "viewpoints": ["front", "three-quarter", "side", "thickness-axis", "long-axis"],
+    "acceptanceThreshold": 0.7
+  },
+  "honesty": {
+    "observed": ["broadside outline", "visible holes", "panel layout", "fastener placement", "ring opening", "major color zones"],
+    "inferred": ["all thickness values", "hidden backside", "exact metal chemistry", "unseen wear and microstructure"],
+    "limitations": "Single broadside image cannot prove hidden geometry or guaranteed exact PBR recovery."
+  }
+}
