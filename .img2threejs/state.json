@@ -1,0 +1,1222 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "profile": "cs2",
+  "currentStep": "complete",
+  "currentPass": "complete",
+  "checklist": [
+    {
+      "id": "image-analysis",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/image-analysis.md"
+      ],
+      "reason": "",
+      "command": "Read grimoire/intake/image_analysis.md and analyze {reference}"
+    },
+    {
+      "id": "reference-suitability",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/reference-suitability.md"
+      ],
+      "reason": "",
+      "command": "Read grimoire/intake/validation_rubric.md and record a pass, conditional, or reject verdict for {reference}"
+    },
+    {
+      "id": "reference-admission",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/reference-admission.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage1_intake/check_reference_admission.py {reference}"
+    },
+    {
+      "id": "cs2-contract-read",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/img2threejs/grimoire/intake/cs2_intake_contract.md"
+      ],
+      "reason": "",
+      "command": "Read grimoire/intake/cs2_intake_contract.md completely"
+    },
+    {
+      "id": "cs2-authoritative-classification",
+      "scope": "setup",
+      "status": "skipped",
+      "evidence": [],
+      "reason": "Not applicable: the user requested reconstruction of the supplied generic melee reference and did not provide or request an official CS2 market identity, paint index, or metadata manifest.",
+      "command": "Obtain an authoritative CS2 family/subtype classification record"
+    },
+    {
+      "id": "cs2-manifest",
+      "scope": "setup",
+      "status": "skipped",
+      "evidence": [],
+      "reason": "Not applicable: the user requested reconstruction of the supplied generic melee reference and did not provide or request an official CS2 market identity, paint index, or metadata manifest.",
+      "command": "python3 forge/stage1_intake/cs2_manifest.py {reference} --classification classification.json --out cs2-intake.json"
+    },
+    {
+      "id": "local-spec-search",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/deep-rebuild-assessment.json"
+      ],
+      "reason": "",
+      "command": "Run the local evidence search before authoring the assessment"
+    },
+    {
+      "id": "pre-spec-assessment",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/deep-rebuild-assessment.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage2_spec/new_pre_spec_assessment.py \"<name>\" --image {reference} --out assessment.json"
+    },
+    {
+      "id": "detail-inventory",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/detail-inventory/di.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage1_intake/build_detail_inventory.py {reference} --mode grid-3x3 --out-dir detail-inventory --out di.json"
+    },
+    {
+      "id": "projection-route",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/projection-route.md"
+      ],
+      "reason": "",
+      "command": "Record whether projection is required; if required run solve_camera_pose.py, delight_albedo.py, and bake_projected_texture.py, otherwise skip with a reason"
+    },
+    {
+      "id": "spec-authoring",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage2_spec/new_sculpt_spec.py \"<name>\" --image {reference} --assessment assessment.json --out object-sculpt-spec.json"
+    },
+    {
+      "id": "material-evidence",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/material-evidence.md",
+        "guns 3d models/01-melee-karambit/material-analysis.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage1_intake/material_region_analysis.py --manifest material-regions.json --out-dir material-evidence --out material-analysis.json (single-crop route: analyze_texture.py + extract_pbr_evidence.py per verified crop; otherwise skip with a reason)"
+    },
+    {
+      "id": "material-spec-wiring",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/material-spec-wiring.md",
+        "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage2_spec/apply_material_analysis.py {spec} material-analysis.json --in-place"
+    },
+    {
+      "id": "strict-validation",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage2_spec/validate_sculpt_spec.py {spec} --strict-quality"
+    },
+    {
+      "id": "build-current-pass",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+    },
+    {
+      "id": "render-capture",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+    },
+    {
+      "id": "review-contract-read",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+    },
+    {
+      "id": "tier1-diagnostics",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+    },
+    {
+      "id": "multi-angle-review",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+    },
+    {
+      "id": "pass-gate-check",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+    },
+    {
+      "id": "cs2-review",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+    },
+    {
+      "id": "ai-review-recorded",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+    },
+    {
+      "id": "pipeline-sync",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+    },
+    {
+      "id": "part-coverage",
+      "scope": "final",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/part-coverage.json",
+        "guns 3d models/01-melee-karambit/parts.json",
+        "guns 3d models/01-melee-karambit/visual-evidence/runtime-hierarchy.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage4_review/check_part_coverage.py --spec {spec} --manifest parts.json"
+    },
+    {
+      "id": "action-ready",
+      "scope": "final",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/01-melee-karambit/action-ready.json",
+        "guns 3d models/01-melee-karambit/visual-evidence/runtime-hierarchy.json",
+        "guns 3d models/01-melee-karambit/part-coverage.json",
+        "guns 3d models/01-melee-karambit/parts.json"
+      ],
+      "reason": "",
+      "command": "Verify explodable/clickable hierarchy, pivots, sockets, and root.userData.sculptRuntime"
+    }
+  ],
+  "loops": {
+    "perPass": {},
+    "total": 0,
+    "maxPerPass": 3,
+    "maxTotal": 6
+  },
+  "artifacts": {
+    "reference": "guns image models/01-melee.png",
+    "spec": "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+  },
+  "passHistory": [
+    {
+      "passId": "blockout",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-reference-sanitized-small.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-orthographic-pipeline-mask-overlay.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/map-stripped-neutral-clay-clean.png",
+            "/tmp/karambit_multi_angle.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_pass_gate_check.txt",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json",
+            "guns 3d models/01-melee-karambit/cs2-intake.json",
+            "guns 3d models/01-melee-karambit/cs2-review-inputs.json",
+            "guns 3d models/01-melee-karambit/cs2-review-scene.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "guns 3d models/01-melee-karambit/cs2-review.json"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "blockout",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-reference-sanitized-small.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-orthographic-pipeline-mask-overlay.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/map-stripped-neutral-clay-clean.png",
+            "/tmp/karambit_multi_angle.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_pass_gate_check.txt",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json",
+            "guns 3d models/01-melee-karambit/cs2-intake.json",
+            "guns 3d models/01-melee-karambit/cs2-review-inputs.json",
+            "guns 3d models/01-melee-karambit/cs2-review-scene.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "guns 3d models/01-melee-karambit/cs2-review.json"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "structural-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts",
+            "guns 3d models/01-melee-karambit/meleeTrace.ts"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/map-stripped-neutral-clay-clean.png"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_structural_tier1.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_structural_multi_angle.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/map-stripped-neutral-clay-clean.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_structural_pass_gate.txt",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json",
+            "guns 3d models/01-melee-karambit/cs2-intake.json",
+            "guns 3d models/01-melee-karambit/cs2-review-inputs.json",
+            "guns 3d models/01-melee-karambit/cs2-review-scene.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_structural_ai_review.txt"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_structural_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "form-refinement",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_form_tier1.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_form_multi_angle.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_form_pass_gate.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_form_ai_review_corrected.txt"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_form_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "material-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/orthographic-projection-front.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/material-gate.json"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_material_tier1_calibrated.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_material_multi_angle.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/map-stripped-neutral-clay-clean.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_material_pass_gate.txt",
+            "guns 3d models/01-melee-karambit/material-gate.json",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json",
+            "guns 3d models/01-melee-karambit/cs2-intake.json",
+            "guns 3d models/01-melee-karambit/cs2-review-inputs.json",
+            "guns 3d models/01-melee-karambit/cs2-review-scene.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "guns 3d models/01-melee-karambit/material-gate.json",
+            "/tmp/karambit_material_ai_review.txt"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_material_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "surface-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-front-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/material-gate.json"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_surface_tier1.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_surface_multi_angle.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_surface_pass_gate.txt",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json",
+            "guns 3d models/01-melee-karambit/cs2-intake.json",
+            "guns 3d models/01-melee-karambit/cs2-review-inputs.json",
+            "guns 3d models/01-melee-karambit/cs2-review-scene.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_surface_ai_review.txt"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_surface_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "lighting-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-front-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/material-view-plan.json"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_lighting_tier1.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_lighting_multi_angle.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_lighting_pass_gate.txt",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "guns 3d models/01-melee-karambit/material-view-plan.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json",
+            "guns 3d models/01-melee-karambit/cs2-intake.json",
+            "guns 3d models/01-melee-karambit/cs2-review-inputs.json",
+            "guns 3d models/01-melee-karambit/cs2-review-scene.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_lighting_ai_review.txt"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_lighting_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "interaction-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-front-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/runtime-hierarchy.json"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_interaction_tier1.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_interaction_multi_angle.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_interaction_pass_gate.txt",
+            "guns 3d models/01-melee-karambit/visual-evidence/runtime-hierarchy.json",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json",
+            "guns 3d models/01-melee-karambit/cs2-intake.json",
+            "guns 3d models/01-melee-karambit/cs2-review-inputs.json",
+            "guns 3d models/01-melee-karambit/cs2-review-scene.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/ai-review-comparison-sheet.png",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/runtime-hierarchy.json",
+            "/tmp/karambit_interaction_ai_review.txt"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_interaction_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "optimization-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/create01MeleeKarambitModel.ts",
+            "guns 3d models/01-melee-karambit/optimization-review.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png",
+            "guns 3d models/01-melee-karambit/visual-evidence/runtime-hierarchy.json"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_material_tier1_calibrated.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/tier1-ortho-projection-small.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_interaction_multi_angle.json",
+            "guns 3d models/01-melee-karambit/visual-evidence/procedural-three-quarter-clean.png"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/tmp/karambit_optimization_pass_gate.txt",
+            "guns 3d models/01-melee-karambit/optimization-review.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "cs2-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/cs2-review.json"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/cs2_review.py --manifest cs2-intake.json --metrics cs2-review-inputs.json --scene forge/tests/fixtures/knife_review_scene.json --out cs2-review.json"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/optimization-review.json",
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_optimization_review.txt"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "guns 3d models/01-melee-karambit/object-sculpt-spec.json",
+            "/tmp/karambit_optimization_pipeline_sync.txt"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    }
+  ],
+  "reviewCursor": 9,
+  "iterationAction": "new-pass",
+  "stopReason": ""
+}

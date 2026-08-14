@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "materialId": "ruby-marbled-anodized-coat",
+  "regionId": "ruby-pommel-ring",
+  "referenceCrop": "material-evidence/03-ruby-pommel-ring.png",
+  "renderScreenshot": "visual-evidence/orthographic-projection-front.png",
+  "pbrEvidence": "material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_albedo.png",
+  "passed": true,
+  "confidence": 0.86,
+  "mismatches": [],
+  "notes": "The open ruby ring and inner wall remain visible in the broadside route, while the separate three-quarter render confirms ring thickness and negative space."
+}

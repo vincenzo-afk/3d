@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "materialId": "brass-hardware",
+  "regionId": "brass-hardware",
+  "referenceCrop": "material-evidence/02-brass-hardware.png",
+  "renderScreenshot": "visual-evidence/orthographic-projection-front.png",
+  "pbrEvidence": "material-evidence/pbr-02-brass-hardware/brass-hardware_albedo.png",
+  "passed": true,
+  "confidence": 0.86,
+  "mismatches": [],
+  "notes": "Warm brass fastener crowns and central rosette are visible in the source and the authored render, with independent metal PBR evidence and a controlled hardware layout."
+}

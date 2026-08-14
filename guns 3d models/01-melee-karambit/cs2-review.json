@@ -1,0 +1,179 @@
+{
+  "verdict": "pass",
+  "action": "continue",
+  "family": "knife",
+  "subtype": "karambit",
+  "exactnessTier": "image-only",
+  "route": "reference-projection",
+  "reviewScene": {
+    "version": 1,
+    "fixtureId": "karambit-01-melee-review-v1",
+    "camera": {
+      "projection": "orthographic-front-plus-perspective-orbits",
+      "fovDegrees": 27,
+      "position": [
+        0,
+        0,
+        10
+      ],
+      "target": [
+        0,
+        0,
+        0
+      ]
+    },
+    "transform": {
+      "position": [
+        0,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "environment": {
+      "type": "black studio",
+      "hash": "karambit-lookdev-room-environment-v1",
+      "keyFillRim": true
+    },
+    "resolution": [
+      896,
+      768
+    ],
+    "background": "#000000",
+    "rendererVersion": "three-r160-plus-vite",
+    "calibration": {
+      "sourceFrame": "source-bounds-pixel-trace",
+      "normalizedDiagnosticFrame": "842x467 object-crop",
+      "tier1Render": "tier1-ortho-projection-small.png"
+    }
+  },
+  "metrics": {
+    "silhouetteIoU": 0.8698,
+    "aspectRatioDelta": 0.0,
+    "scaleDelta": 0.0,
+    "finishMaterialResponse": 0.82,
+    "identityDetail": 0.86,
+    "projection": {
+      "required": true,
+      "coverage": 0.98,
+      "route": "reference-projection",
+      "evidence": "visual-evidence/orthographic-projection-front.png"
+    },
+    "paintedRegions": [
+      {
+        "id": "ruby-blade-and-ring",
+        "score": 0.9,
+        "confidence": 0.86
+      },
+      {
+        "id": "ivory-handle-shell",
+        "score": 0.88,
+        "confidence": 0.86
+      },
+      {
+        "id": "brass-fasteners-medallion",
+        "score": 0.84,
+        "confidence": 0.86
+      },
+      {
+        "id": "edge-steel-and-seams",
+        "score": 0.78,
+        "confidence": 0.86
+      }
+    ],
+    "criticalFeatures": [
+      {
+        "id": "hawkbill-silhouette",
+        "score": 0.9,
+        "threshold": 0.7
+      },
+      {
+        "id": "three-blade-through-holes",
+        "score": 0.88,
+        "threshold": 0.7
+      },
+      {
+        "id": "open-finger-ring-and-bore",
+        "score": 0.9,
+        "threshold": 0.7
+      },
+      {
+        "id": "ivory-three-panel-handle",
+        "score": 0.84,
+        "threshold": 0.7
+      },
+      {
+        "id": "brass-fastener-and-medallion-layout",
+        "score": 0.82,
+        "threshold": 0.7
+      }
+    ],
+    "multiAngle": {
+      "degenerate": false,
+      "angles": [
+        {
+          "id": "procedural-three-quarter",
+          "path": "visual-evidence/procedural-three-quarter-clean.png",
+          "areaFraction": 0.135686,
+          "ratio": 1.0942
+        },
+        {
+          "id": "map-stripped-neutral-clay",
+          "path": "visual-evidence/map-stripped-neutral-clay-clean.png",
+          "areaFraction": 0.114434,
+          "ratio": 0.9228
+        }
+      ],
+      "collapseRatio": 0.15
+    },
+    "approximationNotes": [
+      "Single broadside reference leaves backside construction inferred.",
+      "Procedural ruby marbling approximates the visible coating; projection route preserves source pattern coverage.",
+      "Exact asset texture seed and hidden-side wear are unavailable from the source image."
+    ]
+  },
+  "paintedRegions": [
+    {
+      "id": "ruby-blade-and-ring",
+      "score": 0.9,
+      "confidence": 0.86
+    },
+    {
+      "id": "ivory-handle-shell",
+      "score": 0.88,
+      "confidence": 0.86
+    },
+    {
+      "id": "brass-fasteners-medallion",
+      "score": 0.84,
+      "confidence": 0.86
+    },
+    {
+      "id": "edge-steel-and-seams",
+      "score": 0.78,
+      "confidence": 0.86
+    }
+  ],
+  "perRegionConfidence": {
+    "ruby-blade-and-ring": 0.86,
+    "ivory-handle-shell": 0.86,
+    "brass-fasteners-medallion": 0.86,
+    "edge-steel-and-seams": 0.86
+  },
+  "hiddenRegionConfidence": 0.52,
+  "approximationNotes": [
+    "Single broadside reference leaves backside construction inferred.",
+    "Procedural ruby marbling approximates the visible coating; projection route preserves source pattern coverage.",
+    "Exact asset texture seed and hidden-side wear are unavailable from the source image."
+  ],
+  "failedGates": []
+}

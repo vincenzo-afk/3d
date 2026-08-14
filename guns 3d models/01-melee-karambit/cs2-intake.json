@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "2.1",
+  "state": "proceed",
+  "itemFamily": "knife",
+  "subtype": "karambit",
+  "componentAdapter": "cs2-knife-v1",
+  "route": "reference-projection",
+  "exactnessTier": "image-only",
+  "identity": {
+    "name": "01 melee karambit",
+    "family": "knife",
+    "subtype": "karambit"
+  },
+  "paintedRegions": [
+    {
+      "id": "ruby-blade-and-ring",
+      "score": 0.9,
+      "confidence": 0.86
+    },
+    {
+      "id": "ivory-handle-shell",
+      "score": 0.88,
+      "confidence": 0.86
+    },
+    {
+      "id": "brass-fasteners-medallion",
+      "score": 0.84,
+      "confidence": 0.86
+    },
+    {
+      "id": "edge-steel-and-seams",
+      "score": 0.78,
+      "confidence": 0.86
+    }
+  ],
+  "unpaintedRegions": [
+    {
+      "id": "edge-steel-and-seams",
+      "confidence": 0.86
+    }
+  ],
+  "confidence": {
+    "observed": 0.86,
+    "hiddenRegions": 0.52,
+    "materialRegions": 0.86
+  },
+  "approximationNotes": [
+    "Single broadside reference leaves backside construction inferred.",
+    "Procedural ruby marbling approximates the visible coating; projection route preserves source pattern coverage.",
+    "Exact asset texture seed and hidden-side wear are unavailable from the source image."
+  ],
+  "provenance": {
+    "reference": "guns image models/01-melee.png",
+    "sourceType": "user-provided image",
+    "runtime": "code-only procedural Three.js"
+  }
+}

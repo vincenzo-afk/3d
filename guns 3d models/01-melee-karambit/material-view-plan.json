@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "environment": {
+    "required": true,
+    "type": "black studio",
+    "stableHash": "karambit-lookdev-room-environment-v1",
+    "notes": "Key/fill/rim studio environment is shared across the reference projection and procedural orbit routes."
+  },
+  "views": [
+    {"id":"reference-beauty-front","azimuth":0,"elevation":0,"projection":"orthographic","capture":"visual-evidence/orthographic-projection-front.png"},
+    {"id":"neutral-studio-front","azimuth":0,"elevation":8,"projection":"perspective","capture":"visual-evidence/procedural-front-clean.png"},
+    {"id":"grazing-three-quarter","azimuth":42,"elevation":18,"projection":"perspective","capture":"visual-evidence/procedural-three-quarter-clean.png"},
+    {"id":"thickness-axis-clay","azimuth":68,"elevation":24,"projection":"perspective","capture":"visual-evidence/map-stripped-neutral-clay-clean.png"}
+  ],
+  "captureValidation": [
+    {"viewId":"reference-beauty-front","path":"visual-evidence/orthographic-projection-front.png","passed":true,"coverage":0.98},
+    {"viewId":"neutral-studio-front","path":"visual-evidence/procedural-front-clean.png","passed":true,"coverage":0.94},
+    {"viewId":"grazing-three-quarter","path":"visual-evidence/procedural-three-quarter-clean.png","passed":true,"coverage":0.94},
+    {"viewId":"thickness-axis-clay","path":"visual-evidence/map-stripped-neutral-clay-clean.png","passed":true,"coverage":0.91}
+  ]
+}

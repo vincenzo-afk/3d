@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "passId": "optimization-pass",
+  "verdict": "pass",
+  "action": "continue",
+  "runtime": {
+    "meshCount": 34,
+    "unnamedMeshes": 0,
+    "semanticParts": 24,
+    "drawCallIntent": "named meshes are grouped under a single runtime asset and repeated hardware uses instancing where appropriate",
+    "sockets": 3,
+    "colliders": 3,
+    "networkAssets": 0,
+    "importedMeshes": 0
+  },
+  "evidence": [
+    "create01MeleeKarambitModel.ts",
+    "parts.json",
+    "part-coverage.json",
+    "visual-evidence/runtime-hierarchy.json",
+    "visual-evidence/procedural-three-quarter-clean.png"
+  ],
+  "notes": "The code-only factory compiles cleanly, exposes named/selectable parts and sockets, and remains within the captured runtime hierarchy evidence. Optimization review records the existing 34-mesh runtime rather than claiming a production benchmark not measured here."
+}

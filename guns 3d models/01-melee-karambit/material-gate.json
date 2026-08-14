@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "kind": "img2threejs.material-gate",
+  "passed": true,
+  "failures": [],
+  "warnings": [
+    "material 'ruby-marbled-anodized-coat' profile requires map slots not present in extracted PBR maps: ['roughnessMap']"
+  ],
+  "comparisonCount": 4,
+  "compatibility": {
+    "schemaVersion": 1,
+    "passed": true,
+    "failures": [],
+    "warnings": [
+      "material 'ruby-marbled-anodized-coat' profile requires map slots not present in extracted PBR maps: ['roughnessMap']"
+    ],
+    "checked": {
+      "materialCount": 6,
+      "componentCount": 25,
+      "referencedMaterialCount": 6,
+      "riggedComponentCount": 0,
+      "lodPresent": true,
+      "collisionPresent": false
+    },
+    "invariant": "material IDs and UV/map contracts survive geometry, skinning, collision and LOD changes"
+  },
+  "requiredEvidence": [
+    "materialPipeline.status=proceed",
+    "all material regions status=proceed",
+    "per-region crop comparison passed",
+    "multi-angle controlled view plan and screenshot readback",
+    "geometry/UV/skinning/collision/LOD material ID compatibility passed"
+  ]
+}

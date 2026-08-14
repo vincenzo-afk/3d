@@ -1,0 +1,333 @@
+{
+  "targetName": "01-melee karambit deep rebuild",
+  "sourceImage": "guns image models/01-melee.png",
+  "preSpecAssessment": {
+    "objectClass": {
+      "primaryType": "karambit-style curved melee knife",
+      "primaryDomain": "object",
+      "formLanguage": ["curved", "asymmetric", "geometric-organic"],
+      "structureKind": ["extruded-profile", "assembled-shell", "annular-pommel"],
+      "motionPotential": ["inspection-rotation", "ring-axis-orbit"],
+      "materialFamilies": ["ruby-coated-metal", "ivory-composite", "brass", "edge-steel", "cavity-material"],
+      "notes": "Observed from the supplied broadside: long concave hawkbill blade, proximal holes and serrations, continuous ivory scale shell, brass hardware, rosette, and open ring. Hidden thickness and backside construction remain inferred.",
+      "cs2": true
+    },
+    "complexity": {
+      "tier": "ultra-complex",
+      "scores": {
+        "silhouetteComplexity": 8,
+        "componentCount": 9,
+        "hierarchyDepth": 7,
+        "repetitionDensity": 7,
+        "materialLayerCount": 5,
+        "localDetailDensity": 8,
+        "occlusionRisk": 6,
+        "actionReadinessNeed": 5
+      },
+      "estimatedCounts": {
+        "macroComponents": 4,
+        "mesoComponents": 15,
+        "microFeatureGroups": 16,
+        "materialLayers": 5,
+        "repetitionSystems": 3
+      },
+      "reasoning": [
+        "The target has a long asymmetric silhouette with a concave inner blade and a separate annular pommel.",
+        "Visible macro assemblies are blade, red tang/pommel, ivory scale shell, and ring; meso detail includes holes, serrations, seams, fasteners, rosette, edge rail, and cavity walls.",
+        "The patterned ruby finish requires source projection for broadside fidelity; procedural albedo/roughness/normal maps remain the orbit fallback.",
+        "Single-view hidden geometry is inferred and must remain labelled as such in the spec and review."
+      ]
+    },
+    "specDepthDecision": {
+      "requiredDepth": "ultra-complex",
+      "minimumComponentLevels": [
+        "macro",
+        "meso",
+        "micro"
+      ],
+      "needsRepetitionSystems": true,
+      "needsMaterialLocalOverrides": true,
+      "needsMultipleReviewViews": true,
+      "needsActionReadyHierarchy": true,
+      "rationale": "Choose simple/moderate/complex/ultra-complex from observed structure, not from a hardcoded domain."
+    },
+    "unknownsToResolveBeforeImplementation": [
+      "backside scale construction and hidden fastener attachment",
+      "true stock thickness and exact grind cross-section",
+      "inner pommel-ring wall profile and hidden tang transition",
+      "exact item identity, paint index, and official CS2 metadata",
+      "unseen micro-wear and substrate chemistry"
+    ],
+    "detailInventory": {
+      "scanMethod": "component-zones",
+      "targetMinDetails": 16,
+      "note": "Enumerate every identity-defining small detail before authoring the spec. Each detail must map to a component.localFeatures entry or material.localOverrides entry, never prose only. Use forge/stage1_intake/build_detail_inventory.py to scan zones.",
+      "details": [
+        {"id":"curved-hawkbill-silhouette","region":"full-object","kind":"contour","implementation":"dense source-derived outline","confidence":0.98},
+        {"id":"five-dorsal-serrations","region":"blade-spine","kind":"ridge","implementation":"explicit traced profile","confidence":0.96},
+        {"id":"three-through-holes","region":"blade-shoulder","kind":"hole","implementation":"real extruded openings and inferred walls","confidence":0.98},
+        {"id":"variable-grind-edge","region":"blade","kind":"surface-topology","implementation":"height-field loft with analytic normals","confidence":0.82},
+        {"id":"ruby-marble-field","region":"blade-tang-ring","kind":"finish","implementation":"reference projection plus procedural fallback","confidence":0.94},
+        {"id":"edge-steel-rail","region":"lower-blade-edge","kind":"bevel","implementation":"explicit tube rail","confidence":0.78},
+        {"id":"continuous-ivory-shell","region":"handle","kind":"contour","implementation":"source-derived clipped shell bands","confidence":0.95},
+        {"id":"two-longitudinal-seams","region":"handle","kind":"seam","implementation":"physical seam strips","confidence":0.92},
+        {"id":"seven-visible-fasteners","region":"ivory-scale","kind":"repetition","implementation":"instanced base plus physical dome crowns","confidence":0.90},
+        {"id":"central-six-spoke-rosette","region":"middle-scale","kind":"relief","implementation":"brass ring, warm inlay, six raised spokes, hub","confidence":0.91},
+        {"id":"lower-finger-choil","region":"handle","kind":"contour","implementation":"traced negative-space boundary","confidence":0.92},
+        {"id":"open-pommel-ring","region":"pommel","kind":"hole","implementation":"real annulus and bore","confidence":0.98},
+        {"id":"ring-inner-wall","region":"pommel","kind":"wall","implementation":"explicit inferred wall geometry","confidence":0.76},
+        {"id":"brass-edge-wear","region":"hardware","kind":"material","implementation":"roughness and crown highlight response","confidence":0.70},
+        {"id":"ivory-grain-and-stain","region":"scale-face","kind":"material","implementation":"independent albedo, roughness, normal channels","confidence":0.74},
+        {"id":"dark-cavity-response","region":"holes-and-seams","kind":"material","implementation":"independent higher-roughness cavity material","confidence":0.86}
+      ]
+    },
+    "anatomy": {
+      "applies": false,
+      "styleHeads": 0.0,
+      "proportions": {
+        "headUnit": 0.0,
+        "torso": 0.0,
+        "legs": 0.0,
+        "shoulderWidth": 0.0,
+        "hipWidth": 0.0
+      },
+      "pose": {
+        "type": "unassessed",
+        "jointAngles": {}
+      },
+      "faceLandmarks": {
+        "eyeLine": 0.0,
+        "eyeSpacing": 0.0,
+        "noseBase": 0.0,
+        "mouthLine": 0.0,
+        "hairline": 0.0
+      },
+      "features": [],
+      "confidence": 0.0,
+      "note": "Only meaningful when objectClass.primaryDomain is character or hybrid. Set applies=true and fill from forge/stage1_intake/extract_landmarks.py. See grimoire/character/reconstruction.md and grimoire/character/likeness_maximization.md."
+    },
+    "sourceImage": "guns image models/01-melee.png",
+    "pipelineRouting": {
+      "version": 1,
+      "track": "weapon-v1.4",
+      "source": "explicit",
+      "status": "resolved",
+      "classification": {
+        "kind": "weapon",
+        "confidence": 1.0,
+        "evidenceRefs": [
+          "pipeline-routing:explicit:weapon-v1.4"
+        ],
+        "provider": "pipeline-routing-cli",
+        "version": "1"
+      },
+      "conflicts": []
+    }
+  },
+  "qualityContract": {
+    "qualityBar": "ultra-complex",
+    "definitionOfDone": [
+      "The rendered model matches the reference silhouette, primary proportions, visible component hierarchy, material response, and most recognizable local features for the selected fidelity tier."
+    ],
+    "minimumSpecDepth": {
+      "macroComponents": 5,
+      "mesoComponents": 16,
+      "microFeatureGroups": 8,
+      "materialLayers": 4,
+      "repetitionSystems": 2,
+      "reviewViewpoints": 5
+    },
+    "featureGroups": [
+      {
+        "id": "overall-silhouette",
+        "name": "Overall silhouette and proportions",
+        "required": true,
+        "qualityCriteria": [
+          "Bounding shape, dominant curves, negative spaces, and scale relationships are explicitly described."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "model reads as a generic placeholder instead of the reference object",
+          "major proportions are guessed without evidence"
+        ]
+      },
+      {
+        "id": "primary-structure",
+        "name": "Primary structure and hierarchy",
+        "required": true,
+        "qualityCriteria": [
+          "Major parts, joints, seams, contact points, and parent-child relationships are named before code generation."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "large visible parts are merged into one mesh",
+          "component hierarchy is too shallow for the observed complexity"
+        ]
+      },
+      {
+        "id": "attachment-joint-correctness",
+        "name": "Attachment and joint correctness",
+        "required": true,
+        "qualityCriteria": [
+          "Every visible child appendage, branch, limb, handle, connector, tube, cable, horn, wing, leg, or hinged part has an attachment contract with parent socket, localStart/localEnd, contact type, embed/overlap, and gap tolerance."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "child part root floats away from the parent",
+          "branch/limb/tube is centered in space instead of pivoting from its root",
+          "parent-child transform mixes world and local coordinates"
+        ]
+      },
+      {
+        "id": "surface-material-response",
+        "name": "Surface material response",
+        "required": true,
+        "qualityCriteria": [
+          "Albedo zones, roughness, normal/bump/displacement intent, cavity dirt, edge wear, and local overrides are specified where visible.",
+          "Important materials define independent albedo, roughness, height/normal, and AO responses instead of reusing one texture for unrelated PBR channels.",
+          "Surface response is decomposed into macro, meso, and micro frequency bands with scale and amplitude tied to object scale."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "surface looks like flat plastic",
+          "local material variation is missing or not tied to image evidence"
+        ]
+      },
+      {
+        "id": "reference-lookdev",
+        "name": "Reference color, material, and lighting response",
+        "required": true,
+        "qualityCriteria": [
+          "Material-pass names the reference-derived albedo palette, roughness variation, tactile normal/bump/displacement response, and local masks.",
+          "When a source image is available, run reference PBR extraction and require confidence >= 0.7 before treating maps as implementation-ready.",
+          "Lighting-pass names key/fill/rim or environment light, exposure, tone mapping, background, and contact shadow behavior.",
+          "Neutral, grazing-angle, and reference-matched renders prove that surface relief survives relighting and is not painted into albedo."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "model has acceptable shape but reads as flat shaded or plastic",
+          "colors are a generic average instead of reference-observed local color zones",
+          "lighting is evenly ambient and cannot reproduce the source value range"
+        ]
+      }
+    ],
+    "visualDeltaChecks": [
+      "silhouette and negative-space delta",
+      "component hierarchy depth delta",
+      "repetition density and distribution delta",
+      "material albedo/roughness/normal response delta",
+      "local feature placement and scale delta"
+    ],
+    "antiShallowSpecRules": [
+      "Do not proceed to code if qualityContract.qualityBar is unassessed.",
+      "Do not proceed to code if the spec only contains a root component for a moderate or complex object.",
+      "Do not proceed to code if required featureGroups are not represented by componentTree, materials, or repetitionSystems.",
+      "Do not proceed to code if visible local features are described only in prose and not attached to components/materials/evidenceRefs.",
+      "Do not proceed past structural-pass if attached child parts lack attachment.parentSocket, localStart, localEnd, embedDepth/overlap, and gapTolerance.",
+      "Do not pass material look-dev when albedo is reused as roughness, height, normal, or AO.",
+      "Do not pass material look-dev without macro, meso, and micro surface frequency bands for close-up materials.",
+      "Do not pass reference-fidelity material look-dev from a source image without usable referencePbr maps or an explicit documented limitation.",
+      "Do not patch a spec with extracted PBR maps when extraction confidence is below the target threshold unless the user explicitly accepts lower fidelity.",
+      "Do not place adjacent separate-geometry parts below 0.02 world-unit seam overlap (source: grimoire/build/geometry_patterns.md).",
+      "Do not satisfy raised or recessed relief, fasteners, or grip structure with a map alone when the feature affects form; use geometry or displacement (source: grimoire/build/geometry_patterns.md)."
+    ]
+  },
+  "authoringInstruction": "Fill observed object class, complexity reasoning, featureGroups, visualDeltaChecks, and unknowns before generating or implementing ObjectSculptSpec.",
+  "pipelineRouting": {
+    "version": 1,
+    "track": "weapon-v1.4",
+    "source": "explicit",
+    "status": "resolved",
+    "classification": {
+      "kind": "weapon",
+      "confidence": 1.0,
+      "evidenceRefs": [
+        "pipeline-routing:explicit:weapon-v1.4"
+      ],
+      "provider": "pipeline-routing-cli",
+      "version": "1"
+    },
+    "conflicts": []
+  },
+  "localSpecSearch": {
+    "collection": "cs2",
+    "query": "01-melee karambit deep rebuild curved karambit blade serrations through holes ruby coated metal marbling projection roughness ivory composite handle brass fasteners ring",
+    "index": {
+      "status": "hit",
+      "reason": "current",
+      "fingerprint": "b9e0deef4005f9d7ee8dff76a37547fcabb6c8394cf9bcc2b0912fa915c9f319"
+    },
+    "matches": [
+      {
+        "record_id": "cs2.markdown.docs/cs2/distill.md#2",
+        "file_path": "docs/cs2/distill.md",
+        "heading": "1. Knife Anatomy — Actionable Geometry Rules",
+        "key_path": null,
+        "score": 25.066035709987,
+        "snippets": [
+          "| Knife Type | Signature Geometry | Three.js Primitive | Critical Detail | |---|---|---|---| | **Karambit** | Concave Hawkbill blade + Safety Ring at pommel | `ExtrudeGeometry` (curved profile) | Ring diameter ≈ 20mm, finger hole | | **Bowie** | ..."
+        ],
+        "source_refs": [
+          {
+            "path": "docs/cs2/distill.md",
+            "heading": "1. Knife Anatomy — Actionable Geometry Rules",
+            "key_path": null
+          }
+        ],
+        "evidence_refs": []
+      },
+      {
+        "record_id": "cs2.markdown.docs/cs2/3D_Technical_Reference.md#42",
+        "file_path": "docs/cs2/3D_Technical_Reference.md",
+        "heading": "Blade Types",
+        "key_path": null,
+        "score": 15.413898993054,
+        "snippets": [
+          "| Type | Three.js Geometry | Proportions (W:L) | PBR (Metal/Rough) | Notes | |------|-------------------|-------------------|-------------------|-------| | Clip-point | `ExtrudeGeometry` | 1:3.5 | 1.0 / 0.15 | Notch cutout at tip | | Drop-point ..."
+        ],
+        "source_refs": [
+          {
+            "path": "docs/cs2/3D_Technical_Reference.md",
+            "heading": "Blade Types",
+            "key_path": null
+          }
+        ],
+        "evidence_refs": []
+      },
+      {
+        "record_id": "cs2.knife.bolster",
+        "file_path": "docs/raw/img2threejs-skill-dataset.json",
+        "heading": null,
+        "key_path": "categories.geometry_anatomy.knife[5]",
+        "score": 11.33710339462,
+        "snippets": [
+          "Thick metal collar at the junction between blade and handle. Miếng đệm kim loại dày nằm ở điểm tiếp giáp giữa lưỡi dao và cán dao. Recognition cues: Distinct metal band/thickening right where the blade meets the handle, often a different ..."
+        ],
+        "source_refs": [
+          {
+            "path": "docs/raw/img2threejs-skill-dataset.json",
+            "heading": null,
+            "key_path": "categories.geometry_anatomy.knife[5]"
+          }
+        ],
+        "evidence_refs": [
+          {
+            "kind": "source",
+            "ref": "docs/raw/img2threejs-skill-dataset.json",
+            "note": "img2threejs NotebookLM research distillation"
+          }
+        ]
+      }
+    ]
+  }
+}

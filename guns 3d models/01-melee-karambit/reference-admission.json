@@ -1,0 +1,14 @@
+{
+  "admitted": true,
+  "reasons": [],
+  "provenance": {
+    "viewpoint": "reference",
+    "sourcePath": "/home/ubuntu/3d/guns image models/01-melee.png",
+    "width": 1684,
+    "height": 934,
+    "foregroundCoverage": 0.2799,
+    "largestComponentFraction": 1.0,
+    "pHash": 17483249665824549072,
+    "duplicateOfHash": null
+  }
+}

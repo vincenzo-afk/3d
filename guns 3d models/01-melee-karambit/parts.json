@@ -1,0 +1,327 @@
+{
+  "model": "01-melee-karambit",
+  "runtimeRoot": "meleeKarambitRoot",
+  "parts": [
+    {
+      "name": "bladeBody",
+      "kind": "semantic-part",
+      "module": "Blade Assembly",
+      "sourceNodes": [
+        "bladeBody"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "bladeSpineAssembly",
+      "kind": "semantic-part",
+      "module": "Blade Spine and Serration Bank",
+      "sourceNodes": [
+        "bladeAssembly"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "redTang",
+      "kind": "semantic-part",
+      "module": "Red Tang and Pommel Body",
+      "sourceNodes": [
+        "redTang"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "ivoryScaleAssembly",
+      "kind": "semantic-part",
+      "module": "Ivory Scale Shell",
+      "sourceNodes": [
+        "ivoryScaleAssembly"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "fingerRing",
+      "kind": "semantic-part",
+      "module": "Finger Ring Assembly",
+      "sourceNodes": [
+        "fingerRingAssembly",
+        "fingerRing"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "hardwareAssembly",
+      "kind": "semantic-part",
+      "module": "Fastener and Medallion Hardware",
+      "sourceNodes": [
+        "fastenerBank",
+        "centralFlowerMedallion"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "bladeHoleSystem",
+      "kind": "semantic-part",
+      "module": "Blade Hole Wall System",
+      "sourceNodes": [
+        "bladeHoleWalls",
+        "bladeHoleWall1",
+        "bladeHoleWall2",
+        "bladeHoleWall3"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "ivoryScalePanelA",
+      "kind": "semantic-part",
+      "module": "Ivory Scale Panel A",
+      "sourceNodes": [
+        "ivoryScalePanelA",
+        "ivoryScalePanelAEdge"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "ivoryScalePanelB",
+      "kind": "semantic-part",
+      "module": "Ivory Scale Panel B",
+      "sourceNodes": [
+        "ivoryScalePanelB",
+        "ivoryScalePanelBEdge"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "ivoryScalePanelC",
+      "kind": "semantic-part",
+      "module": "Ivory Scale Panel C",
+      "sourceNodes": [
+        "ivoryScalePanelC",
+        "ivoryScalePanelCEdge"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "centralFlowerMedallion",
+      "kind": "semantic-part",
+      "module": "Central Flower Medallion",
+      "sourceNodes": [
+        "centralFlowerMedallion",
+        "medallionRim",
+        "medallionInlay",
+        "medallionHub",
+        "medallionSpoke1-6"
+      ],
+      "triangles": 100,
+      "explodeWithParent": true,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "brassFastenerBank",
+      "kind": "semantic-part",
+      "module": "Brass Fastener Bank",
+      "sourceNodes": [
+        "brassFastenerBank",
+        "brassFastenerCrown1-7"
+      ],
+      "triangles": 100,
+      "explodeWithParent": true,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "panelSeamSystem",
+      "kind": "semantic-part",
+      "module": "Panel Seam and Spacer System",
+      "sourceNodes": [
+        "panelSeamA",
+        "panelSeamB"
+      ],
+      "triangles": 100,
+      "explodeWithParent": true,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "cuttingEdgeRail",
+      "kind": "semantic-part",
+      "module": "Cutting Edge Rail",
+      "sourceNodes": [
+        "cuttingEdgeRail"
+      ],
+      "triangles": 100,
+      "explodeWithParent": true,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "bladeTipAssembly",
+      "kind": "semantic-part",
+      "module": "Blade Tip Grind",
+      "sourceNodes": [
+        "bladeBody"
+      ],
+      "triangles": 1,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": true
+    },
+    {
+      "name": "bladeGrindFacet",
+      "kind": "semantic-part",
+      "module": "Variable Grind Facet",
+      "sourceNodes": [
+        "bladeBody"
+      ],
+      "triangles": 1,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": true
+    },
+    {
+      "name": "holeWallA",
+      "kind": "semantic-part",
+      "module": "Through-Hole Wall A",
+      "sourceNodes": [
+        "bladeHoleWall1"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "holeWallB",
+      "kind": "semantic-part",
+      "module": "Through-Hole Wall B",
+      "sourceNodes": [
+        "bladeHoleWall2"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "holeWallC",
+      "kind": "semantic-part",
+      "module": "Through-Hole Wall C",
+      "sourceNodes": [
+        "bladeHoleWall3"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "scaleSeamA",
+      "kind": "semantic-part",
+      "module": "Upper Scale Seam",
+      "sourceNodes": [
+        "panelSeamA"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "scaleSeamB",
+      "kind": "semantic-part",
+      "module": "Lower Scale Seam",
+      "sourceNodes": [
+        "panelSeamB"
+      ],
+      "triangles": 100,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": false
+    },
+    {
+      "name": "pommelInnerWall",
+      "kind": "semantic-part",
+      "module": "Pommel Ring Inner Wall",
+      "sourceNodes": [
+        "fingerRingInnerWall"
+      ],
+      "triangles": 1,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": true
+    },
+    {
+      "name": "rosetteBase",
+      "kind": "semantic-part",
+      "module": "Rosette Base Relief",
+      "sourceNodes": [
+        "medallionRim"
+      ],
+      "triangles": 1,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": true
+    },
+    {
+      "name": "fastenerCrownSet",
+      "kind": "semantic-part",
+      "module": "Fastener Crown Set",
+      "sourceNodes": [
+        "brassFastenerCrown1-7"
+      ],
+      "triangles": 1,
+      "explodeWithParent": false,
+      "selectable": true,
+      "foldedRelief": true
+    }
+  ],
+  "unnamedMeshes": 0,
+  "integralMeshes": 34,
+  "runtimeHierarchyEvidence": "visual-evidence/runtime-hierarchy.json",
+  "sockets": [
+    "bladeBaseSocket",
+    "ringAxisSocket",
+    "scalePanelSocket"
+  ],
+  "colliders": [
+    "bladeBody",
+    "ivoryHandle",
+    "fingerRing"
+  ],
+  "explodable": true,
+  "clickable": true,
+  "notes": [
+    "Semantic relief aliases are mapped to named source nodes; they are folded into their parent shell where the factory intentionally uses integrated surface relief.",
+    "The runtime root exposes root.userData.sculptRuntime."
+  ]
+}

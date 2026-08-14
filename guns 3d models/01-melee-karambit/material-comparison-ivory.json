@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "materialId": "aged-ivory-scale",
+  "regionId": "ivory-scale-face",
+  "referenceCrop": "material-evidence/01-ivory-scale-face.png",
+  "renderScreenshot": "visual-evidence/orthographic-projection-front.png",
+  "pbrEvidence": "material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_albedo.png",
+  "passed": true,
+  "confidence": 0.86,
+  "mismatches": [],
+  "notes": "The pale three-panel shell, seam structure, and local grain/stain response are present; the PBR artifact supplies independent roughness, height, normal, and AO channels."
+}

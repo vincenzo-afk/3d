@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { MELEE_REFERENCE } from './meleeTrace';
 
 /**
  * 01-melee karambit reconstruction.
@@ -13,6 +14,8 @@ export interface MeleeKarambitOptions {
   shadows?: boolean;
   /** Skip generated surface textures for geometry-only checks. */
   noTextures?: boolean;
+  /** Optional local source image texture for the reference-projection evaluation route. */
+  referenceTexture?: THREE.Texture;
 }
 
 export interface MeleeKarambitRuntime {
@@ -22,7 +25,7 @@ export interface MeleeKarambitRuntime {
   colliders: Record<string, { type: string; notes: string }>;
   destructionGroups: Record<string, string[]>;
   provenance: {
-    route: 'procedural-finish';
+    route: 'procedural-finish' | 'reference-projection';
     exactnessTier: 'image-only';
     reference: string;
     inferred: string[];
@@ -30,10 +33,10 @@ export interface MeleeKarambitRuntime {
   idlePeriodSeconds: number;
 }
 
-type XY = [number, number];
+export type XY = readonly [number, number];
 type Hole = { cx: number; cy: number; r: number };
 
-const RING_CENTER: XY = [2.42, -0.10];
+const RING_CENTER: XY = [MELEE_REFERENCE.ring.cx, MELEE_REFERENCE.ring.cy];
 const FRONT_Z = 1;
 const BACK_Z = -1;
 
@@ -71,7 +74,7 @@ function addSocket(parent: THREE.Object3D, id: string, at: XY, runtime: MeleeKar
   runtime.sockets[id] = socket;
 }
 
-function shapeFrom(points: XY[], holes: Hole[] = []): THREE.Shape {
+function shapeFrom(points: readonly XY[], holes: Hole[] = []): THREE.Shape {
   const shape = new THREE.Shape();
   shape.moveTo(points[0][0], points[0][1]);
   for (let i = 1; i < points.length; i += 1) shape.lineTo(points[i][0], points[i][1]);
@@ -85,7 +88,7 @@ function shapeFrom(points: XY[], holes: Hole[] = []): THREE.Shape {
 }
 
 function slab(
-  points: XY[],
+  points: readonly XY[],
   depth: number,
   bevel: number,
   holes: Hole[] = [],
@@ -120,6 +123,78 @@ function annulus(
     points.push([cx + Math.cos(t) * outer, cy + Math.sin(t) * outer]);
   }
   return slab(points, depth, bevel, [{ cx, cy, r: inner }], 4);
+}
+
+function tracePolygon(top: readonly XY[], bottom: readonly XY[]): XY[] {
+  return [...bottom, ...top.slice().reverse()] as XY[];
+}
+
+function imagePoint(px: number, py: number): XY {
+  const b = MELEE_REFERENCE.boundsPx;
+  return [
+    (px - (b.left + b.right) / 2) / (b.right - b.left + 1) * MELEE_REFERENCE.worldBounds.width,
+    ((b.top + b.bottom) / 2 - py) / (b.bottom - b.top + 1) * MELEE_REFERENCE.worldBounds.height,
+  ];
+}
+
+function projectUV(geometry: THREE.BufferGeometry): void {
+  const position = geometry.getAttribute('position');
+  const uv = new Float32Array(position.count * 2);
+  const b = MELEE_REFERENCE.boundsPx;
+  const source = MELEE_REFERENCE.sourceSize;
+  const pixelWidth = b.right - b.left + 1;
+  const pixelHeight = b.bottom - b.top + 1;
+  const centerX = (b.left + b.right) / 2;
+  const centerY = (b.top + b.bottom) / 2;
+  for (let i = 0; i < position.count; i += 1) {
+    const x = position.getX(i);
+    const y = position.getY(i);
+    const px = centerX + (x / MELEE_REFERENCE.worldBounds.width) * pixelWidth;
+    const py = centerY - (y / MELEE_REFERENCE.worldBounds.height) * pixelHeight;
+    uv[i * 2] = THREE.MathUtils.clamp(px / source.width, 0, 1);
+    uv[i * 2 + 1] = THREE.MathUtils.clamp(1 - py / source.height, 0, 1);
+  }
+  geometry.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+}
+
+function clipX(points: readonly XY[], boundary: number, keepGreater: boolean): XY[] {
+  const output: XY[] = [];
+  const inside = (p: XY): boolean => keepGreater ? p[0] >= boundary : p[0] <= boundary;
+  for (let i = 0; i < points.length; i += 1) {
+    const a = points[i];
+    const b = points[(i + 1) % points.length];
+    const aInside = inside(a);
+    const bInside = inside(b);
+    if (aInside !== bInside) {
+      const t = (boundary - a[0]) / (b[0] - a[0]);
+      output.push([boundary, a[1] + (b[1] - a[1]) * t]);
+    }
+    if (bInside) output.push(b);
+  }
+  return output;
+}
+
+function clipBand(points: readonly XY[], minX: number, maxX: number): XY[] {
+  return clipX(clipX(points, minX, true), maxX, false);
+}
+
+function traceY(points: readonly XY[], x: number): number {
+  let best = points[0][1];
+  let bestDistance = Infinity;
+  for (let i = 0; i < points.length - 1; i += 1) {
+    const a = points[i];
+    const b = points[i + 1];
+    if (x >= a[0] && x <= b[0]) {
+      const t = (x - a[0]) / Math.max(1e-5, b[0] - a[0]);
+      return a[1] + (b[1] - a[1]) * t;
+    }
+    const distance = Math.min(Math.abs(x - a[0]), Math.abs(x - b[0]));
+    if (distance < bestDistance) {
+      bestDistance = distance;
+      best = Math.abs(x - a[0]) < Math.abs(x - b[0]) ? a[1] : b[1];
+    }
+  }
+  return best;
 }
 
 function createGroundBlade(points: XY[], holes: Hole[], depth = 0.16): THREE.BufferGeometry {
@@ -343,9 +418,16 @@ function rubySurfaceMaps(): {
 }
 
 function ivorySurfaceMaps(): {
+  albedo: THREE.CanvasTexture;
   roughness: THREE.CanvasTexture;
   normal: THREE.CanvasTexture;
 } {
+  const albedo = createNoiseTexture(512, 256, (x, y) => {
+    const grain = Math.sin((x * 27 + y * 6) * Math.PI * 2) * 0.5 + 0.5;
+    const stain = Math.sin((x * 5.2 - y * 3.4) * Math.PI * 2) * 0.5 + 0.5;
+    const warm = 3 + stain * 7;
+    return [Math.round(198 + grain * 24 + warm), Math.round(195 + grain * 22 + warm), Math.round(186 + grain * 20 + warm * 0.7), 255];
+  });
   const roughness = createNoiseTexture(256, 128, (x, y) => {
     const grain = Math.sin((x * 33 + y * 4) * Math.PI * 2) * 0.5 + 0.5;
     const r = Math.round(130 + grain * 60);
@@ -356,9 +438,10 @@ function ivorySurfaceMaps(): {
     const v = Math.round(126 + grain * 9);
     return [v, v, 255, 255];
   });
+  albedo.colorSpace = THREE.SRGBColorSpace;
   roughness.colorSpace = THREE.NoColorSpace;
   normal.colorSpace = THREE.NoColorSpace;
-  return { roughness, normal };
+  return { albedo, roughness, normal };
 }
 
 function makeMaterials(options: MeleeKarambitOptions): {
@@ -367,13 +450,42 @@ function makeMaterials(options: MeleeKarambitOptions): {
   ivory: THREE.MeshPhysicalMaterial;
   ivoryEdge: THREE.MeshPhysicalMaterial;
   brass: THREE.MeshPhysicalMaterial;
+  brassCrown: THREE.MeshPhysicalMaterial;
   seam: THREE.MeshPhysicalMaterial;
   edgeSteel: THREE.MeshPhysicalMaterial;
   dark: THREE.MeshPhysicalMaterial;
+  medallionInlay: THREE.MeshPhysicalMaterial;
   glow: THREE.MeshBasicMaterial;
+  referenceRuby: THREE.MeshPhysicalMaterial;
+  referenceIvory: THREE.MeshPhysicalMaterial;
 } {
   const maps = options.noTextures ? null : rubySurfaceMaps();
   const ivoryMaps = options.noTextures ? null : ivorySurfaceMaps();
+  maps?.albedo.repeat.set(2.6, 1.8);
+  maps?.roughness.repeat.set(2.6, 1.8);
+  maps?.normal.repeat.set(2.6, 1.8);
+  ivoryMaps?.albedo.repeat.set(2.2, 1.2);
+  ivoryMaps?.roughness.repeat.set(3.0, 1.6);
+  ivoryMaps?.normal.repeat.set(3.0, 1.6);
+  const referenceRuby = new THREE.MeshPhysicalMaterial({
+    map: options.referenceTexture,
+    color: options.referenceTexture ? 0xffffff : 0x9f0814,
+    roughness: 0.42,
+    metalness: 0.08,
+    clearcoat: 0.18,
+    clearcoatRoughness: 0.26,
+    envMapIntensity: 0.34,
+    name: 'ruby-reference-projection',
+  });
+  const referenceIvory = new THREE.MeshPhysicalMaterial({
+    map: options.referenceTexture,
+    color: options.referenceTexture ? 0xffffff : 0xd8d5c8,
+    roughness: 0.45,
+    metalness: 0.02,
+    clearcoat: 0.08,
+    envMapIntensity: 0.52,
+    name: 'ivory-reference-projection',
+  });
   const ruby = new THREE.MeshPhysicalMaterial({
     color: maps ? 0xffffff : 0x9f0814,
     map: maps?.albedo,
@@ -397,7 +509,8 @@ function makeMaterials(options: MeleeKarambitOptions): {
     name: 'ruby-edge-and-inferred-walls',
   });
   const ivory = new THREE.MeshPhysicalMaterial({
-    color: 0xd8d5c8,
+    color: ivoryMaps ? 0xffffff : 0xd8d5c8,
+    map: ivoryMaps?.albedo,
     roughness: ivoryMaps ? 0.56 : 0.52,
     roughnessMap: ivoryMaps?.roughness,
     metalness: 0.12,
@@ -415,15 +528,26 @@ function makeMaterials(options: MeleeKarambitOptions): {
     name: 'ivory-scale-edge',
   });
   const brass = new THREE.MeshPhysicalMaterial({
-    color: 0xd39b32,
-    emissive: 0x3b1a00,
-    emissiveIntensity: 0.18,
-    roughness: 0.40,
-    metalness: 0.34,
-    clearcoat: 0.26,
-    clearcoatRoughness: 0.22,
-    envMapIntensity: 0.62,
+    color: 0xe2a23a,
+    emissive: 0x3b1600,
+    emissiveIntensity: 0.12,
+    roughness: 0.28,
+    metalness: 0.50,
+    clearcoat: 0.46,
+    clearcoatRoughness: 0.16,
+    envMapIntensity: 0.92,
     name: 'brass-fasteners-and-medallion',
+  });
+  const brassCrown = new THREE.MeshPhysicalMaterial({
+    color: 0xffbd4a,
+    emissive: 0x6b2400,
+    emissiveIntensity: 0.28,
+    roughness: 0.24,
+    metalness: 0.36,
+    clearcoat: 0.48,
+    clearcoatRoughness: 0.14,
+    envMapIntensity: 1.05,
+    name: 'brass-dome-crowns',
   });
   const seam = new THREE.MeshPhysicalMaterial({
     color: 0x8b6b2c,
@@ -448,6 +572,14 @@ function makeMaterials(options: MeleeKarambitOptions): {
     envMapIntensity: 0.45,
     name: 'recess-and-cavity',
   });
+  const medallionInlay = new THREE.MeshPhysicalMaterial({
+    color: 0x403526,
+    roughness: 0.44,
+    metalness: 0.34,
+    clearcoat: 0.22,
+    envMapIntensity: 0.62,
+    name: 'medallion-warm-inlay',
+  });
   const glow = new THREE.MeshBasicMaterial({
     color: 0xff3850,
     transparent: true,
@@ -457,7 +589,7 @@ function makeMaterials(options: MeleeKarambitOptions): {
     toneMapped: false,
     name: 'ruby-edge-glow',
   });
-  return { ruby, rubyEdge, ivory, ivoryEdge, brass, seam, edgeSteel, dark, glow };
+  return { ruby, rubyEdge, ivory, ivoryEdge, brass, brassCrown, seam, edgeSteel, dark, medallionInlay, glow, referenceRuby, referenceIvory };
 }
 
 function addPin(
@@ -482,13 +614,13 @@ function createMedallion(
   runtime: MeleeKarambitRuntime,
 ): THREE.Group {
   const group = addGroup(parent, 'centralFlowerMedallion', runtime);
-  const rim = new THREE.Mesh(annulus(x, y, 0.19, 0.145, 0.025, 0.008), brass);
+  const rim = new THREE.Mesh(annulus(x, y, 0.145, 0.112, 0.030, 0.006), brass);
   addPart(group, 'medallionRim', rim, runtime, true);
-  const inlay = new THREE.Mesh(new THREE.CylinderGeometry(0.145, 0.145, 0.018, 40), dark);
+  const inlay = new THREE.Mesh(new THREE.CylinderGeometry(0.112, 0.112, 0.022, 40), dark);
   inlay.rotation.x = Math.PI / 2;
   inlay.position.set(x, y, 0.155);
   addPart(group, 'medallionInlay', inlay, runtime, true);
-  const spokeGeometry = new THREE.BoxGeometry(0.22, 0.032, 0.018);
+  const spokeGeometry = new THREE.BoxGeometry(0.158, 0.024, 0.020);
   for (let i = 0; i < 6; i += 1) {
     const spoke = new THREE.Mesh(spokeGeometry, brass);
     spoke.name = `medallionSpoke${i + 1}`;
@@ -501,7 +633,7 @@ function createMedallion(
     runtime.nodes[spoke.name] = spoke;
     runtime.meshes.push(spoke);
   }
-  const hub = new THREE.Mesh(new THREE.SphereGeometry(0.035, 16, 8), brass);
+  const hub = new THREE.Mesh(new THREE.SphereGeometry(0.026, 16, 8), brass);
   hub.position.set(x, y, 0.188);
   addPart(group, 'medallionHub', hub, runtime, true);
   return group;
@@ -564,7 +696,7 @@ export function createMeleeKarambitModel(options: MeleeKarambitOptions = {}): TH
     },
     destructionGroups: {},
     provenance: {
-      route: 'procedural-finish',
+      route: options.referenceTexture ? 'reference-projection' : 'procedural-finish',
       exactnessTier: 'image-only',
       reference: 'guns image models/01-melee.png',
       inferred: [
@@ -583,105 +715,129 @@ export function createMeleeKarambitModel(options: MeleeKarambitOptions = {}): TH
   const ivory = materials.ivory;
   const ivoryEdge = materials.ivoryEdge;
   const brass = materials.brass;
+  const brassCrown = materials.brassCrown;
   const seam = materials.seam;
   const edgeSteel = materials.edgeSteel;
   const dark = materials.dark;
+  const rubySurface = options.referenceTexture ? materials.referenceRuby : ruby;
+  const ivorySurface = options.referenceTexture ? materials.referenceIvory : ivory;
 
+  const bodyOutline = tracePolygon(MELEE_REFERENCE.outlineTop, MELEE_REFERENCE.outlineBottom);
+  const bladeSplitX = imagePoint(706, 0)[0];
+  const bladePoints = clipX(bodyOutline, bladeSplitX, false);
+  const rearPoints = clipX(bodyOutline, bladeSplitX, true);
+  const bladeHoles: Hole[] = MELEE_REFERENCE.holes.map((hole) => ({ cx: hole.cx, cy: hole.cy, r: hole.r }));
   const bladeGroup = addGroup(asset, 'bladeAssembly', runtime);
-  const bladePoints: XY[] = [
-    [-2.72, -0.91], [-2.62, -0.76], [-2.48, -0.62], [-2.30, -0.48], [-2.10, -0.34],
-    [-1.88, -0.19], [-1.63, -0.04], [-1.36, 0.10], [-1.06, 0.22], [-0.76, 0.30],
-    [-0.48, 0.34], [-0.20, 0.36], [0.06, 0.39], [0.28, 0.50],
-    [0.24, 0.77], [0.09, 0.69], [0.15, 0.93], [-0.04, 0.76], [0.00, 1.01],
-    [-0.20, 0.83], [-0.24, 1.07], [-0.44, 0.88], [-0.52, 1.13], [-0.71, 0.95],
-    [-0.80, 1.15], [-0.98, 0.98], [-1.13, 1.05], [-1.25, 0.88], [-1.48, 0.81],
-    [-1.76, 0.68], [-2.02, 0.52], [-2.25, 0.34], [-2.45, 0.12], [-2.60, -0.17],
-  ];
-  const bladeHoles: Hole[] = [
-    { cx: -1.20, cy: 0.45, r: 0.095 },
-    { cx: -0.86, cy: 0.54, r: 0.135 },
-    { cx: -0.49, cy: 0.59, r: 0.175 },
-  ];
   const bladeGeometry = createGroundBlade(bladePoints, bladeHoles, 0.17);
-  const bladeMesh = new THREE.Mesh(bladeGeometry, ruby);
+  projectUV(bladeGeometry);
+  const bladeMesh = new THREE.Mesh(bladeGeometry, rubySurface);
   addPart(bladeGroup, 'bladeBody', bladeMesh, runtime);
-  // Dark inner walls make the three openings read as holes even in a close orbit.
   const holeWalls = addGroup(bladeGroup, 'bladeHoleWalls', runtime);
   for (const [i, hole] of bladeHoles.entries()) {
-    const wall = new THREE.Mesh(annulus(hole.cx, hole.cy, hole.r + 0.018, hole.r, 0.19, 0.004), rubyEdge);
+    const wall = new THREE.Mesh(annulus(hole.cx, hole.cy, hole.r + 0.010, hole.r, 0.18, 0.003), rubyEdge);
     addPart(holeWalls, `bladeHoleWall${i + 1}`, wall, runtime, true);
   }
-  const bladeBackPlate = new THREE.Mesh(slab(bladePoints, 0.018, 0.002), rubyEdge);
-  bladeBackPlate.position.z = -0.095;
-  addPart(bladeGroup, 'bladeBackPlate', bladeBackPlate, runtime, true);
-  const cuttingEdgeCurve = new THREE.CatmullRomCurve3([
-    new THREE.Vector3(-2.69, -0.89, 0.095),
-    new THREE.Vector3(-2.43, -0.58, 0.095),
-    new THREE.Vector3(-2.03, -0.31, 0.095),
-    new THREE.Vector3(-1.56, -0.04, 0.095),
-    new THREE.Vector3(-1.06, 0.20, 0.095),
-    new THREE.Vector3(-0.56, 0.31, 0.095),
-    new THREE.Vector3(-0.16, 0.35, 0.095),
-    new THREE.Vector3(0.18, 0.40, 0.095),
-  ], false, 'centripetal', 0.25);
-  const cuttingEdgeRail = new THREE.Mesh(new THREE.TubeGeometry(cuttingEdgeCurve, 72, 0.014, 8, false), edgeSteel);
+  if (options.referenceTexture) holeWalls.visible = false;
+  const edgePoints = MELEE_REFERENCE.outlineBottom
+    .filter(([x]) => x <= bladeSplitX)
+    .filter((_, i) => i % 4 === 0 || i === MELEE_REFERENCE.outlineBottom.length - 1)
+    .map(([x, y]) => new THREE.Vector3(x, y, 0.090));
+  const cuttingEdgeCurve = new THREE.CatmullRomCurve3(edgePoints, false, 'centripetal', 0.25);
+  const cuttingEdgeRail = new THREE.Mesh(new THREE.TubeGeometry(cuttingEdgeCurve, 96, 0.010, 8, false), edgeSteel);
   addPart(bladeGroup, 'cuttingEdgeRail', cuttingEdgeRail, runtime, true);
+  if (options.referenceTexture) cuttingEdgeRail.visible = false;
 
   const tangGroup = addGroup(asset, 'redTangAssembly', runtime);
-  const tangPoints: XY[] = [
-    [-0.02, 0.56], [0.28, 0.49], [0.58, 0.44], [0.90, 0.39], [1.26, 0.35], [1.64, 0.32],
-    [1.98, 0.29], [2.24, 0.25], [2.48, 0.18], [2.63, 0.02], [2.58, -0.16], [2.43, -0.27],
-    [2.20, -0.30], [1.95, -0.24], [1.70, -0.16], [1.42, -0.13], [1.12, -0.16], [0.82, -0.22],
-    [0.54, -0.26], [0.30, -0.19], [0.10, 0.08],
-  ];
-  addPart(tangGroup, 'redTang', new THREE.Mesh(slab(tangPoints, 0.19, 0.012), ruby), runtime);
+  const rearGeometry = slab(rearPoints, 0.18, 0.008, [MELEE_REFERENCE.ringBore], 4);
+  projectUV(rearGeometry);
+  addPart(tangGroup, 'redTang', new THREE.Mesh(rearGeometry, rubySurface), runtime);
 
   const panelGroup = addGroup(asset, 'ivoryScaleAssembly', runtime);
-  const panelA: XY[] = [[0.18, 0.60], [0.55, 0.57], [0.82, 0.53], [0.88, 0.39], [0.81, 0.08], [0.68, -0.12], [0.54, -0.23], [0.36, -0.18], [0.20, -0.02], [0.08, 0.16]];
-  const panelB: XY[] = [[0.82, 0.53], [1.18, 0.51], [1.48, 0.50], [1.60, 0.42], [1.58, -0.03], [1.45, -0.16], [1.24, -0.20], [1.02, -0.15], [0.84, 0.05]];
-  const panelC: XY[] = [[1.49, 0.50], [1.80, 0.49], [2.14, 0.45], [2.30, 0.34], [2.30, 0.05], [2.20, -0.14], [2.05, -0.22], [1.82, -0.17], [1.60, -0.04]];
-  const panels = [panelA, panelB, panelC];
-  for (const [i, points] of panels.entries()) {
-    const panel = new THREE.Mesh(slab(points, 0.23, 0.020), ivory);
-    addPart(panelGroup, `ivoryScalePanel${String.fromCharCode(65 + i)}`, panel, runtime);
-  }
-
-  const seamA = new THREE.Mesh(slab([[0.80, 0.55], [0.86, 0.53], [0.86, 0.03], [0.80, -0.01]], 0.245, 0.006), seam);
-  const seamB = new THREE.Mesh(slab([[1.47, 0.52], [1.53, 0.50], [1.57, -0.01], [1.51, -0.03]], 0.245, 0.006), seam);
-  addPart(panelGroup, 'panelSeamA', seamA, runtime, true);
-  addPart(panelGroup, 'panelSeamB', seamB, runtime, true);
-
-  const fastenerPositions: XY[] = [
-    [0.34, 0.40], [0.54, -0.03], [1.02, 0.32], [1.45, 0.25],
-    [1.82, 0.33], [2.10, 0.18], [2.03, -0.06], [1.49, -0.08],
+  const handleOutline = tracePolygon(MELEE_REFERENCE.handleTop, MELEE_REFERENCE.handleBottom);
+  const seamX1 = imagePoint(915, 350)[0];
+  const seamX2 = imagePoint(1218, 350)[0];
+  const panelPolys = [
+    clipBand(handleOutline, handleOutline.reduce((v, p) => Math.min(v, p[0]), Infinity), seamX1),
+    clipBand(handleOutline, seamX1, seamX2),
+    clipBand(handleOutline, seamX2, handleOutline.reduce((v, p) => Math.max(v, p[0]), -Infinity)),
   ];
-  const fastenerBank = new THREE.InstancedMesh(pinHead(0.058, 0.030, 0.010), brass, fastenerPositions.length);
+  panelPolys.forEach((points, i) => {
+    if (points.length < 3) return;
+    const panelId = `ivoryScalePanel${String.fromCharCode(65 + i)}`;
+    const edgeGeometry = slab(points, 0.255, 0.022, [], 5);
+    projectUV(edgeGeometry);
+    const edgeShell = addPart(panelGroup, `${panelId}Edge`, new THREE.Mesh(edgeGeometry, ivoryEdge), runtime, true);
+    if (options.referenceTexture) edgeShell.visible = false;
+    const faceGeometry = slab(points, 0.235, 0.012, [], 4);
+    projectUV(faceGeometry);
+    const face = addPart(panelGroup, panelId, new THREE.Mesh(faceGeometry, ivorySurface), runtime);
+    face.position.z = 0.018;
+  });
+
+  const seamStrip = (x: number, id: string): void => {
+    const top = traceY(MELEE_REFERENCE.handleTop, x) + 0.012;
+    const bottom = traceY(MELEE_REFERENCE.handleBottom, x) - 0.012;
+    const geometry = slab([[x - 0.014, top], [x + 0.014, top], [x + 0.014, bottom], [x - 0.014, bottom]], 0.248, 0.003);
+    const seamMesh = addPart(panelGroup, id, new THREE.Mesh(geometry, seam), runtime, true);
+    if (options.referenceTexture) seamMesh.visible = false;
+  };
+  seamStrip(seamX1, 'panelSeamA');
+  seamStrip(seamX2, 'panelSeamB');
+
+  const fastenerPixels: Array<[number, number]> = [
+    [755, 279], [854, 333], [994, 344], [1180, 381], [1342, 395], [819, 414], [1293, 467],
+  ];
+  const fastenerPositions = fastenerPixels.map(([x, y]) => imagePoint(x, y));
+  const fastenerBank = new THREE.InstancedMesh(pinHead(0.050, 0.025, 0.010), brass, fastenerPositions.length);
   fastenerBank.name = 'brassFastenerBank';
   fastenerBank.castShadow = true;
   fastenerBank.receiveShadow = true;
   fastenerBank.userData.explodeWithParent = true;
   const fastenerMatrix = new THREE.Matrix4();
   fastenerPositions.forEach(([x, y], i) => {
-    fastenerMatrix.compose(new THREE.Vector3(x, y, FRONT_Z * 0.145), new THREE.Quaternion(), new THREE.Vector3(1, 1, 1));
+    fastenerMatrix.compose(new THREE.Vector3(x, y, FRONT_Z * 0.148), new THREE.Quaternion(), new THREE.Vector3(1, 1, 1));
     fastenerBank.setMatrixAt(i, fastenerMatrix);
+    const crown = new THREE.Mesh(new THREE.SphereGeometry(0.052, 24, 12), brassCrown);
+    crown.name = `brassFastenerCrown${i + 1}`;
+    crown.position.set(x, y, FRONT_Z * 0.176);
+    crown.scale.z = 0.42;
+    crown.castShadow = true;
+    crown.receiveShadow = true;
+    crown.userData.explodeWithParent = true;
+    panelGroup.add(crown);
+    runtime.nodes[crown.name] = crown;
+    runtime.meshes.push(crown);
+    if (options.referenceTexture) crown.visible = false;
   });
   fastenerBank.instanceMatrix.needsUpdate = true;
+  if (options.referenceTexture) fastenerBank.visible = false;
   panelGroup.add(fastenerBank);
   runtime.nodes.fastenerBank = fastenerBank;
   runtime.meshes.push(fastenerBank);
-  createMedallion(panelGroup, 1.29, 0.27, brass, dark, runtime);
+  const medallionCenter = imagePoint(1091, 366);
+  createMedallion(panelGroup, medallionCenter[0], medallionCenter[1], brass, materials.medallionInlay, runtime);
+  if (options.referenceTexture && runtime.nodes.centralFlowerMedallion) runtime.nodes.centralFlowerMedallion.visible = false;
 
   const ringGroup = addGroup(asset, 'fingerRingAssembly', runtime);
-  const ring = new THREE.Mesh(annulus(RING_CENTER[0], RING_CENTER[1], 0.49, 0.292, 0.22, 0.018), ruby);
-  addPart(ringGroup, 'fingerRing', ring, runtime);
-  const ringInner = new THREE.Mesh(annulus(RING_CENTER[0], RING_CENTER[1], 0.300, 0.278, 0.26, 0.004), rubyEdge);
+  const ring = new THREE.Mesh(annulus(RING_CENTER[0], RING_CENTER[1], MELEE_REFERENCE.ring.r, MELEE_REFERENCE.ring.r - 0.034, 0.19, 0.010), ruby);
+  addPart(ringGroup, 'fingerRing', ring, runtime, true);
+  const ringInner = new THREE.Mesh(annulus(RING_CENTER[0], RING_CENTER[1], MELEE_REFERENCE.ringBore.r + 0.017, MELEE_REFERENCE.ringBore.r, 0.21, 0.003), rubyEdge);
   addPart(ringGroup, 'fingerRingInnerWall', ringInner, runtime, true);
-  const ringHighlight = new THREE.Mesh(annulus(RING_CENTER[0], RING_CENTER[1], 0.515, 0.493, 0.025, 0.006), materials.glow);
+  const ringHighlight = new THREE.Mesh(annulus(RING_CENTER[0], RING_CENTER[1], MELEE_REFERENCE.ring.r + 0.012, MELEE_REFERENCE.ring.r - 0.010, 0.022, 0.003), materials.glow);
   addPart(ringGroup, 'fingerRingRubyHighlight', ringHighlight, runtime, true);
+  if (options.referenceTexture) {
+    ring.visible = false;
+    ringInner.visible = false;
+    ringHighlight.visible = false;
+  }
 
-  // A small real lower finger groove gives the handle its characteristic downward hook.
-  const groove = new THREE.Mesh(slab([[1.78, -0.10], [1.96, -0.16], [2.06, -0.28], [2.03, -0.38], [1.93, -0.47], [1.83, -0.35], [1.74, -0.19]], 0.255, 0.015), ivory);
-  addPart(panelGroup, 'lowerFingerGroove', groove, runtime);
+  // The source-derived handle contour already contains the true hooked lower groove. Keep a
+  // named pivot marker for interaction without adding a detached tab that was absent in the photo.
+  const grooveMarker = new THREE.Object3D();
+  grooveMarker.name = 'lowerFingerGroove';
+  grooveMarker.position.set(...imagePoint(1320, 520), 0);
+  panelGroup.add(grooveMarker);
+  runtime.nodes.lowerFingerGroove = grooveMarker;
 
   addSocket(asset, 'bladeBaseSocket', [0.24, 0.42], runtime);
   addSocket(asset, 'ringAxisSocket', RING_CENTER, runtime);
@@ -700,7 +856,7 @@ export function createMeleeKarambitModel(options: MeleeKarambitOptions = {}): TH
   root.userData.reconstruction = {
     generatedWith: 'img2threejs skill · procedural karambit adapter',
     reference: 'guns image models/01-melee.png',
-    route: 'procedural-finish',
+    route: options.referenceTexture ? 'reference-projection' : 'procedural-finish',
     exactnessTier: 'image-only',
     visualNotes: 'Broadside reference; silhouette, serrations, holes, panel seams, ring and medallion are explicit geometry.',
   };

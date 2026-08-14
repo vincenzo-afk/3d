@@ -1,0 +1,8 @@
+{
+  "ready": true,
+  "runtimeKeys": ["nodes", "meshes", "sockets", "colliders", "destructionGroups", "provenance", "idlePeriodSeconds"],
+  "nodeNames": ["root", "asset", "bladeAssembly", "bladeBody", "bladeHoleWalls", "bladeHoleWall1", "bladeHoleWall2", "bladeHoleWall3", "cuttingEdgeRail", "redTangAssembly", "redTang", "ivoryScaleAssembly", "ivoryScalePanelAEdge", "ivoryScalePanelA", "ivoryScalePanelBEdge", "ivoryScalePanelB", "ivoryScalePanelCEdge", "ivoryScalePanelC", "panelSeamA", "panelSeamB", "brassFastenerCrown1", "brassFastenerCrown2", "brassFastenerCrown3", "brassFastenerCrown4", "brassFastenerCrown5", "brassFastenerCrown6", "brassFastenerCrown7", "fastenerBank", "centralFlowerMedallion", "medallionRim", "medallionInlay", "medallionSpoke1", "medallionSpoke2", "medallionSpoke3", "medallionSpoke4", "medallionSpoke5", "medallionSpoke6", "medallionHub", "fingerRingAssembly", "fingerRing", "fingerRingInnerWall", "fingerRingRubyHighlight", "lowerFingerGroove"],
+  "socketNames": ["bladeBaseSocket", "ringAxisSocket", "scalePanelSocket"],
+  "meshCount": 34,
+  "rootUserDataKeys": ["sculptRuntime", "reconstruction", "tick"]
+}

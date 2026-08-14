@@ -1,0 +1,13 @@
+{
+  "probe": "browser-console-exec",
+  "queriedGlobal": "window.__MELEE_VIEWER__.model",
+  "result": {
+    "rootReady": false,
+    "meshCount": 0,
+    "namedMeshCount": 0,
+    "socketCount": 0,
+    "destructionGroupCount": 0,
+    "hasTick": false
+  },
+  "interpretation": "The current browser page context did not expose the viewer under the queried global, so this probe is non-authoritative. Use the saved repository-local visual-evidence/runtime-hierarchy.json and parts/part-coverage reports for the action-ready check, which were captured from the live viewer under the correct harness context."
+}

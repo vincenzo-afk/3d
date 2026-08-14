@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "materialId": "ruby-marbled-anodized-coat",
+  "regionId": "ruby-blade-coating",
+  "referenceCrop": "material-evidence/00-ruby-blade-coating.png",
+  "renderScreenshot": "visual-evidence/orthographic-projection-front.png",
+  "pbrEvidence": "material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_albedo.png",
+  "passed": true,
+  "confidence": 0.86,
+  "mismatches": [],
+  "notes": "The source-projection route preserves the observed ruby/red blade field and the independent PBR artifact supplies albedo, roughness, height, normal, and AO evidence."
+}

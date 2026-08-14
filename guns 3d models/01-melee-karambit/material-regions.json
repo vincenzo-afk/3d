@@ -1,0 +1,45 @@
+{
+  "referenceId": "01-melee-karambit",
+  "regions": [
+    {
+      "componentId": "bladeBody",
+      "regionId": "ruby-blade-coating",
+      "sourceImage": "/home/ubuntu/3d/guns image models/01-melee.png",
+      "bbox": {"x": 95, "y": 233, "width": 620, "height": 425},
+      "family": "coating",
+      "subtype": "paint-over-metal",
+      "finish": "gloss-or-satin",
+      "materialSpecId": "ruby-marbled-anodized-coat"
+    },
+    {
+      "componentId": "ivoryScaleAssembly",
+      "regionId": "ivory-scale-face",
+      "sourceImage": "/home/ubuntu/3d/guns image models/01-melee.png",
+      "bbox": {"x": 715, "y": 240, "width": 590, "height": 280},
+      "family": "composite",
+      "subtype": "aged-composite-scale",
+      "finish": "satin-or-matte",
+      "materialSpecId": "aged-ivory-scale"
+    },
+    {
+      "componentId": "centralFlowerMedallion",
+      "regionId": "brass-hardware",
+      "sourceImage": "/home/ubuntu/3d/guns image models/01-melee.png",
+      "bbox": {"x": 980, "y": 325, "width": 145, "height": 95},
+      "family": "metal",
+      "subtype": "brass-fastener",
+      "finish": "metallic-aged",
+      "materialSpecId": "brass-hardware"
+    },
+    {
+      "componentId": "fingerRing",
+      "regionId": "ruby-pommel-ring",
+      "sourceImage": "/home/ubuntu/3d/guns image models/01-melee.png",
+      "bbox": {"x": 1280, "y": 360, "width": 360, "height": 360},
+      "family": "coating",
+      "subtype": "paint-over-metal",
+      "finish": "gloss-or-satin",
+      "materialSpecId": "ruby-marbled-anodized-coat"
+    }
+  ]
+}

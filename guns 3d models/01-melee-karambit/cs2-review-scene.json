@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "fixtureId": "karambit-01-melee-review-v1",
+  "reference": {
+    "front": "guns image models/01-melee.png",
+    "viewpoint": "front broadside",
+    "sourceSize": [
+      1684,
+      934
+    ]
+  },
+  "identity": {
+    "family": "knife",
+    "subtype": "karambit",
+    "name": "01 melee karambit",
+    "sourceBasis": "single broadside reference"
+  },
+  "camera": {
+    "projection": "orthographic-front-plus-perspective-orbits",
+    "fovDegrees": 27,
+    "position": [
+      0,
+      0,
+      10
+    ],
+    "target": [
+      0,
+      0,
+      0
+    ]
+  },
+  "transform": {
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  "environment": {
+    "type": "black studio",
+    "hash": "karambit-lookdev-room-environment-v1",
+    "keyFillRim": true
+  },
+  "resolution": [
+    896,
+    768
+  ],
+  "background": "#000000",
+  "rendererVersion": "three-r160-plus-vite",
+  "calibration": {
+    "sourceFrame": "source-bounds-pixel-trace",
+    "normalizedDiagnosticFrame": "842x467 object-crop",
+    "tier1Render": "tier1-ortho-projection-small.png"
+  },
+  "thresholds": {
+    "silhouetteIoU": 0.85,
+    "aspectRatioDelta": 0.05,
+    "scaleDelta": 0.08,
+    "projectionCoverage": 0.85,
+    "finishMaterialResponse": 0.7,
+    "identityDetail": 0.7,
+    "paintedRegion": 0.7,
+    "maxOrbitCollapseRatio": 0.15
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "kind": "img2threejs.action-ready",
+  "ready": true,
+  "model": "01-melee-karambit",
+  "runtime": {
+    "rootUserDataKeys": ["sculptRuntime", "reconstruction", "tick"],
+    "meshCount": 34,
+    "namedMeshCount": 34,
+    "unnamedMeshes": 0,
+    "socketNames": ["bladeBaseSocket", "ringAxisSocket", "scalePanelSocket"],
+    "socketCount": 3,
+    "destructionGroups": ["blade", "hardware", "ivory-shell", "ring"],
+    "selectableParts": true,
+    "explodableHierarchy": true,
+    "pivotsAndSocketsVerified": true
+  },
+  "coverage": {
+    "specifiedComponents": 24,
+    "builtParts": 24,
+    "errors": 0,
+    "warnings": 4,
+    "report": "part-coverage.json"
+  },
+  "codeOnly": {
+    "importedMeshes": 0,
+    "runtimeNetworkAssets": 0,
+    "factory": "create01MeleeKarambitModel.ts"
+  },
+  "evidence": [
+    "visual-evidence/runtime-hierarchy.json",
+    "parts.json",
+    "part-coverage.json",
+    "object-sculpt-spec.json",
+    "create01MeleeKarambitModel.ts"
+  ],
+  "nonBlockingWarnings": [
+    "ruby-marble-field material mapping is recorded as a material-level detail",
+    "brass-edge-wear material mapping is recorded as a material-level detail",
+    "ivory-grain-and-stain material mapping is recorded as a material-level detail",
+    "dark-cavity-response material mapping is recorded as a material-level detail"
+  ],
+  "notes": "The authoritative live-runtime capture reports a ready sculptRuntime tree, 34 named meshes, three sockets, and tick metadata. A later browser probe queried an inactive page global and is retained as non-authoritative diagnostic context only."
+}

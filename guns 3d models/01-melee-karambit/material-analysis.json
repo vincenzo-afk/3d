@@ -1,0 +1,1722 @@
+{
+  "schemaVersion": 1,
+  "kind": "img2threejs.material-analysis",
+  "referenceId": "01-melee-karambit",
+  "manifest": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-regions.json",
+  "registry": "/home/ubuntu/img2threejs/docs/materials/material-reference.json",
+  "targetThreshold": 0.7,
+  "notObservedMaterials": [],
+  "unresolvedNotObservedMaterials": [],
+  "regions": [
+    {
+      "componentId": "bladeBody",
+      "regionId": "ruby-blade-coating",
+      "materialSpecId": "ruby-marbled-anodized-coat",
+      "hypothesis": {
+        "componentId": "bladeBody",
+        "regionId": "ruby-blade-coating",
+        "materialId": null,
+        "family": "coating",
+        "subtype": "paint-over-metal",
+        "finish": "gloss-or-satin",
+        "aliases": [],
+        "confidence": 0.86,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "coating.painted-metal",
+        "status": "proceed",
+        "source": "vision",
+        "confidence": 0.86,
+        "method": "family-subtype-finish",
+        "alternatives": [],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/00-ruby-blade-coating.png",
+            "bbox": {
+              "x": 95,
+              "y": 233,
+              "width": 620,
+              "height": 425
+            },
+            "sourceWidth": 1684,
+            "sourceHeight": 934,
+            "loaderWarnings": [],
+            "coverage": 0.1675
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.86,
+            "estimatedFidelity": 0.86,
+            "targetThreshold": 0.7,
+            "materialId": "ruby-marbled-anodized-coat",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/00-ruby-blade-coating.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating",
+            "palette": [
+              "#3B070B",
+              "#6E1D21",
+              "#020101",
+              "#AC1F26",
+              "#F74B4F"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_albedo.png",
+                "url": "ruby-marbled-anodized-coat_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_roughness.png",
+                "url": "ruby-marbled-anodized-coat_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_height.png",
+                "url": "ruby-marbled-anodized-coat_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_normal.png",
+                "url": "ruby-marbled-anodized-coat_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_ao.png",
+                "url": "ruby-marbled-anodized-coat_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 620,
+              "sourceHeight": 425,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 620,
+                "height": 425
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 1.0,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.4739
+              },
+              "mapStats": {
+                "valueRange": 0.4583,
+                "heightP90Gradient": 0.08863,
+                "roughnessBase": 0.749,
+                "roughnessVariation": 0.175,
+                "normalStrength": 0.26,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#3B070B",
+                "#6E1D21",
+                "#020101",
+                "#AC1F26",
+                "#F74B4F"
+              ]
+            },
+            "warnings": [
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "painted-metal",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.5,
+              "clearcoat": 1.0,
+              "clearcoatRoughness": 0.05,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 1.0,
+              "anisotropy": 0.0,
+              "procedural": "flat-clearcoat"
+            },
+            "palette": [
+              "#000000",
+              "#461415",
+              "#4E0D11",
+              "#270A0A",
+              "#100404"
+            ],
+            "paletteHueRisk": [],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 23.9,
+              "meanSaturation": 0.364,
+              "gradientStrength": 0.154,
+              "mottle": 0.031,
+              "streakRatio": 1.07,
+              "hueSpread": 0.056,
+              "specularFraction": 0.0
+            }
+          }
+        },
+        "profileId": "coating.painted-metal",
+        "family": "coating",
+        "subtype": "paint-over-metal",
+        "finish": "gloss-or-satin",
+        "renderPrior": {
+          "metalness": 0.0,
+          "roughness": 0.45,
+          "clearcoat": 0.75,
+          "clearcoatRoughness": 0.12,
+          "ior": 1.5
+        },
+        "requiredMaps": [
+          "map",
+          "roughnessMap"
+        ],
+        "optionalMaps": [
+          "normalMap",
+          "clearcoatMap",
+          "clearcoatRoughnessMap",
+          "metalnessMap"
+        ],
+        "validationViews": [
+          "albedo-unlit",
+          "neutral-studio",
+          "grazing",
+          "environment-reflection",
+          "reference-beauty"
+        ],
+        "sourceRefs": [
+          "three.mesh-physical",
+          "gltf.2",
+          "khronos.gltf-pbr",
+          "adobe.pbr-guide-1",
+          "adobe.pbr-guide-2"
+        ],
+        "visualCues": [
+          "diffuse paint colour under a separate glossy coat",
+          "chips may expose metallic substrate"
+        ]
+      },
+      "observations": [
+        "chromatic base-colour response",
+        "single-image PBR inference requires controlled render validation"
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/00-ruby-blade-coating.png",
+        "bbox": {
+          "x": 95,
+          "y": 233,
+          "width": 620,
+          "height": 425
+        },
+        "sourceWidth": 1684,
+        "sourceHeight": 934,
+        "loaderWarnings": [],
+        "coverage": 0.1675
+      },
+      "textureAnalysis": {
+        "finishClass": "painted-metal",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.5,
+          "clearcoat": 1.0,
+          "clearcoatRoughness": 0.05,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 1.0,
+          "anisotropy": 0.0,
+          "procedural": "flat-clearcoat"
+        },
+        "palette": [
+          "#000000",
+          "#461415",
+          "#4E0D11",
+          "#270A0A",
+          "#100404"
+        ],
+        "paletteHueRisk": [],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 23.9,
+          "meanSaturation": 0.364,
+          "gradientStrength": 0.154,
+          "mottle": 0.031,
+          "streakRatio": 1.07,
+          "hueSpread": 0.056,
+          "specularFraction": 0.0
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "materialId": "ruby-marbled-anodized-coat",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/00-ruby-blade-coating.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating",
+        "palette": [
+          "#3B070B",
+          "#6E1D21",
+          "#020101",
+          "#AC1F26",
+          "#F74B4F"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_albedo.png",
+            "url": "ruby-marbled-anodized-coat_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_roughness.png",
+            "url": "ruby-marbled-anodized-coat_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_height.png",
+            "url": "ruby-marbled-anodized-coat_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_normal.png",
+            "url": "ruby-marbled-anodized-coat_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_ao.png",
+            "url": "ruby-marbled-anodized-coat_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 620,
+          "sourceHeight": 425,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 620,
+            "height": 425
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 1.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.4739
+          },
+          "mapStats": {
+            "valueRange": 0.4583,
+            "heightP90Gradient": 0.08863,
+            "roughnessBase": 0.749,
+            "roughnessVariation": 0.175,
+            "normalStrength": 0.26,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#3B070B",
+            "#6E1D21",
+            "#020101",
+            "#AC1F26",
+            "#F74B4F"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/00-ruby-blade-coating.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_albedo.png",
+            "url": "ruby-marbled-anodized-coat_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_roughness.png",
+            "url": "ruby-marbled-anodized-coat_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_height.png",
+            "url": "ruby-marbled-anodized-coat_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_normal.png",
+            "url": "ruby-marbled-anodized-coat_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_ao.png",
+            "url": "ruby-marbled-anodized-coat_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 620,
+          "sourceHeight": 425,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 620,
+            "height": 425
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 1.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.4739
+          },
+          "mapStats": {
+            "valueRange": 0.4583,
+            "heightP90Gradient": 0.08863,
+            "roughnessBase": 0.749,
+            "roughnessVariation": 0.175,
+            "normalStrength": 0.26,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#3B070B",
+            "#6E1D21",
+            "#020101",
+            "#AC1F26",
+            "#F74B4F"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_albedo.png",
+          "url": "ruby-marbled-anodized-coat_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_roughness.png",
+          "url": "ruby-marbled-anodized-coat_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_height.png",
+          "url": "ruby-marbled-anodized-coat_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_normal.png",
+          "url": "ruby-marbled-anodized-coat_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-00-ruby-blade-coating/ruby-marbled-anodized-coat_ao.png",
+          "url": "ruby-marbled-anodized-coat_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "ivoryScaleAssembly",
+      "regionId": "ivory-scale-face",
+      "materialSpecId": "aged-ivory-scale",
+      "hypothesis": {
+        "componentId": "ivoryScaleAssembly",
+        "regionId": "ivory-scale-face",
+        "materialId": null,
+        "family": "composite",
+        "subtype": "aged-composite-scale",
+        "finish": "satin-or-matte",
+        "aliases": [],
+        "confidence": 0.86,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "aged-ivory-scale",
+        "status": "proceed",
+        "source": "vision-plus-manual-region-confirmation",
+        "confidence": 0.86,
+        "method": "observed ivory shell region matched to existing PBR evidence",
+        "alternatives": [],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/01-ivory-scale-face.png",
+            "bbox": {
+              "x": 715,
+              "y": 240,
+              "width": 590,
+              "height": 280
+            },
+            "sourceWidth": 1684,
+            "sourceHeight": 934,
+            "loaderWarnings": [],
+            "coverage": 0.105
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.86,
+            "estimatedFidelity": 0.86,
+            "targetThreshold": 0.7,
+            "materialId": "aged-ivory-scale",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/01-ivory-scale-face.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face",
+            "palette": [
+              "#CAC8C6",
+              "#A9A59E",
+              "#8E423E",
+              "#430F14",
+              "#F5F4F3"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_albedo.png",
+                "url": "aged-ivory-scale_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_roughness.png",
+                "url": "aged-ivory-scale_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_height.png",
+                "url": "aged-ivory-scale_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_normal.png",
+                "url": "aged-ivory-scale_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_ao.png",
+                "url": "aged-ivory-scale_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 590,
+              "sourceHeight": 280,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 590,
+                "height": 280
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 30.887,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.736
+              },
+              "mapStats": {
+                "valueRange": 0.7949,
+                "heightP90Gradient": 0.12702,
+                "roughnessBase": 0.721,
+                "roughnessVariation": 0.199,
+                "normalStrength": 0.305,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#CAC8C6",
+                "#A9A59E",
+                "#8E423E",
+                "#430F14",
+                "#F5F4F3"
+              ]
+            },
+            "warnings": [
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "worn-composite",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.9,
+              "clearcoat": 0.0,
+              "clearcoatRoughness": 0.0,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.5,
+              "anisotropy": 0.0,
+              "procedural": "mottle"
+            },
+            "palette": [
+              "#0E0707",
+              "#AA9B97",
+              "#B5A6A1",
+              "#957F7E",
+              "#0C0606"
+            ],
+            "paletteHueRisk": [],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 113.0,
+              "meanSaturation": 0.168,
+              "gradientStrength": 0.692,
+              "mottle": 0.055,
+              "streakRatio": 1.16,
+              "hueSpread": 0.089,
+              "specularFraction": 0.02
+            }
+          }
+        },
+        "reviewNote": "The pale shell, longitudinal seams, and handle panels are directly visible in the supplied reference.",
+        "profileId": "composite.aged-composite-scale"
+      },
+      "observations": [
+        "near-neutral colour response",
+        "visible meso/micro variation",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation"
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/01-ivory-scale-face.png",
+        "bbox": {
+          "x": 715,
+          "y": 240,
+          "width": 590,
+          "height": 280
+        },
+        "sourceWidth": 1684,
+        "sourceHeight": 934,
+        "loaderWarnings": [],
+        "coverage": 0.105
+      },
+      "textureAnalysis": {
+        "finishClass": "worn-composite",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.9,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.0,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.5,
+          "anisotropy": 0.0,
+          "procedural": "mottle"
+        },
+        "palette": [
+          "#0E0707",
+          "#AA9B97",
+          "#B5A6A1",
+          "#957F7E",
+          "#0C0606"
+        ],
+        "paletteHueRisk": [],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 113.0,
+          "meanSaturation": 0.168,
+          "gradientStrength": 0.692,
+          "mottle": 0.055,
+          "streakRatio": 1.16,
+          "hueSpread": 0.089,
+          "specularFraction": 0.02
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "materialId": "aged-ivory-scale",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/01-ivory-scale-face.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face",
+        "palette": [
+          "#CAC8C6",
+          "#A9A59E",
+          "#8E423E",
+          "#430F14",
+          "#F5F4F3"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_albedo.png",
+            "url": "aged-ivory-scale_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_roughness.png",
+            "url": "aged-ivory-scale_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_height.png",
+            "url": "aged-ivory-scale_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_normal.png",
+            "url": "aged-ivory-scale_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_ao.png",
+            "url": "aged-ivory-scale_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 590,
+          "sourceHeight": 280,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 590,
+            "height": 280
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 30.887,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.736
+          },
+          "mapStats": {
+            "valueRange": 0.7949,
+            "heightP90Gradient": 0.12702,
+            "roughnessBase": 0.721,
+            "roughnessVariation": 0.199,
+            "normalStrength": 0.305,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#CAC8C6",
+            "#A9A59E",
+            "#8E423E",
+            "#430F14",
+            "#F5F4F3"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/01-ivory-scale-face.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_albedo.png",
+            "url": "aged-ivory-scale_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_roughness.png",
+            "url": "aged-ivory-scale_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_height.png",
+            "url": "aged-ivory-scale_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_normal.png",
+            "url": "aged-ivory-scale_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_ao.png",
+            "url": "aged-ivory-scale_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 590,
+          "sourceHeight": 280,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 590,
+            "height": 280
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 30.887,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.736
+          },
+          "mapStats": {
+            "valueRange": 0.7949,
+            "heightP90Gradient": 0.12702,
+            "roughnessBase": 0.721,
+            "roughnessVariation": 0.199,
+            "normalStrength": 0.305,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#CAC8C6",
+            "#A9A59E",
+            "#8E423E",
+            "#430F14",
+            "#F5F4F3"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_albedo.png",
+          "url": "aged-ivory-scale_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_roughness.png",
+          "url": "aged-ivory-scale_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_height.png",
+          "url": "aged-ivory-scale_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_normal.png",
+          "url": "aged-ivory-scale_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-01-ivory-scale-face/aged-ivory-scale_ao.png",
+          "url": "aged-ivory-scale_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "centralFlowerMedallion",
+      "regionId": "brass-hardware",
+      "materialSpecId": "brass-hardware",
+      "hypothesis": {
+        "componentId": "centralFlowerMedallion",
+        "regionId": "brass-hardware",
+        "materialId": null,
+        "family": "metal",
+        "subtype": "brass-fastener",
+        "finish": "metallic-aged",
+        "aliases": [],
+        "confidence": 0.86,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "brass-hardware",
+        "status": "proceed",
+        "source": "vision-plus-manual-region-confirmation",
+        "confidence": 0.86,
+        "method": "observed warm-metal hardware region matched to existing PBR evidence",
+        "alternatives": [
+          "metal.aluminum",
+          "metal.brass",
+          "metal.copper",
+          "metal.gold",
+          "metal.steel-brushed",
+          "metal.steel-polished"
+        ],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/02-brass-hardware.png",
+            "bbox": {
+              "x": 980,
+              "y": 325,
+              "width": 145,
+              "height": 95
+            },
+            "sourceWidth": 1684,
+            "sourceHeight": 934,
+            "loaderWarnings": [],
+            "coverage": 0.0088
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.86,
+            "estimatedFidelity": 0.86,
+            "targetThreshold": 0.7,
+            "materialId": "brass-hardware",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/02-brass-hardware.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware",
+            "palette": [
+              "#67593E",
+              "#AF925B",
+              "#7A6B4D",
+              "#BFB397",
+              "#31261B"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_albedo.png",
+                "url": "brass-hardware_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_roughness.png",
+                "url": "brass-hardware_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_height.png",
+                "url": "brass-hardware_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_normal.png",
+                "url": "brass-hardware_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_ao.png",
+                "url": "brass-hardware_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 145,
+              "sourceHeight": 95,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 4,
+                "y": 0,
+                "width": 105,
+                "height": 95
+              },
+              "mask": {
+                "backgroundColor": "#CFCDCC",
+                "backgroundNoise": 32.939,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.104
+              },
+              "mapStats": {
+                "valueRange": 0.3869,
+                "heightP90Gradient": 0.03852,
+                "roughnessBase": 0.68,
+                "roughnessVariation": 0.05,
+                "normalStrength": 0.201,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#67593E",
+                "#AF925B",
+                "#7A6B4D",
+                "#BFB397",
+                "#31261B"
+              ]
+            },
+            "warnings": [
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "worn-composite",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.9,
+              "clearcoat": 0.0,
+              "clearcoatRoughness": 0.0,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.5,
+              "anisotropy": 0.0,
+              "procedural": "mottle"
+            },
+            "palette": [
+              "#CAC9C7",
+              "#D1CCC7",
+              "#D1CECC",
+              "#C6C2BC",
+              "#CECBC9"
+            ],
+            "paletteHueRisk": [],
+            "gradientAxis": "horizontal",
+            "stats": {
+              "meanLum": 192.6,
+              "meanSaturation": 0.083,
+              "gradientStrength": 0.464,
+              "mottle": 0.036,
+              "streakRatio": 1.79,
+              "hueSpread": 0.002,
+              "specularFraction": 0.006
+            }
+          }
+        },
+        "reviewNote": "The fastener crowns and central medallion visibly read as warm brass/gold hardware in the supplied reference.",
+        "profileId": "metal.brass"
+      },
+      "observations": [
+        "near-neutral colour response",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation"
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/02-brass-hardware.png",
+        "bbox": {
+          "x": 980,
+          "y": 325,
+          "width": 145,
+          "height": 95
+        },
+        "sourceWidth": 1684,
+        "sourceHeight": 934,
+        "loaderWarnings": [],
+        "coverage": 0.0088
+      },
+      "textureAnalysis": {
+        "finishClass": "worn-composite",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.9,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.0,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.5,
+          "anisotropy": 0.0,
+          "procedural": "mottle"
+        },
+        "palette": [
+          "#CAC9C7",
+          "#D1CCC7",
+          "#D1CECC",
+          "#C6C2BC",
+          "#CECBC9"
+        ],
+        "paletteHueRisk": [],
+        "gradientAxis": "horizontal",
+        "stats": {
+          "meanLum": 192.6,
+          "meanSaturation": 0.083,
+          "gradientStrength": 0.464,
+          "mottle": 0.036,
+          "streakRatio": 1.79,
+          "hueSpread": 0.002,
+          "specularFraction": 0.006
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "materialId": "brass-hardware",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/02-brass-hardware.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware",
+        "palette": [
+          "#67593E",
+          "#AF925B",
+          "#7A6B4D",
+          "#BFB397",
+          "#31261B"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_albedo.png",
+            "url": "brass-hardware_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_roughness.png",
+            "url": "brass-hardware_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_height.png",
+            "url": "brass-hardware_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_normal.png",
+            "url": "brass-hardware_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_ao.png",
+            "url": "brass-hardware_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 145,
+          "sourceHeight": 95,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 4,
+            "y": 0,
+            "width": 105,
+            "height": 95
+          },
+          "mask": {
+            "backgroundColor": "#CFCDCC",
+            "backgroundNoise": 32.939,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.104
+          },
+          "mapStats": {
+            "valueRange": 0.3869,
+            "heightP90Gradient": 0.03852,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.201,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#67593E",
+            "#AF925B",
+            "#7A6B4D",
+            "#BFB397",
+            "#31261B"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/02-brass-hardware.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_albedo.png",
+            "url": "brass-hardware_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_roughness.png",
+            "url": "brass-hardware_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_height.png",
+            "url": "brass-hardware_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_normal.png",
+            "url": "brass-hardware_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_ao.png",
+            "url": "brass-hardware_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 145,
+          "sourceHeight": 95,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 4,
+            "y": 0,
+            "width": 105,
+            "height": 95
+          },
+          "mask": {
+            "backgroundColor": "#CFCDCC",
+            "backgroundNoise": 32.939,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.104
+          },
+          "mapStats": {
+            "valueRange": 0.3869,
+            "heightP90Gradient": 0.03852,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.201,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#67593E",
+            "#AF925B",
+            "#7A6B4D",
+            "#BFB397",
+            "#31261B"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_albedo.png",
+          "url": "brass-hardware_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_roughness.png",
+          "url": "brass-hardware_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_height.png",
+          "url": "brass-hardware_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_normal.png",
+          "url": "brass-hardware_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-02-brass-hardware/brass-hardware_ao.png",
+          "url": "brass-hardware_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "fingerRing",
+      "regionId": "ruby-pommel-ring",
+      "materialSpecId": "ruby-marbled-anodized-coat",
+      "hypothesis": {
+        "componentId": "fingerRing",
+        "regionId": "ruby-pommel-ring",
+        "materialId": null,
+        "family": "coating",
+        "subtype": "paint-over-metal",
+        "finish": "gloss-or-satin",
+        "aliases": [],
+        "confidence": 0.86,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "coating.painted-metal",
+        "status": "proceed",
+        "source": "vision",
+        "confidence": 0.86,
+        "method": "family-subtype-finish",
+        "alternatives": [],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/03-ruby-pommel-ring.png",
+            "bbox": {
+              "x": 1280,
+              "y": 360,
+              "width": 360,
+              "height": 360
+            },
+            "sourceWidth": 1684,
+            "sourceHeight": 934,
+            "loaderWarnings": [],
+            "coverage": 0.0824
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.86,
+            "estimatedFidelity": 0.86,
+            "targetThreshold": 0.7,
+            "materialId": "ruby-marbled-anodized-coat",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/03-ruby-pommel-ring.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring",
+            "palette": [
+              "#BCB9B6",
+              "#D0CECD",
+              "#1D0709",
+              "#6F3333",
+              "#A09593"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_albedo.png",
+                "url": "ruby-marbled-anodized-coat_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_roughness.png",
+                "url": "ruby-marbled-anodized-coat_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_height.png",
+                "url": "ruby-marbled-anodized-coat_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_normal.png",
+                "url": "ruby-marbled-anodized-coat_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_ao.png",
+                "url": "ruby-marbled-anodized-coat_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 360,
+              "sourceHeight": 360,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 360,
+                "height": 360
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 1.732,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.58
+              },
+              "mapStats": {
+                "valueRange": 0.8081,
+                "heightP90Gradient": 0.15143,
+                "roughnessBase": 0.741,
+                "roughnessVariation": 0.207,
+                "normalStrength": 0.334,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#BCB9B6",
+                "#D0CECD",
+                "#1D0709",
+                "#6F3333",
+                "#A09593"
+              ]
+            },
+            "warnings": [
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "candy-coat",
+            "recipe": {
+              "metalness": 0.35,
+              "roughness": 0.18,
+              "clearcoat": 0.6,
+              "clearcoatRoughness": 0.15,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.7,
+              "anisotropy": 0.0,
+              "procedural": "gradient-smoke"
+            },
+            "palette": [
+              "#3A3938",
+              "#969491",
+              "#473839",
+              "#2A191B",
+              "#000000"
+            ],
+            "paletteHueRisk": [],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 73.7,
+              "meanSaturation": 0.181,
+              "gradientStrength": 0.649,
+              "mottle": 0.046,
+              "streakRatio": 1.03,
+              "hueSpread": 0.127,
+              "specularFraction": 0.01
+            }
+          }
+        },
+        "profileId": "coating.painted-metal",
+        "family": "coating",
+        "subtype": "paint-over-metal",
+        "finish": "gloss-or-satin",
+        "renderPrior": {
+          "metalness": 0.0,
+          "roughness": 0.45,
+          "clearcoat": 0.75,
+          "clearcoatRoughness": 0.12,
+          "ior": 1.5
+        },
+        "requiredMaps": [
+          "map",
+          "roughnessMap"
+        ],
+        "optionalMaps": [
+          "normalMap",
+          "clearcoatMap",
+          "clearcoatRoughnessMap",
+          "metalnessMap"
+        ],
+        "validationViews": [
+          "albedo-unlit",
+          "neutral-studio",
+          "grazing",
+          "environment-reflection",
+          "reference-beauty"
+        ],
+        "sourceRefs": [
+          "three.mesh-physical",
+          "gltf.2",
+          "khronos.gltf-pbr",
+          "adobe.pbr-guide-1",
+          "adobe.pbr-guide-2"
+        ],
+        "visualCues": [
+          "diffuse paint colour under a separate glossy coat",
+          "chips may expose metallic substrate"
+        ]
+      },
+      "observations": [
+        "chromatic base-colour response",
+        "visible meso/micro variation",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation"
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/03-ruby-pommel-ring.png",
+        "bbox": {
+          "x": 1280,
+          "y": 360,
+          "width": 360,
+          "height": 360
+        },
+        "sourceWidth": 1684,
+        "sourceHeight": 934,
+        "loaderWarnings": [],
+        "coverage": 0.0824
+      },
+      "textureAnalysis": {
+        "finishClass": "candy-coat",
+        "recipe": {
+          "metalness": 0.35,
+          "roughness": 0.18,
+          "clearcoat": 0.6,
+          "clearcoatRoughness": 0.15,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.7,
+          "anisotropy": 0.0,
+          "procedural": "gradient-smoke"
+        },
+        "palette": [
+          "#3A3938",
+          "#969491",
+          "#473839",
+          "#2A191B",
+          "#000000"
+        ],
+        "paletteHueRisk": [],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 73.7,
+          "meanSaturation": 0.181,
+          "gradientStrength": 0.649,
+          "mottle": 0.046,
+          "streakRatio": 1.03,
+          "hueSpread": 0.127,
+          "specularFraction": 0.01
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "materialId": "ruby-marbled-anodized-coat",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/03-ruby-pommel-ring.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring",
+        "palette": [
+          "#BCB9B6",
+          "#D0CECD",
+          "#1D0709",
+          "#6F3333",
+          "#A09593"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_albedo.png",
+            "url": "ruby-marbled-anodized-coat_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_roughness.png",
+            "url": "ruby-marbled-anodized-coat_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_height.png",
+            "url": "ruby-marbled-anodized-coat_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_normal.png",
+            "url": "ruby-marbled-anodized-coat_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_ao.png",
+            "url": "ruby-marbled-anodized-coat_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 360,
+          "sourceHeight": 360,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 360
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 1.732,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.58
+          },
+          "mapStats": {
+            "valueRange": 0.8081,
+            "heightP90Gradient": 0.15143,
+            "roughnessBase": 0.741,
+            "roughnessVariation": 0.207,
+            "normalStrength": 0.334,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#BCB9B6",
+            "#D0CECD",
+            "#1D0709",
+            "#6F3333",
+            "#A09593"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/03-ruby-pommel-ring.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_albedo.png",
+            "url": "ruby-marbled-anodized-coat_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_roughness.png",
+            "url": "ruby-marbled-anodized-coat_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_height.png",
+            "url": "ruby-marbled-anodized-coat_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_normal.png",
+            "url": "ruby-marbled-anodized-coat_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_ao.png",
+            "url": "ruby-marbled-anodized-coat_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 360,
+          "sourceHeight": 360,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 360
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 1.732,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.58
+          },
+          "mapStats": {
+            "valueRange": 0.8081,
+            "heightP90Gradient": 0.15143,
+            "roughnessBase": 0.741,
+            "roughnessVariation": 0.207,
+            "normalStrength": 0.334,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#BCB9B6",
+            "#D0CECD",
+            "#1D0709",
+            "#6F3333",
+            "#A09593"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_albedo.png",
+          "url": "ruby-marbled-anodized-coat_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_roughness.png",
+          "url": "ruby-marbled-anodized-coat_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_height.png",
+          "url": "ruby-marbled-anodized-coat_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_normal.png",
+          "url": "ruby-marbled-anodized-coat_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-evidence/pbr-03-ruby-pommel-ring/ruby-marbled-anodized-coat_ao.png",
+          "url": "ruby-marbled-anodized-coat_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    }
+  ],
+  "status": "proceed",
+  "limitations": [
+    "PBR extraction is reference-derived inference, not inverse rendering.",
+    "Region assignments for ivory and brass were manually confirmed from the supplied broadside image; hidden-side materials remain inferred.",
+    "A crop must be checked against the component visible footprint before accepting material scores."
+  ],
+  "artifact": "/home/ubuntu/3d/guns 3d models/01-melee-karambit/material-analysis.json",
+  "manualReview": {
+    "reviewer": "agent-vision",
+    "decision": "proceed",
+    "reason": "All four visible material regions have usable PBR evidence at confidence 0.86; ivory and brass identities are directly legible in the source."
+  }
+}
