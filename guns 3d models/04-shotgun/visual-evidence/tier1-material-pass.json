@@ -1,0 +1,204 @@
+{
+  "passed": false,
+  "checks": {
+    "silhouetteIoU": 0.1197,
+    "aspectRatioDelta": 0.0,
+    "scaleDelta": 0.0,
+    "bilateralSymmetryError": 0.012,
+    "colorDelta": {
+      "checked": 45,
+      "maxDeltaE": 35.6,
+      "perComponent": [
+        {
+          "componentId": null,
+          "deltaE": 0.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.71
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.88
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.14
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.83
+        },
+        {
+          "componentId": null,
+          "deltaE": 35.6
+        },
+        {
+          "componentId": null,
+          "deltaE": 19.13
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.45
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.71
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.71
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.71
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.71
+        },
+        {
+          "componentId": null,
+          "deltaE": 2.12
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.88
+        },
+        {
+          "componentId": null,
+          "deltaE": 0.2
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.14
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.88
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.83
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.45
+        },
+        {
+          "componentId": null,
+          "deltaE": 35.6
+        },
+        {
+          "componentId": null,
+          "deltaE": 35.6
+        },
+        {
+          "componentId": null,
+          "deltaE": 35.6
+        },
+        {
+          "componentId": null,
+          "deltaE": 19.13
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.45
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.45
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.71
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.71
+        },
+        {
+          "componentId": null,
+          "deltaE": 2.12
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 35.6
+        },
+        {
+          "componentId": null,
+          "deltaE": 35.6
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.53
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.45
+        },
+        {
+          "componentId": null,
+          "deltaE": 0.2
+        },
+        {
+          "componentId": null,
+          "deltaE": 0.2
+        }
+      ],
+      "gated": true
+    }
+  },
+  "failures": [
+    "silhouette IoU 0.120 is below threshold 0.85",
+    "max per-part color delta-E 35.6 exceeds threshold 20.0"
+  ],
+  "maskWarnings": [],
+  "renderHash": "ed5cfc0938535a61",
+  "passId": "material-pass"
+}
+STATUS pass=material-pass completed=3 blocked=none next=diagnose_render.py
