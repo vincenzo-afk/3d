@@ -206,6 +206,23 @@ function torusGeometry(major: number, minor: number, radial = 32, tubular = 10):
   return geometry;
 }
 
+function addFastener(
+  parent: THREE.Object3D,
+  id: string,
+  at: V3,
+  material: THREE.Material,
+  runtime: AssaultRifleRuntime,
+  shadows: boolean,
+  radius = 0.042,
+  depth = 0.034,
+): THREE.Mesh {
+  const geometry = new THREE.CylinderGeometry(radius, radius, depth, 18);
+  geometry.rotateX(Math.PI / 2);
+  const fastener = addMesh(parent, id, geometry, material, runtime, true, shadows);
+  fastener.position.set(at[0], at[1], at[2]);
+  return fastener;
+}
+
 function hash(x: number, y: number, seed: number): number {
   let value = Math.imul(x + seed * 17, 374761393) ^ Math.imul(y + seed * 31, 668265263);
   value = Math.imul(value ^ (value >>> 13), 1274126177);
@@ -273,14 +290,20 @@ function proceduralMaps(kind: 'coating' | 'polymer' | 'metal', noTextures: boole
     const mid = valueNoise(u * 1.2, v * 0.8, kind === 'metal' ? 41 : 51, 18, 10);
     const fine = valueNoise(u * 2.0, v * 2.0, 71, 52, 40);
     if (kind === 'coating') {
-      const wave = Math.sin((u * 3.4 + v * 1.6 + low * 1.6) * Math.PI * 2);
-      const tendril = THREE.MathUtils.smoothstep(Math.abs(wave), 0.26, 0.78);
-      const blue = 30 + tendril * 58 + mid * 30;
-      const cyan = 18 + (1 - tendril) * 22 + fine * 18;
-      return [12 + blue * 0.38, 24 + blue * 0.58, 38 + blue + cyan * 0.2, 255];
+      const waveA = Math.sin((u * 3.1 + v * 1.25 + low * 1.8) * Math.PI * 2);
+      const waveB = Math.sin((u * 7.4 - v * 2.8 + mid * 2.1) * Math.PI * 2);
+      const filament = THREE.MathUtils.smoothstep(Math.abs(waveA + waveB * 0.34), 0.34, 0.92);
+      const violetVein = THREE.MathUtils.smoothstep(Math.abs(waveB - waveA * 0.28), 0.52, 0.96);
+      const charcoal = 30 + low * 26 + fine * 12;
+      return [
+        charcoal + filament * 58 + violetVein * 28,
+        charcoal + filament * 38 + violetVein * 14,
+        charcoal + 18 + filament * 94 + violetVein * 44,
+        255,
+      ];
     }
-    if (kind === 'polymer') return [42 + low * 24 + fine * 9, 48 + low * 27 + fine * 10, 55 + low * 30 + fine * 12, 255];
-    return [34 + low * 30 + fine * 12, 42 + low * 34 + fine * 14, 56 + low * 42 + fine * 18, 255];
+    if (kind === 'polymer') return [62 + low * 30 + fine * 14, 70 + low * 33 + fine * 15, 79 + low * 36 + fine * 18, 255];
+    return [54 + low * 38 + fine * 17, 64 + low * 42 + fine * 20, 80 + low * 50 + fine * 24, 255];
   });
   const roughness = makeTexture(width, height, (u, v) => {
     const n = valueNoise(u, v, 101, kind === 'coating' ? 26 : 34, kind === 'coating' ? 16 : 22);
@@ -406,6 +429,10 @@ function addStock(group: THREE.Group, runtime: AssaultRifleRuntime, materials: M
   butt.position.set(-2.80, -0.05, 0);
   const cheek = addMesh(group, 'stockCheekRest', roundedBox(0.72, 0.17, 0.34, 0.04), materials.polymer, runtime, true, shadows);
   cheek.position.set(-2.30, 0.39, 0.01);
+  const stockCoatingPanel = addMesh(group, 'stockOrnamentalCoatingPanel', extrudePolygon([[-2.64, 0.10], [-2.12, 0.20], [-2.20, 0.37], [-2.62, 0.27]], 0.035, 0.008), materials.coating, runtime, true, shadows);
+  stockCoatingPanel.position.z = FRONT_Z + 0.03;
+  const stockPanelRib = addMesh(group, 'stockCoatingPanelRib', tubeBetween([-2.55, 0.16, FRONT_Z + 0.06], [-2.22, 0.27, FRONT_Z + 0.06], 0.018, 12), materials.darkEdge, runtime, true, shadows);
+  stockPanelRib.userData.feature = 'stock-ornamental-panel';
   const buffer = addMesh(group, cylinderX(0.86, 0.14, 28), materials.dark, runtime, true, shadows);
   buffer.position.set(-1.77, 0.38, 0);
   const collar = addMesh(group, cylinderX(0.15, 0.19, 28), materials.darkEdge, runtime, true, shadows);
@@ -418,6 +445,18 @@ function addStock(group: THREE.Group, runtime: AssaultRifleRuntime, materials: M
   rearBrace.userData.feature = 'stock-rear-brace';
   const stockInset = addMesh(group, tubeBetween([-2.54, -0.19, FRONT_Z * 0.76], [-2.14, 0.10, FRONT_Z * 0.76], 0.028), materials.darkEdge, runtime, true, shadows);
   stockInset.userData.feature = 'stock-inset-edge';
+  const bufferRingA = addMesh(group, 'stockBufferRingA', cylinderX(0.055, 0.17, 24), materials.darkEdge, runtime, true, shadows);
+  bufferRingA.position.set(-1.99, 0.38, 0);
+  const bufferRingB = addMesh(group, 'stockBufferRingB', cylinderX(0.055, 0.17, 24), materials.darkEdge, runtime, true, shadows);
+  bufferRingB.position.set(-1.84, 0.38, 0);
+  const stockLatch = addMesh(group, 'stockAdjustmentLatch', roundedBox(0.20, 0.09, 0.44, 0.018), materials.darkEdge, runtime, true, shadows);
+  stockLatch.position.set(-1.56, 0.16, FRONT_Z * 0.72);
+  stockLatch.rotation.z = -0.08;
+  addFastener(group, 'stockLatchPin', [-1.55, 0.16, FRONT_Z + 0.20], materials.cavity, runtime, shadows, 0.028, 0.035);
+  for (let i = 0; i < 4; i += 1) {
+    const ridge = addMesh(group, `stockButtpadRidge${i + 1}`, roundedBox(0.12, 0.026, 0.42, 0.005), materials.darkEdge, runtime, true, shadows);
+    ridge.position.set(-2.90, -0.28 + i * 0.13, FRONT_Z * 0.70);
+  }
   const sling = addMesh(group, torusGeometry(0.12, 0.028, 18, 36), materials.darkEdge, runtime, true, shadows);
   sling.position.set(-2.82, -0.50, 0);
   sling.rotation.x = Math.PI / 2;
@@ -431,12 +470,40 @@ function addReceiver(group: THREE.Group, runtime: AssaultRifleRuntime, materials
   const lowerPoints: XY[] = [[-1.22, 0.31], [-0.12, 0.31], [-0.07, 0.05], [-0.34, -0.06], [-0.97, -0.03], [-1.30, 0.12]];
   const lower = addMesh(group, 'lowerReceiverShell', extrudePolygon(lowerPoints, 0.44, 0.042), materials.dark, runtime, false, shadows);
   lower.userData.feature = 'lower-receiver-shell';
+  const receiverCoatingPanel = addMesh(group, 'receiverOrnamentalCoatingPanel', extrudePolygon([[-1.22, 0.35], [-0.57, 0.35], [-0.43, 0.51], [-0.86, 0.59], [-1.20, 0.52]], 0.036, 0.008), materials.coating, runtime, true, shadows);
+  receiverCoatingPanel.position.z = FRONT_Z + 0.235;
+  const receiverPanelCut = addMesh(group, 'receiverCoatingPanelCut', roundedBox(0.36, 0.025, 0.045, 0.004), materials.cavity, runtime, true, shadows);
+  receiverPanelCut.position.set(-0.74, 0.43, FRONT_Z + 0.26);
+  receiverPanelCut.rotation.z = -0.18;
+  const upperEdgeBand = addMesh(group, 'upperReceiverEdgeBand', roundedBox(0.92, 0.026, 0.045, 0.005), materials.darkEdge, runtime, true, shadows);
+  upperEdgeBand.position.set(-0.78, 0.66, FRONT_Z + 0.24);
   const split = addMesh(group, roundedBox(0.91, 0.024, 0.48, 0.007), materials.cavity, runtime, true, shadows);
   split.position.set(-0.73, 0.295, FRONT_Z + 0.012);
   const ejection = addMesh(group, roundedBox(0.39, 0.13, 0.028, 0.015), materials.cavity, runtime, true, shadows);
   ejection.position.set(-0.38, 0.50, FRONT_Z + 0.027);
   const ejectionLip = addMesh(group, roundedBox(0.47, 0.018, 0.045, 0.004), materials.darkEdge, runtime, true, shadows);
   ejectionLip.position.set(-0.38, 0.585, FRONT_Z + 0.035);
+  const dustCover = addMesh(group, 'ejectionPortDustCover', roundedBox(0.39, 0.075, 0.042, 0.012), materials.darkEdge, runtime, true, shadows);
+  dustCover.position.set(-0.38, 0.61, FRONT_Z + 0.018);
+  dustCover.rotation.z = -0.035;
+  const boltCarrier = addMesh(group, 'boltCarrierHead', cylinderX(0.30, 0.052, 20), materials.darkEdge, runtime, true, shadows);
+  boltCarrier.position.set(-1.02, 0.52, FRONT_Z + 0.02);
+  const boltCatch = addMesh(group, 'boltCatchPaddle', roundedBox(0.08, 0.24, 0.05, 0.016), materials.darkEdge, runtime, true, shadows);
+  boltCatch.position.set(-0.10, 0.30, FRONT_Z + 0.17);
+  boltCatch.rotation.z = -0.20;
+  const magRelease = addMesh(group, 'magazineReleasePaddle', roundedBox(0.12, 0.055, 0.06, 0.012), materials.darkEdge, runtime, true, shadows);
+  magRelease.position.set(-0.08, 0.14, FRONT_Z + 0.18);
+  magRelease.rotation.z = 0.12;
+  const selector = addMesh(group, 'selectorLever', roundedBox(0.16, 0.035, 0.045, 0.006), materials.darkEdge, runtime, true, shadows);
+  selector.position.set(-0.98, 0.20, FRONT_Z + 0.20);
+  selector.rotation.z = -0.28;
+  for (let i = 0; i < 4; i += 1) {
+    const engraving = addMesh(group, `receiverSideRelief${i + 1}`, roundedBox(0.19, 0.014, 0.032, 0.003), materials.darkEdge, runtime, true, shadows);
+    engraving.position.set(-1.16 + i * 0.24, 0.22, FRONT_Z + 0.245);
+    engraving.rotation.z = i % 2 === 0 ? 0.04 : -0.04;
+  }
+  addFastener(group, 'receiverForwardFastener', [-0.28, 0.36, FRONT_Z + 0.245], materials.darkEdge, runtime, shadows);
+  addFastener(group, 'receiverRearFastener', [-1.17, 0.36, FRONT_Z + 0.245], materials.darkEdge, runtime, shadows);
   const chargingHandle = addMesh(group, roundedBox(0.18, 0.11, 0.25, 0.018), materials.darkEdge, runtime, true, shadows);
   chargingHandle.position.set(-1.22, 0.72, 0);
   const magwell = addMesh(group, roundedBox(0.25, 0.34, 0.46, 0.03), materials.darkEdge, runtime, true, shadows);
@@ -476,6 +543,17 @@ function addOptic(group: THREE.Group, runtime: AssaultRifleRuntime, materials: M
   reticleH.position.set(-0.74, 1.28, FRONT_Z + 0.214);
   const mount = addMesh(group, roundedBox(0.48, 0.10, 0.34, 0.02), materials.darkEdge, runtime, true, shadows);
   mount.position.set(-0.74, 0.75, 0);
+  const opticFrontFrame = addMesh(group, 'opticFrontWindowFrame', roundedBox(0.07, 0.30, 0.40, 0.018), materials.darkEdge, runtime, true, shadows);
+  opticFrontFrame.position.set(-0.98, 1.28, 0);
+  const opticRearFrame = addMesh(group, 'opticRearWindowFrame', roundedBox(0.07, 0.30, 0.40, 0.018), materials.darkEdge, runtime, true, shadows);
+  opticRearFrame.position.set(-0.50, 1.28, 0);
+  const opticTopBridge = addMesh(group, 'opticTopBridge', roundedBox(0.54, 0.06, 0.40, 0.012), materials.darkEdge, runtime, true, shadows);
+  opticTopBridge.position.set(-0.74, 1.44, 0);
+  const opticBatteryCap = addMesh(group, 'opticBatteryCap', cylinderY(0.10, 0.07, 20), materials.darkEdge, runtime, true, shadows);
+  opticBatteryCap.position.set(-0.42, 1.28, FRONT_Z + 0.04);
+  for (let i = 0; i < 3; i += 1) {
+    addFastener(group, `opticMountFastener${i + 1}`, [-0.93 + i * 0.19, 0.80, FRONT_Z + 0.18], materials.cavity, runtime, shadows, 0.024, 0.032);
+  }
   const adjusterA = addMesh(group, cylinderY(0.12, 0.08, 20), materials.darkEdge, runtime, true, shadows);
   adjusterA.position.set(-0.47, 1.20, FRONT_Z + 0.02);
   const adjusterB = addMesh(group, cylinderY(0.12, 0.07, 20), materials.darkEdge, runtime, true, shadows);
@@ -494,8 +572,21 @@ function addMagazine(group: THREE.Group, runtime: AssaultRifleRuntime, materials
     rib.rotation.z = -0.08;
   }
   const spine = addMesh(group, tubeBetween([0.44, -0.10, FRONT_Z + 0.17], [0.34, -1.17, FRONT_Z + 0.17], 0.025), materials.cavity, runtime, true, shadows);
-  const floor = addMesh(group, roundedBox(0.50, 0.12, 0.38, 0.025), materials.darkEdge, runtime, true, shadows);
+  const floor = addMesh(group, 'magazineBaseplate', roundedBox(0.50, 0.12, 0.38, 0.025), materials.darkEdge, runtime, true, shadows);
   floor.position.set(0.18, -1.31, 0);
+  const feedLipA = addMesh(group, 'magazineFeedLipA', roundedBox(0.20, 0.045, 0.15, 0.008), materials.darkEdge, runtime, true, shadows);
+  feedLipA.position.set(-0.01, 0.26, FRONT_Z + 0.15);
+  const feedLipB = addMesh(group, 'magazineFeedLipB', roundedBox(0.20, 0.045, 0.15, 0.008), materials.darkEdge, runtime, true, shadows);
+  feedLipB.position.set(0.24, 0.26, FRONT_Z + 0.15);
+  for (let i = 0; i < 5; i += 1) {
+    const witness = addMesh(group, `magazineWitnessHole${i + 1}`, roundedBox(0.09, 0.045, 0.025, 0.006), materials.cavity, runtime, true, shadows);
+    witness.position.set(0.08 + i * 0.015, 0.06 - i * 0.22, FRONT_Z + 0.195);
+    witness.rotation.z = -0.08;
+  }
+  for (let i = 0; i < 3; i += 1) {
+    const baseRidge = addMesh(group, `magazineBaseRidge${i + 1}`, roundedBox(0.34, 0.018, 0.40, 0.004), materials.darkEdge, runtime, true, shadows);
+    baseRidge.position.set(0.18, -1.25 - i * 0.025, FRONT_Z * 0.74);
+  }
   addSocket(group, 'magazineAssemblySocket', [-0.02, 0.22, 0], runtime, { detachable: true });
 }
 
@@ -521,6 +612,15 @@ function addHandguard(group: THREE.Group, runtime: AssaultRifleRuntime, material
     fastener.rotation.x = Math.PI / 2;
     fastener.position.set(0.44 + i * 0.34, 0.36, FRONT_Z + 0.25);
   }
+  const frontCap = addMesh(group, 'handguardFrontCap', roundedBox(0.14, 0.50, 0.62, 0.025), materials.darkEdge, runtime, true, shadows);
+  frontCap.position.set(2.08, 0.54, 0);
+  const lowerVentRail = addMesh(group, 'handguardLowerVentRail', roundedBox(1.28, 0.05, 0.40, 0.012), materials.darkEdge, runtime, true, shadows);
+  lowerVentRail.position.set(1.36, 0.30, FRONT_Z + 0.06);
+  for (let i = 0; i < 6; i += 1) {
+    const sideVent = addMesh(group, `handguardSideMlok${i + 1}`, roundedBox(0.13, 0.045, 0.035, 0.006), materials.cavity, runtime, true, shadows);
+    sideVent.position.set(0.48 + i * 0.235, 0.46, FRONT_Z + 0.235);
+    sideVent.rotation.z = i % 2 === 0 ? 0.18 : -0.18;
+  }
   addSocket(group, 'handguardAssemblySocket', [0.05, 0.52, 0], runtime);
 }
 
@@ -529,6 +629,10 @@ function addForegrip(group: THREE.Group, runtime: AssaultRifleRuntime, materials
   body.position.set(1.13, 0.00, 0);
   const shoe = addMesh(group, roundedBox(0.37, 0.10, 0.38, 0.025), materials.darkEdge, runtime, true, shadows);
   shoe.position.set(1.13, 0.31, 0);
+  const foregripCollar = addMesh(group, 'foregripClamp', cylinderY(0.07, 0.19, 24), materials.darkEdge, runtime, true, shadows);
+  foregripCollar.position.set(1.13, 0.28, 0);
+  const foregripCap = addMesh(group, 'foregripBottomCap', roundedBox(0.28, 0.06, 0.34, 0.012), materials.darkEdge, runtime, true, shadows);
+  foregripCap.position.set(1.13, -0.54, 0);
   for (let i = 0; i < 5; i += 1) {
     const groove = addMesh(group, roundedBox(0.24, 0.025, 0.34, 0.006), materials.cavity, runtime, true, shadows);
     groove.position.set(1.13, 0.14 - i * 0.11, FRONT_Z + 0.18);
@@ -554,6 +658,15 @@ function addBarrelMuzzle(group: THREE.Group, runtime: AssaultRifleRuntime, mater
   muzzle.position.set(3.45, 0.52, 0);
   const collar = addMesh(group, cylinderX(0.10, 0.16, 28), materials.dark, runtime, true, shadows);
   collar.position.set(3.23, 0.52, 0);
+  const gasTube = addMesh(group, 'gasTube', tubeBetween([1.86, 0.68, 0], [2.50, 0.68, 0], 0.035, 18), materials.darkEdge, runtime, true, shadows);
+  const muzzleCageA = addMesh(group, 'muzzleBrakeCageTop', roundedBox(0.34, 0.05, 0.34, 0.008), materials.darkEdge, runtime, true, shadows);
+  muzzleCageA.position.set(3.45, 0.68, 0);
+  const muzzleCageB = addMesh(group, 'muzzleBrakeCageBottom', roundedBox(0.34, 0.05, 0.34, 0.008), materials.darkEdge, runtime, true, shadows);
+  muzzleCageB.position.set(3.45, 0.36, 0);
+  for (let i = 0; i < 4; i += 1) {
+    const fin = addMesh(group, `muzzleBrakeFin${i + 1}`, roundedBox(0.045, 0.28, 0.34, 0.008), materials.darkEdge, runtime, true, shadows);
+    fin.position.set(3.29 + i * 0.11, 0.52, 0);
+  }
   for (let i = 0; i < 6; i += 1) {
     const angle = (i / 6) * Math.PI * 2;
     const slot = addMesh(group, roundedBox(0.16, 0.05, 0.035, 0.004), materials.cavity, runtime, true, shadows);
@@ -565,6 +678,11 @@ function addBarrelMuzzle(group: THREE.Group, runtime: AssaultRifleRuntime, mater
   const bore = addMesh(group, torusGeometry(0.09, 0.026, 18, 36), materials.cavity, runtime, true, shadows);
   bore.position.set(3.64, 0.52, FRONT_Z * 0.55);
   bore.rotation.y = Math.PI / 2;
+  const boreDepth = addMesh(group, 'muzzleBoreDepth', cylinderX(0.10, 0.065, 24), materials.cavity, runtime, true, shadows);
+  boreDepth.position.set(3.68, 0.52, 0);
+  const muzzleCrown = addMesh(group, 'muzzleCrown', torusGeometry(0.14, 0.018, 20, 40), materials.darkEdge, runtime, true, shadows);
+  muzzleCrown.position.set(3.66, 0.52, 0);
+  muzzleCrown.rotation.y = Math.PI / 2;
   addSocket(group, 'barrelMuzzleAssemblySocket', [1.73, 0.52, 0], runtime);
 }
 
@@ -579,8 +697,10 @@ function addLookDevLights(): THREE.Group {
   fill.position.set(3.4, 0.4, 2.8);
   const rim = new THREE.DirectionalLight(0x24c8d8, 0.58);
   rim.position.set(1.8, 2.2, -4.2);
-  const ambient = new THREE.AmbientLight(0x02040a, 0.18);
-  lights.add(key, fill, rim, ambient);
+  const hemisphere = new THREE.HemisphereLight(0x9ebfff, 0x0b1018, 0.42);
+  hemisphere.position.set(0, 4.5, 0);
+  const ambient = new THREE.AmbientLight(0x050b14, 0.24);
+  lights.add(key, fill, rim, hemisphere, ambient);
   return lights;
 }
 

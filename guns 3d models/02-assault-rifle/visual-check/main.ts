@@ -24,16 +24,16 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(width, height);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = diagnostic ? 1.52 : (neutral ? 1.52 : 1.42);
+renderer.toneMappingExposure = diagnostic ? 1.68 : (neutral ? 2.05 : 1.78);
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 stage.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
-scene.background = diagnostic ? new THREE.Color(0xe9edf3) : (neutral ? new THREE.Color(0x101722) : makeAssaultRifleBackground());
+scene.background = diagnostic ? new THREE.Color(0xe9edf3) : (neutral ? new THREE.Color(0x263445) : makeAssaultRifleBackground());
 const lights = createAssaultRifleLookDevLights();
 const ambientLight = lights.children.find((child) => child instanceof THREE.AmbientLight) as THREE.AmbientLight | undefined;
-if (ambientLight) ambientLight.intensity = diagnostic ? 0.72 : (neutral ? 0.58 : 0.46);
+if (ambientLight) ambientLight.intensity = diagnostic ? 0.84 : (neutral ? 0.96 : 0.72);
 scene.add(lights);
 
 const root = create02AssaultRifleModel({ shadows: true, noTextures: diagnostic || params.has('noTextures'), disableIdle: staticFrame });

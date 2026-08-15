@@ -1,0 +1,26 @@
+{
+  "referenceAreaFraction": 1.0,
+  "angles": [
+    {
+      "path": "guns 3d models/02-assault-rifle/visual-evidence/refined-three-quarter-neutral-v21.png",
+      "areaFraction": 1.0,
+      "ratio": 1.0,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/02-assault-rifle/visual-evidence/refined-top-neutral-v22.png",
+      "areaFraction": 1.0,
+      "ratio": 1.0,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/02-assault-rifle/visual-evidence/refined-side-neutral-v23.png",
+      "areaFraction": 0.9999795865994774,
+      "ratio": 0.9999795865994774,
+      "degenerate": false
+    }
+  ],
+  "degenerate": false,
+  "collapseRatio": 0.15,
+  "note": "deterministic; zero token; a flat-plane-faking-a-volume collapses in silhouette area when orbited"
+}

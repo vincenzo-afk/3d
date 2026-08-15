@@ -1,0 +1,14 @@
+WARN  detail-dangling: barrel-steps
+      mapsTo 'muzzleDevice' matches no component, localFeature or localOverride
+WARN  detail-dangling: muzzle-slots
+      mapsTo 'muzzleDevice' matches no component, localFeature or localOverride
+WARN  detail-dangling: blue-marble-tendrils
+      mapsTo 'marbled-coating' matches no component, localFeature or localOverride
+WARN  detail-dangling: teal-accent-flecks
+      mapsTo 'marbled-coating' matches no component, localFeature or localOverride
+WARN  detail-dangling: edge-wear-highlights
+      mapsTo 'dark-anodized-metal' matches no component, localFeature or localOverride
+WARN  detail-dangling: cavity-occlusion
+      mapsTo 'cavity-material' matches no component, localFeature or localOverride
+
+check_part_coverage: 50 specified, 50 built, 0 error(s), 6 warning(s)

@@ -519,7 +519,7 @@
     }
   ],
   "unnamedMeshes": 0,
-  "integralMeshes": 134,
+  "integralMeshes": 194,
   "runtimeHierarchy": {
     "root": "assault-rifle-root",
     "asset": "assault-rifle-geometry",

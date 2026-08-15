@@ -1,0 +1,9 @@
+{
+  "comparisonImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/visual-evidence/refined-comparison-sheet-v2.png",
+  "referenceImage": "/home/ubuntu/3d/guns image models/02-assault-rifle.png",
+  "renderScreenshot": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/visual-evidence/refined-neutral-broadside-v18.png",
+  "layout": "left=reference,right=render",
+  "panelWidth": 720,
+  "panelHeight": 405,
+  "note": "Send this image to AI vision for global, layer, and semantic feature scores; this script does not score."
+}
