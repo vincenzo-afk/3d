@@ -1,0 +1,44 @@
+{
+  "reference": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-reference-normalized.png",
+  "model": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-map-stripped-normalized.png",
+  "referenceBounds": [
+    19,
+    520,
+    2546,
+    993
+  ],
+  "modelBounds": [
+    8,
+    520,
+    2552,
+    1000
+  ],
+  "silhouetteIoU": 0.1984,
+  "referenceBands": [
+    [
+      520,
+      676
+    ],
+    [
+      680,
+      952
+    ],
+    [
+      954,
+      971
+    ]
+  ],
+  "modelBands": [
+    [
+      520,
+      999
+    ]
+  ],
+  "visualPriorities": [
+    "make stock body thicker and its cutout smaller/rounder",
+    "make optic objective bell visibly tapered rather than a flat rectangular block in broadside",
+    "replace the long block rail/teeth under the fore-end with a compact bright spring-loaded support",
+    "restore readable blue-teal ornamental coverage on stock and receiver in comparison lighting",
+    "keep barrel thin and muzzle compact while preserving scope/bolt identity"
+  ]
+}

@@ -29,7 +29,9 @@ type MaterialSet = {
   glass: THREE.MeshPhysicalMaterial;
   silver: THREE.MeshPhysicalMaterial;
   edge: THREE.MeshPhysicalMaterial;
+  ornament: THREE.MeshPhysicalMaterial;
 };
+type BaseMaterialKind = Exclude<keyof MaterialSet, 'ornament'>;
 
 const FRONT_Z = 0.40;
 const trace = sniperRifleReferenceTrace;
@@ -84,6 +86,14 @@ function cylinderX(radius: number, length: number, segments = 32): THREE.Cylinde
   return geometry;
 }
 
+function taperedCylinderX(rearRadius: number, frontRadius: number, length: number, segments = 32): THREE.CylinderGeometry {
+  // CylinderGeometry's top cap becomes the -X/rear end after the quarter-turn.
+  const geometry = new THREE.CylinderGeometry(rearRadius, frontRadius, length, segments, 1, false);
+  geometry.rotateZ(Math.PI / 2);
+  geometry.computeVertexNormals();
+  return geometry;
+}
+
 function cylinderY(radius: number, length: number, segments = 32): THREE.CylinderGeometry {
   const geometry = new THREE.CylinderGeometry(radius, radius, length, segments, 1, false);
   geometry.computeVertexNormals();
@@ -132,7 +142,7 @@ function createTexture(kind: 'dark' | 'coating' | 'polymer' | 'roughness' | 'sil
       ctx.fillRect(x, y, w, 1 + w * 0.25);
     }
   } else if (kind === 'coating') {
-    ctx.fillStyle = '#111a32';
+    ctx.fillStyle = '#13294c';
     ctx.fillRect(0, 0, size, size);
     for (let i = 0; i < 28; i += 1) {
       const y = size * (0.04 + (i / 28) * 0.92);
@@ -156,7 +166,7 @@ function createTexture(kind: 'dark' | 'coating' | 'polymer' | 'roughness' | 'sil
       ctx.fillRect(hash(i, 51, 8) * size, hash(i, 53, 10) * size, 1 + hash(i, 59, 11) * 5, 1 + hash(i, 61, 13) * 3);
     }
   } else {
-    const base = kind === 'dark' ? '#30445f' : (kind === 'polymer' ? '#364556' : '#a8bdd3');
+    const base = kind === 'dark' ? '#4d6478' : (kind === 'polymer' ? '#53667a' : '#a8bdd3');
     ctx.fillStyle = base;
     ctx.fillRect(0, 0, size, size);
     const lineColor = kind === 'silver' ? 'rgba(228,238,250,0.22)' : 'rgba(130,160,205,0.13)';
@@ -177,19 +187,19 @@ function createTexture(kind: 'dark' | 'coating' | 'polymer' | 'roughness' | 'sil
   return texture;
 }
 
-function makeMaterial(kind: keyof MaterialSet, options: SniperRifleModelOptions): THREE.MeshPhysicalMaterial {
+function makeMaterial(kind: BaseMaterialKind, options: SniperRifleModelOptions): THREE.MeshPhysicalMaterial {
   const size = Math.max(64, Math.min(options.textureSize ?? 256, 512));
-  const colors: Record<keyof MaterialSet, string> = {
-    dark: '#33455d',
-    coating: '#2854a7',
-    polymer: '#384656',
+  const colors: Record<BaseMaterialKind, string> = {
+    dark: '#425d78',
+    coating: '#356bc7',
+    polymer: '#46586b',
     cavity: '#02050b',
     glass: '#2f82aa',
     silver: '#b7c9dd',
     edge: '#7892b0',
   };
-  const roughnessByKind: Record<keyof MaterialSet, number> = { dark: 0.34, coating: 0.30, polymer: 0.68, cavity: 0.92, glass: 0.12, silver: 0.22, edge: 0.28 };
-  const metalnessByKind: Record<keyof MaterialSet, number> = { dark: 0.88, coating: 0.72, polymer: 0.04, cavity: 0.05, glass: 0.08, silver: 0.92, edge: 0.78 };
+  const roughnessByKind: Record<BaseMaterialKind, number> = { dark: 0.42, coating: 0.30, polymer: 0.68, cavity: 0.92, glass: 0.12, silver: 0.22, edge: 0.28 };
+  const metalnessByKind: Record<BaseMaterialKind, number> = { dark: 0.64, coating: 0.72, polymer: 0.04, cavity: 0.05, glass: 0.08, silver: 0.92, edge: 0.78 };
   const textureKind = kind === 'coating' ? 'coating' : (kind === 'polymer' ? 'polymer' : (kind === 'silver' ? 'silver' : 'dark'));
   const material = new THREE.MeshPhysicalMaterial({
     color: colors[kind],
@@ -204,6 +214,8 @@ function makeMaterial(kind: keyof MaterialSet, options: SniperRifleModelOptions)
     opacity: kind === 'glass' ? 0.76 : 1,
     envMapIntensity: kind === 'glass' ? 1.6 : 1.15,
     side: THREE.DoubleSide,
+    emissive: kind === 'coating' ? new THREE.Color('#071d62') : (kind === 'dark' ? new THREE.Color('#0a1422') : new THREE.Color('#000000')),
+    emissiveIntensity: kind === 'coating' ? 0.52 : (kind === 'dark' ? 0.20 : 0),
   });
   if (options.wireframe) material.wireframe = true;
   return material;
@@ -260,14 +272,14 @@ function addStock(group: THREE.Group, runtime: SniperRuntime, materials: Materia
   const butt = addMesh(group, 'stockButtPlate', roundedBox(0.25, 0.86, 0.72, 0.055), materials.polymer, runtime, shadows);
   butt.position.set(-3.66, -0.03, 0);
   const sidePlate = addMesh(group, 'stockSkeletonSidePlate', extrude([
-    [-3.56, 0.36], [-2.64, 0.41], [-2.12, 0.18], [-2.18, -0.39], [-2.80, -0.53], [-3.56, -0.37],
-  ], 0.48, 0.035, [ellipseLoop(-2.82, -0.05, 0.60, 0.27)]), materials.coating, runtime, shadows);
+    [-3.56, 0.34], [-3.30, 0.47], [-2.42, 0.46], [-2.08, 0.20], [-2.16, -0.43], [-2.54, -0.56], [-3.34, -0.43], [-3.58, -0.29],
+  ], 0.48, 0.035, [ellipseLoop(-2.82, -0.04, 0.33, 0.22)]), materials.coating, runtime, shadows);
   sidePlate.position.z = 0.04;
   const cheek = addMesh(group, 'stockCheekRest', roundedBox(0.92, 0.18, 0.52, 0.035), materials.polymer, runtime, shadows);
   cheek.position.set(-2.58, 0.48, 0.02);
   cheek.rotation.z = -0.03;
-  const upperBrace = addMesh(group, 'stockUpperBrace', tubeBetween([-3.45, 0.28, 0], [-2.05, 0.25, 0], 0.085), materials.polymer, runtime, shadows);
-  const lowerBrace = addMesh(group, 'stockLowerBrace', tubeBetween([-3.40, -0.30, 0], [-2.12, -0.42, 0], 0.09), materials.polymer, runtime, shadows);
+  const upperBrace = addMesh(group, 'stockUpperBrace', tubeBetween([-3.40, 0.29, 0], [-2.08, 0.24, 0], 0.10), materials.polymer, runtime, shadows);
+  const lowerBrace = addMesh(group, 'stockLowerBrace', tubeBetween([-3.34, -0.34, 0], [-2.14, -0.45, 0], 0.105), materials.polymer, runtime, shadows);
   const rearBrace = addMesh(group, 'stockRearBrace', tubeBetween([-3.42, 0.28, 0], [-3.42, -0.32, 0], 0.072), materials.polymer, runtime, shadows);
   upperBrace.userData.feature = 'stock-upper-attachment';
   lowerBrace.userData.feature = 'stock-lower-attachment';
@@ -278,14 +290,24 @@ function addStock(group: THREE.Group, runtime: SniperRuntime, materials: Materia
   }
   for (let i = 0; i < 5; i += 1) {
     const fleck = addMesh(group, `stockCoatingFleck${i + 1}`, roundedBox(0.12 + i * 0.018, 0.025, 0.035, 0.004), materials.edge, runtime, shadows);
-    fleck.position.set(-3.12 + i * 0.18, 0.18 + Math.sin(i) * 0.08, FRONT_Z + 0.25);
+    fleck.position.set(-3.12 + i * 0.18, 0.18 + Math.sin(i) * 0.08, FRONT_Z * 0.76);
     fleck.rotation.z = (i % 2 ? -1 : 1) * 0.22;
+  }
+  const stockTendrils: V3[][] = [
+    [[-3.42, 0.26, 0.30], [-3.18, 0.10, 0.30], [-2.98, 0.24, 0.30], [-2.76, 0.08, 0.30], [-2.50, 0.19, 0.30], [-2.18, 0.07, 0.30]],
+    [[-3.35, 0.06, 0.31], [-3.07, -0.09, 0.31], [-2.83, 0.04, 0.31], [-2.58, -0.14, 0.31], [-2.32, -0.02, 0.31]],
+    [[-3.12, 0.34, 0.32], [-2.88, 0.28, 0.32], [-2.64, 0.37, 0.32], [-2.38, 0.26, 0.32], [-2.16, 0.30, 0.32]],
+    [[-3.30, -0.22, 0.30], [-3.00, -0.28, 0.30], [-2.72, -0.20, 0.30], [-2.48, -0.33, 0.30]],
+  ];
+  for (const [i, points] of stockTendrils.entries()) {
+    const tendril = addMesh(group, `stockOrnamentalTendril${i + 1}`, tubePath(points, 0.026, 28), materials.ornament, runtime, shadows);
+    tendril.userData.feature = 'blue-teal-serpentine-ornament';
   }
   const sling = addMesh(group, 'stockSlingLoop', new THREE.TorusGeometry(0.12, 0.025, 16, 30), materials.edge, runtime, shadows);
   sling.position.set(-3.52, -0.48, 0);
   sling.rotation.x = Math.PI / 2;
-  addFastener(group, 'stockRearFastener', [-3.46, 0.30, FRONT_Z + 0.24], materials.edge, runtime, shadows, 0.035);
-  addFastener(group, 'stockForwardFastener', [-2.34, 0.18, FRONT_Z + 0.24], materials.edge, runtime, shadows, 0.035);
+  addFastener(group, 'stockRearFastener', [-3.46, 0.30, FRONT_Z * 0.78], materials.edge, runtime, shadows, 0.035);
+  addFastener(group, 'stockForwardFastener', [-2.34, 0.18, FRONT_Z * 0.78], materials.edge, runtime, shadows, 0.035);
   addSocket(group, 'stockAssemblySocket', [-2.02, 0.20, 0], runtime, [1, 0, 0]);
   addCollider('stock-collider', sidePlate, runtime);
 }
@@ -296,14 +318,23 @@ function addReceiverAction(group: THREE.Group, runtime: SniperRuntime, materials
   ], 0.66, 0.03), materials.dark, runtime, shadows);
   receiver.userData.feature = 'precision-receiver-shell';
   const sidePanel = addMesh(group, 'receiverOrnamentalPanel', extrude([
-    [-2.02, 0.10], [-1.15, 0.10], [-0.92, 0.23], [-1.14, 0.40], [-1.92, 0.40],
+    [-2.02, 0.10], [-0.96, 0.10], [-0.72, 0.23], [-0.98, 0.40], [-1.92, 0.40],
   ], 0.038, 0.008), materials.coating, runtime, shadows);
-  sidePanel.position.z = FRONT_Z + 0.28;
+  sidePanel.position.z = 0.36;
+  const receiverTendrils: V3[][] = [
+    [[-1.98, 0.30, 0.39], [-1.70, 0.20, 0.39], [-1.40, 0.31, 0.39], [-1.10, 0.18, 0.39], [-0.82, 0.27, 0.39]],
+    [[-1.84, 0.14, 0.40], [-1.56, 0.08, 0.40], [-1.28, 0.17, 0.40], [-0.98, 0.10, 0.40]],
+    [[-1.78, 0.38, 0.41], [-1.50, 0.33, 0.41], [-1.22, 0.39, 0.41], [-0.94, 0.32, 0.41]],
+  ];
+  for (const [i, points] of receiverTendrils.entries()) {
+    const tendril = addMesh(group, `receiverOrnamentalTendril${i + 1}`, tubePath(points, 0.024, 24), materials.ornament, runtime, shadows);
+    tendril.userData.feature = 'blue-teal-serpentine-ornament';
+  }
   const topRail = addMesh(group, 'receiverTopRail', roundedBox(1.56, 0.07, 0.42, 0.012), materials.edge, runtime, shadows);
-  topRail.position.set(-0.78, 0.53, 0);
-  for (let i = 0; i < 12; i += 1) {
-    const tooth = addMesh(group, `receiverRailTooth${i + 1}`, roundedBox(0.08, 0.10, 0.40, 0.007), materials.edge, runtime, shadows);
-    tooth.position.set(-1.72 + i * 0.13, 0.605, 0);
+  topRail.position.set(-0.90, 0.53, 0);
+  for (let i = 0; i < 8; i += 1) {
+    const tooth = addMesh(group, `receiverRailTooth${i + 1}`, roundedBox(0.09, 0.085, 0.36, 0.007), materials.edge, runtime, shadows);
+    tooth.position.set(-1.46 + i * 0.15, 0.595, 0);
   }
   const boltBody = addMesh(group, 'boltActionBody', cylinderX(0.15, 0.92, 28), materials.silver, runtime, shadows);
   boltBody.position.set(-0.92, 0.36, 0);
@@ -314,24 +345,24 @@ function addReceiverAction(group: THREE.Group, runtime: SniperRuntime, materials
   const knob = addMesh(group, 'boltKnob', new THREE.SphereGeometry(0.105, 24, 16), materials.silver, runtime, shadows);
   knob.position.set(-1.19, -0.08, FRONT_Z * 0.80);
   const ejection = addMesh(group, 'ejectionPortCavity', roundedBox(0.46, 0.15, 0.035, 0.012), materials.cavity, runtime, shadows);
-  ejection.position.set(-0.34, 0.40, FRONT_Z + 0.02);
+  ejection.position.set(-0.34, 0.40, 0.36);
   const ejectionLip = addMesh(group, 'ejectionPortLip', roundedBox(0.52, 0.025, 0.05, 0.006), materials.edge, runtime, shadows);
-  ejectionLip.position.set(-0.34, 0.49, FRONT_Z + 0.04);
+  ejectionLip.position.set(-0.34, 0.49, 0.38);
   for (let i = 0; i < 4; i += 1) {
-    addFastener(group, `receiverFastener${i + 1}`, [-1.75 + i * 0.40, 0.21, FRONT_Z + 0.30], materials.edge, runtime, shadows, 0.038);
+    addFastener(group, `receiverFastener${i + 1}`, [-1.75 + i * 0.40, 0.21, 0.37], materials.edge, runtime, shadows, 0.038);
   }
   for (let i = 0; i < 5; i += 1) {
     const ridge = addMesh(group, `receiverSideRidge${i + 1}`, roundedBox(0.18, 0.018, 0.025, 0.003), materials.edge, runtime, shadows);
-    ridge.position.set(-1.86 + i * 0.19, 0.13, FRONT_Z + 0.305);
+    ridge.position.set(-1.86 + i * 0.19, 0.13, 0.375);
     ridge.rotation.z = i % 2 === 0 ? 0.10 : -0.10;
   }
   const grip = addMesh(group, 'curvedPistolGrip', extrude([
-    [-1.78, 0.06], [-1.30, 0.02], [-1.46, -0.72], [-1.70, -0.78], [-1.90, -0.24],
+    [-1.78, 0.06], [-1.30, 0.02], [-1.45, -0.62], [-1.68, -0.68], [-1.90, -0.24],
   ], 0.50, 0.032), materials.coating, runtime, shadows);
   grip.position.z = -0.01;
-  const triggerGuardA = addMesh(group, 'triggerGuardFront', tubeBetween([-1.18, -0.12, FRONT_Z * 0.76], [-1.15, -0.58, FRONT_Z * 0.76], 0.045), materials.edge, runtime, shadows);
-  const triggerGuardB = addMesh(group, 'triggerGuardRear', tubeBetween([-1.15, -0.58, FRONT_Z * 0.76], [-1.62, -0.58, FRONT_Z * 0.76], 0.045), materials.edge, runtime, shadows);
-  const triggerGuardC = addMesh(group, 'triggerGuardTop', tubeBetween([-1.62, -0.58, FRONT_Z * 0.76], [-1.72, -0.22, FRONT_Z * 0.76], 0.045), materials.edge, runtime, shadows);
+  const triggerGuardA = addMesh(group, 'triggerGuardFront', tubeBetween([-1.18, -0.12, FRONT_Z * 0.76], [-1.15, -0.50, FRONT_Z * 0.76], 0.042), materials.edge, runtime, shadows);
+  const triggerGuardB = addMesh(group, 'triggerGuardRear', tubeBetween([-1.15, -0.50, FRONT_Z * 0.76], [-1.62, -0.50, FRONT_Z * 0.76], 0.042), materials.edge, runtime, shadows);
+  const triggerGuardC = addMesh(group, 'triggerGuardTop', tubeBetween([-1.62, -0.50, FRONT_Z * 0.76], [-1.72, -0.22, FRONT_Z * 0.76], 0.042), materials.edge, runtime, shadows);
   triggerGuardA.userData.feature = 'trigger-guard-opening';
   triggerGuardB.userData.feature = 'trigger-guard-opening';
   triggerGuardC.userData.feature = 'trigger-guard-opening';
@@ -349,10 +380,12 @@ function addOptic(group: THREE.Group, runtime: SniperRuntime, materials: Materia
   eyepiece.position.set(-1.90, 0.94, 0);
   const eyeRing = addMesh(group, 'scopeEyepieceRing', cylinderX(0.19, 0.09, 32), materials.edge, runtime, shadows);
   eyeRing.position.set(-2.08, 0.94, 0);
-  const bell = addMesh(group, 'scopeObjectiveBell', cylinderX(0.22, 0.38, 36), materials.silver, runtime, shadows);
-  bell.position.set(-0.10, 0.94, 0);
-  const frontGlass = addMesh(group, 'scopeObjectiveGlass', cylinderX(0.19, 0.018, 32), materials.glass, runtime, shadows);
-  frontGlass.position.set(0.11, 0.94, 0);
+  const bell = addMesh(group, 'scopeObjectiveBell', taperedCylinderX(0.14, 0.28, 0.46, 36), materials.silver, runtime, shadows);
+  bell.position.set(-0.08, 0.94, 0);
+  const bellRim = addMesh(group, 'scopeObjectiveBellRim', cylinderX(0.285, 0.075, 36), materials.edge, runtime, shadows);
+  bellRim.position.set(0.18, 0.94, 0);
+  const frontGlass = addMesh(group, 'scopeObjectiveGlass', cylinderX(0.245, 0.018, 32), materials.glass, runtime, shadows);
+  frontGlass.position.set(0.225, 0.94, 0);
   const rearGlass = addMesh(group, 'scopeEyepieceGlass', cylinderX(0.12, 0.018, 32), materials.glass, runtime, shadows);
   rearGlass.position.set(-2.13, 0.94, 0);
   for (const [i, x] of [-1.62, -0.66].entries()) {
@@ -369,46 +402,54 @@ function addOptic(group: THREE.Group, runtime: SniperRuntime, materials: Materia
   const turretCap = addMesh(group, 'scopeElevationCap', cylinderY(0.12, 0.07, 24), materials.edge, runtime, shadows);
   turretCap.position.set(-1.00, 1.22, 0);
   const sideCap = addMesh(group, 'scopeWindageCap', cylinderX(0.12, 0.08, 24), materials.edge, runtime, shadows);
-  sideCap.position.set(-1.00, 1.00, FRONT_Z * 0.86);
+  sideCap.position.set(-1.00, 1.00, 0.20);
   const reticle = addMesh(group, 'scopeGlassHighlight', roundedBox(0.016, 0.22, 0.012, 0.002), materials.glass, runtime, shadows);
-  reticle.position.set(-2.14, 0.94, FRONT_Z + 0.02);
+  reticle.position.set(-2.14, 0.94, 0.16);
   const reticleCross = addMesh(group, 'scopeReticleCrossbar', roundedBox(0.04, 0.012, 0.014, 0.002), materials.glass, runtime, shadows);
-  reticleCross.position.set(-2.14, 0.94, FRONT_Z + 0.03);
+  reticleCross.position.set(-2.14, 0.94, 0.17);
   addSocket(group, 'opticAssemblySocket', [-1.1, 0.78, 0], runtime, [0, 1, 0]);
   addCollider('optic-collider', mainTube, runtime);
 }
 
 function addMagazineTrigger(group: THREE.Group, runtime: SniperRuntime, materials: MaterialSet, shadows: boolean): void {
   const magazine = addMesh(group, 'magazineBody', extrude([
-    [-0.95, -0.12], [-0.52, -0.12], [-0.48, -0.60], [-0.82, -0.68], [-1.02, -0.42],
-  ], 0.44, 0.024), materials.polymer, runtime, shadows);
+    [-0.88, -0.10], [-0.54, -0.10], [-0.51, -0.46], [-0.78, -0.52], [-0.94, -0.34],
+  ], 0.40, 0.024), materials.polymer, runtime, shadows);
   magazine.position.z = -0.01;
-  const baseplate = addMesh(group, 'magazineFloorplate', roundedBox(0.48, 0.08, 0.42, 0.014), materials.edge, runtime, shadows);
-  baseplate.position.set(-0.75, -0.66, 0);
+  const baseplate = addMesh(group, 'magazineFloorplate', roundedBox(0.40, 0.07, 0.38, 0.014), materials.edge, runtime, shadows);
+  baseplate.position.set(-0.72, -0.50, 0);
   const magazineCatch = addMesh(group, 'magazineCatchNotch', roundedBox(0.15, 0.07, 0.03, 0.006), materials.cavity, runtime, shadows);
-  magazineCatch.position.set(-0.50, -0.34, FRONT_Z + 0.22);
+  magazineCatch.position.set(-0.50, -0.34, 0.25);
   for (let i = 0; i < 3; i += 1) {
     const rib = addMesh(group, `magazineRib${i + 1}`, roundedBox(0.25, 0.028, 0.025, 0.005), materials.edge, runtime, shadows);
-    rib.position.set(-0.76, -0.26 - i * 0.14, FRONT_Z + 0.23);
+    rib.position.set(-0.72, -0.20 - i * 0.10, 0.26);
     rib.rotation.z = -0.16;
   }
-  addFastener(group, 'triggerPivot', [-1.47, -0.18, FRONT_Z + 0.23], materials.silver, runtime, shadows, 0.033);
+  addFastener(group, 'triggerPivot', [-1.47, -0.18, 0.29], materials.silver, runtime, shadows, 0.033);
   addSocket(group, 'magazineTriggerAssemblySocket', [-1.02, -0.10, 0], runtime, [0, 1, 0]);
   addCollider('magazine-collider', magazine, runtime);
 }
 
 function addUnderAction(group: THREE.Group, runtime: SniperRuntime, materials: MaterialSet, shadows: boolean): void {
-  const rail = addMesh(group, 'underActionRail', roundedBox(1.48, 0.075, 0.40, 0.015), materials.silver, runtime, shadows);
-  rail.position.set(1.65, -0.03, 0);
-  const bridge = addMesh(group, 'underActionMountBridge', roundedBox(0.30, 0.20, 0.44, 0.02), materials.silver, runtime, shadows);
-  bridge.position.set(0.86, 0.02, 0);
-  for (let i = 0; i < 10; i += 1) {
-    const tooth = addMesh(group, `underActionTooth${i + 1}`, roundedBox(0.07, 0.14, 0.34, 0.008), materials.edge, runtime, shadows);
-    tooth.position.set(0.96 + i * 0.14, -0.10, 0);
+  const rail = addMesh(group, 'underActionRail', roundedBox(0.96, 0.065, 0.30, 0.014), materials.silver, runtime, shadows);
+  rail.position.set(1.46, -0.03, 0);
+  const bridge = addMesh(group, 'underActionMountBridge', roundedBox(0.24, 0.16, 0.38, 0.018), materials.silver, runtime, shadows);
+  bridge.position.set(0.98, 0.02, 0);
+  const springRod = addMesh(group, 'underActionSpringRod', tubeBetween([1.00, -0.10, 0.18], [2.02, -0.10, 0.18], 0.025, 16), materials.silver, runtime, shadows);
+  springRod.userData.feature = 'spring-loaded-under-action-support';
+  for (let i = 0; i < 8; i += 1) {
+    const coil = addMesh(group, `underActionSpringCoil${i + 1}`, new THREE.TorusGeometry(0.060, 0.012, 8, 16), materials.edge, runtime, shadows);
+    coil.position.set(1.12 + i * 0.09, -0.10, 0.18);
   }
-  const innerRail = addMesh(group, 'underActionInnerRail', roundedBox(1.35, 0.045, 0.22, 0.008), materials.dark, runtime, shadows);
-  innerRail.position.set(1.72, 0.04, FRONT_Z * 0.20);
-  addSocket(group, 'underActionAssemblySocket', [0.05, -0.08, 0], runtime, [1, 0, 0]);
+  for (let i = 0; i < 10; i += 1) {
+    const tooth = addMesh(group, `underActionTooth${i + 1}`, roundedBox(i < 6 ? 0.055 : 0.042, i < 6 ? 0.07 : 0.045, i < 6 ? 0.26 : 0.20, 0.005), materials.edge, runtime, shadows);
+    tooth.position.set(1.06 + i * 0.09, i < 6 ? -0.095 : -0.065, 0);
+  }
+  const innerRail = addMesh(group, 'underActionInnerRail', roundedBox(0.90, 0.035, 0.18, 0.006), materials.dark, runtime, shadows);
+  innerRail.position.set(1.50, 0.04, 0.08);
+  const supportLink = addMesh(group, 'underActionSupportLink', tubeBetween([0.92, -0.02, 0.12], [1.08, -0.08, 0.18], 0.035, 12), materials.silver, runtime, shadows);
+  supportLink.userData.feature = 'under-action-grounded-link';
+  addSocket(group, 'underActionAssemblySocket', [0.92, -0.02, 0], runtime, [1, 0, 0]);
   addCollider('under-action-collider', rail, runtime);
 }
 
@@ -417,8 +458,8 @@ function addBarrel(group: THREE.Group, runtime: SniperRuntime, materials: Materi
   barrel.position.set(2.55, 0.34, 0);
   const root = addMesh(group, 'barrelRootShoulder', cylinderX(0.17, 0.26, 32), materials.edge, runtime, shadows);
   root.position.set(0.84, 0.34, 0);
-  const highlight = addMesh(group, 'barrelTopHighlight', roundedBox(2.85, 0.018, 0.018, 0.003), materials.edge, runtime, shadows);
-  highlight.position.set(2.48, 0.44, FRONT_Z * 0.75);
+  const highlight = addMesh(group, 'barrelTopHighlight', roundedBox(1.85, 0.018, 0.018, 0.003), materials.edge, runtime, shadows);
+  highlight.position.set(2.25, 0.44, 0.13);
   const ringA = addMesh(group, 'barrelCollarA', cylinderX(0.13, 0.08, 28), materials.edge, runtime, shadows);
   ringA.position.set(1.08, 0.34, 0);
   const ringB = addMesh(group, 'barrelCollarB', cylinderX(0.12, 0.06, 28), materials.edge, runtime, shadows);
@@ -439,7 +480,7 @@ function addMuzzle(group: THREE.Group, runtime: SniperRuntime, materials: Materi
   crown.rotation.y = Math.PI / 2;
   for (let i = 0; i < 4; i += 1) {
     const slot = addMesh(group, `muzzleSlot${i + 1}`, roundedBox(0.07, 0.06, 0.20, 0.008), materials.cavity, runtime, shadows);
-    slot.position.set(4.32 + (i % 2) * 0.09, 0.55 - Math.floor(i / 2) * 0.24, FRONT_Z * 0.78);
+    slot.position.set(4.32 + (i % 2) * 0.09, 0.55 - Math.floor(i / 2) * 0.24, 0.18);
     slot.rotation.z = i % 2 ? -0.12 : 0.12;
   }
   const frontSight = addMesh(group, 'frontMuzzleSightBlock', roundedBox(0.12, 0.18, 0.20, 0.015), materials.edge, runtime, shadows);
@@ -455,14 +496,23 @@ function createRuntime(): SniperRuntime {
 export function create03SniperRifleModel(options: SniperRifleModelOptions = {}): THREE.Group {
   const shadows = options.shadows ?? true;
   const runtime = createRuntime();
+  const coatingMaterial = makeMaterial('coating', options);
+  const ornamentMaterial = coatingMaterial.clone();
+  ornamentMaterial.name = 'ornament-accent';
+  ornamentMaterial.map = null;
+  ornamentMaterial.color.set('#19b8ce');
+  ornamentMaterial.emissive.set('#06394b');
+  ornamentMaterial.emissiveIntensity = 0.92;
+  ornamentMaterial.roughness = 0.24;
   const materials: MaterialSet = {
     dark: makeMaterial('dark', options),
-    coating: makeMaterial('coating', options),
+    coating: coatingMaterial,
     polymer: makeMaterial('polymer', options),
     cavity: makeMaterial('cavity', { ...options, noTextures: true }),
     glass: makeMaterial('glass', options),
     silver: makeMaterial('silver', options),
     edge: makeMaterial('edge', options),
+    ornament: ornamentMaterial,
   };
   const root = new THREE.Group();
   root.name = 'sniper-rifle-root';
@@ -520,7 +570,7 @@ export function create03SniperRifleModel(options: SniperRifleModelOptions = {}):
   root.userData.inspect = {
     source: trace.source,
     referenceBounds: trace.foregroundBounds,
-    routes: { broadside: '?projection=1&ortho=1&view=front', orbit: '?view=three-quarter', neutral: '?view=neutral&projection=1&ortho=1&neutral=1' },
+    routes: { broadside: '?projection=1&ortho=1&view=front', studio: '?view=studio&projection=1&ortho=1&studio=1', orbit: '?view=three-quarter', neutral: '?view=neutral&projection=1&ortho=1&neutral=1' },
     runtimeMeshCount: Object.keys(runtime.meshes).length,
   };
   return root;

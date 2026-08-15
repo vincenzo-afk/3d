@@ -1,0 +1,3 @@
+# User Review v5
+
+The final studio fixture is visibly closer to the sample. The stock is thicker and more organic, its cutout is smaller and rounder, the blue-teal serpentine coating is now readable across stock and receiver, the optic objective is tapered, and the under-action support is compact with a continuous spring/rail structure. The rifle still intentionally remains a code-only low-poly/procedural interpretation rather than an imported photo mesh; the long barrel and broadside proportions are preserved, while small receiver and muzzle surfaces remain simplified for stable procedural construction.

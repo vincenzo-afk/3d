@@ -1,7 +1,7 @@
 {
   "model": "03-sniper-rifle",
   "sourceFactory": "create03SniperRifleModel.ts",
-  "runtimeMeshCount": 104,
+  "runtimeMeshCount": 118,
   "parts": [
     {
       "name": "root",
@@ -401,6 +401,6 @@
     }
   ],
   "unnamedMeshes": 0,
-  "integralMeshes": 104,
+  "integralMeshes": 118,
   "notes": "Manifest maps all 44 ObjectSculptSpec components to named procedural runtime assemblies; repeated meshes remain individually selectable in the factory runtime."
 }

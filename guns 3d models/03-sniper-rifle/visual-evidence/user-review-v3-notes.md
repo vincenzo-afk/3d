@@ -1,0 +1,3 @@
+# User Review v3
+
+The source-studio render now shows a better tapered optic objective, thicker organic stock body, smaller opening, and a compact spring/rail assembly. However, the main chassis remains too black for the light sample, the blue coating reads as a flat blue slab rather than blue-teal serpentine ornament, and the under-action assembly still leaves a few detached bright dots beyond the support. The next correction increases diffuse readability, introduces a dedicated emissive teal ornament material for the serpentine tubes, and keeps all support teeth seated within the compact rail span.

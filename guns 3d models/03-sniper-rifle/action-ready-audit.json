@@ -14,7 +14,7 @@
     "manifestIntegralMeshes": true
   },
   "parts": 44,
-  "integralMeshes": 104,
+  "integralMeshes": 118,
   "requiredGroups": [
     "stockAssembly",
     "receiverActionAssembly",

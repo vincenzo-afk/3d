@@ -7,7 +7,8 @@ import {
 
 const params = new URLSearchParams(window.location.search);
 const view = params.get('view') ?? (params.has('projection') ? 'front' : 'three-quarter');
-const projection = params.has('projection') || params.has('ortho') || view === 'front' || view === 'neutral';
+const studio = params.has('studio') || view === 'studio';
+const projection = params.has('projection') || params.has('ortho') || view === 'front' || view === 'neutral' || view === 'studio';
 const staticFrame = params.has('static') || params.has('snapshot');
 const neutral = params.has('neutral') || view === 'neutral';
 const diagnostic = params.has('diagnostic');
@@ -24,16 +25,16 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(width, height);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = diagnostic ? 1.82 : (neutral ? 2.28 : 1.70);
+renderer.toneMappingExposure = diagnostic ? 1.82 : (neutral ? 2.28 : (studio ? 2.02 : 1.70));
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 stage.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
-scene.background = diagnostic ? new THREE.Color(0xe9edf3) : (neutral ? new THREE.Color(0x3a4b61) : makeSniperRifleBackground());
+scene.background = diagnostic ? new THREE.Color(0xe9edf3) : (neutral ? new THREE.Color(0x3a4b61) : (studio ? new THREE.Color(0xe9edf3) : makeSniperRifleBackground()));
 const lights = createSniperRifleLookDevLights();
 const ambient = lights.children.find((child) => child instanceof THREE.AmbientLight) as THREE.AmbientLight | undefined;
-if (ambient) ambient.intensity = diagnostic ? 1.00 : (neutral ? 1.18 : 0.54);
+if (ambient) ambient.intensity = diagnostic ? 1.00 : (neutral ? 1.18 : (studio ? 1.02 : 0.54));
 scene.add(lights);
 
 const root = create03SniperRifleModel({ shadows: true, noTextures: diagnostic || params.has('noTextures'), disableIdle: staticFrame });
@@ -42,6 +43,9 @@ if (neutral || diagnostic) {
     '33455d': '#6d8198',
     '2854a7': '#4b7fdb',
     '384656': '#657384',
+    '425d78': '#6d8198',
+    '356bc7': '#4b7fdb',
+    '46586b': '#657384',
     '02050b': '#1b2a3b',
     '2f82aa': '#4ca6cc',
     'b7c9dd': '#d5e0eb',
@@ -67,7 +71,7 @@ const target = new THREE.Vector3(0.28, 0.30, 0);
 const camera: THREE.Camera = projection
   ? new THREE.OrthographicCamera(-3.72 * aspect, 3.72 * aspect, 3.72, -3.72, 0.1, 60)
   : new THREE.PerspectiveCamera(34, aspect, 0.1, 60);
-if (view === 'front' || view === 'reference' || view === 'neutral') {
+if (view === 'front' || view === 'reference' || view === 'neutral' || view === 'studio') {
   camera.position.set(target.x, target.y, 9.4);
 } else if (view === 'top') {
   camera.position.set(0.65, 7.8, 3.3);
@@ -91,7 +95,7 @@ floor.receiveShadow = true;
 if (diagnostic) floor.visible = false;
 scene.add(floor);
 
-status.textContent = `${view} · ${diagnostic ? 'tier1-diagnostic' : (neutral ? 'neutral-light' : (projection ? 'reference-projection' : 'procedural-orbit'))} · ${root.userData.sculptRuntime?.selectableParts?.length ?? 0} meshes · sniper-rifle`;
+  status.textContent = `${view} · ${diagnostic ? 'tier1-diagnostic' : (neutral ? 'neutral-light' : (studio ? 'source-studio' : (projection ? 'reference-projection' : 'procedural-orbit')))} · ${root.userData.sculptRuntime?.selectableParts?.length ?? 0} meshes · sniper-rifle`;
 if (diagnostic) status.style.display = 'none';
 
 const renderFrame = (elapsed: number): void => {
