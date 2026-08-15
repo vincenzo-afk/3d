@@ -1043,16 +1043,16 @@
       "interaction-pass",
       "optimization-pass"
     ],
-    "currentPass": "structural-pass",
+    "currentPass": "form-refinement",
     "completedPasses": [
-      "blockout"
+      "blockout",
+      "structural-pass"
     ],
-    "lastCompletedPass": "blockout",
+    "lastCompletedPass": "structural-pass",
     "blockedReason": "",
     "nextRequiredEvidence": [
-      "Macro, meso, and repeated structures meet qualityContract.minimumSpecDepth.",
-      "Parent-child relations, joints, seams, sockets, and contact points are explicit.",
-      "Every attached child appendage/connector has parentSocket, localStart/localEnd, contactType, embedDepth or overlap, and gapTolerance.",
+      "Important visible forms are represented in component geometryDescriptor, deformations, localFeatures, or repetitionSystems.",
+      "Endpoint-based child parts are rooted at their attachment sockets and do not visibly float away from parents.",
       "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
       "attachment contracts for child appendages/connectors",
       "no floating child roots/joints in the browser screenshot",
@@ -18688,6 +18688,76 @@
       "cameraView": "broadside-reference-camera",
       "notes": "Refined broadside plus neutral/studio and axial orbit captures reviewed. All mandatory viewpoints include long-axis and thickness-axis evidence labels.",
       "aiVisionNotes": "Refined screenshot comparison shows a recognizable heavy machine gun with stronger coating distribution and preserved 3D assembly. The exact product photo cannot be pixel-matched by a single procedural broadside; raw and normalized Tier-1 probes are retained, while the semantic screenshot review is the acceptance authority."
+    },
+    {
+      "timestamp": "2026-08-15T06:37:49.596304+00:00",
+      "passId": "structural-pass",
+      "estimatedFidelity": 0.83,
+      "aiVisionScore": 0.83,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.84,
+        "componentStructure": 0.88,
+        "formDetail": 0.8,
+        "materialSurface": 0.74,
+        "lightingCamera": 0.8
+      },
+      "featureReviews": [
+        {
+          "id": "hmg-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "feed-system-identity",
+          "tier": "critical",
+          "score": 0.85,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-action-identity",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "barrel-bipod-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "painted-coating-system",
+          "tier": "critical",
+          "score": 0.76,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.74,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/reference-source.png",
+      "renderScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/front-v4.png",
+      "comparisonImage": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-comparison-sheet-v2.png",
+      "cameraView": "front/reference-projection plus neutral broadside",
+      "notes": "structural-pass reviewed from broadside plus neutral and orbit fixtures.",
+      "aiVisionNotes": "Structural review confirms the parent-child heavy-machine-gun assembly: stock to receiver, receiver to feed cover and barrel, feed tray to cartridge/link run, ammunition box mount, handguard collars, carry handle, grip/trigger, charging handle, muzzle, and bipod attachments. The score is bounded and does not claim pixel-identical fidelity from one source image."
     }
   ],
   "reviewHistory": [
@@ -18901,6 +18971,115 @@
         "cameraView": "broadside-reference-camera",
         "notes": "Refined broadside plus neutral/studio and axial orbit captures reviewed. All mandatory viewpoints include long-axis and thickness-axis evidence labels.",
         "aiVisionNotes": "Refined screenshot comparison shows a recognizable heavy machine gun with stronger coating distribution and preserved 3D assembly. The exact product photo cannot be pixel-matched by a single procedural broadside; raw and normalized Tier-1 probes are retained, while the semantic screenshot review is the acceptance authority."
+      }
+    },
+    {
+      "timestamp": "2026-08-15T06:37:49.596304+00:00",
+      "passId": "structural-pass",
+      "estimatedFidelity": 0.83,
+      "aiVisionScore": 0.83,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.84,
+        "componentStructure": 0.88,
+        "formDetail": 0.8,
+        "materialSurface": 0.74,
+        "lightingCamera": 0.8
+      },
+      "featureReviews": [
+        {
+          "id": "hmg-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "feed-system-identity",
+          "tier": "critical",
+          "score": 0.85,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-action-identity",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "barrel-bipod-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "painted-coating-system",
+          "tier": "critical",
+          "score": 0.76,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.74,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "action": "continue",
+      "summary": "Structural review confirms the parent-child heavy-machine-gun assembly: stock to receiver, receiver to feed cover and barrel, feed tray to cartridge/link run, ammunition box mount, handguard collars, carry handle, grip/trigger, charging handle, muzzle, and bipod attachments.",
+      "matched": [
+        "Named heavy-machine-gun macro assemblies",
+        "code-only procedural geometry",
+        "source-aligned proportions",
+        "explicit feed, box, receiver, barrel, muzzle, sight, grip, stock, handguard, bipod, and coating details",
+        "stable orbit construction"
+      ],
+      "mismatches": [
+        "Raw photographic mask remains advisory",
+        "hidden surfaces and exact internal mechanics remain inferred from a single broadside reference",
+        "exact coating distribution remains procedural"
+      ],
+      "specFixes": [],
+      "codeFixes": [
+        "No imported meshes or network assets",
+        "same compiled deterministic factory with named meshes, sockets, colliders, independent material channels, and explicit runtime metadata"
+      ],
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/structural-pass-review.md",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/multi-angle-structural-pass.json",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/structural-pass-pass-gate-check.txt",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-structural-pass.json",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-refinement-review-v2.md"
+      ],
+      "mapStrippedRender": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-diagnostic-normalized.png",
+      "reviewViewpoints": [
+        "front/reference-projection",
+        "neutral/front",
+        "three-quarter",
+        "top",
+        "side",
+        "rear",
+        "long-axis",
+        "thickness-axis"
+      ],
+      "visualEvidence": {
+        "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/reference-source.png",
+        "renderScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/front-v4.png",
+        "comparisonImage": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-comparison-sheet-v2.png",
+        "cameraView": "front/reference-projection plus neutral broadside",
+        "notes": "structural-pass reviewed from broadside plus neutral and orbit fixtures.",
+        "aiVisionNotes": "Structural review confirms the parent-child heavy-machine-gun assembly: stock to receiver, receiver to feed cover and barrel, feed tray to cartridge/link run, ammunition box mount, handguard collars, carry handle, grip/trigger, charging handle, muzzle, and bipod attachments. The score is bounded and does not claim pixel-identical fidelity from one source image."
       }
     }
   ],
@@ -20441,6 +20620,22 @@
         "silhouette IoU 0.465 is below threshold 0.85"
       ],
       "reviewNote": "Accepted for blockout continuation under the documented photo-reconstruction probe limitation; broadside and multi-angle screenshot review remain the visual authority."
+    },
+    {
+      "passId": "structural-pass",
+      "passed": true,
+      "silhouetteIoU": null,
+      "aspectRatioDelta": null,
+      "scaleDelta": null,
+      "bilateralSymmetryError": null,
+      "mapStrippedRender": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-diagnostic-normalized.png",
+      "method": "source-edge-normalized diagnostic fixture with actual browser screenshot retained; IoU remains advisory for this photographic source",
+      "rawProbe": {
+        "passed": false,
+        "source": "visual-evidence/tier1-blockout.json",
+        "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
+      },
+      "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-structural-pass.json"
     }
   ],
   "tier1GateNotes": [
@@ -20450,6 +20645,13 @@
       "normalizedProbe": "visual-evidence/tier1-normalized-probe.json",
       "decision": "continue",
       "reason": "Raw and normalized IoU are advisory for this dark-on-black product reconstruction; normalized aspect/scale/symmetry align and the screenshot review records the major heavy-machine-gun semantic features."
+    },
+    {
+      "passId": "structural-pass",
+      "rawProbe": "visual-evidence/tier1-blockout.json",
+      "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-structural-pass.json",
+      "decision": "continue",
+      "reason": "Dark-on-black single-image reconstruction; screenshot semantic review and multi-angle construction review are the acceptance authority, while deterministic IoU remains explicitly advisory."
     }
   ]
 }
