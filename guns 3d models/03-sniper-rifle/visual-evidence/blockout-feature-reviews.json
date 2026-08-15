@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sniper-silhouette",
+    "score": 0.84,
+    "visible": true,
+    "note": "The full stock-to-muzzle span, shallow receiver, long barrel, compact muzzle, and skeleton-stock read are visible in the neutral broadside. The generic black-on-black photo mask is recorded separately as an advisory probe."
+  },
+  {
+    "id": "scope-bolt-identity",
+    "score": 0.86,
+    "visible": true,
+    "note": "The lower cylindrical scope, two ring mounts, elevation turret, objective bell, and polished bolt handle with spherical knob are visible in broadside and three-quarter views."
+  },
+  {
+    "id": "stock-negative-space",
+    "score": 0.84,
+    "visible": true,
+    "note": "The large open skeleton-stock cutout is explicit in broadside and remains readable in three-quarter orbit; the hidden backside is inferred from the single source view."
+  },
+  {
+    "id": "ornamental-coating",
+    "score": 0.78,
+    "visible": true,
+    "note": "The authored coating material and blue edge accents are visible in neutral light, while the source's broad blue-teal serpent ornament is a material-pass refinement target."
+  },
+  {
+    "id": "orbit-construction",
+    "score": 0.86,
+    "visible": true,
+    "note": "Three-quarter, top, and side captures show volumetric scope mounts, receiver depth, under-action support, barrel concentricity, and muzzle construction without a flat-plane collapse."
+  }
+]

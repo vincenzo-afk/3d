@@ -1,0 +1,3 @@
+# Three-Quarter Orbit Notes
+
+The three-quarter route confirms the sniper rifle is a genuine volumetric assembly rather than a flat broadside. The scope tube, eyepiece, objective bell, two rings, elevation turret, receiver shell, bolt handle/knob, skeleton stock braces, trigger guard, magazine, under-action rail, barrel, and muzzle hardware separate in depth. The silver barrel highlight and repeated under-action teeth read clearly, while the broad stock opening remains open through the orbit. The far-right muzzle is intentionally outside this crop because this view prioritizes construction depth; broadside remains the silhouette fixture.

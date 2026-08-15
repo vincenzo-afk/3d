@@ -1,0 +1,14 @@
+STATUS pass=structural-pass completed=1 blocked=none next=forge/stage3_build/orchestrate_passes.py status /home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json
+currentPass: structural-pass
+completedPasses: blockout
+required: Macro, meso, and repeated structures meet qualityContract.minimumSpecDepth.
+required: Parent-child relations, joints, seams, sockets, and contact points are explicit.
+required: Every attached child appendage/connector has parentSocket, localStart/localEnd, contactType, embedDepth or overlap, and gapTolerance.
+required: AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.
+required: attachment contracts for child appendages/connectors
+required: no floating child roots/joints in the browser screenshot
+required: browser render screenshot from your agent's browser/screenshot tool
+required: side-by-side reference/render comparison sheet for AI vision review
+required: AI vision score at or above the visual acceptance threshold
+required: all critical semantic feature scores from the shared image pair at or above their thresholds
+required: self-correction review appended with action=continue before the next pass

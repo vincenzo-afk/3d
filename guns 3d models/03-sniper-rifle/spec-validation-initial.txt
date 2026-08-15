@@ -1,0 +1,17 @@
+FAIL
+warning: quality: preSpecAssessment.objectClass.primaryType is unassessed
+warning: quality: preSpecAssessment.objectClass.formLanguage is empty
+warning: quality: preSpecAssessment.objectClass.structureKind is empty
+warning: quality: preSpecAssessment.objectClass.motionPotential is empty
+warning: quality: preSpecAssessment.objectClass.materialFamilies is empty
+warning: quality: component 'scopeMainTube' pairs topologyClass='continuous-sculpt' with disallowed primitive 'cylinder' (use lathe, extrude, or curve-sweep instead)
+warning: quality: detailInventory has 0 details but targetMinDetails is 16; enumerate identity-defining details (gloss, bevel, fasteners, linework, stains) before code generation
+error: component 'ejectionPortCut' topologyClass 'implicit' requires geometryDescriptor.sdf
+error: component 'scopeGlassHighlight' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: strict quality failure: preSpecAssessment.objectClass.primaryType is unassessed
+error: strict quality failure: preSpecAssessment.objectClass.formLanguage is empty
+error: strict quality failure: preSpecAssessment.objectClass.structureKind is empty
+error: strict quality failure: preSpecAssessment.objectClass.motionPotential is empty
+error: strict quality failure: preSpecAssessment.objectClass.materialFamilies is empty
+error: strict quality failure: component 'scopeMainTube' pairs topologyClass='continuous-sculpt' with disallowed primitive 'cylinder' (use lathe, extrude, or curve-sweep instead)
+error: strict quality failure: detailInventory has 0 details but targetMinDetails is 16; enumerate identity-defining details (gloss, bevel, fasteners, linework, stains) before code generation

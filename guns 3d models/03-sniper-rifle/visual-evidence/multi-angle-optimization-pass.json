@@ -1,0 +1,26 @@
+{
+  "referenceAreaFraction": 1.0,
+  "angles": [
+    {
+      "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+      "areaFraction": 0.999995625699888,
+      "ratio": 0.999995625699888,
+      "degenerate": false
+    },
+    {
+      "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+      "areaFraction": 1.0,
+      "ratio": 1.0,
+      "degenerate": false
+    },
+    {
+      "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+      "areaFraction": 1.0,
+      "ratio": 1.0,
+      "degenerate": false
+    }
+  ],
+  "degenerate": false,
+  "collapseRatio": 0.15,
+  "note": "deterministic; zero token; a flat-plane-faking-a-volume collapses in silhouette area when orbited"
+}

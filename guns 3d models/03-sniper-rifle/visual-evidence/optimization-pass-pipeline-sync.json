@@ -1,0 +1,17 @@
+{
+  "targetName": "03 Sniper Rifle Deep Rebuild",
+  "passGateMode": "locked-sequential",
+  "currentPass": "complete",
+  "completedPasses": [
+    "blockout",
+    "structural-pass",
+    "form-refinement",
+    "material-pass",
+    "surface-pass",
+    "lighting-pass",
+    "interaction-pass",
+    "optimization-pass"
+  ],
+  "nextRequiredEvidence": []
+}
+STATUS pass=complete completed=8 blocked=all build passes completed next=forge/stage3_build/orchestrate_passes.py sync /home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json

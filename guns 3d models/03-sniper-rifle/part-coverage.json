@@ -1,0 +1,106 @@
+{
+  "model": "03-sniper-rifle",
+  "specifiedComponents": 43,
+  "builtParts": 44,
+  "errors": 0,
+  "warnings": 15,
+  "result": "pass",
+  "findings": [
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "grip-trigger-opening",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "grip-front-bevel",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "receiver-top-rail",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "receiver-action-seam",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "receiver-fasteners",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "bolt-handle",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "bolt-knob",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "ejection-port",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "receiver-ornamental-panel",
+      "detail": "mapsTo 'receiverAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "barrel-root-shoulder",
+      "detail": "mapsTo 'barrelMuzzleAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "long-barrel",
+      "detail": "mapsTo 'barrelMuzzleAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "barrel-highlight",
+      "detail": "mapsTo 'barrelMuzzleAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "muzzle-collar",
+      "detail": "mapsTo 'barrelMuzzleAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "muzzle-slots",
+      "detail": "mapsTo 'barrelMuzzleAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "muzzle-bore",
+      "detail": "mapsTo 'barrelMuzzleAssembly' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "part-not-specified",
+      "severity": "info",
+      "subject": "root",
+      "detail": "built part has no matching component in the spec (fine for detail groups; a sign of spec drift for anything larger)"
+    }
+  ]
+}

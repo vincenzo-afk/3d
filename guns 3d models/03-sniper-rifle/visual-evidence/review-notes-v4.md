@@ -1,0 +1,5 @@
+# Sniper Rifle Review Notes — v4 Neutral Broadside
+
+The widened orthographic framing now contains the full stock-to-muzzle span with comfortable margins. The neutral-only inspection lift makes the authored silhouette readable: the skeleton stock cutout is unambiguous, the receiver and pistol grip are distinct, the large scope shows both rings, turret, eyepiece, objective bell, and front glass, the bolt handle has a visible spherical knob, the under-action silver support rail has repeated teeth, and the barrel terminates in a compact collar/brake with bore detail.
+
+The source-matched route remains intentionally dark because the reference is near-black on black; this is suitable for the photo-reconstruction probe but not for geometry judgment. The neutral route exposes the critical identity features for review. One remaining presentation issue is that the blue ornamental coating is currently mostly expressed as localized blue-violet edge/detail accents rather than a broad saturated stock/grip field; this should be recorded as a material-readability refinement candidate, not a blocker for the authored geometry pass.

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "sniper-silhouette",
+    "score": 0.84,
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact ornament uncertainty is documented as a single-image reconstruction limitation."
+  },
+  {
+    "id": "scope-bolt-identity",
+    "score": 0.84,
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact ornament uncertainty is documented as a single-image reconstruction limitation."
+  },
+  {
+    "id": "stock-negative-space",
+    "score": 0.84,
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact ornament uncertainty is documented as a single-image reconstruction limitation."
+  },
+  {
+    "id": "ornamental-coating",
+    "score": 0.8,
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact ornament uncertainty is documented as a single-image reconstruction limitation."
+  },
+  {
+    "id": "orbit-construction",
+    "score": 0.84,
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact ornament uncertainty is documented as a single-image reconstruction limitation."
+  }
+]

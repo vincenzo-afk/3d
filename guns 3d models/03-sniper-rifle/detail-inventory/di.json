@@ -1,0 +1,555 @@
+{
+  "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/reference-source.png",
+  "zonesDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory",
+  "detailInventory": {
+    "scanMethod": "component-zones",
+    "targetMinDetails": 32,
+    "details": [
+      {
+        "id": "stock-cutout",
+        "kind": "hole",
+        "description": "Large skeletonized stock opening and rear brace cutout",
+        "region": {
+          "sourceComponent": "stockAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "silhouette and negative space",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/stockAssembly.png",
+        "confidence": 0.97
+      },
+      {
+        "id": "stock-buttplate",
+        "kind": "bevel",
+        "description": "Squared rear butt plate with dark edge bevel",
+        "region": {
+          "sourceComponent": "stockAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "contact edge and silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/stockAssembly.png",
+        "confidence": 0.92
+      },
+      {
+        "id": "stock-cheek-rest",
+        "kind": "contour",
+        "description": "Raised cheek-rest plane above the stock opening",
+        "region": {
+          "sourceComponent": "stockAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "head support silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/stockAssembly.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "stock-ornamental-tendrils",
+        "kind": "linework",
+        "description": "Blue-violet and teal curling tendril coating over the stock side plate",
+        "region": {
+          "sourceComponent": "stockAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "ornamental material breakup",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/stockAssembly.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "stock-sling-fasteners",
+        "kind": "fastener",
+        "description": "Small circular stock fasteners and rear sling hardware",
+        "region": {
+          "sourceComponent": "stockAssembly",
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "surface rhythm and attachment",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/stockAssembly.png",
+        "confidence": 0.84
+      },
+      {
+        "id": "grip-trigger-opening",
+        "kind": "hole",
+        "description": "Curved pistol grip with open trigger guard silhouette",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "negative space and control layout",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "grip-front-bevel",
+        "kind": "bevel",
+        "description": "Bright curved bevel along the grip and trigger guard",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "edge highlight",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.88
+      },
+      {
+        "id": "receiver-top-rail",
+        "kind": "ridge",
+        "description": "Long top rail/saddle under the scope rings",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "optic attachment and upper silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "receiver-action-seam",
+        "kind": "seam",
+        "description": "Long bolt-action receiver seam and side panel break",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "hard-surface segmentation",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.91
+      },
+      {
+        "id": "receiver-fasteners",
+        "kind": "fastener",
+        "description": "Circular receiver fasteners along the side plate",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "surface rhythm",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.89
+      },
+      {
+        "id": "bolt-handle",
+        "kind": "contour",
+        "description": "Polished bolt handle projecting down and rearward",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "bolt-action identity",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.98
+      },
+      {
+        "id": "bolt-knob",
+        "kind": "sphere",
+        "description": "Spherical bolt knob at the end of the handle",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "interaction silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "ejection-port",
+        "kind": "hole",
+        "description": "Dark rectangular ejection/loading port near the action",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "cavity contrast",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "receiver-ornamental-panel",
+        "kind": "linework",
+        "description": "Branching blue coating crossing the rear action and grip",
+        "region": {
+          "sourceComponent": "receiverAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "material identity",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/receiverAssembly.png",
+        "confidence": 0.94
+      },
+      {
+        "id": "scope-eyepiece",
+        "kind": "contour",
+        "description": "Narrow rear eyepiece with stepped ring",
+        "region": {
+          "sourceComponent": "opticAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "optic silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/opticAssembly.png",
+        "confidence": 0.92
+      },
+      {
+        "id": "scope-main-tube",
+        "kind": "cylinder",
+        "description": "Long cylindrical precision scope body",
+        "region": {
+          "sourceComponent": "opticAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "primary optic volume",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/opticAssembly.png",
+        "confidence": 0.99
+      },
+      {
+        "id": "scope-ring-mounts",
+        "kind": "fastener",
+        "description": "Two scope ring mounts and clamp bands",
+        "region": {
+          "sourceComponent": "opticAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "attachment and repetition",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/opticAssembly.png",
+        "confidence": 0.97
+      },
+      {
+        "id": "scope-turret-housing",
+        "kind": "cylinder",
+        "description": "Large central elevation turret housing and cap",
+        "region": {
+          "sourceComponent": "opticAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "optic control detail",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/opticAssembly.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "scope-objective-bell",
+        "kind": "contour",
+        "description": "Broad front objective bell with stepped rim",
+        "region": {
+          "sourceComponent": "opticAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "optic silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/opticAssembly.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "scope-glass",
+        "kind": "decal",
+        "description": "Dark blue-gray glass and cool reflection band",
+        "region": {
+          "sourceComponent": "opticAssembly",
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "material response",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/opticAssembly.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "magazine-body",
+        "kind": "contour",
+        "description": "Short dark magazine/floorplate body under the receiver",
+        "region": {
+          "sourceComponent": "magazineTriggerAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "lower silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "magazineTriggerAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/magazineTriggerAssembly.png",
+        "confidence": 0.91
+      },
+      {
+        "id": "trigger-guard",
+        "kind": "hole",
+        "description": "Large open trigger guard under the action",
+        "region": {
+          "sourceComponent": "magazineTriggerAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "negative space",
+        "mapsTo": {
+          "type": "component",
+          "ref": "magazineTriggerAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/magazineTriggerAssembly.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "trigger-blade",
+        "kind": "contour",
+        "description": "Visible curved trigger blade inside the guard",
+        "region": {
+          "sourceComponent": "magazineTriggerAssembly",
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "interaction detail",
+        "mapsTo": {
+          "type": "component",
+          "ref": "magazineTriggerAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/magazineTriggerAssembly.png",
+        "confidence": 0.85
+      },
+      {
+        "id": "magazine-catch",
+        "kind": "fastener",
+        "description": "Small magazine catch/retaining detail",
+        "region": {
+          "sourceComponent": "magazineTriggerAssembly",
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "attachment detail",
+        "mapsTo": {
+          "type": "component",
+          "ref": "magazineTriggerAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/magazineTriggerAssembly.png",
+        "confidence": 0.78
+      },
+      {
+        "id": "under-action-rail",
+        "kind": "ridge",
+        "description": "Pale metallic under-action rail/support strip",
+        "region": {
+          "sourceComponent": "underActionAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "separated lower structure",
+        "mapsTo": {
+          "type": "component",
+          "ref": "underActionAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/underActionAssembly.png",
+        "confidence": 0.93
+      },
+      {
+        "id": "under-action-serrations",
+        "kind": "ridge",
+        "description": "Repeated bright action/support teeth beneath receiver",
+        "region": {
+          "sourceComponent": "underActionAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "repetition and contact shadow",
+        "mapsTo": {
+          "type": "component",
+          "ref": "underActionAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/underActionAssembly.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "barrel-root-shoulder",
+        "kind": "bevel",
+        "description": "Stepped barrel root and shoulder entering the receiver",
+        "region": {
+          "sourceComponent": "barrelMuzzleAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "mechanical transition",
+        "mapsTo": {
+          "type": "component",
+          "ref": "barrelMuzzleAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/barrelMuzzleAssembly.png",
+        "confidence": 0.93
+      },
+      {
+        "id": "long-barrel",
+        "kind": "cylinder",
+        "description": "Very long thin dark precision barrel",
+        "region": {
+          "sourceComponent": "barrelMuzzleAssembly",
+          "units": "normalized"
+        },
+        "scale": "macro",
+        "affects": "primary silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "barrelMuzzleAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/barrelMuzzleAssembly.png",
+        "confidence": 0.99
+      },
+      {
+        "id": "barrel-highlight",
+        "kind": "linework",
+        "description": "Narrow top highlight running along the barrel",
+        "region": {
+          "sourceComponent": "barrelMuzzleAssembly",
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "specular response",
+        "mapsTo": {
+          "type": "component",
+          "ref": "barrelMuzzleAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/barrelMuzzleAssembly.png",
+        "confidence": 0.83
+      },
+      {
+        "id": "muzzle-collar",
+        "kind": "contour",
+        "description": "Stepped compact muzzle collar/device",
+        "region": {
+          "sourceComponent": "barrelMuzzleAssembly",
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "front silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "barrelMuzzleAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/barrelMuzzleAssembly.png",
+        "confidence": 0.92
+      },
+      {
+        "id": "muzzle-slots",
+        "kind": "hole",
+        "description": "Small dark muzzle openings/slots around the front block",
+        "region": {
+          "sourceComponent": "barrelMuzzleAssembly",
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "negative space",
+        "mapsTo": {
+          "type": "component",
+          "ref": "barrelMuzzleAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/barrelMuzzleAssembly.png",
+        "confidence": 0.83
+      },
+      {
+        "id": "muzzle-bore",
+        "kind": "hole",
+        "description": "Front bore opening visible on the muzzle face",
+        "region": {
+          "sourceComponent": "barrelMuzzleAssembly",
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "cavity and barrel termination",
+        "mapsTo": {
+          "type": "component",
+          "ref": "barrelMuzzleAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/detail-inventory/barrelMuzzleAssembly.png",
+        "confidence": 0.9
+      }
+    ]
+  },
+  "authoringInstruction": "Inventory is filled from the source crop zones. Each observed feature is linked to a named component or material and is eligible for strict detail-coverage validation."
+}

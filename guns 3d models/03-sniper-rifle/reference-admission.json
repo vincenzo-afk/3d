@@ -1,0 +1,14 @@
+{
+  "admitted": true,
+  "reasons": [],
+  "provenance": {
+    "viewpoint": "broadside",
+    "sourcePath": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/reference-source.png",
+    "width": 2560,
+    "height": 1440,
+    "foregroundCoverage": 0.1186,
+    "largestComponentFraction": 1.0,
+    "pHash": 17730943264920739892,
+    "duplicateOfHash": null
+  }
+}

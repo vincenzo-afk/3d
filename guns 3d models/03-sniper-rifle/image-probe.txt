@@ -1,0 +1,11 @@
+{
+  "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/reference-source.png",
+  "type": "png",
+  "bytes": 414259,
+  "width": 2560,
+  "height": 1440,
+  "aspectRatio": 1.7777777777777777,
+  "technicalSuitability": "pass",
+  "warnings": [],
+  "note": "This is only technical image probing. Semantic object suitability still requires visual inspection."
+}

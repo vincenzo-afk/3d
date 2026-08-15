@@ -1,0 +1,65 @@
+{
+  "referenceId": "03-sniper-rifle-broadside",
+  "regions": [
+    {
+      "componentId": "receiverActionAssembly",
+      "regionId": "dark-anodized-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 680, "y": 418, "width": 710, "height": 92},
+      "family": "metal",
+      "subtype": "anodized-dark-metal",
+      "finish": "satin-or-machined",
+      "materialSpecId": "dark-anodized-metal"
+    },
+    {
+      "componentId": "stockOrnamentalPanel",
+      "regionId": "blue-ornamental-coating",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 70, "y": 430, "width": 610, "height": 170},
+      "family": "coating",
+      "subtype": "paint-over-metal",
+      "finish": "gloss-or-satin",
+      "materialSpecId": "blue-ornamental-coating"
+    },
+    {
+      "componentId": "stockAssembly",
+      "regionId": "charcoal-polymer",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 22, "y": 338, "width": 220, "height": 252},
+      "family": "plastic",
+      "subtype": "generic-polymer",
+      "finish": "matte-or-satin",
+      "materialSpecId": "charcoal-polymer"
+    },
+    {
+      "componentId": "ejectionPortCavity",
+      "regionId": "cavity-material",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 1370, "y": 455, "width": 240, "height": 92},
+      "family": "unknown",
+      "subtype": "recessed-dark-cavity",
+      "finish": "near-black-occluded",
+      "materialSpecId": "cavity-material"
+    },
+    {
+      "componentId": "scopeGlassSystem",
+      "regionId": "optic-glass",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 575, "y": 326, "width": 700, "height": 102},
+      "family": "glass",
+      "subtype": "clear-or-tinted-glass",
+      "finish": "glossy-reflective",
+      "materialSpecId": "optic-glass"
+    },
+    {
+      "componentId": "boltHandleSystem",
+      "regionId": "silver-action-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 650, "y": 470, "width": 330, "height": 95},
+      "family": "metal",
+      "subtype": "steel-polished",
+      "finish": "polished-or-brushed",
+      "materialSpecId": "silver-action-metal"
+    }
+  ]
+}

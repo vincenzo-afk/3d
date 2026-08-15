@@ -1,0 +1,44 @@
+{
+  "model": "03-sniper-rifle",
+  "checks": {
+    "rootUserDataSculptRuntime": true,
+    "sourceTraceAttached": true,
+    "codeOnlyProvenance": true,
+    "macroGroups": true,
+    "namedMeshes": true,
+    "selectableParts": true,
+    "sockets": true,
+    "colliders": true,
+    "destructionGroups": true,
+    "inspectRoutes": true,
+    "manifestIntegralMeshes": true
+  },
+  "parts": 44,
+  "integralMeshes": 104,
+  "requiredGroups": [
+    "stockAssembly",
+    "receiverActionAssembly",
+    "opticAssembly",
+    "magazineTriggerAssembly",
+    "underActionAssembly",
+    "barrelAssembly",
+    "muzzleAssembly"
+  ],
+  "requiredSockets": [
+    "stockAssemblySocket",
+    "receiverActionAssemblySocket",
+    "opticAssemblySocket",
+    "magazineTriggerAssemblySocket",
+    "underActionAssemblySocket",
+    "barrelAssemblySocket",
+    "muzzleAssemblySocket",
+    "scope-sight-line"
+  ],
+  "actionReady": true,
+  "notes": [
+    "Macro groups are stable transform pivots for the seven authored sniper assemblies.",
+    "Every authored mesh receives a stable name, runtime ID, selectable flag, and destruction-group membership.",
+    "Sockets, colliders, scope sight-line metadata, and source-trace/projection metadata are exposed under sculptRuntime/root.userData.",
+    "The audit validates the authored runtime contract statically; it does not claim a physics engine is installed."
+  ]
+}

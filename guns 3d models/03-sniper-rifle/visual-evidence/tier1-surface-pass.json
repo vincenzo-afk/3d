@@ -1,0 +1,200 @@
+{
+  "passed": false,
+  "checks": {
+    "silhouetteIoU": 0.544,
+    "aspectRatioDelta": 0.0,
+    "scaleDelta": 0.0,
+    "bilateralSymmetryError": 0.1415,
+    "colorDelta": {
+      "checked": 44,
+      "maxDeltaE": 21.31,
+      "perComponent": [
+        {
+          "componentId": null,
+          "deltaE": 5.62
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.74
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.9
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.9
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.9
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.9
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.74
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 3.37
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 21.31
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.9
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 3.37
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.74
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 3.37
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 7.63
+        },
+        {
+          "componentId": null,
+          "deltaE": 21.31
+        },
+        {
+          "componentId": null,
+          "deltaE": 3.37
+        },
+        {
+          "componentId": null,
+          "deltaE": 15.98
+        },
+        {
+          "componentId": null,
+          "deltaE": 3.37
+        }
+      ],
+      "gated": true
+    }
+  },
+  "failures": [
+    "silhouette IoU 0.544 is below threshold 0.85",
+    "max per-part color delta-E 21.31 exceeds threshold 20.0"
+  ],
+  "maskWarnings": [],
+  "renderHash": "cf1f7861d71ad118",
+  "passId": "surface-pass"
+}
+STATUS pass=surface-pass completed=4 blocked=none next=diagnose_render.py

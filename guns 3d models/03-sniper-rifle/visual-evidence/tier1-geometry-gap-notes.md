@@ -1,0 +1,5 @@
+# Tier-1 Geometry Gap Notes
+
+The source-derived reference has a low, wide precision chassis: the stock is a shallow rectangular skeleton with an oval cutout, the receiver is a slim horizontal body, the scope is longer and lower with a cylindrical objective bell, and the under-action metallic rail is a narrow bright assembly immediately below the fore-end. The procedural diagnostic currently has the correct global span but is too tall in the stock/receiver block, has a much larger and more angular stock opening, uses an oversized box-like objective bell, and places the under-action rail lower and heavier. These differences explain the normalized silhouette IoU of approximately 0.476 despite exact aspect-ratio and scale alignment.
+
+The identity features are present, but a true geometry refinement is warranted before unlocking later passes: reduce stock and receiver vertical mass, reshape the stock opening toward the reference's shallower oval/rounded-rect, lower and lengthen the cylindrical scope objective, and reduce the rail's vertical offset/thickness while keeping repeated teeth visible.

@@ -1,0 +1,39 @@
+FAIL
+warning: quality: detailInventory detail 'grip-trigger-opening' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'grip-front-bevel' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'receiver-top-rail' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'receiver-action-seam' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'receiver-fasteners' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'bolt-handle' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'bolt-knob' has unknown kind 'sphere'
+warning: quality: detailInventory detail 'bolt-knob' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'ejection-port' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'receiver-ornamental-panel' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'scope-main-tube' has unknown kind 'cylinder'
+warning: quality: detailInventory detail 'scope-turret-housing' has unknown kind 'cylinder'
+warning: quality: detailInventory detail 'barrel-root-shoulder' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'long-barrel' has unknown kind 'cylinder'
+warning: quality: detailInventory detail 'long-barrel' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'barrel-highlight' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'muzzle-collar' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'muzzle-slots' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'muzzle-bore' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'grip-trigger-opening' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'grip-front-bevel' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'receiver-top-rail' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'receiver-action-seam' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'receiver-fasteners' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'bolt-handle' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'bolt-knob' has unknown kind 'sphere'
+error: strict quality failure: detailInventory detail 'bolt-knob' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'ejection-port' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'receiver-ornamental-panel' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'scope-main-tube' has unknown kind 'cylinder'
+error: strict quality failure: detailInventory detail 'scope-turret-housing' has unknown kind 'cylinder'
+error: strict quality failure: detailInventory detail 'barrel-root-shoulder' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'long-barrel' has unknown kind 'cylinder'
+error: strict quality failure: detailInventory detail 'long-barrel' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'barrel-highlight' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'muzzle-collar' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'muzzle-slots' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'muzzle-bore' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)

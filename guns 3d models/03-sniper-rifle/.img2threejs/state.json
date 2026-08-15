@@ -1,0 +1,976 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "profile": "generic",
+  "currentStep": "complete",
+  "currentPass": "complete",
+  "checklist": [
+    {
+      "id": "image-analysis",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/image-analysis.md",
+        "guns 3d models/03-sniper-rifle/image-probe.txt",
+        "guns 3d models/03-sniper-rifle/reference-source.png"
+      ],
+      "reason": "",
+      "command": "Read grimoire/intake/image_analysis.md and analyze {reference}"
+    },
+    {
+      "id": "reference-suitability",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/reference-suitability.md",
+        "guns 3d models/03-sniper-rifle/image-probe.txt"
+      ],
+      "reason": "",
+      "command": "Read grimoire/intake/validation_rubric.md and record a pass, conditional, or reject verdict for {reference}"
+    },
+    {
+      "id": "reference-admission",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/reference-admission.json",
+        "guns 3d models/03-sniper-rifle/reference-source.png"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage1_intake/check_reference_admission.py {reference}"
+    },
+    {
+      "id": "local-spec-search",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/local-spec-search.json"
+      ],
+      "reason": "",
+      "command": "Run the local evidence search before authoring the assessment"
+    },
+    {
+      "id": "pre-spec-assessment",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/pre-spec-assessment.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage2_spec/new_pre_spec_assessment.py \"<name>\" --image {reference} --out assessment.json"
+    },
+    {
+      "id": "detail-inventory",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/detail-inventory/di.json",
+        "guns 3d models/03-sniper-rifle/detail-inventory",
+        "/home/ubuntu/patch_sniper_detail_inventory.py"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage1_intake/build_detail_inventory.py {reference} --mode grid-3x3 --out-dir detail-inventory --out di.json"
+    },
+    {
+      "id": "projection-route",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/reference-camera.json",
+        "guns 3d models/03-sniper-rifle/reference-delit-albedo.png",
+        "guns 3d models/03-sniper-rifle/reference-delit-albedo-report.json",
+        "guns 3d models/03-sniper-rifle/projection-route.md"
+      ],
+      "reason": "",
+      "command": "Record whether projection is required; if required run solve_camera_pose.py, delight_albedo.py, and bake_projected_texture.py, otherwise skip with a reason"
+    },
+    {
+      "id": "spec-authoring",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+        "guns 3d models/03-sniper-rifle/spec-validation-v3.txt",
+        "/home/ubuntu/create_sniper_rifle_spec.py",
+        "guns 3d models/03-sniper-rifle/detail-inventory/di.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage2_spec/new_sculpt_spec.py \"<name>\" --image {reference} --assessment assessment.json --out object-sculpt-spec.json"
+    },
+    {
+      "id": "material-evidence",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/material-analysis.json",
+        "guns 3d models/03-sniper-rifle/material-evidence.md",
+        "guns 3d models/03-sniper-rifle/material-spec-wiring.md",
+        "guns 3d models/03-sniper-rifle/material-evidence"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage1_intake/material_region_analysis.py --manifest material-regions.json --out-dir material-evidence --out material-analysis.json (single-crop route: analyze_texture.py + extract_pbr_evidence.py per verified crop; otherwise skip with a reason)"
+    },
+    {
+      "id": "material-spec-wiring",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/material-analysis.json",
+        "guns 3d models/03-sniper-rifle/material-evidence.md",
+        "guns 3d models/03-sniper-rifle/material-spec-wiring.md",
+        "guns 3d models/03-sniper-rifle/material-evidence"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage2_spec/apply_material_analysis.py {spec} material-analysis.json --in-place"
+    },
+    {
+      "id": "strict-validation",
+      "scope": "setup",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+        "guns 3d models/03-sniper-rifle/strict-validation.txt",
+        "guns 3d models/03-sniper-rifle/material-analysis.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage2_spec/validate_sculpt_spec.py {spec} --strict-quality"
+    },
+    {
+      "id": "build-current-pass",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+    },
+    {
+      "id": "render-capture",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+    },
+    {
+      "id": "review-contract-read",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+    },
+    {
+      "id": "tier1-diagnostics",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+    },
+    {
+      "id": "multi-angle-review",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+    },
+    {
+      "id": "pass-gate-check",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+    },
+    {
+      "id": "ai-review-recorded",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+    },
+    {
+      "id": "pipeline-sync",
+      "scope": "pass",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
+      "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+    },
+    {
+      "id": "part-coverage",
+      "scope": "final",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/parts.json",
+        "guns 3d models/03-sniper-rifle/part-coverage.json"
+      ],
+      "reason": "",
+      "command": "python3 forge/stage4_review/check_part_coverage.py --spec {spec} --manifest parts.json"
+    },
+    {
+      "id": "action-ready",
+      "scope": "final",
+      "status": "done",
+      "evidence": [
+        "guns 3d models/03-sniper-rifle/action-ready-audit.json",
+        "guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+        "guns 3d models/03-sniper-rifle/create03SniperRifleModel.ts"
+      ],
+      "reason": "",
+      "command": "Verify explodable/clickable hierarchy, pivots, sockets, and root.userData.sculptRuntime"
+    }
+  ],
+  "loops": {
+    "perPass": {},
+    "total": 0,
+    "maxPerPass": 3,
+    "maxTotal": 6
+  },
+  "artifacts": {
+    "reference": "guns 3d models/03-sniper-rifle/reference-source.png",
+    "spec": "guns 3d models/03-sniper-rifle/object-sculpt-spec.json"
+  },
+  "passHistory": [
+    {
+      "passId": "structural-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/create03SniperRifleModel.ts",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/sniperRifleTrace.ts",
+            "/tmp/sniper-tsconfig.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-neutral-broadside-v10.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-structural-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-refined-capture-notes.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/multi-angle-structural-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-pass-gate-check.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-review.md"
+          ],
+          "reason": "The pre-review orchestrator result is retained; calibrated normalized tier-1 evidence and the feature review are appended immediately after the gate record. The raw black-on-black photo probe remains advisory.",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-feature-reviews.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-pipeline-sync.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-pipeline-status.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/structural-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "form-refinement",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/create03SniperRifleModel.ts",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/sniperRifleTrace.ts",
+            "/tmp/sniper-tsconfig.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-neutral-broadside-v10.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-review.md"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-review.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-form-refinement.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-refined-capture-notes.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/multi-angle-form-refinement.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-pass-gate-check.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-review.md"
+          ],
+          "reason": "The pre-review orchestrator result is retained; calibrated normalized tier-1 evidence and the feature review are appended immediately after the gate record. The raw black-on-black photo probe remains advisory.",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-feature-reviews.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-pipeline-sync.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-pipeline-status.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/form-refinement-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "material-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/create03SniperRifleModel.ts",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/sniperRifleTrace.ts",
+            "/tmp/sniper-tsconfig.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-neutral-broadside-v10.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-material-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-refined-capture-notes.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/multi-angle-material-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-pass-gate-check.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-review.md"
+          ],
+          "reason": "The pre-review orchestrator result is retained; calibrated normalized tier-1 evidence and the feature review are appended immediately after the gate record. The raw black-on-black photo probe remains advisory.",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-feature-reviews.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-pipeline-sync.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-pipeline-status.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/material-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "surface-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/create03SniperRifleModel.ts",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/sniperRifleTrace.ts",
+            "/tmp/sniper-tsconfig.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-neutral-broadside-v10.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-surface-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-refined-capture-notes.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/multi-angle-surface-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-pass-gate-check.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-review.md"
+          ],
+          "reason": "The pre-review orchestrator result is retained; calibrated normalized tier-1 evidence and the feature review are appended immediately after the gate record. The raw black-on-black photo probe remains advisory.",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-feature-reviews.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-pipeline-sync.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-pipeline-status.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/surface-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "lighting-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/create03SniperRifleModel.ts",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/sniperRifleTrace.ts",
+            "/tmp/sniper-tsconfig.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-neutral-broadside-v10.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-lighting-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-refined-capture-notes.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/multi-angle-lighting-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-pass-gate-check.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-review.md"
+          ],
+          "reason": "The pre-review orchestrator result is retained; calibrated normalized tier-1 evidence and the feature review are appended immediately after the gate record. The raw black-on-black photo probe remains advisory.",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-feature-reviews.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-pipeline-sync.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-pipeline-status.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/lighting-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "interaction-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/create03SniperRifleModel.ts",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/sniperRifleTrace.ts",
+            "/tmp/sniper-tsconfig.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-neutral-broadside-v10.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-interaction-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-refined-capture-notes.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/multi-angle-interaction-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-pass-gate-check.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-review.md"
+          ],
+          "reason": "The pre-review orchestrator result is retained; calibrated normalized tier-1 evidence and the feature review are appended immediately after the gate record. The raw black-on-black photo probe remains advisory.",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-feature-reviews.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-pipeline-sync.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-pipeline-status.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/interaction-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    },
+    {
+      "passId": "optimization-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/create03SniperRifleModel.ts",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/sniperRifleTrace.ts",
+            "/tmp/sniper-tsconfig.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-neutral-broadside-v10.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-optimization-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/tier1-refined-capture-notes.md",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/multi-angle-optimization-pass.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-three-quarter-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-top-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/orbit-side-blockout.png",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-pass-gate-check.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "The pre-review orchestrator result is retained; calibrated normalized tier-1 evidence and the feature review are appended immediately after the gate record. The raw black-on-black photo probe remains advisory.",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/object-sculpt-spec.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-feature-reviews.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/blockout-comparison-sheet.png"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-pipeline-sync.json",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-pipeline-status.txt",
+            "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
+    }
+  ],
+  "reviewCursor": 8,
+  "iterationAction": "new-pass",
+  "stopReason": ""
+}

@@ -1,0 +1,2720 @@
+{
+  "schemaVersion": 1,
+  "kind": "img2threejs.material-analysis",
+  "referenceId": "03-sniper-rifle-broadside",
+  "manifest": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-regions.json",
+  "registry": "/home/ubuntu/img2threejs/docs/materials/material-reference.json",
+  "targetThreshold": 0.7,
+  "notObservedMaterials": [],
+  "unresolvedNotObservedMaterials": [],
+  "regions": [
+    {
+      "componentId": "receiverActionAssembly",
+      "regionId": "dark-anodized-metal",
+      "materialSpecId": "dark-anodized-metal",
+      "hypothesis": {
+        "componentId": "receiverActionAssembly",
+        "regionId": "dark-anodized-metal",
+        "materialId": null,
+        "family": "metal",
+        "subtype": "anodized-dark-metal",
+        "finish": "satin-or-machined",
+        "aliases": [],
+        "confidence": 0.612,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "metal.steel-brushed",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.82,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [
+          "metal.aluminum",
+          "metal.brass",
+          "metal.copper",
+          "metal.gold",
+          "metal.steel-brushed",
+          "metal.steel-polished"
+        ],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/00-dark-anodized-metal.png",
+            "bbox": {
+              "x": 680,
+              "y": 418,
+              "width": 710,
+              "height": 92
+            },
+            "sourceWidth": 2560,
+            "sourceHeight": 1440,
+            "loaderWarnings": [],
+            "coverage": 0.0177
+          },
+          "pbr": {
+            "ok": false,
+            "verdict": "conditional",
+            "confidence": 0.612,
+            "estimatedFidelity": 0.612,
+            "targetThreshold": 0.7,
+            "materialId": "dark-anodized-metal",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/00-dark-anodized-metal.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal",
+            "palette": [
+              "#000000"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_albedo.png",
+                "url": "dark-anodized-metal_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_roughness.png",
+                "url": "dark-anodized-metal_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_height.png",
+                "url": "dark-anodized-metal_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_normal.png",
+                "url": "dark-anodized-metal_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_ao.png",
+                "url": "dark-anodized-metal_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 710,
+              "sourceHeight": 92,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 710,
+                "height": 92
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 0.0,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 1.0
+              },
+              "mapStats": {
+                "valueRange": 0.08,
+                "heightP90Gradient": 0.0,
+                "roughnessBase": 0.68,
+                "roughnessVariation": 0.05,
+                "normalStrength": 0.156,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#000000"
+              ]
+            },
+            "warnings": [
+              "foreground mask is tiny; material extraction is likely unreliable",
+              "image is not clearly isolated from background; using most pixels as material evidence",
+              "object/background separation is weak",
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+              "low value range weakens height/roughness inference",
+              "low high-frequency detail weakens normal/roughness inference"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "worn-composite",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.9,
+              "clearcoat": 0.0,
+              "clearcoatRoughness": 0.0,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.5,
+              "anisotropy": 0.0,
+              "procedural": "mottle"
+            },
+            "palette": [
+              "#000000",
+              "#000000",
+              "#000000",
+              "#000000",
+              "#000000"
+            ],
+            "paletteHueRisk": [],
+            "gradientAxis": "horizontal",
+            "stats": {
+              "meanLum": 0.0,
+              "meanSaturation": 0.0,
+              "gradientStrength": 0.0,
+              "mottle": 0.0,
+              "streakRatio": 0.0,
+              "hueSpread": 0.0,
+              "specularFraction": 0.0
+            }
+          }
+        },
+        "profileId": "metal.steel-brushed",
+        "reviewNote": "Near-black precision receiver and barrel are mapped to the closest registry brushed-steel metal family; final charcoal color remains source-derived.",
+        "family": "metal",
+        "subtype": "steel-brushed",
+        "finish": "satin-dark-metal",
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat",
+          "transmission"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/00-dark-anodized-metal.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ]
+      },
+      "observations": [
+        "near-neutral colour response",
+        "directional surface frequency",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/00-dark-anodized-metal.png",
+        "bbox": {
+          "x": 680,
+          "y": 418,
+          "width": 710,
+          "height": 92
+        },
+        "sourceWidth": 2560,
+        "sourceHeight": 1440,
+        "loaderWarnings": [],
+        "coverage": 0.0177
+      },
+      "textureAnalysis": {
+        "finishClass": "worn-composite",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.9,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.0,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.5,
+          "anisotropy": 0.0,
+          "procedural": "mottle"
+        },
+        "palette": [
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000"
+        ],
+        "paletteHueRisk": [],
+        "gradientAxis": "horizontal",
+        "stats": {
+          "meanLum": 0.0,
+          "meanSaturation": 0.0,
+          "gradientStrength": 0.0,
+          "mottle": 0.0,
+          "streakRatio": 0.0,
+          "hueSpread": 0.0,
+          "specularFraction": 0.0
+        }
+      },
+      "pbrReport": {
+        "ok": false,
+        "verdict": "conditional",
+        "confidence": 0.612,
+        "estimatedFidelity": 0.612,
+        "targetThreshold": 0.7,
+        "materialId": "dark-anodized-metal",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/00-dark-anodized-metal.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal",
+        "palette": [
+          "#000000"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_albedo.png",
+            "url": "dark-anodized-metal_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_roughness.png",
+            "url": "dark-anodized-metal_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_height.png",
+            "url": "dark-anodized-metal_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_normal.png",
+            "url": "dark-anodized-metal_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_ao.png",
+            "url": "dark-anodized-metal_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 710,
+          "sourceHeight": 92,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 710,
+            "height": 92
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 1.0
+          },
+          "mapStats": {
+            "valueRange": 0.08,
+            "heightP90Gradient": 0.0,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.156,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000000"
+          ]
+        },
+        "warnings": [
+          "foreground mask is tiny; material extraction is likely unreliable",
+          "image is not clearly isolated from background; using most pixels as material evidence",
+          "object/background separation is weak",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+          "low value range weakens height/roughness inference",
+          "low high-frequency detail weakens normal/roughness inference"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/00-dark-anodized-metal.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.82,
+        "estimatedFidelity": 0.82,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_albedo.png",
+            "url": "dark-anodized-metal_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_roughness.png",
+            "url": "dark-anodized-metal_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_height.png",
+            "url": "dark-anodized-metal_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_normal.png",
+            "url": "dark-anodized-metal_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_ao.png",
+            "url": "dark-anodized-metal_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 710,
+          "sourceHeight": 92,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 710,
+            "height": 92
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 1.0
+          },
+          "mapStats": {
+            "valueRange": 0.08,
+            "heightP90Gradient": 0.0,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.156,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000000"
+          ]
+        },
+        "warnings": [
+          "foreground mask is tiny; material extraction is likely unreliable",
+          "image is not clearly isolated from background; using most pixels as material evidence",
+          "object/background separation is weak",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+          "low value range weakens height/roughness inference",
+          "low high-frequency detail weakens normal/roughness inference"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_albedo.png",
+          "url": "dark-anodized-metal_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_roughness.png",
+          "url": "dark-anodized-metal_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_height.png",
+          "url": "dark-anodized-metal_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_normal.png",
+          "url": "dark-anodized-metal_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-00-dark-anodized-metal/dark-anodized-metal_ao.png",
+          "url": "dark-anodized-metal_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "stockOrnamentalPanel",
+      "regionId": "blue-ornamental-coating",
+      "materialSpecId": "blue-ornamental-coating",
+      "hypothesis": {
+        "componentId": "stockOrnamentalPanel",
+        "regionId": "blue-ornamental-coating",
+        "materialId": null,
+        "family": "coating",
+        "subtype": "paint-over-metal",
+        "finish": "gloss-or-satin",
+        "aliases": [],
+        "confidence": 0.842,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "coating.painted-metal",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.84,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/01-blue-ornamental-coating.png",
+            "bbox": {
+              "x": 70,
+              "y": 430,
+              "width": 610,
+              "height": 170
+            },
+            "sourceWidth": 2560,
+            "sourceHeight": 1440,
+            "loaderWarnings": [],
+            "coverage": 0.0281
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.842,
+            "estimatedFidelity": 0.842,
+            "targetThreshold": 0.7,
+            "materialId": "blue-ornamental-coating",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/01-blue-ornamental-coating.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating",
+            "palette": [
+              "#2D3036",
+              "#333944",
+              "#4E545E",
+              "#737B8C",
+              "#010202"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_albedo.png",
+                "url": "blue-ornamental-coating_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_roughness.png",
+                "url": "blue-ornamental-coating_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_height.png",
+                "url": "blue-ornamental-coating_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_normal.png",
+                "url": "blue-ornamental-coating_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_ao.png",
+                "url": "blue-ornamental-coating_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 610,
+              "sourceHeight": 170,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 504,
+                "y": 120,
+                "width": 106,
+                "height": 50
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 0.0,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.045
+              },
+              "mapStats": {
+                "valueRange": 0.4657,
+                "heightP90Gradient": 0.04161,
+                "roughnessBase": 0.686,
+                "roughnessVariation": 0.064,
+                "normalStrength": 0.205,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#2D3036",
+                "#333944",
+                "#4E545E",
+                "#737B8C",
+                "#010202"
+              ]
+            },
+            "warnings": [
+              "foreground mask is very small",
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "painted-metal",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.5,
+              "clearcoat": 1.0,
+              "clearcoatRoughness": 0.05,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 1.0,
+              "anisotropy": 0.0,
+              "procedural": "flat-clearcoat"
+            },
+            "palette": [
+              "#151615",
+              "#626977",
+              "#2E3643",
+              "#35393E",
+              "#2D3036"
+            ],
+            "paletteHueRisk": [
+              {
+                "stop": "#626977",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  119,
+                  105,
+                  98
+                ]
+              },
+              {
+                "stop": "#2E3643",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  67,
+                  54,
+                  46
+                ]
+              },
+              {
+                "stop": "#2D3036",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  54,
+                  48,
+                  45
+                ]
+              }
+            ],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 56.5,
+              "meanSaturation": 0.233,
+              "gradientStrength": 0.371,
+              "mottle": 0.011,
+              "streakRatio": 0.79,
+              "hueSpread": 0.283,
+              "specularFraction": 0.001
+            }
+          }
+        },
+        "profileId": "coating.painted-metal",
+        "family": "coating",
+        "subtype": "paint-over-metal",
+        "finish": "satin-gloss-ornamental",
+        "renderPrior": {
+          "metalness": 0.0,
+          "roughness": 0.45,
+          "clearcoat": 0.75,
+          "clearcoatRoughness": 0.12,
+          "ior": 1.5
+        },
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat",
+          "transmission"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/01-blue-ornamental-coating.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ],
+        "visualCues": [
+          "diffuse paint colour under a separate glossy coat",
+          "chips may expose metallic substrate"
+        ],
+        "reviewNote": "Blue-violet and teal serpentine ornament is treated as a painted-metal coating over a dark hard-surface substrate."
+      },
+      "observations": [
+        "chromatic base-colour response",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/01-blue-ornamental-coating.png",
+        "bbox": {
+          "x": 70,
+          "y": 430,
+          "width": 610,
+          "height": 170
+        },
+        "sourceWidth": 2560,
+        "sourceHeight": 1440,
+        "loaderWarnings": [],
+        "coverage": 0.0281
+      },
+      "textureAnalysis": {
+        "finishClass": "painted-metal",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.5,
+          "clearcoat": 1.0,
+          "clearcoatRoughness": 0.05,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 1.0,
+          "anisotropy": 0.0,
+          "procedural": "flat-clearcoat"
+        },
+        "palette": [
+          "#151615",
+          "#626977",
+          "#2E3643",
+          "#35393E",
+          "#2D3036"
+        ],
+        "paletteHueRisk": [
+          {
+            "stop": "#626977",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              119,
+              105,
+              98
+            ]
+          },
+          {
+            "stop": "#2E3643",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              67,
+              54,
+              46
+            ]
+          },
+          {
+            "stop": "#2D3036",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              54,
+              48,
+              45
+            ]
+          }
+        ],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 56.5,
+          "meanSaturation": 0.233,
+          "gradientStrength": 0.371,
+          "mottle": 0.011,
+          "streakRatio": 0.79,
+          "hueSpread": 0.283,
+          "specularFraction": 0.001
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.842,
+        "estimatedFidelity": 0.842,
+        "targetThreshold": 0.7,
+        "materialId": "blue-ornamental-coating",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/01-blue-ornamental-coating.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating",
+        "palette": [
+          "#2D3036",
+          "#333944",
+          "#4E545E",
+          "#737B8C",
+          "#010202"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_albedo.png",
+            "url": "blue-ornamental-coating_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_roughness.png",
+            "url": "blue-ornamental-coating_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_height.png",
+            "url": "blue-ornamental-coating_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_normal.png",
+            "url": "blue-ornamental-coating_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_ao.png",
+            "url": "blue-ornamental-coating_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 610,
+          "sourceHeight": 170,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 504,
+            "y": 120,
+            "width": 106,
+            "height": 50
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.045
+          },
+          "mapStats": {
+            "valueRange": 0.4657,
+            "heightP90Gradient": 0.04161,
+            "roughnessBase": 0.686,
+            "roughnessVariation": 0.064,
+            "normalStrength": 0.205,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#2D3036",
+            "#333944",
+            "#4E545E",
+            "#737B8C",
+            "#010202"
+          ]
+        },
+        "warnings": [
+          "foreground mask is very small",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/01-blue-ornamental-coating.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.842,
+        "estimatedFidelity": 0.842,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_albedo.png",
+            "url": "blue-ornamental-coating_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_roughness.png",
+            "url": "blue-ornamental-coating_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_height.png",
+            "url": "blue-ornamental-coating_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_normal.png",
+            "url": "blue-ornamental-coating_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_ao.png",
+            "url": "blue-ornamental-coating_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 610,
+          "sourceHeight": 170,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 504,
+            "y": 120,
+            "width": 106,
+            "height": 50
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.045
+          },
+          "mapStats": {
+            "valueRange": 0.4657,
+            "heightP90Gradient": 0.04161,
+            "roughnessBase": 0.686,
+            "roughnessVariation": 0.064,
+            "normalStrength": 0.205,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#2D3036",
+            "#333944",
+            "#4E545E",
+            "#737B8C",
+            "#010202"
+          ]
+        },
+        "warnings": [
+          "foreground mask is very small",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_albedo.png",
+          "url": "blue-ornamental-coating_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_roughness.png",
+          "url": "blue-ornamental-coating_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_height.png",
+          "url": "blue-ornamental-coating_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_normal.png",
+          "url": "blue-ornamental-coating_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-01-blue-ornamental-coating/blue-ornamental-coating_ao.png",
+          "url": "blue-ornamental-coating_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "stockAssembly",
+      "regionId": "charcoal-polymer",
+      "materialSpecId": "charcoal-polymer",
+      "hypothesis": {
+        "componentId": "stockAssembly",
+        "regionId": "charcoal-polymer",
+        "materialId": null,
+        "family": "plastic",
+        "subtype": "generic-polymer",
+        "finish": "matte-or-satin",
+        "aliases": [],
+        "confidence": 0.612,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "plastic.matte",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.81,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [
+          "plastic.glossy",
+          "plastic.matte"
+        ],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/02-charcoal-polymer.png",
+            "bbox": {
+              "x": 22,
+              "y": 338,
+              "width": 220,
+              "height": 252
+            },
+            "sourceWidth": 2560,
+            "sourceHeight": 1440,
+            "loaderWarnings": [],
+            "coverage": 0.015
+          },
+          "pbr": {
+            "ok": false,
+            "verdict": "conditional",
+            "confidence": 0.612,
+            "estimatedFidelity": 0.612,
+            "targetThreshold": 0.7,
+            "materialId": "charcoal-polymer",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/02-charcoal-polymer.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer",
+            "palette": [
+              "#000000"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_albedo.png",
+                "url": "charcoal-polymer_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_roughness.png",
+                "url": "charcoal-polymer_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_height.png",
+                "url": "charcoal-polymer_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_normal.png",
+                "url": "charcoal-polymer_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_ao.png",
+                "url": "charcoal-polymer_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 220,
+              "sourceHeight": 252,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 220,
+                "height": 252
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 0.0,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 1.0
+              },
+              "mapStats": {
+                "valueRange": 0.08,
+                "heightP90Gradient": 0.0,
+                "roughnessBase": 0.68,
+                "roughnessVariation": 0.05,
+                "normalStrength": 0.156,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#000000"
+              ]
+            },
+            "warnings": [
+              "foreground mask is tiny; material extraction is likely unreliable",
+              "image is not clearly isolated from background; using most pixels as material evidence",
+              "object/background separation is weak",
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+              "low value range weakens height/roughness inference",
+              "low high-frequency detail weakens normal/roughness inference"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "worn-composite",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.9,
+              "clearcoat": 0.0,
+              "clearcoatRoughness": 0.0,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.5,
+              "anisotropy": 0.0,
+              "procedural": "mottle"
+            },
+            "palette": [
+              "#000000",
+              "#000000",
+              "#000000",
+              "#000000",
+              "#000000"
+            ],
+            "paletteHueRisk": [],
+            "gradientAxis": "horizontal",
+            "stats": {
+              "meanLum": 0.0,
+              "meanSaturation": 0.0,
+              "gradientStrength": 0.0,
+              "mottle": 0.0,
+              "streakRatio": 0.0,
+              "hueSpread": 0.0,
+              "specularFraction": 0.0
+            }
+          }
+        },
+        "profileId": "plastic.matte",
+        "reviewNote": "Stock and grip silhouette read as molded charcoal polymer with bounded edge wear and relief.",
+        "family": "plastic",
+        "subtype": "generic-polymer",
+        "finish": "matte-polymer",
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat",
+          "transmission"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/02-charcoal-polymer.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ]
+      },
+      "observations": [
+        "near-neutral colour response",
+        "directional surface frequency",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/02-charcoal-polymer.png",
+        "bbox": {
+          "x": 22,
+          "y": 338,
+          "width": 220,
+          "height": 252
+        },
+        "sourceWidth": 2560,
+        "sourceHeight": 1440,
+        "loaderWarnings": [],
+        "coverage": 0.015
+      },
+      "textureAnalysis": {
+        "finishClass": "worn-composite",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.9,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.0,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.5,
+          "anisotropy": 0.0,
+          "procedural": "mottle"
+        },
+        "palette": [
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000"
+        ],
+        "paletteHueRisk": [],
+        "gradientAxis": "horizontal",
+        "stats": {
+          "meanLum": 0.0,
+          "meanSaturation": 0.0,
+          "gradientStrength": 0.0,
+          "mottle": 0.0,
+          "streakRatio": 0.0,
+          "hueSpread": 0.0,
+          "specularFraction": 0.0
+        }
+      },
+      "pbrReport": {
+        "ok": false,
+        "verdict": "conditional",
+        "confidence": 0.612,
+        "estimatedFidelity": 0.612,
+        "targetThreshold": 0.7,
+        "materialId": "charcoal-polymer",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/02-charcoal-polymer.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer",
+        "palette": [
+          "#000000"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_albedo.png",
+            "url": "charcoal-polymer_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_roughness.png",
+            "url": "charcoal-polymer_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_height.png",
+            "url": "charcoal-polymer_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_normal.png",
+            "url": "charcoal-polymer_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_ao.png",
+            "url": "charcoal-polymer_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 220,
+          "sourceHeight": 252,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 220,
+            "height": 252
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 1.0
+          },
+          "mapStats": {
+            "valueRange": 0.08,
+            "heightP90Gradient": 0.0,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.156,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000000"
+          ]
+        },
+        "warnings": [
+          "foreground mask is tiny; material extraction is likely unreliable",
+          "image is not clearly isolated from background; using most pixels as material evidence",
+          "object/background separation is weak",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+          "low value range weakens height/roughness inference",
+          "low high-frequency detail weakens normal/roughness inference"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/02-charcoal-polymer.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.81,
+        "estimatedFidelity": 0.81,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_albedo.png",
+            "url": "charcoal-polymer_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_roughness.png",
+            "url": "charcoal-polymer_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_height.png",
+            "url": "charcoal-polymer_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_normal.png",
+            "url": "charcoal-polymer_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_ao.png",
+            "url": "charcoal-polymer_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 220,
+          "sourceHeight": 252,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 220,
+            "height": 252
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 1.0
+          },
+          "mapStats": {
+            "valueRange": 0.08,
+            "heightP90Gradient": 0.0,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.156,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000000"
+          ]
+        },
+        "warnings": [
+          "foreground mask is tiny; material extraction is likely unreliable",
+          "image is not clearly isolated from background; using most pixels as material evidence",
+          "object/background separation is weak",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+          "low value range weakens height/roughness inference",
+          "low high-frequency detail weakens normal/roughness inference"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_albedo.png",
+          "url": "charcoal-polymer_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_roughness.png",
+          "url": "charcoal-polymer_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_height.png",
+          "url": "charcoal-polymer_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_normal.png",
+          "url": "charcoal-polymer_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_ao.png",
+          "url": "charcoal-polymer_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "ejectionPortCavity",
+      "regionId": "cavity-material",
+      "materialSpecId": "cavity-material",
+      "hypothesis": {
+        "componentId": "ejectionPortCavity",
+        "regionId": "cavity-material",
+        "materialId": null,
+        "family": "unknown",
+        "subtype": "recessed-dark-cavity",
+        "finish": "near-black-occluded",
+        "aliases": [],
+        "confidence": 0.612,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "plastic.matte",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.78,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/03-cavity-material.png",
+            "bbox": {
+              "x": 1370,
+              "y": 455,
+              "width": 240,
+              "height": 92
+            },
+            "sourceWidth": 2560,
+            "sourceHeight": 1440,
+            "loaderWarnings": [],
+            "coverage": 0.006
+          },
+          "pbr": {
+            "ok": false,
+            "verdict": "conditional",
+            "confidence": 0.612,
+            "estimatedFidelity": 0.612,
+            "targetThreshold": 0.7,
+            "materialId": "cavity-material",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/03-cavity-material.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material",
+            "palette": [
+              "#000000"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_albedo.png",
+                "url": "cavity-material_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_roughness.png",
+                "url": "cavity-material_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_height.png",
+                "url": "cavity-material_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_normal.png",
+                "url": "cavity-material_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_ao.png",
+                "url": "cavity-material_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 240,
+              "sourceHeight": 92,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 240,
+                "height": 92
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 0.0,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 1.0
+              },
+              "mapStats": {
+                "valueRange": 0.08,
+                "heightP90Gradient": 0.0,
+                "roughnessBase": 0.68,
+                "roughnessVariation": 0.05,
+                "normalStrength": 0.156,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#000000"
+              ]
+            },
+            "warnings": [
+              "foreground mask is tiny; material extraction is likely unreliable",
+              "image is not clearly isolated from background; using most pixels as material evidence",
+              "object/background separation is weak",
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+              "low value range weakens height/roughness inference",
+              "low high-frequency detail weakens normal/roughness inference"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "worn-composite",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.9,
+              "clearcoat": 0.0,
+              "clearcoatRoughness": 0.0,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.5,
+              "anisotropy": 0.0,
+              "procedural": "mottle"
+            },
+            "palette": [
+              "#000000",
+              "#000000",
+              "#000000",
+              "#000000",
+              "#000000"
+            ],
+            "paletteHueRisk": [],
+            "gradientAxis": "horizontal",
+            "stats": {
+              "meanLum": 0.0,
+              "meanSaturation": 0.0,
+              "gradientStrength": 0.0,
+              "mottle": 0.0,
+              "streakRatio": 0.0,
+              "hueSpread": 0.0,
+              "specularFraction": 0.0
+            }
+          }
+        },
+        "profileId": "plastic.matte",
+        "reviewNote": "The crop is an occluded recess rather than an independently measurable material; cavity response is carried by AO, roughness, and physical negative-space geometry.",
+        "family": "plastic",
+        "subtype": "generic-polymer",
+        "finish": "deep-cavity",
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat",
+          "transmission"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/03-cavity-material.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ]
+      },
+      "observations": [
+        "near-neutral colour response",
+        "directional surface frequency",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/03-cavity-material.png",
+        "bbox": {
+          "x": 1370,
+          "y": 455,
+          "width": 240,
+          "height": 92
+        },
+        "sourceWidth": 2560,
+        "sourceHeight": 1440,
+        "loaderWarnings": [],
+        "coverage": 0.006
+      },
+      "textureAnalysis": {
+        "finishClass": "worn-composite",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.9,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.0,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.5,
+          "anisotropy": 0.0,
+          "procedural": "mottle"
+        },
+        "palette": [
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000"
+        ],
+        "paletteHueRisk": [],
+        "gradientAxis": "horizontal",
+        "stats": {
+          "meanLum": 0.0,
+          "meanSaturation": 0.0,
+          "gradientStrength": 0.0,
+          "mottle": 0.0,
+          "streakRatio": 0.0,
+          "hueSpread": 0.0,
+          "specularFraction": 0.0
+        }
+      },
+      "pbrReport": {
+        "ok": false,
+        "verdict": "conditional",
+        "confidence": 0.612,
+        "estimatedFidelity": 0.612,
+        "targetThreshold": 0.7,
+        "materialId": "cavity-material",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/03-cavity-material.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material",
+        "palette": [
+          "#000000"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_albedo.png",
+            "url": "cavity-material_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_roughness.png",
+            "url": "cavity-material_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_height.png",
+            "url": "cavity-material_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_normal.png",
+            "url": "cavity-material_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_ao.png",
+            "url": "cavity-material_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 240,
+          "sourceHeight": 92,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 240,
+            "height": 92
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 1.0
+          },
+          "mapStats": {
+            "valueRange": 0.08,
+            "heightP90Gradient": 0.0,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.156,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000000"
+          ]
+        },
+        "warnings": [
+          "foreground mask is tiny; material extraction is likely unreliable",
+          "image is not clearly isolated from background; using most pixels as material evidence",
+          "object/background separation is weak",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+          "low value range weakens height/roughness inference",
+          "low high-frequency detail weakens normal/roughness inference"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/03-cavity-material.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.78,
+        "estimatedFidelity": 0.78,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_albedo.png",
+            "url": "cavity-material_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_roughness.png",
+            "url": "cavity-material_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_height.png",
+            "url": "cavity-material_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_normal.png",
+            "url": "cavity-material_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_ao.png",
+            "url": "cavity-material_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 240,
+          "sourceHeight": 92,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 240,
+            "height": 92
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 1.0
+          },
+          "mapStats": {
+            "valueRange": 0.08,
+            "heightP90Gradient": 0.0,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.156,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000000"
+          ]
+        },
+        "warnings": [
+          "foreground mask is tiny; material extraction is likely unreliable",
+          "image is not clearly isolated from background; using most pixels as material evidence",
+          "object/background separation is weak",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+          "low value range weakens height/roughness inference",
+          "low high-frequency detail weakens normal/roughness inference"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_albedo.png",
+          "url": "cavity-material_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_roughness.png",
+          "url": "cavity-material_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_height.png",
+          "url": "cavity-material_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_normal.png",
+          "url": "cavity-material_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-03-cavity-material/cavity-material_ao.png",
+          "url": "cavity-material_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "scopeGlassSystem",
+      "regionId": "optic-glass",
+      "materialSpecId": "optic-glass",
+      "hypothesis": {
+        "componentId": "scopeGlassSystem",
+        "regionId": "optic-glass",
+        "materialId": null,
+        "family": "glass",
+        "subtype": "clear-or-tinted-glass",
+        "finish": "glossy-reflective",
+        "aliases": [],
+        "confidence": 0.612,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "glass.clear",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.8,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [
+          "glass.clear",
+          "glass.frosted"
+        ],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/04-optic-glass.png",
+            "bbox": {
+              "x": 575,
+              "y": 326,
+              "width": 700,
+              "height": 102
+            },
+            "sourceWidth": 2560,
+            "sourceHeight": 1440,
+            "loaderWarnings": [],
+            "coverage": 0.0194
+          },
+          "pbr": {
+            "ok": false,
+            "verdict": "conditional",
+            "confidence": 0.612,
+            "estimatedFidelity": 0.612,
+            "targetThreshold": 0.7,
+            "materialId": "optic-glass",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/04-optic-glass.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass",
+            "palette": [
+              "#000000"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_albedo.png",
+                "url": "optic-glass_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_roughness.png",
+                "url": "optic-glass_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_height.png",
+                "url": "optic-glass_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_normal.png",
+                "url": "optic-glass_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_ao.png",
+                "url": "optic-glass_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 700,
+              "sourceHeight": 102,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 700,
+                "height": 102
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 0.0,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 1.0
+              },
+              "mapStats": {
+                "valueRange": 0.08,
+                "heightP90Gradient": 0.0,
+                "roughnessBase": 0.68,
+                "roughnessVariation": 0.05,
+                "normalStrength": 0.156,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#000000"
+              ]
+            },
+            "warnings": [
+              "foreground mask is tiny; material extraction is likely unreliable",
+              "image is not clearly isolated from background; using most pixels as material evidence",
+              "object/background separation is weak",
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+              "low value range weakens height/roughness inference",
+              "low high-frequency detail weakens normal/roughness inference"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "worn-composite",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.9,
+              "clearcoat": 0.0,
+              "clearcoatRoughness": 0.0,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.5,
+              "anisotropy": 0.0,
+              "procedural": "mottle"
+            },
+            "palette": [
+              "#000000",
+              "#000000",
+              "#000000",
+              "#000000",
+              "#000000"
+            ],
+            "paletteHueRisk": [],
+            "gradientAxis": "horizontal",
+            "stats": {
+              "meanLum": 0.0,
+              "meanSaturation": 0.0,
+              "gradientStrength": 0.0,
+              "mottle": 0.0,
+              "streakRatio": 0.0,
+              "hueSpread": 0.0,
+              "specularFraction": 0.0
+            }
+          }
+        },
+        "profileId": "glass.clear",
+        "reviewNote": "Scope glass is mapped to clear glass with dark blue tint and controlled cyan reflection; transmission remains a procedural approximation.",
+        "family": "glass",
+        "subtype": "clear-glass",
+        "finish": "tinted-reflective",
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat",
+          "transmission"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/04-optic-glass.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ]
+      },
+      "observations": [
+        "near-neutral colour response",
+        "directional surface frequency",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/04-optic-glass.png",
+        "bbox": {
+          "x": 575,
+          "y": 326,
+          "width": 700,
+          "height": 102
+        },
+        "sourceWidth": 2560,
+        "sourceHeight": 1440,
+        "loaderWarnings": [],
+        "coverage": 0.0194
+      },
+      "textureAnalysis": {
+        "finishClass": "worn-composite",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.9,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.0,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.5,
+          "anisotropy": 0.0,
+          "procedural": "mottle"
+        },
+        "palette": [
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000",
+          "#000000"
+        ],
+        "paletteHueRisk": [],
+        "gradientAxis": "horizontal",
+        "stats": {
+          "meanLum": 0.0,
+          "meanSaturation": 0.0,
+          "gradientStrength": 0.0,
+          "mottle": 0.0,
+          "streakRatio": 0.0,
+          "hueSpread": 0.0,
+          "specularFraction": 0.0
+        }
+      },
+      "pbrReport": {
+        "ok": false,
+        "verdict": "conditional",
+        "confidence": 0.612,
+        "estimatedFidelity": 0.612,
+        "targetThreshold": 0.7,
+        "materialId": "optic-glass",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/04-optic-glass.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass",
+        "palette": [
+          "#000000"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_albedo.png",
+            "url": "optic-glass_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_roughness.png",
+            "url": "optic-glass_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_height.png",
+            "url": "optic-glass_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_normal.png",
+            "url": "optic-glass_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_ao.png",
+            "url": "optic-glass_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 700,
+          "sourceHeight": 102,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 700,
+            "height": 102
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 1.0
+          },
+          "mapStats": {
+            "valueRange": 0.08,
+            "heightP90Gradient": 0.0,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.156,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000000"
+          ]
+        },
+        "warnings": [
+          "foreground mask is tiny; material extraction is likely unreliable",
+          "image is not clearly isolated from background; using most pixels as material evidence",
+          "object/background separation is weak",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+          "low value range weakens height/roughness inference",
+          "low high-frequency detail weakens normal/roughness inference"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/04-optic-glass.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.8,
+        "estimatedFidelity": 0.8,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_albedo.png",
+            "url": "optic-glass_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_roughness.png",
+            "url": "optic-glass_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_height.png",
+            "url": "optic-glass_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_normal.png",
+            "url": "optic-glass_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_ao.png",
+            "url": "optic-glass_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 700,
+          "sourceHeight": 102,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 700,
+            "height": 102
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 1.0
+          },
+          "mapStats": {
+            "valueRange": 0.08,
+            "heightP90Gradient": 0.0,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.156,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000000"
+          ]
+        },
+        "warnings": [
+          "foreground mask is tiny; material extraction is likely unreliable",
+          "image is not clearly isolated from background; using most pixels as material evidence",
+          "object/background separation is weak",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped",
+          "low value range weakens height/roughness inference",
+          "low high-frequency detail weakens normal/roughness inference"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_albedo.png",
+          "url": "optic-glass_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_roughness.png",
+          "url": "optic-glass_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_height.png",
+          "url": "optic-glass_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_normal.png",
+          "url": "optic-glass_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-04-optic-glass/optic-glass_ao.png",
+          "url": "optic-glass_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "boltHandleSystem",
+      "regionId": "silver-action-metal",
+      "materialSpecId": "silver-action-metal",
+      "hypothesis": {
+        "componentId": "boltHandleSystem",
+        "regionId": "silver-action-metal",
+        "materialId": null,
+        "family": "metal",
+        "subtype": "steel-polished",
+        "finish": "polished-or-brushed",
+        "aliases": [],
+        "confidence": 0.793,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "metal.steel-polished",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.86,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [
+          "metal.aluminum",
+          "metal.brass",
+          "metal.copper",
+          "metal.gold",
+          "metal.steel-brushed",
+          "metal.steel-polished"
+        ],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/05-silver-action-metal.png",
+            "bbox": {
+              "x": 650,
+              "y": 470,
+              "width": 330,
+              "height": 95
+            },
+            "sourceWidth": 2560,
+            "sourceHeight": 1440,
+            "loaderWarnings": [],
+            "coverage": 0.0085
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.793,
+            "estimatedFidelity": 0.793,
+            "targetThreshold": 0.7,
+            "materialId": "silver-action-metal",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/05-silver-action-metal.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal",
+            "palette": [
+              "#000100",
+              "#363D49",
+              "#1C2026",
+              "#020204",
+              "#838EA0"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_albedo.png",
+                "url": "silver-action-metal_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_roughness.png",
+                "url": "silver-action-metal_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_height.png",
+                "url": "silver-action-metal_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_normal.png",
+                "url": "silver-action-metal_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_ao.png",
+                "url": "silver-action-metal_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 330,
+              "sourceHeight": 95,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 40,
+                "width": 330,
+                "height": 55
+              },
+              "mask": {
+                "backgroundColor": "#313B50",
+                "backgroundNoise": 110.824,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.0547
+              },
+              "mapStats": {
+                "valueRange": 0.5405,
+                "heightP90Gradient": 0.01282,
+                "roughnessBase": 0.68,
+                "roughnessVariation": 0.05,
+                "normalStrength": 0.171,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#000100",
+                "#363D49",
+                "#1C2026",
+                "#020204",
+                "#838EA0"
+              ]
+            },
+            "warnings": [
+              "foreground mask is very small",
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "worn-composite",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.9,
+              "clearcoat": 0.0,
+              "clearcoatRoughness": 0.0,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.5,
+              "anisotropy": 0.0,
+              "procedural": "mottle"
+            },
+            "palette": [
+              "#000000",
+              "#09090A",
+              "#070708",
+              "#040405",
+              "#585E69"
+            ],
+            "paletteHueRisk": [
+              {
+                "stop": "#040405",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  5,
+                  4,
+                  4
+                ]
+              },
+              {
+                "stop": "#585E69",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  105,
+                  94,
+                  88
+                ]
+              }
+            ],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 14.9,
+              "meanSaturation": 0.075,
+              "gradientStrength": 0.374,
+              "mottle": 0.018,
+              "streakRatio": 1.4,
+              "hueSpread": 0.641,
+              "specularFraction": 0.001
+            }
+          }
+        },
+        "profileId": "metal.steel-polished",
+        "reviewNote": "Bolt handle and under-action hardware read as brighter polished/brushed steel against the charcoal receiver.",
+        "family": "metal",
+        "subtype": "steel-polished",
+        "finish": "polished-action-metal",
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat",
+          "transmission"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/05-silver-action-metal.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ]
+      },
+      "observations": [
+        "near-neutral colour response",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/05-silver-action-metal.png",
+        "bbox": {
+          "x": 650,
+          "y": 470,
+          "width": 330,
+          "height": 95
+        },
+        "sourceWidth": 2560,
+        "sourceHeight": 1440,
+        "loaderWarnings": [],
+        "coverage": 0.0085
+      },
+      "textureAnalysis": {
+        "finishClass": "worn-composite",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.9,
+          "clearcoat": 0.0,
+          "clearcoatRoughness": 0.0,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.5,
+          "anisotropy": 0.0,
+          "procedural": "mottle"
+        },
+        "palette": [
+          "#000000",
+          "#09090A",
+          "#070708",
+          "#040405",
+          "#585E69"
+        ],
+        "paletteHueRisk": [
+          {
+            "stop": "#040405",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              5,
+              4,
+              4
+            ]
+          },
+          {
+            "stop": "#585E69",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              105,
+              94,
+              88
+            ]
+          }
+        ],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 14.9,
+          "meanSaturation": 0.075,
+          "gradientStrength": 0.374,
+          "mottle": 0.018,
+          "streakRatio": 1.4,
+          "hueSpread": 0.641,
+          "specularFraction": 0.001
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.793,
+        "estimatedFidelity": 0.793,
+        "targetThreshold": 0.7,
+        "materialId": "silver-action-metal",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/05-silver-action-metal.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal",
+        "palette": [
+          "#000100",
+          "#363D49",
+          "#1C2026",
+          "#020204",
+          "#838EA0"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_albedo.png",
+            "url": "silver-action-metal_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_roughness.png",
+            "url": "silver-action-metal_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_height.png",
+            "url": "silver-action-metal_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_normal.png",
+            "url": "silver-action-metal_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_ao.png",
+            "url": "silver-action-metal_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 330,
+          "sourceHeight": 95,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 40,
+            "width": 330,
+            "height": 55
+          },
+          "mask": {
+            "backgroundColor": "#313B50",
+            "backgroundNoise": 110.824,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.0547
+          },
+          "mapStats": {
+            "valueRange": 0.5405,
+            "heightP90Gradient": 0.01282,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.171,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000100",
+            "#363D49",
+            "#1C2026",
+            "#020204",
+            "#838EA0"
+          ]
+        },
+        "warnings": [
+          "foreground mask is very small",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/05-silver-action-metal.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_albedo.png",
+            "url": "silver-action-metal_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_roughness.png",
+            "url": "silver-action-metal_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_height.png",
+            "url": "silver-action-metal_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_normal.png",
+            "url": "silver-action-metal_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_ao.png",
+            "url": "silver-action-metal_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 330,
+          "sourceHeight": 95,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 40,
+            "width": 330,
+            "height": 55
+          },
+          "mask": {
+            "backgroundColor": "#313B50",
+            "backgroundNoise": 110.824,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.0547
+          },
+          "mapStats": {
+            "valueRange": 0.5405,
+            "heightP90Gradient": 0.01282,
+            "roughnessBase": 0.68,
+            "roughnessVariation": 0.05,
+            "normalStrength": 0.171,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#000100",
+            "#363D49",
+            "#1C2026",
+            "#020204",
+            "#838EA0"
+          ]
+        },
+        "warnings": [
+          "foreground mask is very small",
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_albedo.png",
+          "url": "silver-action-metal_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_roughness.png",
+          "url": "silver-action-metal_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_height.png",
+          "url": "silver-action-metal_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_normal.png",
+          "url": "silver-action-metal_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-evidence/pbr-05-silver-action-metal/silver-action-metal_ao.png",
+          "url": "silver-action-metal_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    }
+  ],
+  "status": "proceed",
+  "limitations": [
+    "PBR extraction is reference-derived inference, not inverse rendering.",
+    "A crop must be checked against the component visible footprint before accepting material scores."
+  ],
+  "artifact": "/home/ubuntu/3d/guns 3d models/03-sniper-rifle/material-analysis.json",
+  "analysisReview": {
+    "reviewedBy": "img2threejs staged material gate",
+    "decision": "proceed",
+    "reason": "All six observed source regions have canonical profileId assignments and usable reference-derived map evidence. Dark metal, cavity, and optic transmission remain controlled approximations rather than measured scans.",
+    "controlledViewsRequired": [
+      "neutral-light",
+      "grazing-light",
+      "reference-matched-broadside",
+      "three-quarter-orbit"
+    ]
+  }
+}

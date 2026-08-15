@@ -1,0 +1,406 @@
+{
+  "model": "03-sniper-rifle",
+  "sourceFactory": "create03SniperRifleModel.ts",
+  "runtimeMeshCount": 104,
+  "parts": [
+    {
+      "name": "root",
+      "kind": "part",
+      "module": "sniper-rifle-root",
+      "runtimeIds": [
+        "sniper-rifle-root"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "stockAssembly",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "receiverActionAssembly",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "opticAssembly",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "magazineTriggerAssembly",
+      "kind": "part",
+      "module": "magazineTriggerAssembly",
+      "runtimeIds": [
+        "magazineTriggerAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "underActionAssembly",
+      "kind": "part",
+      "module": "underActionAssembly",
+      "runtimeIds": [
+        "underActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "barrelAssembly",
+      "kind": "part",
+      "module": "barrelAssembly",
+      "runtimeIds": [
+        "barrelAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "muzzleAssembly",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "stockButtAssembly",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "stockCheekRest",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "stockBraceSystem",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "stockOrnamentalPanel",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "receiverShell",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "boltActionBody",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "boltHandleSystem",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "receiverFasteners",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "ejectionPortCavity",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeEyepiece",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeMainTube",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeRingSystem",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeTurretHousing",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeObjectiveBell",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeGlassSystem",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "magazineBody",
+      "kind": "part",
+      "module": "magazineTriggerAssembly",
+      "runtimeIds": [
+        "magazineTriggerAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "triggerGuardSystem",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "triggerBlade",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "underActionRail",
+      "kind": "part",
+      "module": "underActionAssembly",
+      "runtimeIds": [
+        "underActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "underActionTeeth",
+      "kind": "part",
+      "module": "underActionAssembly",
+      "runtimeIds": [
+        "underActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "barrelTube",
+      "kind": "part",
+      "module": "barrelAssembly",
+      "runtimeIds": [
+        "barrelAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "barrelRootShoulder",
+      "kind": "part",
+      "module": "barrelAssembly",
+      "runtimeIds": [
+        "barrelAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "muzzleCollar",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "muzzleBoreWall",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "stockSlingLoop",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "stockPanelFlecks",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "receiverActionRidges",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "boltHandleCollar",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "receiverSideFastenerCrowns",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "ejectionPortCut",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverActionAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeRingBolts",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeTurretCaps",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "scopeGlassHighlight",
+      "kind": "part",
+      "module": "opticAssembly",
+      "runtimeIds": [
+        "opticAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "magazineCatchNotch",
+      "kind": "part",
+      "module": "magazineTriggerAssembly",
+      "runtimeIds": [
+        "magazineTriggerAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "triggerPivot",
+      "kind": "part",
+      "module": "magazineTriggerAssembly",
+      "runtimeIds": [
+        "magazineTriggerAssembly"
+      ],
+      "triangles": 1
+    },
+    {
+      "name": "muzzleBore",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleAssembly"
+      ],
+      "triangles": 1
+    }
+  ],
+  "unnamedMeshes": 0,
+  "integralMeshes": 104,
+  "notes": "Manifest maps all 44 ObjectSculptSpec components to named procedural runtime assemblies; repeated meshes remain individually selectable in the factory runtime."
+}
