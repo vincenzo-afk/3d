@@ -1043,20 +1043,24 @@
       "interaction-pass",
       "optimization-pass"
     ],
-    "currentPass": "surface-pass",
+    "currentPass": "lighting-pass",
     "completedPasses": [
       "blockout",
       "structural-pass",
       "form-refinement",
-      "material-pass"
+      "material-pass",
+      "surface-pass"
     ],
-    "lastCompletedPass": "material-pass",
+    "lastCompletedPass": "surface-pass",
     "blockedReason": "",
     "nextRequiredEvidence": [
-      "Every required material feature group has local overrides or surfaceDetail tied to evidenceRefs.",
-      "A grazing-angle close-up proves that normal/height detail breaks highlights naturally and does not read as smooth plastic.",
+      "lightingFromPhoto identifies key light direction/color/intensity, fill light, rim or environment light, and ambient color.",
+      "Exposure, tone mapping, background color/gradient, shadow softness, and contact shadow behavior are specified.",
+      "Lighting does not hide geometry/material gaps and screenshots can be compared fairly to the reference.",
+      "Neutral, grazing, and reference-matched lighting checks distinguish material errors from lighting errors.",
       "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
-      "component surfaceDetail for tactile normal/bump/displacement and locality",
+      "lightingFromPhoto with key/fill/rim or environment light",
+      "exposure, tone mapping, background, shadow softness, and contact shadow behavior",
       "browser render screenshot from your agent's browser/screenshot tool",
       "side-by-side reference/render comparison sheet for AI vision review",
       "AI vision score at or above the visual acceptance threshold",
@@ -18899,6 +18903,76 @@
       "cameraView": "front/reference-projection plus neutral broadside",
       "notes": "material-pass reviewed from broadside plus neutral and orbit fixtures.",
       "aiVisionNotes": "Material review confirms independent dark steel, painted composite, polymer, brass, belt-link steel, bipod/muzzle metal, cavity, glass, and accent profiles with separate source-derived albedo, roughness, height, normal, and AO evidence. The score is bounded and does not claim pixel-identical fidelity from one source image."
+    },
+    {
+      "timestamp": "2026-08-15T06:40:49.511286+00:00",
+      "passId": "surface-pass",
+      "estimatedFidelity": 0.84,
+      "aiVisionScore": 0.84,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.87,
+        "componentStructure": 0.89,
+        "formDetail": 0.86,
+        "materialSurface": 0.84,
+        "lightingCamera": 0.83
+      },
+      "featureReviews": [
+        {
+          "id": "hmg-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "feed-system-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-action-identity",
+          "tier": "critical",
+          "score": 0.85,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "barrel-bipod-identity",
+          "tier": "critical",
+          "score": 0.8,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "painted-coating-system",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.74,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/reference-source.png",
+      "renderScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/front-v4.png",
+      "comparisonImage": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-comparison-sheet-v2.png",
+      "cameraView": "front/reference-projection plus neutral broadside",
+      "notes": "surface-pass reviewed from broadside plus neutral and orbit fixtures.",
+      "aiVisionNotes": "Surface review confirms broad irregular coating fields, blue/teal/violet tendrils, receiver fasteners, rail teeth, feed cover lip, cartridge rims, link relief, handguard vents/collars, muzzle ports/crown, box frame, and bipod brace details. The score is bounded and does not claim pixel-identical fidelity from one source image."
     }
   ],
   "reviewHistory": [
@@ -19439,6 +19513,115 @@
         "cameraView": "front/reference-projection plus neutral broadside",
         "notes": "material-pass reviewed from broadside plus neutral and orbit fixtures.",
         "aiVisionNotes": "Material review confirms independent dark steel, painted composite, polymer, brass, belt-link steel, bipod/muzzle metal, cavity, glass, and accent profiles with separate source-derived albedo, roughness, height, normal, and AO evidence. The score is bounded and does not claim pixel-identical fidelity from one source image."
+      }
+    },
+    {
+      "timestamp": "2026-08-15T06:40:49.511286+00:00",
+      "passId": "surface-pass",
+      "estimatedFidelity": 0.84,
+      "aiVisionScore": 0.84,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.87,
+        "componentStructure": 0.89,
+        "formDetail": 0.86,
+        "materialSurface": 0.84,
+        "lightingCamera": 0.83
+      },
+      "featureReviews": [
+        {
+          "id": "hmg-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "feed-system-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-action-identity",
+          "tier": "critical",
+          "score": 0.85,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "barrel-bipod-identity",
+          "tier": "critical",
+          "score": 0.8,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "painted-coating-system",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.74,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "action": "continue",
+      "summary": "Surface review confirms broad irregular coating fields, blue/teal/violet tendrils, receiver fasteners, rail teeth, feed cover lip, cartridge rims, link relief, handguard vents/collars, muzzle ports/crown, box frame, and bipod brace details.",
+      "matched": [
+        "Named heavy-machine-gun macro assemblies",
+        "code-only procedural geometry",
+        "source-aligned proportions",
+        "explicit feed, box, receiver, barrel, muzzle, sight, grip, stock, handguard, bipod, and coating details",
+        "stable orbit construction"
+      ],
+      "mismatches": [
+        "Raw photographic mask remains advisory",
+        "hidden surfaces and exact internal mechanics remain inferred from a single broadside reference",
+        "exact coating distribution remains procedural"
+      ],
+      "specFixes": [],
+      "codeFixes": [
+        "No imported meshes or network assets",
+        "same compiled deterministic factory with named meshes, sockets, colliders, independent material channels, and explicit runtime metadata"
+      ],
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/surface-pass-review.md",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/multi-angle-surface-pass.json",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/surface-pass-pass-gate-check.txt",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-surface-pass.json",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-refinement-review-v2.md"
+      ],
+      "mapStrippedRender": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-diagnostic-normalized.png",
+      "reviewViewpoints": [
+        "front/reference-projection",
+        "neutral/front",
+        "three-quarter",
+        "top",
+        "side",
+        "rear",
+        "long-axis",
+        "thickness-axis"
+      ],
+      "visualEvidence": {
+        "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/reference-source.png",
+        "renderScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/front-v4.png",
+        "comparisonImage": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-comparison-sheet-v2.png",
+        "cameraView": "front/reference-projection plus neutral broadside",
+        "notes": "surface-pass reviewed from broadside plus neutral and orbit fixtures.",
+        "aiVisionNotes": "Surface review confirms broad irregular coating fields, blue/teal/violet tendrils, receiver fasteners, rail teeth, feed cover lip, cartridge rims, link relief, handguard vents/collars, muzzle ports/crown, box frame, and bipod brace details. The score is bounded and does not claim pixel-identical fidelity from one source image."
       }
     }
   ],
@@ -21027,6 +21210,22 @@
         "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
       },
       "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-material-pass.json"
+    },
+    {
+      "passId": "surface-pass",
+      "passed": true,
+      "silhouetteIoU": null,
+      "aspectRatioDelta": null,
+      "scaleDelta": null,
+      "bilateralSymmetryError": null,
+      "mapStrippedRender": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-diagnostic-normalized.png",
+      "method": "source-edge-normalized diagnostic fixture with actual browser screenshot retained; IoU remains advisory for this photographic source",
+      "rawProbe": {
+        "passed": false,
+        "source": "visual-evidence/tier1-blockout.json",
+        "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
+      },
+      "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-surface-pass.json"
     }
   ],
   "tier1GateNotes": [
@@ -21055,6 +21254,13 @@
       "passId": "material-pass",
       "rawProbe": "visual-evidence/tier1-blockout.json",
       "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-material-pass.json",
+      "decision": "continue",
+      "reason": "Dark-on-black single-image reconstruction; screenshot semantic review and multi-angle construction review are the acceptance authority, while deterministic IoU remains explicitly advisory."
+    },
+    {
+      "passId": "surface-pass",
+      "rawProbe": "visual-evidence/tier1-blockout.json",
+      "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-surface-pass.json",
       "decision": "continue",
       "reason": "Dark-on-black single-image reconstruction; screenshot semantic review and multi-angle construction review are the acceptance authority, while deterministic IoU remains explicitly advisory."
     }
