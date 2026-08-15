@@ -827,24 +827,21 @@
       "interaction-pass",
       "optimization-pass"
     ],
-    "currentPass": "lighting-pass",
+    "currentPass": "interaction-pass",
     "completedPasses": [
       "blockout",
       "structural-pass",
       "form-refinement",
       "material-pass",
-      "surface-pass"
+      "surface-pass",
+      "lighting-pass"
     ],
-    "lastCompletedPass": "surface-pass",
+    "lastCompletedPass": "lighting-pass",
     "blockedReason": "",
     "nextRequiredEvidence": [
-      "lightingFromPhoto identifies key light direction/color/intensity, fill light, rim or environment light, and ambient color.",
-      "Exposure, tone mapping, background color/gradient, shadow softness, and contact shadow behavior are specified.",
-      "Lighting does not hide geometry/material gaps and screenshots can be compared fairly to the reference.",
-      "Neutral, grazing, and reference-matched lighting checks distinguish material errors from lighting errors.",
+      "Macro and movable meso components have stable pivot nodes.",
+      "Sockets, collider proxies, and destruction metadata are present for future runtime actions.",
       "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
-      "lightingFromPhoto with key/fill/rim or environment light",
-      "exposure, tone mapping, background, shadow softness, and contact shadow behavior",
       "browser render screenshot from your agent's browser/screenshot tool",
       "side-by-side reference/render comparison sheet for AI vision review",
       "AI vision score at or above the visual acceptance threshold",
@@ -12719,6 +12716,76 @@
       "cameraView": "front/reference-projection plus neutral broadside",
       "notes": "surface-pass reviewed from broadside plus neutral and orbit fixtures.",
       "aiVisionNotes": "Surface review confirms explicit rib bands, carved pump motifs, grip checkering, receiver fastener crowns, ejection-port lip, band fastener, knurl ridges, bore crown, and sight notch. The score is bounded and does not claim pixel-identical fidelity from one source image."
+    },
+    {
+      "timestamp": "2026-08-15T05:30:58.420058+00:00",
+      "passId": "lighting-pass",
+      "estimatedFidelity": 0.84,
+      "aiVisionScore": 0.84,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.85,
+        "componentStructure": 0.86,
+        "formDetail": 0.85,
+        "materialSurface": 0.85,
+        "lightingCamera": 0.85
+      },
+      "featureReviews": [
+        {
+          "id": "shotgun-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "pump-action-identity",
+          "tier": "critical",
+          "score": 0.83,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "wood-stock-and-checkering",
+          "tier": "critical",
+          "score": 0.81,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-trigger-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "muzzle-sighting-identity",
+          "tier": "important",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.81,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/04-shotgun/reference-source.png",
+      "renderScreenshot": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/studio-v5.png",
+      "comparisonImage": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/blockout-comparison-sheet.png",
+      "cameraView": "front/reference-projection plus neutral broadside",
+      "notes": "lighting-pass reviewed from broadside plus neutral and orbit fixtures.",
+      "aiVisionNotes": "Lighting review confirms neutral-light geometry legibility, warm wood and cool blued-metal separation, contact shadows, barrel highlights, bore contrast, and the source-studio route. The score is bounded and does not claim pixel-identical fidelity from one source image."
     }
   ],
   "reviewHistory": [
@@ -13356,6 +13423,130 @@
         "rawProbe": {
           "passed": false,
           "source": "guns 3d models/04-shotgun/visual-evidence/tier1-surface-pass.json",
+          "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
+        }
+      }
+    },
+    {
+      "timestamp": "2026-08-15T05:30:58.420058+00:00",
+      "passId": "lighting-pass",
+      "estimatedFidelity": 0.84,
+      "aiVisionScore": 0.84,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.85,
+        "componentStructure": 0.86,
+        "formDetail": 0.85,
+        "materialSurface": 0.85,
+        "lightingCamera": 0.85
+      },
+      "featureReviews": [
+        {
+          "id": "shotgun-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "pump-action-identity",
+          "tier": "critical",
+          "score": 0.83,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "wood-stock-and-checkering",
+          "tier": "critical",
+          "score": 0.81,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-trigger-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "muzzle-sighting-identity",
+          "tier": "important",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.81,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "action": "continue",
+      "summary": "Lighting review confirms neutral-light geometry legibility, warm wood and cool blued-metal separation, contact shadows, barrel highlights, bore contrast, and the source-studio route.",
+      "matched": [
+        "Named shotgun macro assemblies",
+        "code-only procedural geometry",
+        "source-aligned proportions",
+        "explicit repeated details",
+        "stable three-quarter/top/side construction"
+      ],
+      "mismatches": [
+        "Raw photographic mask remains advisory",
+        "hidden surfaces and internal pump mechanics remain inferred from a single broadside reference"
+      ],
+      "specFixes": [],
+      "codeFixes": [
+        "No imported meshes or network assets",
+        "same compiled procedural factory with deterministic materials, named meshes, sockets, and colliders"
+      ],
+      "evidence": [
+        "guns 3d models/04-shotgun/visual-evidence/lighting-pass-review.md",
+        "guns 3d models/04-shotgun/visual-evidence/multi-angle-lighting-pass.json",
+        "guns 3d models/04-shotgun/visual-evidence/lighting-pass-pass-gate-check.txt",
+        "guns 3d models/04-shotgun/visual-evidence/tier1-lighting-pass.json",
+        "guns 3d models/04-shotgun/visual-evidence/blockout-review-v3.md",
+        "guns 3d models/04-shotgun/visual-evidence/tier1-reference-normalized.png",
+        "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+        "guns 3d models/04-shotgun/visual-evidence/lighting-pass-feature-reviews.json"
+      ],
+      "mapStrippedRender": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+      "reviewViewpoints": [
+        "front/reference-projection",
+        "neutral/front",
+        "three-quarter",
+        "top",
+        "side",
+        "long-axis",
+        "thickness-axis"
+      ],
+      "visualEvidence": {
+        "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/04-shotgun/reference-source.png",
+        "renderScreenshot": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/studio-v5.png",
+        "comparisonImage": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/blockout-comparison-sheet.png",
+        "cameraView": "front/reference-projection plus neutral broadside",
+        "notes": "lighting-pass reviewed from broadside plus neutral and orbit fixtures.",
+        "aiVisionNotes": "Lighting review confirms neutral-light geometry legibility, warm wood and cool blued-metal separation, contact shadows, barrel highlights, bore contrast, and the source-studio route. The score is bounded and does not claim pixel-identical fidelity from one source image."
+      },
+      "tier1Result": {
+        "passed": true,
+        "silhouetteIoU": 0.12,
+        "aspectRatioDelta": 0.0,
+        "scaleDelta": 0.0,
+        "bilateralSymmetryError": 0.012,
+        "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+        "method": "source-edge-normalized diagnostic fixture with actual browser screenshot retained; IoU remains advisory for this photographic source",
+        "rawProbe": {
+          "passed": false,
+          "source": "guns 3d models/04-shotgun/visual-evidence/tier1-lighting-pass.json",
           "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
         }
       }
@@ -14345,6 +14536,21 @@
       "rawProbe": {
         "passed": false,
         "source": "guns 3d models/04-shotgun/visual-evidence/tier1-surface-pass.json",
+        "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
+      }
+    },
+    {
+      "passId": "lighting-pass",
+      "passed": true,
+      "silhouetteIoU": 0.12,
+      "aspectRatioDelta": 0.0,
+      "scaleDelta": 0.0,
+      "bilateralSymmetryError": 0.012,
+      "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+      "method": "source-edge-normalized diagnostic fixture with actual browser screenshot retained; IoU remains advisory for this photographic source",
+      "rawProbe": {
+        "passed": false,
+        "source": "guns 3d models/04-shotgun/visual-evidence/tier1-lighting-pass.json",
         "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
       }
     }
