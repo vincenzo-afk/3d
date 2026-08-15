@@ -1,0 +1,182 @@
+FAIL
+warning: quality: preSpecAssessment has unresolved unknowns before implementation
+warning: quality: material 'dark-blued-metal' needs usable referencePbr extracted from source pixels
+warning: quality: material 'painted-composite' needs usable referencePbr extracted from source pixels
+warning: quality: material 'polymer-grip' needs usable referencePbr extracted from source pixels
+warning: quality: material 'feed-belt-brass' needs usable referencePbr extracted from source pixels
+warning: quality: material 'belt-link-metal' needs usable referencePbr extracted from source pixels
+warning: quality: material 'bipod-metal' needs usable referencePbr extracted from source pixels
+warning: quality: material 'muzzle-metal' needs usable referencePbr extracted from source pixels
+warning: quality: material 'cavity' needs usable referencePbr extracted from source pixels
+warning: quality: material 'glass-optic' needs usable referencePbr extracted from source pixels
+warning: quality: material 'painted-accent' needs usable referencePbr extracted from source pixels
+warning: quality: component 'root' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'ammunitionBoxAssembly' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'handguardAssembly' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'bipodAssembly' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'stockGripAssembly' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'controlAssembly' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'carryHandleAssembly' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'chargingSystem' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'receiverSidePlate' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'receiverActionCavity' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'receiverSeams' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'feedTray' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'cartridgeLinkRun' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'ammoBoxShell' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'handguardShell' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'handguardVentSystem' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'bipodHinge' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'leftBipodLeg' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'rightBipodLeg' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'bipodFeet' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'stockShell' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'stockButtpad' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'pistolGripShell' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'gripRelief' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'muzzlePortSystem' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'muzzleBore' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'sightInset' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'carryHandleUprights' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'carryHandleGrip' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'chargingHandleBody' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+warning: quality: component 'receiverPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'ammoBoxPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'handguardPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'handguardVentLips' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'bipodPerforations' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'bipodFootGrooves' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'stockPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'stockEdgeBevels' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'gripPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'gripDiagonalRelief' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'muzzleBoreCrown' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'frontSightAperture' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'carryGripRibs' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: component 'chargeHandleGrip' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+warning: quality: detailInventory detail 'hmg-detail-01' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-02' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-03' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-04' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-05' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-06' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-07' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-08' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-09' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-10' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-11' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-12' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-13' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-14' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-15' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-16' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-17' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-18' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-19' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-20' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-21' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-22' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-23' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+warning: quality: detailInventory detail 'hmg-detail-24' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: component 'feedSystem' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'bipodAssembly' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'controlAssembly' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'controlAssembly' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'polymer-grip' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'sightingAssembly' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'carryHandleAssembly' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'chargingSystem' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'receiverActionCavity' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'receiverActionCavity' topologyClass 'implicit' requires geometryDescriptor.sdf
+error: component 'feedTray' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'cavity' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'feedGuide' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'handguardVentSystem' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'cavity' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'handguardLug' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'bipod-metal' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'bipodHinge' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'bipodFeet' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'triggerGuard' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'bipod-metal' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'muzzlePortSystem' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'cavity' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'muzzleBore' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'cavity' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'sightInset' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'glass-optic' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'carryHandleUprights' primitive must be one of: box, capsule, cone, curve-sweep, cylinder, ellipsoid, extrude, ground-blade, instanced-cluster, lathe, plane-card, sphere, torus, tube
+error: component 'bipodPerforations' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'cavity' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'muzzleBoreCrown' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'cavity' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: component 'frontSightAperture' topologyClass 'open-shell' is a zero-thickness two-sided surface but its material 'cavity' does not set doubleSided: true -- a one-sided membrane renders invisible from behind; set materials[].doubleSided = true on its material
+error: strict quality failure: preSpecAssessment has unresolved unknowns before implementation
+error: strict quality failure: material 'dark-blued-metal' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'painted-composite' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'polymer-grip' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'feed-belt-brass' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'belt-link-metal' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'bipod-metal' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'muzzle-metal' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'cavity' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'glass-optic' needs usable referencePbr extracted from source pixels
+error: strict quality failure: material 'painted-accent' needs usable referencePbr extracted from source pixels
+error: strict quality failure: component 'root' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'ammunitionBoxAssembly' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'handguardAssembly' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'bipodAssembly' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'stockGripAssembly' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'controlAssembly' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'carryHandleAssembly' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'chargingSystem' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'receiverSidePlate' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'receiverActionCavity' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'receiverSeams' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'feedTray' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'cartridgeLinkRun' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'ammoBoxShell' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'handguardShell' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'handguardVentSystem' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'bipodHinge' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'leftBipodLeg' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'rightBipodLeg' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'bipodFeet' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'stockShell' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'stockButtpad' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'pistolGripShell' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'gripRelief' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'muzzlePortSystem' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'muzzleBore' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'sightInset' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'carryHandleUprights' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'carryHandleGrip' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'chargingHandleBody' missing or invalid topologyClass (must be one of: assembled-solid, conforming-shell, continuous-sculpt, fiber-strand, implicit, material-only, open-shell, surface-relief)
+error: strict quality failure: component 'receiverPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'ammoBoxPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'handguardPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'handguardVentLips' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'bipodPerforations' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'bipodFootGrooves' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'stockPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'stockEdgeBevels' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'gripPaintTendrils' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'gripDiagonalRelief' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'muzzleBoreCrown' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'frontSightAperture' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'carryGripRibs' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: component 'chargeHandleGrip' colorMaterialRecipe.materialClass must be one of: ceramic, fabric, glass, metal, plastic, rubber, skin, stone, unknown, wood
+error: strict quality failure: detailInventory detail 'hmg-detail-01' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-02' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-03' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-04' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-05' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-06' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-07' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-08' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-09' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-10' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-11' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-12' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-13' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-14' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-15' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-16' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-17' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-18' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-19' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-20' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-21' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-22' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-23' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)
+error: strict quality failure: detailInventory detail 'hmg-detail-24' does not map to a component.localFeatures or material.localOverrides entry (no prose-only details)

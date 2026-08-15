@@ -1,0 +1,115 @@
+{
+  "referenceId": "05-heavy-machine-gun-broadside",
+  "regions": [
+    {
+      "componentId": "receiverAssembly",
+      "regionId": "dark-blued-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 330, "y": 325, "width": 390, "height": 165},
+      "family": "metal",
+      "subtype": "blued-steel",
+      "finish": "satin-dark-metal",
+      "materialSpecId": "dark-blued-metal"
+    },
+    {
+      "componentId": "stockGripAssembly",
+      "regionId": "painted-composite-stock",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 22, "y": 365, "width": 300, "height": 205},
+      "family": "plastic",
+      "subtype": "painted-composite",
+      "finish": "satin-painted-clearcoat",
+      "materialSpecId": "painted-composite"
+    },
+    {
+      "componentId": "handguardAssembly",
+      "regionId": "painted-composite-handguard",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 815, "y": 365, "width": 390, "height": 185},
+      "family": "plastic",
+      "subtype": "painted-composite",
+      "finish": "satin-painted-clearcoat",
+      "materialSpecId": "painted-composite"
+    },
+    {
+      "componentId": "controlAssembly",
+      "regionId": "polymer-grip",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 365, "y": 470, "width": 150, "height": 190},
+      "family": "plastic",
+      "subtype": "textured-polymer",
+      "finish": "matte-satin-grip",
+      "materialSpecId": "polymer-grip"
+    },
+    {
+      "componentId": "feedSystem",
+      "regionId": "feed-belt-brass",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 650, "y": 390, "width": 125, "height": 205},
+      "family": "metal",
+      "subtype": "brass-cartridge",
+      "finish": "semi-polished-brass",
+      "materialSpecId": "feed-belt-brass"
+    },
+    {
+      "componentId": "bipodAssembly",
+      "regionId": "bipod-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 1160, "y": 465, "width": 205, "height": 245},
+      "family": "metal",
+      "subtype": "satin-steel",
+      "finish": "satin-dark-metal",
+      "materialSpecId": "bipod-metal"
+    },
+    {
+      "componentId": "muzzleAssembly",
+      "regionId": "muzzle-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 1300, "y": 345, "width": 335, "height": 120},
+      "family": "metal",
+      "subtype": "brushed-steel",
+      "finish": "satin-machined-metal",
+      "materialSpecId": "muzzle-metal"
+    },
+    {
+      "componentId": "receiverActionCavity",
+      "regionId": "cavity",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 545, "y": 430, "width": 105, "height": 130},
+      "family": "unknown",
+      "subtype": "mechanical-cavity",
+      "finish": "near-black-matte",
+      "materialSpecId": "cavity"
+    },
+    {
+      "componentId": "sightInset",
+      "regionId": "glass-optic",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 1260, "y": 300, "width": 80, "height": 90},
+      "family": "glass",
+      "subtype": "dark-coated-glass",
+      "finish": "low-roughness-dark-glass",
+      "materialSpecId": "glass-optic"
+    },
+    {
+      "componentId": "receiverSidePlate",
+      "regionId": "painted-accent",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 350, "y": 350, "width": 310, "height": 100},
+      "family": "plastic",
+      "subtype": "painted-accent-coating",
+      "finish": "gloss-clearcoat-pattern",
+      "materialSpecId": "painted-accent"
+    },
+    {
+      "componentId": "cartridgeLinkRun",
+      "regionId": "belt-link-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 682, "y": 410, "width": 62, "height": 145},
+      "family": "metal",
+      "subtype": "dark-steel-link",
+      "finish": "satin-dark-metal",
+      "materialSpecId": "belt-link-metal"
+    }
+  ]
+}
