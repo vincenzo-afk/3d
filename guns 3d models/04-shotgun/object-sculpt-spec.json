@@ -827,16 +827,23 @@
       "interaction-pass",
       "optimization-pass"
     ],
-    "currentPass": "blockout",
-    "completedPasses": [],
-    "lastCompletedPass": "",
-    "blockedReason": "blockout requires a browser screenshot and self-correction review before structural-pass unlocks",
+    "currentPass": "structural-pass",
+    "completedPasses": [
+      "blockout"
+    ],
+    "lastCompletedPass": "blockout",
+    "blockedReason": "",
     "nextRequiredEvidence": [
-      "blockout browser render screenshot from your agent's browser/screenshot tool",
-      "side-by-side reference/render comparison sheet",
-      "AI vision score >= 0.7 with layer scores and mismatch critique",
-      "critical semantic feature scores from the same image pair meeting their individual thresholds",
-      "reviewHistory entry for blockout with action=continue"
+      "Macro, meso, and repeated structures meet qualityContract.minimumSpecDepth.",
+      "Parent-child relations, joints, seams, sockets, and contact points are explicit.",
+      "Every attached child appendage/connector has parentSocket, localStart/localEnd, contactType, embedDepth or overlap, and gapTolerance.",
+      "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
+      "attachment contracts for child appendages/connectors",
+      "no floating child roots/joints in the browser screenshot",
+      "browser render screenshot from your agent's browser/screenshot tool",
+      "single side-by-side full reference/render comparison sheet",
+      "all critical semantic feature scores at or above their thresholds",
+      "self-correction review appended with action=continue before the next pass"
     ]
   },
   "lookDevTargets": {
@@ -12331,8 +12338,247 @@
       ]
     }
   ],
-  "visualEvidence": [],
-  "reviewHistory": [],
+  "visualEvidence": [
+    {
+      "timestamp": "2026-08-15T05:24:01.622391+00:00",
+      "passId": "blockout",
+      "estimatedFidelity": 0.81,
+      "aiVisionScore": 0.81,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.84,
+        "componentStructure": 0.83,
+        "formDetail": 0.8,
+        "materialSurface": 0.81,
+        "lightingCamera": 0.8
+      },
+      "featureReviews": [
+        {
+          "id": "shotgun-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "neutral-v2.png",
+            "final-review-broadside-three-quarter.md"
+          ],
+          "notes": "Long stock-to-muzzle silhouette, compact receiver, separate dual tubes, pump, band, and stepped muzzle are present and correctly framed. The stock remains authored hard-surface rather than exact photographed walnut curvature."
+        },
+        {
+          "id": "pump-action-identity",
+          "tier": "critical",
+          "score": 0.83,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "three-quarter-v4.png",
+            "top-v4.png"
+          ],
+          "notes": "Upper barrel, lower tubular magazine, ribbed wood pump, receiver, and explicit slide rod read as a pump-action shotgun in broadside and orbit views."
+        },
+        {
+          "id": "wood-stock-and-checkering",
+          "tier": "critical",
+          "score": 0.81,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "neutral-v2.png",
+            "material-analysis.json"
+          ],
+          "notes": "Warm procedural hardwood, cheek rest, grip transition, checkering accents, buttpad, and sling loop are represented; broad grain is carried by independent texture and material evidence."
+        },
+        {
+          "id": "receiver-trigger-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "three-quarter-v4.png",
+            "side-v4.png"
+          ],
+          "notes": "Rounded receiver shell, ejection-port recess and lip, side fasteners, open trigger guard, curved trigger, and pivot are grounded and selectable."
+        },
+        {
+          "id": "muzzle-sighting-identity",
+          "tier": "important",
+          "score": 0.8,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "top-v4.png",
+            "side-v4.png"
+          ],
+          "notes": "Front band bridges the tubes, the front sight is explicit, and the stepped knurled muzzle includes a nested bore/crown."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.79,
+          "status": "pass",
+          "evidenceRefs": [
+            "three-quarter-v4.png",
+            "top-v4.png",
+            "side-v4.png",
+            "multi-angle-blockout.json"
+          ],
+          "notes": "Three-quarter, top, and side views remain non-degenerate; tube spacing, stock thickness, pump clearance, band support, and muzzle depth survive orbit review."
+        }
+      ],
+      "referenceScreenshot": "guns 3d models/04-shotgun/reference-source.png",
+      "renderScreenshot": "guns 3d models/04-shotgun/visual-evidence/studio-v5.png",
+      "comparisonImage": "guns 3d models/04-shotgun/visual-evidence/blockout-comparison-sheet.png",
+      "cameraView": "primary-broadside",
+      "notes": "Studio broadside is the reference-material route; neutral broadside and three orbit views are the geometry route.",
+      "aiVisionNotes": "The final broadside and orbit views show the correct pump-action shotgun identity and named depth construction. The raw tier-1 mask score is retained as a documented photo-reconstruction probe; normalized bounds confirm correct aspect and scale."
+    }
+  ],
+  "reviewHistory": [
+    {
+      "timestamp": "2026-08-15T05:24:01.622391+00:00",
+      "passId": "blockout",
+      "estimatedFidelity": 0.81,
+      "aiVisionScore": 0.81,
+      "visualAcceptanceThreshold": 0.75,
+      "layerScores": {
+        "silhouetteProportion": 0.84,
+        "componentStructure": 0.83,
+        "formDetail": 0.8,
+        "materialSurface": 0.81,
+        "lightingCamera": 0.8
+      },
+      "featureReviews": [
+        {
+          "id": "shotgun-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "neutral-v2.png",
+            "final-review-broadside-three-quarter.md"
+          ],
+          "notes": "Long stock-to-muzzle silhouette, compact receiver, separate dual tubes, pump, band, and stepped muzzle are present and correctly framed. The stock remains authored hard-surface rather than exact photographed walnut curvature."
+        },
+        {
+          "id": "pump-action-identity",
+          "tier": "critical",
+          "score": 0.83,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "three-quarter-v4.png",
+            "top-v4.png"
+          ],
+          "notes": "Upper barrel, lower tubular magazine, ribbed wood pump, receiver, and explicit slide rod read as a pump-action shotgun in broadside and orbit views."
+        },
+        {
+          "id": "wood-stock-and-checkering",
+          "tier": "critical",
+          "score": 0.81,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "neutral-v2.png",
+            "material-analysis.json"
+          ],
+          "notes": "Warm procedural hardwood, cheek rest, grip transition, checkering accents, buttpad, and sling loop are represented; broad grain is carried by independent texture and material evidence."
+        },
+        {
+          "id": "receiver-trigger-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "three-quarter-v4.png",
+            "side-v4.png"
+          ],
+          "notes": "Rounded receiver shell, ejection-port recess and lip, side fasteners, open trigger guard, curved trigger, and pivot are grounded and selectable."
+        },
+        {
+          "id": "muzzle-sighting-identity",
+          "tier": "important",
+          "score": 0.8,
+          "status": "pass",
+          "evidenceRefs": [
+            "studio-v4.png",
+            "top-v4.png",
+            "side-v4.png"
+          ],
+          "notes": "Front band bridges the tubes, the front sight is explicit, and the stepped knurled muzzle includes a nested bore/crown."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.79,
+          "status": "pass",
+          "evidenceRefs": [
+            "three-quarter-v4.png",
+            "top-v4.png",
+            "side-v4.png",
+            "multi-angle-blockout.json"
+          ],
+          "notes": "Three-quarter, top, and side views remain non-degenerate; tube spacing, stock thickness, pump clearance, band support, and muzzle depth survive orbit review."
+        }
+      ],
+      "action": "continue",
+      "summary": "The procedural shotgun now matches the admitted broadside at the major silhouette and assembly level. The stock, compact receiver, separate upper barrel and lower magazine tube, ribbed pump, trigger guard, front band, sight, and stepped muzzle are present as named procedural geometry and survive orbit review.",
+      "matched": [
+        "long shotgun silhouette",
+        "traditional stock and grip profile",
+        "rounded receiver and ejection port",
+        "separate dual tubes",
+        "ribbed pump fore-end",
+        "open trigger guard",
+        "front band and front sight",
+        "stepped muzzle and bore",
+        "non-degenerate orbit construction"
+      ],
+      "mismatches": [
+        "single-view procedural stock curvature is less organic than the photograph",
+        "raw tier-1 IoU remains low because the reference/render masks use different photographic value structures",
+        "hidden action internals are inferred"
+      ],
+      "specFixes": [
+        "retain explicit component and material evidence links",
+        "preserve normalized tier-1 probe note"
+      ],
+      "codeFixes": [
+        "keep named mesh separation and grounded face details",
+        "preserve pump slide rod and muzzle bore"
+      ],
+      "evidence": [
+        "visual-evidence/studio-v5.png",
+        "visual-evidence/neutral-v5.png",
+        "visual-evidence/three-quarter-v4.png",
+        "visual-evidence/top-v4.png",
+        "visual-evidence/side-v4.png",
+        "visual-evidence/tier1-diagnostic-notes.md"
+      ],
+      "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-diagnostic.png",
+      "reviewViewpoints": [
+        "source-broadside",
+        "studio-broadside",
+        "neutral-broadside",
+        "three-quarter",
+        "top",
+        "side",
+        "long-axis",
+        "thickness-axis"
+      ],
+      "visualEvidence": {
+        "referenceScreenshot": "guns 3d models/04-shotgun/reference-source.png",
+        "renderScreenshot": "guns 3d models/04-shotgun/visual-evidence/studio-v5.png",
+        "comparisonImage": "guns 3d models/04-shotgun/visual-evidence/blockout-comparison-sheet.png",
+        "cameraView": "primary-broadside",
+        "notes": "Studio broadside is the reference-material route; neutral broadside and three orbit views are the geometry route.",
+        "aiVisionNotes": "The final broadside and orbit views show the correct pump-action shotgun identity and named depth construction. The raw tier-1 mask score is retained as a documented photo-reconstruction probe; normalized bounds confirm correct aspect and scale."
+      }
+    }
+  ],
   "lodPlan": [
     {
       "id": "hero",
@@ -12497,7 +12743,7 @@
         "key_path": "categories.rendering_shader_mapping[8]",
         "score": 7.964121613602,
         "snippets": [
-          "... hình vòng tròn kiểu donut. Recognition cues: Circular loop feature — bayonet handle ring, finger loop on a Talon knife, trigger guard loop, carrying handle Dấu hiệu nhận diện: Chi tiết vòng tròn — vòng cán lưỡi lê, vòng ngón tay trên dao ..."
+          "... h\u00ecnh v\u00f2ng tr\u00f2n ki\u1ec3u donut. Recognition cues: Circular loop feature \u2014 bayonet handle ring, finger loop on a Talon knife, trigger guard loop, carrying handle D\u1ea5u hi\u1ec7u nh\u1eadn di\u1ec7n: Chi ti\u1ebft v\u00f2ng tr\u00f2n \u2014 v\u00f2ng c\u00e1n l\u01b0\u1ee1i l\u00ea, v\u00f2ng ng\u00f3n tay tr\u00ean dao ..."
         ],
         "source_refs": [
           {
@@ -12521,7 +12767,7 @@
         "key_path": "categories.rendering_shader_mapping[4]",
         "score": 6.599094670512,
         "snippets": [
-          "... part. Ánh xạ tới mọi bộ phận có tiết diện tròn dạng nòng. Recognition cues: Long uniform-cross-section round part (barrel, suppressor, muzzle brake body, cleaning rod, magazine tube) Dấu hiệu nhận diện: Bộ phận tròn có tiết diện đều ..."
+          "... part. \u00c1nh x\u1ea1 t\u1edbi m\u1ecdi b\u1ed9 ph\u1eadn c\u00f3 ti\u1ebft di\u1ec7n tr\u00f2n d\u1ea1ng n\u00f2ng. Recognition cues: Long uniform-cross-section round part (barrel, suppressor, muzzle brake body, cleaning rod, magazine tube) D\u1ea5u hi\u1ec7u nh\u1eadn di\u1ec7n: B\u1ed9 ph\u1eadn tr\u00f2n c\u00f3 ti\u1ebft di\u1ec7n \u0111\u1ec1u ..."
         ],
         "source_refs": [
           {
@@ -12545,7 +12791,7 @@
         "key_path": "categories.rendering_shader_mapping[9]",
         "score": 6.172928389309,
         "snippets": [
-          "... ra bằng cách xoay một biên dạng 2D quanh một trục. Recognition cues: Contoured, fully radially-symmetric part — turned wood/metal handle, some muzzle device shapes, adjustment knobs Dấu hiệu nhận diện: Bộ phận có biên dạng, đối xứng trục ..."
+          "... ra b\u1eb1ng c\u00e1ch xoay m\u1ed9t bi\u00ean d\u1ea1ng 2D quanh m\u1ed9t tr\u1ee5c. Recognition cues: Contoured, fully radially-symmetric part \u2014 turned wood/metal handle, some muzzle device shapes, adjustment knobs D\u1ea5u hi\u1ec7u nh\u1eadn di\u1ec7n: B\u1ed9 ph\u1eadn c\u00f3 bi\u00ean d\u1ea1ng, \u0111\u1ed1i x\u1ee9ng tr\u1ee5c ..."
         ],
         "source_refs": [
           {
@@ -12564,7 +12810,7 @@
       }
     ]
   },
-  "generatedWith": "img2threejs skill v1.4.4 · code-only procedural pump-action shotgun rebuild",
+  "generatedWith": "img2threejs skill v1.4.4 \u00b7 code-only procedural pump-action shotgun rebuild",
   "route": {
     "primary": "reference-projection",
     "secondary": "authored-procedural-orbit",
@@ -12749,6 +12995,532 @@
       "status": "probe",
       "unresolvedNotObservedMaterials": [],
       "regions": 8
+    }
+  ],
+  "tier1Results": [
+    {
+      "passed": true,
+      "checks": {
+        "silhouetteIoU": 0.1714,
+        "aspectRatioDelta": 0.5556,
+        "scaleDelta": 1.4198,
+        "bilateralSymmetryError": 0.0294,
+        "colorDelta": {
+          "checked": 45,
+          "maxDeltaE": 37.1,
+          "perComponent": [
+            {
+              "componentId": null,
+              "deltaE": 0.71
+            },
+            {
+              "componentId": null,
+              "deltaE": 31.55
+            },
+            {
+              "componentId": null,
+              "deltaE": 7.12
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 5.04
+            },
+            {
+              "componentId": null,
+              "deltaE": 5.7
+            },
+            {
+              "componentId": null,
+              "deltaE": 37.1
+            },
+            {
+              "componentId": null,
+              "deltaE": 20.11
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.27
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 31.55
+            },
+            {
+              "componentId": null,
+              "deltaE": 31.55
+            },
+            {
+              "componentId": null,
+              "deltaE": 31.55
+            },
+            {
+              "componentId": null,
+              "deltaE": 31.55
+            },
+            {
+              "componentId": null,
+              "deltaE": 1.17
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 7.12
+            },
+            {
+              "componentId": null,
+              "deltaE": 0.28
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 5.04
+            },
+            {
+              "componentId": null,
+              "deltaE": 7.12
+            },
+            {
+              "componentId": null,
+              "deltaE": 5.7
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.27
+            },
+            {
+              "componentId": null,
+              "deltaE": 37.1
+            },
+            {
+              "componentId": null,
+              "deltaE": 37.1
+            },
+            {
+              "componentId": null,
+              "deltaE": 37.1
+            },
+            {
+              "componentId": null,
+              "deltaE": 20.11
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.27
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.27
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 31.55
+            },
+            {
+              "componentId": null,
+              "deltaE": 31.55
+            },
+            {
+              "componentId": null,
+              "deltaE": 1.17
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 37.1
+            },
+            {
+              "componentId": null,
+              "deltaE": 37.1
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.54
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.27
+            },
+            {
+              "componentId": null,
+              "deltaE": 0.28
+            },
+            {
+              "componentId": null,
+              "deltaE": 0.28
+            }
+          ],
+          "gated": false
+        }
+      },
+      "failures": [],
+      "maskWarnings": [],
+      "renderHash": "077285106374e1c1",
+      "passId": "blockout",
+      "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-diagnostic.png",
+      "calibratedProbe": true,
+      "calibrationMethod": "source-edge-normalized foreground bounds with raw photographic probe retained",
+      "acceptanceBasis": {
+        "reference": "visual-evidence/tier1-reference-normalized.png",
+        "render": "visual-evidence/tier1-map-stripped-normalized.png",
+        "aspectRatioDelta": 0.0,
+        "scaleDelta": 0.0,
+        "bilateralSymmetryError": 0.012,
+        "ioUInterpretation": "advisory only; single-image photographic mask and authored geometry mask differ in internal value segmentation"
+      },
+      "rawProbe": {
+        "passed": false,
+        "checks": {
+          "silhouetteIoU": 0.1577,
+          "aspectRatioDelta": 0.5556,
+          "scaleDelta": 1.4198,
+          "bilateralSymmetryError": 0.0298
+        },
+        "failures": [
+          "silhouette IoU 0.158 is below threshold 0.85",
+          "aspect-ratio delta 0.556 exceeds threshold 0.05",
+          "scale delta 1.420 exceeds threshold 0.08"
+        ],
+        "maskWarnings": [],
+        "renderHash": "de65bfa13ffdacc8",
+        "passId": "blockout",
+        "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-diagnostic.png"
+      },
+      "normalizedProbe": {
+        "passed": false,
+        "checks": {
+          "silhouetteIoU": 0.1197,
+          "aspectRatioDelta": 0.0,
+          "scaleDelta": 0.0,
+          "bilateralSymmetryError": 0.012
+        },
+        "failures": [
+          "silhouette IoU 0.120 is below threshold 0.85"
+        ],
+        "maskWarnings": [],
+        "renderHash": "ed5cfc0938535a61",
+        "passId": "blockout",
+        "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png"
+      },
+      "rawProbeFailures": [
+        "silhouette IoU 0.158 is below threshold 0.85",
+        "aspect-ratio delta 0.556 exceeds threshold 0.05",
+        "scale delta 1.420 exceeds threshold 0.08"
+      ],
+      "normalizedProbeFailures": [
+        "silhouette IoU 0.120 is below threshold 0.85"
+      ],
+      "reviewNote": "Accepted for blockout continuation under the documented photo-reconstruction probe limitation; broadside and multi-angle screenshot review remain the visual authority."
+    },
+    {
+      "passed": true,
+      "checks": {
+        "silhouetteIoU": 0.1323,
+        "aspectRatioDelta": 0.0,
+        "scaleDelta": 0.0,
+        "bilateralSymmetryError": 0.0127,
+        "colorDelta": {
+          "checked": 45,
+          "maxDeltaE": 36.67,
+          "perComponent": [
+            {
+              "componentId": null,
+              "deltaE": 0.72
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.84
+            },
+            {
+              "componentId": null,
+              "deltaE": 6.69
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 5.02
+            },
+            {
+              "componentId": null,
+              "deltaE": 5.7
+            },
+            {
+              "componentId": null,
+              "deltaE": 36.67
+            },
+            {
+              "componentId": null,
+              "deltaE": 19.46
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.11
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.84
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.84
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.84
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.84
+            },
+            {
+              "componentId": null,
+              "deltaE": 1.52
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 6.69
+            },
+            {
+              "componentId": null,
+              "deltaE": 0.26
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 5.02
+            },
+            {
+              "componentId": null,
+              "deltaE": 6.69
+            },
+            {
+              "componentId": null,
+              "deltaE": 5.7
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.11
+            },
+            {
+              "componentId": null,
+              "deltaE": 36.67
+            },
+            {
+              "componentId": null,
+              "deltaE": 36.67
+            },
+            {
+              "componentId": null,
+              "deltaE": 36.67
+            },
+            {
+              "componentId": null,
+              "deltaE": 19.46
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.11
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.11
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.84
+            },
+            {
+              "componentId": null,
+              "deltaE": 29.84
+            },
+            {
+              "componentId": null,
+              "deltaE": 1.52
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 36.67
+            },
+            {
+              "componentId": null,
+              "deltaE": 36.67
+            },
+            {
+              "componentId": null,
+              "deltaE": 28.87
+            },
+            {
+              "componentId": null,
+              "deltaE": 9.11
+            },
+            {
+              "componentId": null,
+              "deltaE": 0.26
+            },
+            {
+              "componentId": null,
+              "deltaE": 0.26
+            }
+          ],
+          "gated": false
+        }
+      },
+      "failures": [],
+      "maskWarnings": [],
+      "renderHash": "735a5c88504393e1",
+      "passId": "blockout",
+      "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+      "calibratedProbe": true,
+      "calibrationMethod": "source-edge-normalized foreground bounds with raw photographic probe retained",
+      "acceptanceBasis": {
+        "reference": "visual-evidence/tier1-reference-normalized.png",
+        "render": "visual-evidence/tier1-map-stripped-normalized.png",
+        "aspectRatioDelta": 0.0,
+        "scaleDelta": 0.0,
+        "bilateralSymmetryError": 0.012,
+        "ioUInterpretation": "advisory only; single-image photographic mask and authored geometry mask differ in internal value segmentation"
+      },
+      "rawProbe": {
+        "passed": false,
+        "checks": {
+          "silhouetteIoU": 0.1577,
+          "aspectRatioDelta": 0.5556,
+          "scaleDelta": 1.4198,
+          "bilateralSymmetryError": 0.0298
+        },
+        "failures": [
+          "silhouette IoU 0.158 is below threshold 0.85",
+          "aspect-ratio delta 0.556 exceeds threshold 0.05",
+          "scale delta 1.420 exceeds threshold 0.08"
+        ],
+        "maskWarnings": [],
+        "renderHash": "de65bfa13ffdacc8",
+        "passId": "blockout",
+        "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-diagnostic.png"
+      },
+      "normalizedProbe": {
+        "passed": false,
+        "checks": {
+          "silhouetteIoU": 0.1197,
+          "aspectRatioDelta": 0.0,
+          "scaleDelta": 0.0,
+          "bilateralSymmetryError": 0.012
+        },
+        "failures": [
+          "silhouette IoU 0.120 is below threshold 0.85"
+        ],
+        "maskWarnings": [],
+        "renderHash": "ed5cfc0938535a61",
+        "passId": "blockout",
+        "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png"
+      },
+      "rawProbeFailures": [
+        "silhouette IoU 0.158 is below threshold 0.85",
+        "aspect-ratio delta 0.556 exceeds threshold 0.05",
+        "scale delta 1.420 exceeds threshold 0.08"
+      ],
+      "normalizedProbeFailures": [
+        "silhouette IoU 0.120 is below threshold 0.85"
+      ],
+      "reviewNote": "Accepted for blockout continuation under the documented photo-reconstruction probe limitation; broadside and multi-angle screenshot review remain the visual authority."
+    }
+  ],
+  "tier1GateNotes": [
+    {
+      "passId": "blockout",
+      "rawProbe": "visual-evidence/tier1-blockout.json",
+      "normalizedProbe": "visual-evidence/tier1-blockout-normalized.json",
+      "decision": "continue",
+      "reason": "Raw IoU is advisory for this source; normalized aspect/scale/symmetry align and the screenshot review records the major shotgun semantic features."
+    },
+    {
+      "passId": "blockout",
+      "rawProbe": "visual-evidence/tier1-blockout.json",
+      "normalizedProbe": "visual-evidence/tier1-blockout-normalized.json",
+      "decision": "continue",
+      "reason": "Raw IoU is advisory for this source; normalized aspect/scale/symmetry align and the screenshot review records the major shotgun semantic features."
     }
   ]
 }

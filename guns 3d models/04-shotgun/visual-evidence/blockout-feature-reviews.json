@@ -1,0 +1,50 @@
+[
+  {
+    "id": "shotgun-silhouette",
+    "tier": "critical",
+    "score": 0.84,
+    "status": "pass",
+    "evidenceRefs": ["studio-v4.png", "neutral-v2.png", "final-review-broadside-three-quarter.md"],
+    "notes": "Long stock-to-muzzle silhouette, compact receiver, separate dual tubes, pump, band, and stepped muzzle are present and correctly framed. The stock remains authored hard-surface rather than exact photographed walnut curvature."
+  },
+  {
+    "id": "pump-action-identity",
+    "tier": "critical",
+    "score": 0.83,
+    "status": "pass",
+    "evidenceRefs": ["studio-v4.png", "three-quarter-v4.png", "top-v4.png"],
+    "notes": "Upper barrel, lower tubular magazine, ribbed wood pump, receiver, and explicit slide rod read as a pump-action shotgun in broadside and orbit views."
+  },
+  {
+    "id": "wood-stock-and-checkering",
+    "tier": "critical",
+    "score": 0.81,
+    "status": "pass",
+    "evidenceRefs": ["studio-v4.png", "neutral-v2.png", "material-analysis.json"],
+    "notes": "Warm procedural hardwood, cheek rest, grip transition, checkering accents, buttpad, and sling loop are represented; broad grain is carried by independent texture and material evidence."
+  },
+  {
+    "id": "receiver-trigger-identity",
+    "tier": "critical",
+    "score": 0.82,
+    "status": "pass",
+    "evidenceRefs": ["studio-v4.png", "three-quarter-v4.png", "side-v4.png"],
+    "notes": "Rounded receiver shell, ejection-port recess and lip, side fasteners, open trigger guard, curved trigger, and pivot are grounded and selectable."
+  },
+  {
+    "id": "muzzle-sighting-identity",
+    "tier": "important",
+    "score": 0.80,
+    "status": "pass",
+    "evidenceRefs": ["studio-v4.png", "top-v4.png", "side-v4.png"],
+    "notes": "Front band bridges the tubes, the front sight is explicit, and the stepped knurled muzzle includes a nested bore/crown."
+  },
+  {
+    "id": "orbit-construction",
+    "tier": "important",
+    "score": 0.79,
+    "status": "pass",
+    "evidenceRefs": ["three-quarter-v4.png", "top-v4.png", "side-v4.png", "multi-angle-blockout.json"],
+    "notes": "Three-quarter, top, and side views remain non-degenerate; tube spacing, stock thickness, pump clearance, band support, and muzzle depth survive orbit review."
+  }
+]

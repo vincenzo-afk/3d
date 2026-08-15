@@ -1,0 +1,16 @@
+{
+  "passed": false,
+  "checks": {
+    "silhouetteIoU": 0.1197,
+    "aspectRatioDelta": 0.0,
+    "scaleDelta": 0.0,
+    "bilateralSymmetryError": 0.012
+  },
+  "failures": [
+    "silhouette IoU 0.120 is below threshold 0.85"
+  ],
+  "maskWarnings": [],
+  "renderHash": "ed5cfc0938535a61",
+  "passId": "blockout",
+  "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png"
+}

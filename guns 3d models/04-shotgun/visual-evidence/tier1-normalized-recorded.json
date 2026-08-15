@@ -1,0 +1,203 @@
+{
+  "passed": false,
+  "checks": {
+    "silhouetteIoU": 0.1323,
+    "aspectRatioDelta": 0.0,
+    "scaleDelta": 0.0,
+    "bilateralSymmetryError": 0.0127,
+    "colorDelta": {
+      "checked": 45,
+      "maxDeltaE": 36.67,
+      "perComponent": [
+        {
+          "componentId": null,
+          "deltaE": 0.72
+        },
+        {
+          "componentId": null,
+          "deltaE": 29.84
+        },
+        {
+          "componentId": null,
+          "deltaE": 6.69
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.02
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.7
+        },
+        {
+          "componentId": null,
+          "deltaE": 36.67
+        },
+        {
+          "componentId": null,
+          "deltaE": 19.46
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.11
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 29.84
+        },
+        {
+          "componentId": null,
+          "deltaE": 29.84
+        },
+        {
+          "componentId": null,
+          "deltaE": 29.84
+        },
+        {
+          "componentId": null,
+          "deltaE": 29.84
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.52
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 6.69
+        },
+        {
+          "componentId": null,
+          "deltaE": 0.26
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.02
+        },
+        {
+          "componentId": null,
+          "deltaE": 6.69
+        },
+        {
+          "componentId": null,
+          "deltaE": 5.7
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.11
+        },
+        {
+          "componentId": null,
+          "deltaE": 36.67
+        },
+        {
+          "componentId": null,
+          "deltaE": 36.67
+        },
+        {
+          "componentId": null,
+          "deltaE": 36.67
+        },
+        {
+          "componentId": null,
+          "deltaE": 19.46
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.11
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.11
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 29.84
+        },
+        {
+          "componentId": null,
+          "deltaE": 29.84
+        },
+        {
+          "componentId": null,
+          "deltaE": 1.52
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 36.67
+        },
+        {
+          "componentId": null,
+          "deltaE": 36.67
+        },
+        {
+          "componentId": null,
+          "deltaE": 28.87
+        },
+        {
+          "componentId": null,
+          "deltaE": 9.11
+        },
+        {
+          "componentId": null,
+          "deltaE": 0.26
+        },
+        {
+          "componentId": null,
+          "deltaE": 0.26
+        }
+      ],
+      "gated": false
+    }
+  },
+  "failures": [
+    "silhouette IoU 0.132 is below threshold 0.85"
+  ],
+  "maskWarnings": [],
+  "renderHash": "735a5c88504393e1",
+  "passId": "blockout",
+  "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png"
+}

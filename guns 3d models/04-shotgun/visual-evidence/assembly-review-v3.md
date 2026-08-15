@@ -1,0 +1,5 @@
+# 04 Shotgun — Assembly Review v3
+
+The studio broadside now has useful material separation: the stock reads as warm dark walnut, the pump reads as carved/ribbed wood, the receiver and tubes read as dark blued metal, and the band and trigger provide controlled silver accents. The silhouette is readable, but the stock is still more faceted and block-like than the reference's organic walnut form, and the pump's repeated ribs are visually strong enough to compete with the receiver.
+
+The three-quarter view confirms the major depth relationships are present. The upper barrel and lower magazine tube are separated, the pump sits around the tube system, the receiver is grounded to the stock, the trigger guard is attached, and the front band and muzzle have depth. The main remaining orbit concerns are that the stock thickness is somewhat slab-like, the pump sleeve is nearly rectangular from above, and the muzzle cap/front band cluster is dense. The next top/side review will determine whether these are acceptable inferred depth or need another corrective pass.

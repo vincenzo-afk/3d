@@ -1,0 +1,26 @@
+{
+  "referenceAreaFraction": 0.13022762345679012,
+  "angles": [
+    {
+      "path": "guns 3d models/04-shotgun/visual-evidence/three-quarter-v4.png",
+      "areaFraction": 0.9933993902439024,
+      "ratio": 7.628177216744764,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/04-shotgun/visual-evidence/top-v4.png",
+      "areaFraction": 0.994344512195122,
+      "ratio": 7.635434678150663,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/04-shotgun/visual-evidence/side-v4.png",
+      "areaFraction": 0.9989005335365854,
+      "ratio": 7.670419739081112,
+      "degenerate": false
+    }
+  ],
+  "degenerate": false,
+  "collapseRatio": 0.15,
+  "note": "deterministic; zero token; a flat-plane-faking-a-volume collapses in silhouette area when orbited"
+}

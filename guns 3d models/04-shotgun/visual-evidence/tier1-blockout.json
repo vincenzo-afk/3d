@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "checks": {
+    "silhouetteIoU": 0.1577,
+    "aspectRatioDelta": 0.5556,
+    "scaleDelta": 1.4198,
+    "bilateralSymmetryError": 0.0298
+  },
+  "failures": [
+    "silhouette IoU 0.158 is below threshold 0.85",
+    "aspect-ratio delta 0.556 exceeds threshold 0.05",
+    "scale delta 1.420 exceeds threshold 0.08"
+  ],
+  "maskWarnings": [],
+  "renderHash": "de65bfa13ffdacc8",
+  "passId": "blockout",
+  "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-diagnostic.png"
+}
