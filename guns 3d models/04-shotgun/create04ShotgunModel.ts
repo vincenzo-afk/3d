@@ -240,12 +240,12 @@ function addFastener(group: THREE.Group, name: string, position: V3, material: T
 
 function addStock(group: THREE.Group, runtime: ShotgunRuntime, materials: MaterialSet, shadows: boolean): void {
   const shell = addMesh(group, 'stockWoodShell', extrude([
-    [-2.18, 0.30], [-1.94, 0.52], [-1.35, 0.58], [-0.98, 0.42], [-0.72, 0.25], [-0.86, -0.20], [-1.22, -0.34], [-1.48, -0.58], [-2.14, -0.48],
-  ], 0.54, [ellipseLoop(-1.62, 0.03, 0.38, 0.19)]), materials['wood-stock'], runtime, shadows);
+    [-2.18, 0.22], [-2.08, 0.42], [-1.56, 0.50], [-1.18, 0.46], [-0.90, 0.30], [-0.72, 0.18], [-0.80, -0.10], [-1.05, -0.23], [-1.32, -0.47], [-2.10, -0.42],
+  ], 0.54), materials['wood-stock'], runtime, shadows);
   shell.userData.feature = 'organic-hardwood-stock-profile';
-  const cheek = addMesh(group, 'stockCheekRest', extrude([[-1.56, 0.44], [-1.20, 0.52], [-0.92, 0.38], [-1.10, 0.26], [-1.50, 0.30]], 0.40), materials['wood-stock'], runtime, shadows);
+  const cheek = addMesh(group, 'stockCheekRest', extrude([[-1.56, 0.40], [-1.22, 0.48], [-0.92, 0.35], [-1.10, 0.24], [-1.50, 0.27]], 0.40), materials['wood-stock'], runtime, shadows);
   cheek.position.z = 0.01;
-  const grip = addMesh(group, 'gripTransition', extrude([[-1.50, 0.23], [-1.08, 0.24], [-1.10, -0.18], [-1.34, -0.40], [-1.58, -0.18]], 0.48), materials['wood-stock'], runtime, shadows);
+  const grip = addMesh(group, 'gripTransition', extrude([[-1.47, 0.20], [-1.06, 0.22], [-1.10, -0.12], [-1.30, -0.32], [-1.54, -0.15]], 0.48), materials['wood-stock'], runtime, shadows);
   grip.position.z = 0.02;
   for (let i = 0; i < 7; i += 1) {
     const check = addMesh(group, `gripCheckering${i + 1}`, roundedBox(0.10, 0.018, 0.026, 0.004), materials['polished-action-metal'], runtime, shadows);
@@ -269,15 +269,15 @@ function addStock(group: THREE.Group, runtime: ShotgunRuntime, materials: Materi
 
 function addReceiver(group: THREE.Group, runtime: ShotgunRuntime, materials: MaterialSet, shadows: boolean): void {
   const shell = addMesh(group, 'receiverShell', extrude([
-    [-0.82, 0.06], [-0.72, 0.42], [-0.52, 0.55], [0.30, 0.55], [0.48, 0.42], [0.48, -0.18], [0.24, -0.34], [-0.58, -0.34],
+    [-0.82, 0.02], [-0.72, 0.34], [-0.52, 0.46], [0.28, 0.46], [0.42, 0.34], [0.42, -0.12], [0.22, -0.24], [-0.58, -0.24],
   ], 0.62), materials['blued-receiver-metal'], runtime, shadows);
   shell.userData.feature = 'rounded-pump-action-receiver';
   const topCrown = addMesh(group, 'receiverTopCrown', roundedBox(0.82, 0.08, 0.58, 0.012), materials['band-edge-metal'], runtime, shadows);
-  topCrown.position.set(-0.12, 0.57, 0);
+  topCrown.position.set(-0.12, 0.48, 0);
   const ejection = addMesh(group, 'ejectionPortCavity', roundedBox(0.38, 0.13, 0.05, 0.018), materials['cavity-material'], runtime, shadows);
-  ejection.position.set(-0.18, 0.38, FRONT_Z * 0.96);
+  ejection.position.set(-0.18, 0.31, FRONT_Z * 0.96);
   const ejectionLip = addMesh(group, 'ejectionPortLip', roundedBox(0.42, 0.025, 0.06, 0.006), materials['polished-action-metal'], runtime, shadows);
-  ejectionLip.position.set(-0.18, 0.47, FRONT_Z * 0.98);
+  ejectionLip.position.set(-0.18, 0.39, FRONT_Z * 0.98);
   const actionBar = addMesh(group, 'actionSeam', roundedBox(0.76, 0.025, 0.025, 0.004), materials['polished-action-metal'], runtime, shadows);
   actionBar.position.set(-0.28, -0.08, FRONT_Z * 0.96);
   for (let i = 0; i < 4; i += 1) {
@@ -290,11 +290,11 @@ function addReceiver(group: THREE.Group, runtime: ShotgunRuntime, materials: Mat
 }
 
 function addTrigger(group: THREE.Group, runtime: ShotgunRuntime, materials: MaterialSet, shadows: boolean): void {
-  const guard = addMesh(group, 'triggerGuardSystem', tubePath([[-0.56, -0.22, FRONT_Z * 0.90], [-0.54, -0.47, FRONT_Z * 0.90], [-0.20, -0.48, FRONT_Z * 0.90], [-0.14, -0.23, FRONT_Z * 0.90]], 0.045, 22), materials['polished-action-metal'], runtime, shadows);
+  const guard = addMesh(group, 'triggerGuardSystem', tubePath([[-0.56, -0.16, FRONT_Z * 0.90], [-0.54, -0.38, FRONT_Z * 0.90], [-0.20, -0.39, FRONT_Z * 0.90], [-0.14, -0.16, FRONT_Z * 0.90]], 0.040, 22), materials['polished-action-metal'], runtime, shadows);
   guard.userData.feature = 'open-trigger-guard';
-  const blade = addMesh(group, 'triggerBlade', tubePath([[-0.34, -0.25, FRONT_Z * 0.98], [-0.36, -0.38, FRONT_Z * 0.98], [-0.29, -0.43, FRONT_Z * 0.98]], 0.035, 16), materials['polished-action-metal'], runtime, shadows);
+  const blade = addMesh(group, 'triggerBlade', tubePath([[-0.34, -0.18, FRONT_Z * 0.98], [-0.36, -0.30, FRONT_Z * 0.98], [-0.29, -0.35, FRONT_Z * 0.98]], 0.032, 16), materials['polished-action-metal'], runtime, shadows);
   blade.userData.feature = 'curved-trigger-blade';
-  addFastener(group, 'triggerPivot', [-0.38, -0.20, FRONT_Z], materials['band-edge-metal'], runtime, shadows, 0.035);
+  addFastener(group, 'triggerPivot', [-0.38, -0.16, FRONT_Z], materials['band-edge-metal'], runtime, shadows, 0.032);
   addSocket(group, 'triggerAssemblySocket', [-0.48, -0.18, 0], runtime, [0, -1, 0]);
   addCollider('trigger-collider', guard, runtime);
 }
@@ -323,19 +323,19 @@ function addMagazineTube(group: THREE.Group, runtime: ShotgunRuntime, materials:
 
 function addPump(group: THREE.Group, runtime: ShotgunRuntime, materials: MaterialSet, shadows: boolean): void {
   const sleeve = addMesh(group, 'pumpWoodSleeve', extrude([
-    [0.36, 0.02], [1.30, 0.02], [1.34, 0.17], [1.25, 0.35], [0.42, 0.35], [0.34, 0.22],
+    [0.28, 0.00], [1.42, 0.00], [1.46, 0.15], [1.34, 0.34], [0.36, 0.34], [0.26, 0.20],
   ], 0.54), materials['wood-pump-fore-end'], runtime, shadows);
   sleeve.userData.feature = 'sliding-ribbed-hardwood-pump';
   for (let i = 0; i < 12; i += 1) {
     const rib = addMesh(group, `pumpRib${i + 1}`, roundedBox(0.042, 0.29, 0.05, 0.008), materials['wood-pump-fore-end'], runtime, shadows);
-    rib.position.set(0.46 + i * 0.066, 0.19, FRONT_Z * 0.90);
+    rib.position.set(0.40 + i * 0.086, 0.18, FRONT_Z * 0.90);
   }
   for (const [i, x] of [0.42, 1.25].entries()) {
     const motif = addMesh(group, `pumpChevronCarving${i + 1}`, extrude([[x - 0.10, 0.10], [x, 0.28], [x + 0.10, 0.10], [x, 0.14]], 0.025), materials['rubber-and-cavity'], runtime, shadows);
     motif.position.z = FRONT_Z * 0.98;
   }
-  runtime.pumpSlide = { start: [0.34, 0.18, 0], end: [1.34, 0.18, 0] };
-  addSocket(group, 'pumpForeEndAssemblySocket', [0.34, 0.18, 0], runtime, [1, 0, 0]);
+  runtime.pumpSlide = { start: [0.26, 0.17, 0], end: [1.46, 0.17, 0] };
+  addSocket(group, 'pumpForeEndAssemblySocket', [0.26, 0.17, 0], runtime, [1, 0, 0]);
   addCollider('pump-collider', sleeve, runtime);
 }
 
