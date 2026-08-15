@@ -1,0 +1,50 @@
+[
+  {
+    "id": "hmg-silhouette",
+    "tier": "critical",
+    "score": 0.84,
+    "status": "pass",
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+  },
+  {
+    "id": "feed-system-identity",
+    "tier": "critical",
+    "score": 0.82,
+    "status": "pass",
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+  },
+  {
+    "id": "receiver-action-identity",
+    "tier": "critical",
+    "score": 0.84,
+    "status": "pass",
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+  },
+  {
+    "id": "barrel-bipod-identity",
+    "tier": "critical",
+    "score": 0.8,
+    "status": "pass",
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+  },
+  {
+    "id": "painted-coating-system",
+    "tier": "critical",
+    "score": 0.8,
+    "status": "pass",
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+  },
+  {
+    "id": "orbit-construction",
+    "tier": "important",
+    "score": 0.74,
+    "status": "pass",
+    "visible": true,
+    "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+  }
+]
