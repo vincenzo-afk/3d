@@ -1,0 +1,85 @@
+{
+  "referenceId": "04-shotgun-broadside",
+  "regions": [
+    {
+      "componentId": "stockAssembly",
+      "regionId": "wood-stock",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 24, "y": 366, "width": 455, "height": 205},
+      "family": "wood",
+      "subtype": "finished-hardwood",
+      "finish": "satin-varnished",
+      "materialSpecId": "wood-stock"
+    },
+    {
+      "componentId": "receiverActionAssembly",
+      "regionId": "blued-receiver-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 455, "y": 330, "width": 390, "height": 150},
+      "family": "metal",
+      "subtype": "blued-steel",
+      "finish": "satin-dark-metal",
+      "materialSpecId": "blued-receiver-metal"
+    },
+    {
+      "componentId": "upperBarrelAssembly",
+      "regionId": "blued-barrel-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 758, "y": 326, "width": 690, "height": 82},
+      "family": "metal",
+      "subtype": "blued-steel",
+      "finish": "satin-dark-metal",
+      "materialSpecId": "blued-barrel-metal"
+    },
+    {
+      "componentId": "lowerMagazineTubeAssembly",
+      "regionId": "magazine-tube-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 760, "y": 390, "width": 690, "height": 82},
+      "family": "metal",
+      "subtype": "blued-steel",
+      "finish": "satin-dark-metal",
+      "materialSpecId": "magazine-tube-metal"
+    },
+    {
+      "componentId": "pumpForeEndAssembly",
+      "regionId": "wood-pump-fore-end",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 842, "y": 360, "width": 320, "height": 105},
+      "family": "wood",
+      "subtype": "finished-hardwood",
+      "finish": "satin-varnished-carved",
+      "materialSpecId": "wood-pump-fore-end"
+    },
+    {
+      "componentId": "triggerAssembly",
+      "regionId": "trigger-rubber-cavity",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 530, "y": 410, "width": 155, "height": 92},
+      "family": "rubber",
+      "subtype": "matte-rubber",
+      "finish": "matte-black",
+      "materialSpecId": "rubber-and-cavity"
+    },
+    {
+      "componentId": "frontBandAssembly",
+      "regionId": "band-edge-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 1310, "y": 325, "width": 85, "height": 150},
+      "family": "metal",
+      "subtype": "polished-steel",
+      "finish": "semi-polished-edge",
+      "materialSpecId": "band-edge-metal"
+    },
+    {
+      "componentId": "muzzleAssembly",
+      "regionId": "muzzle-knurled-metal",
+      "sourceImage": "reference-source.png",
+      "bbox": {"x": 1430, "y": 325, "width": 205, "height": 150},
+      "family": "metal",
+      "subtype": "brushed-steel",
+      "finish": "satin-knurled-metal",
+      "materialSpecId": "muzzle-knurled-metal"
+    }
+  ]
+}

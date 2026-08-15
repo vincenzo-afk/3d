@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active",
   "profile": "generic",
-  "currentStep": "material-evidence",
+  "currentStep": "build-current-pass",
   "currentPass": "",
   "checklist": [
     {
@@ -94,24 +94,33 @@
     {
       "id": "material-evidence",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/04-shotgun/material-analysis.json",
+        "guns 3d models/04-shotgun/material-evidence"
+      ],
       "reason": "",
       "command": "python3 forge/stage1_intake/material_region_analysis.py --manifest material-regions.json --out-dir material-evidence --out material-analysis.json (single-crop route: analyze_texture.py + extract_pbr_evidence.py per verified crop; otherwise skip with a reason)"
     },
     {
       "id": "material-spec-wiring",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/04-shotgun/material-spec-wiring.md",
+        "guns 3d models/04-shotgun/object-sculpt-spec.json"
+      ],
       "reason": "",
       "command": "python3 forge/stage2_spec/apply_material_analysis.py {spec} material-analysis.json --in-place"
     },
     {
       "id": "strict-validation",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/04-shotgun/strict-validation-material-wiring.txt",
+        "guns 3d models/04-shotgun/object-sculpt-spec.json"
+      ],
       "reason": "",
       "command": "python3 forge/stage2_spec/validate_sculpt_spec.py {spec} --strict-quality"
     },

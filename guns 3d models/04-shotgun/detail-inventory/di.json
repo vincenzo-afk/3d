@@ -1,0 +1,251 @@
+{
+  "sourceImage": "/home/ubuntu/3d/guns 3d models/04-shotgun/reference-source.png",
+  "zonesDir": "/home/ubuntu/3d/guns 3d models/04-shotgun/detail-inventory",
+  "detailInventory": {
+    "scanMethod": "grid-3x3 plus authored broadside observation",
+    "targetMinDetails": 12,
+    "details": [
+      {
+        "id": "stock-wood-grain",
+        "kind": "linework",
+        "description": "Directional dark hardwood grain streaks follow the stock axis from butt toward the receiver.",
+        "region": {
+          "x": 0.03,
+          "y": 0.4,
+          "width": 0.27,
+          "height": 0.16,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "wood albedo and roughness",
+        "mapsTo": {
+          "type": "component",
+          "ref": "woodStockShell"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c0.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "stock-cheek-bevel",
+        "kind": "bevel",
+        "description": "Raised cheek transition and sloped upper stock shoulder form the butt-to-grip profile.",
+        "region": {
+          "x": 0.18,
+          "y": 0.37,
+          "width": 0.16,
+          "height": 0.1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "stock silhouette and edge highlight",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockCheekRest"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c0.png",
+        "confidence": 0.88
+      },
+      {
+        "id": "grip-checkering",
+        "kind": "linework",
+        "description": "Dark repeated checkering/engraved facets occupy the visible pistol-grip panel.",
+        "region": {
+          "x": 0.18,
+          "y": 0.45,
+          "width": 0.11,
+          "height": 0.11,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "grip relief and roughness",
+        "mapsTo": {
+          "type": "component",
+          "ref": "gripCheckering"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c1.png",
+        "confidence": 0.82
+      },
+      {
+        "id": "buttpad-checkering",
+        "kind": "ridge",
+        "description": "Near-black buttpad carries a repeated diagonal traction pattern.",
+        "region": {
+          "x": 0.02,
+          "y": 0.42,
+          "width": 0.035,
+          "height": 0.15,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "rubber relief and contact shadow",
+        "mapsTo": {
+          "type": "component",
+          "ref": "buttpad"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c0.png",
+        "confidence": 0.91
+      },
+      {
+        "id": "receiver-ejection-port",
+        "kind": "hole",
+        "description": "A rounded rectangular recessed loading/ejection port interrupts the receiver side wall.",
+        "region": {
+          "x": 0.38,
+          "y": 0.37,
+          "width": 0.1,
+          "height": 0.055,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "cavity and action identity",
+        "mapsTo": {
+          "type": "component",
+          "ref": "ejectionPortCavity"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c1.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "receiver-side-pins",
+        "kind": "fastener",
+        "description": "Small circular pins/fasteners repeat along the lower receiver side.",
+        "region": {
+          "x": 0.34,
+          "y": 0.43,
+          "width": 0.13,
+          "height": 0.05,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "receiver edge contrast",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverFasteners"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c1.png",
+        "confidence": 0.84
+      },
+      {
+        "id": "trigger-guard-opening",
+        "kind": "hole",
+        "description": "Rounded open trigger guard is embedded below the receiver and surrounds the curved trigger blade.",
+        "region": {
+          "x": 0.31,
+          "y": 0.45,
+          "width": 0.1,
+          "height": 0.1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "negative space and action readability",
+        "mapsTo": {
+          "type": "component",
+          "ref": "triggerGuardSystem"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c1.png",
+        "confidence": 0.94
+      },
+      {
+        "id": "pump-rib-bands",
+        "kind": "ridge",
+        "description": "Repeated vertical rib bands wrap the wooden pump fore-end and create a tactile sliding grip.",
+        "region": {
+          "x": 0.52,
+          "y": 0.4,
+          "width": 0.19,
+          "height": 0.08,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "pump relief and highlight breakup",
+        "mapsTo": {
+          "type": "component",
+          "ref": "pumpRibSystem"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c2.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "pump-chevron-carving",
+        "kind": "linework",
+        "description": "Dark triangular carved motifs cap the visible front and rear ends of the pump wood.",
+        "region": {
+          "x": 0.51,
+          "y": 0.38,
+          "width": 0.2,
+          "height": 0.09,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "wood local albedo and relief",
+        "mapsTo": {
+          "type": "component",
+          "ref": "pumpCarvedMotifs"
+        },
+        "evidenceRef": "detail-inventory/zone-r1c2.png",
+        "confidence": 0.84
+      },
+      {
+        "id": "front-band",
+        "kind": "bevel",
+        "description": "Metal band wraps the upper barrel and lower magazine tube near the muzzle-side support.",
+        "region": {
+          "x": 0.78,
+          "y": 0.36,
+          "width": 0.05,
+          "height": 0.12,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "tube attachment and edge highlights",
+        "mapsTo": {
+          "type": "component",
+          "ref": "frontBand"
+        },
+        "evidenceRef": "detail-inventory/zone-r2c2.png",
+        "confidence": 0.92
+      },
+      {
+        "id": "muzzle-knurling",
+        "kind": "ridge",
+        "description": "Short forward cap has a dense knurled grip pattern and stepped termination.",
+        "region": {
+          "x": 0.87,
+          "y": 0.38,
+          "width": 0.08,
+          "height": 0.08,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "muzzle roughness and grip relief",
+        "mapsTo": {
+          "type": "component",
+          "ref": "muzzleKnurling"
+        },
+        "evidenceRef": "detail-inventory/zone-r2c2.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "front-sight-post",
+        "kind": "ridge",
+        "description": "Small raised front sight post and notch sit above the upper barrel near the muzzle.",
+        "region": {
+          "x": 0.89,
+          "y": 0.33,
+          "width": 0.05,
+          "height": 0.05,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "sighting identity and silhouette",
+        "mapsTo": {
+          "type": "component",
+          "ref": "frontSight"
+        },
+        "evidenceRef": "detail-inventory/zone-r2c2.png",
+        "confidence": 0.89
+      }
+    ]
+  },
+  "authoringInstruction": "Open each zone crop under zonesDir and replace every detail stub's kind, description, scale, affects, mapsTo, and confidence with what is actually observed. Add more detail entries per zone if a single zone contains multiple distinct marks; do not leave stubs unfilled or unlinked (mapsTo must reference a real component.localFeatures or material.localOverrides entry)."
+}
