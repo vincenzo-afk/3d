@@ -1,0 +1,11 @@
+{
+  "path": "/home/ubuntu/3d/guns image models/02-assault-rifle.png",
+  "type": "png",
+  "bytes": 655604,
+  "width": 1672,
+  "height": 941,
+  "aspectRatio": 1.7768331562167907,
+  "technicalSuitability": "pass",
+  "warnings": [],
+  "note": "This is only technical image probing. Semantic object suitability still requires visual inspection."
+}

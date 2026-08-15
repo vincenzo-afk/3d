@@ -1,0 +1,37 @@
+{
+  "model": "02-assault-rifle",
+  "checks": {
+    "rootUserDataSculptRuntime": true,
+    "runtimeNodes": true,
+    "namedMeshes": true,
+    "macroGroups": true,
+    "sockets": true,
+    "colliders": true,
+    "destructionGroups": true,
+    "selectableParts": true
+  },
+  "parts": 50,
+  "integralMeshes": 134,
+  "requiredGroups": [
+    "stockAssembly",
+    "receiverAssembly",
+    "opticAssembly",
+    "magazineAssembly",
+    "handguardAssembly",
+    "foregripAssembly",
+    "barrelMuzzleAssembly"
+  ],
+  "requiredSockets": [
+    "stockAssemblySocket",
+    "receiverAssemblySocket",
+    "opticAssemblySocket",
+    "scope-sight-line"
+  ],
+  "actionReady": true,
+  "notes": [
+    "Macro groups are stable transform pivots.",
+    "Named child meshes ride their macro assembly through explodeWithParent metadata.",
+    "Collider proxies and destruction groups are exposed under sculptRuntime.",
+    "This audit validates the authored runtime contract statically; it does not claim a physics engine is installed."
+  ]
+}

@@ -1,0 +1,2067 @@
+{
+  "schemaVersion": 1,
+  "kind": "img2threejs.material-analysis",
+  "referenceId": "02-assault-rifle",
+  "manifest": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-regions.json",
+  "registry": "/home/ubuntu/img2threejs/docs/materials/material-reference.json",
+  "targetThreshold": 0.7,
+  "notObservedMaterials": [],
+  "unresolvedNotObservedMaterials": [],
+  "regions": [
+    {
+      "componentId": "receiverAssembly",
+      "regionId": "dark-metal-body",
+      "materialSpecId": "dark-anodized-metal",
+      "hypothesis": {
+        "componentId": "receiverAssembly",
+        "regionId": "dark-metal-body",
+        "materialId": null,
+        "family": "metal",
+        "subtype": "anodized-dark-metal",
+        "finish": "satin-metal",
+        "aliases": [],
+        "confidence": 0.86,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "metal.steel-brushed",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.82,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [
+          "metal.aluminum",
+          "metal.brass",
+          "metal.copper",
+          "metal.gold",
+          "metal.steel-brushed",
+          "metal.steel-polished"
+        ],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/00-dark-metal-body.png",
+            "bbox": {
+              "x": 455,
+              "y": 355,
+              "width": 280,
+              "height": 160
+            },
+            "sourceWidth": 1672,
+            "sourceHeight": 941,
+            "loaderWarnings": [],
+            "coverage": 0.0285
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.86,
+            "estimatedFidelity": 0.86,
+            "targetThreshold": 0.7,
+            "materialId": "dark-anodized-metal",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/00-dark-metal-body.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body",
+            "palette": [
+              "#222F42",
+              "#161F2C",
+              "#2F486B",
+              "#090D12",
+              "#7EA1C4"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_albedo.png",
+                "url": "dark-anodized-metal_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_roughness.png",
+                "url": "dark-anodized-metal_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_height.png",
+                "url": "dark-anodized-metal_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_normal.png",
+                "url": "dark-anodized-metal_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_ao.png",
+                "url": "dark-anodized-metal_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 280,
+              "sourceHeight": 160,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 280,
+                "height": 160
+              },
+              "mask": {
+                "backgroundColor": "#17232D",
+                "backgroundNoise": 61.474,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.673
+              },
+              "mapStats": {
+                "valueRange": 0.2976,
+                "heightP90Gradient": 0.13724,
+                "roughnessBase": 0.766,
+                "roughnessVariation": 0.202,
+                "normalStrength": 0.317,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#222F42",
+                "#161F2C",
+                "#2F486B",
+                "#090D12",
+                "#7EA1C4"
+              ]
+            },
+            "warnings": [
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "candy-coat",
+            "recipe": {
+              "metalness": 0.35,
+              "roughness": 0.18,
+              "clearcoat": 0.6,
+              "clearcoatRoughness": 0.15,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.7,
+              "anisotropy": 0.0,
+              "procedural": "gradient-smoke"
+            },
+            "palette": [
+              "#2B2B2D",
+              "#2D3137",
+              "#262E3A",
+              "#1F2B3D",
+              "#131D28"
+            ],
+            "paletteHueRisk": [
+              {
+                "stop": "#2D3137",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  55,
+                  49,
+                  45
+                ]
+              },
+              {
+                "stop": "#262E3A",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  58,
+                  46,
+                  38
+                ]
+              },
+              {
+                "stop": "#1F2B3D",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  61,
+                  43,
+                  31
+                ]
+              },
+              {
+                "stop": "#131D28",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  40,
+                  29,
+                  19
+                ]
+              }
+            ],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 46.1,
+              "meanSaturation": 0.346,
+              "gradientStrength": 0.231,
+              "mottle": 0.041,
+              "streakRatio": 0.75,
+              "hueSpread": 0.066,
+              "specularFraction": 0.001
+            }
+          }
+        },
+        "profileId": "metal.steel-brushed",
+        "reviewNote": "Dark near-black anodized receiver is mapped to the closest registry steel-brushed metal family; final color/roughness stays source-derived.",
+        "family": "metal",
+        "subtype": "steel-brushed",
+        "finish": "satin-metal",
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/00-dark-metal-body.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ]
+      },
+      "observations": [
+        "chromatic base-colour response",
+        "visible meso/micro variation",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/00-dark-metal-body.png",
+        "bbox": {
+          "x": 455,
+          "y": 355,
+          "width": 280,
+          "height": 160
+        },
+        "sourceWidth": 1672,
+        "sourceHeight": 941,
+        "loaderWarnings": [],
+        "coverage": 0.0285
+      },
+      "textureAnalysis": {
+        "finishClass": "candy-coat",
+        "recipe": {
+          "metalness": 0.35,
+          "roughness": 0.18,
+          "clearcoat": 0.6,
+          "clearcoatRoughness": 0.15,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.7,
+          "anisotropy": 0.0,
+          "procedural": "gradient-smoke"
+        },
+        "palette": [
+          "#2B2B2D",
+          "#2D3137",
+          "#262E3A",
+          "#1F2B3D",
+          "#131D28"
+        ],
+        "paletteHueRisk": [
+          {
+            "stop": "#2D3137",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              55,
+              49,
+              45
+            ]
+          },
+          {
+            "stop": "#262E3A",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              58,
+              46,
+              38
+            ]
+          },
+          {
+            "stop": "#1F2B3D",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              61,
+              43,
+              31
+            ]
+          },
+          {
+            "stop": "#131D28",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              40,
+              29,
+              19
+            ]
+          }
+        ],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 46.1,
+          "meanSaturation": 0.346,
+          "gradientStrength": 0.231,
+          "mottle": 0.041,
+          "streakRatio": 0.75,
+          "hueSpread": 0.066,
+          "specularFraction": 0.001
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "materialId": "dark-anodized-metal",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/00-dark-metal-body.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body",
+        "palette": [
+          "#222F42",
+          "#161F2C",
+          "#2F486B",
+          "#090D12",
+          "#7EA1C4"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_albedo.png",
+            "url": "dark-anodized-metal_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_roughness.png",
+            "url": "dark-anodized-metal_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_height.png",
+            "url": "dark-anodized-metal_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_normal.png",
+            "url": "dark-anodized-metal_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_ao.png",
+            "url": "dark-anodized-metal_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 280,
+          "sourceHeight": 160,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 280,
+            "height": 160
+          },
+          "mask": {
+            "backgroundColor": "#17232D",
+            "backgroundNoise": 61.474,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.673
+          },
+          "mapStats": {
+            "valueRange": 0.2976,
+            "heightP90Gradient": 0.13724,
+            "roughnessBase": 0.766,
+            "roughnessVariation": 0.202,
+            "normalStrength": 0.317,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#222F42",
+            "#161F2C",
+            "#2F486B",
+            "#090D12",
+            "#7EA1C4"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/00-dark-metal-body.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_albedo.png",
+            "url": "dark-anodized-metal_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_roughness.png",
+            "url": "dark-anodized-metal_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_height.png",
+            "url": "dark-anodized-metal_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_normal.png",
+            "url": "dark-anodized-metal_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_ao.png",
+            "url": "dark-anodized-metal_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 280,
+          "sourceHeight": 160,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 280,
+            "height": 160
+          },
+          "mask": {
+            "backgroundColor": "#17232D",
+            "backgroundNoise": 61.474,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.673
+          },
+          "mapStats": {
+            "valueRange": 0.2976,
+            "heightP90Gradient": 0.13724,
+            "roughnessBase": 0.766,
+            "roughnessVariation": 0.202,
+            "normalStrength": 0.317,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#222F42",
+            "#161F2C",
+            "#2F486B",
+            "#090D12",
+            "#7EA1C4"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_albedo.png",
+          "url": "dark-anodized-metal_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_roughness.png",
+          "url": "dark-anodized-metal_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_height.png",
+          "url": "dark-anodized-metal_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_normal.png",
+          "url": "dark-anodized-metal_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-00-dark-metal-body/dark-anodized-metal_ao.png",
+          "url": "dark-anodized-metal_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "handguardAssembly",
+      "regionId": "marbled-coating",
+      "materialSpecId": "marbled-coating",
+      "hypothesis": {
+        "componentId": "handguardAssembly",
+        "regionId": "marbled-coating",
+        "materialId": null,
+        "family": "coating",
+        "subtype": "paint-over-metal",
+        "finish": "satin-gloss-marbled",
+        "aliases": [],
+        "confidence": 0.86,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "coating.painted-metal",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.84,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/01-marbled-coating.png",
+            "bbox": {
+              "x": 740,
+              "y": 365,
+              "width": 440,
+              "height": 140
+            },
+            "sourceWidth": 1672,
+            "sourceHeight": 941,
+            "loaderWarnings": [],
+            "coverage": 0.0392
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.86,
+            "estimatedFidelity": 0.86,
+            "targetThreshold": 0.7,
+            "materialId": "marbled-coating",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/01-marbled-coating.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating",
+            "palette": [
+              "#18222F",
+              "#29384F",
+              "#05070B",
+              "#31538F",
+              "#85B1E4"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_albedo.png",
+                "url": "marbled-coating_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_roughness.png",
+                "url": "marbled-coating_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_height.png",
+                "url": "marbled-coating_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_normal.png",
+                "url": "marbled-coating_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_ao.png",
+                "url": "marbled-coating_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 440,
+              "sourceHeight": 140,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 440,
+                "height": 140
+              },
+              "mask": {
+                "backgroundColor": "#303335",
+                "backgroundNoise": 86.706,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.6061
+              },
+              "mapStats": {
+                "valueRange": 0.4661,
+                "heightP90Gradient": 0.12127,
+                "roughnessBase": 0.758,
+                "roughnessVariation": 0.202,
+                "normalStrength": 0.298,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#18222F",
+                "#29384F",
+                "#05070B",
+                "#31538F",
+                "#85B1E4"
+              ]
+            },
+            "warnings": [
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "candy-coat",
+            "recipe": {
+              "metalness": 0.35,
+              "roughness": 0.18,
+              "clearcoat": 0.6,
+              "clearcoatRoughness": 0.15,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 0.7,
+              "anisotropy": 0.0,
+              "procedural": "gradient-smoke"
+            },
+            "palette": [
+              "#080809",
+              "#374F72",
+              "#1C2C57",
+              "#121417",
+              "#090A0B"
+            ],
+            "paletteHueRisk": [
+              {
+                "stop": "#374F72",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  114,
+                  79,
+                  55
+                ]
+              },
+              {
+                "stop": "#1C2C57",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  87,
+                  44,
+                  28
+                ]
+              },
+              {
+                "stop": "#121417",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  23,
+                  20,
+                  18
+                ]
+              },
+              {
+                "stop": "#090A0B",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  11,
+                  10,
+                  9
+                ]
+              }
+            ],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 41.0,
+              "meanSaturation": 0.332,
+              "gradientStrength": 0.406,
+              "mottle": 0.064,
+              "streakRatio": 0.89,
+              "hueSpread": 0.213,
+              "specularFraction": 0.008
+            }
+          }
+        },
+        "profileId": "coating.painted-metal",
+        "family": "coating",
+        "subtype": "paint-over-metal",
+        "finish": "satin-gloss-marbled",
+        "renderPrior": {
+          "metalness": 0.0,
+          "roughness": 0.45,
+          "clearcoat": 0.75,
+          "clearcoatRoughness": 0.12,
+          "ior": 1.5
+        },
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/01-marbled-coating.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ],
+        "visualCues": [
+          "diffuse paint colour under a separate glossy coat",
+          "chips may expose metallic substrate"
+        ],
+        "reviewNote": "Blue-violet and teal marbling is treated as a painted-metal coating over a dark hard-surface substrate."
+      },
+      "observations": [
+        "chromatic base-colour response",
+        "visible meso/micro variation",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/01-marbled-coating.png",
+        "bbox": {
+          "x": 740,
+          "y": 365,
+          "width": 440,
+          "height": 140
+        },
+        "sourceWidth": 1672,
+        "sourceHeight": 941,
+        "loaderWarnings": [],
+        "coverage": 0.0392
+      },
+      "textureAnalysis": {
+        "finishClass": "candy-coat",
+        "recipe": {
+          "metalness": 0.35,
+          "roughness": 0.18,
+          "clearcoat": 0.6,
+          "clearcoatRoughness": 0.15,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 0.7,
+          "anisotropy": 0.0,
+          "procedural": "gradient-smoke"
+        },
+        "palette": [
+          "#080809",
+          "#374F72",
+          "#1C2C57",
+          "#121417",
+          "#090A0B"
+        ],
+        "paletteHueRisk": [
+          {
+            "stop": "#374F72",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              114,
+              79,
+              55
+            ]
+          },
+          {
+            "stop": "#1C2C57",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              87,
+              44,
+              28
+            ]
+          },
+          {
+            "stop": "#121417",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              23,
+              20,
+              18
+            ]
+          },
+          {
+            "stop": "#090A0B",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              11,
+              10,
+              9
+            ]
+          }
+        ],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 41.0,
+          "meanSaturation": 0.332,
+          "gradientStrength": 0.406,
+          "mottle": 0.064,
+          "streakRatio": 0.89,
+          "hueSpread": 0.213,
+          "specularFraction": 0.008
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "materialId": "marbled-coating",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/01-marbled-coating.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating",
+        "palette": [
+          "#18222F",
+          "#29384F",
+          "#05070B",
+          "#31538F",
+          "#85B1E4"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_albedo.png",
+            "url": "marbled-coating_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_roughness.png",
+            "url": "marbled-coating_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_height.png",
+            "url": "marbled-coating_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_normal.png",
+            "url": "marbled-coating_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_ao.png",
+            "url": "marbled-coating_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 440,
+          "sourceHeight": 140,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 440,
+            "height": 140
+          },
+          "mask": {
+            "backgroundColor": "#303335",
+            "backgroundNoise": 86.706,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.6061
+          },
+          "mapStats": {
+            "valueRange": 0.4661,
+            "heightP90Gradient": 0.12127,
+            "roughnessBase": 0.758,
+            "roughnessVariation": 0.202,
+            "normalStrength": 0.298,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#18222F",
+            "#29384F",
+            "#05070B",
+            "#31538F",
+            "#85B1E4"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/01-marbled-coating.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_albedo.png",
+            "url": "marbled-coating_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_roughness.png",
+            "url": "marbled-coating_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_height.png",
+            "url": "marbled-coating_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_normal.png",
+            "url": "marbled-coating_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_ao.png",
+            "url": "marbled-coating_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 440,
+          "sourceHeight": 140,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 440,
+            "height": 140
+          },
+          "mask": {
+            "backgroundColor": "#303335",
+            "backgroundNoise": 86.706,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.6061
+          },
+          "mapStats": {
+            "valueRange": 0.4661,
+            "heightP90Gradient": 0.12127,
+            "roughnessBase": 0.758,
+            "roughnessVariation": 0.202,
+            "normalStrength": 0.298,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#18222F",
+            "#29384F",
+            "#05070B",
+            "#31538F",
+            "#85B1E4"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_albedo.png",
+          "url": "marbled-coating_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_roughness.png",
+          "url": "marbled-coating_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_height.png",
+          "url": "marbled-coating_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_normal.png",
+          "url": "marbled-coating_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-01-marbled-coating/marbled-coating_ao.png",
+          "url": "marbled-coating_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "stockAssembly",
+      "regionId": "charcoal-polymer",
+      "materialSpecId": "charcoal-polymer",
+      "hypothesis": {
+        "componentId": "stockAssembly",
+        "regionId": "charcoal-polymer",
+        "materialId": null,
+        "family": "plastic",
+        "subtype": "generic-polymer",
+        "finish": "matte-polymer",
+        "aliases": [],
+        "confidence": 0.86,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "plastic.matte",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.81,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [
+          "plastic.glossy",
+          "plastic.matte"
+        ],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/02-charcoal-polymer.png",
+            "bbox": {
+              "x": 18,
+              "y": 382,
+              "width": 320,
+              "height": 230
+            },
+            "sourceWidth": 1672,
+            "sourceHeight": 941,
+            "loaderWarnings": [],
+            "coverage": 0.0468
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.86,
+            "estimatedFidelity": 0.86,
+            "targetThreshold": 0.7,
+            "materialId": "charcoal-polymer",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/02-charcoal-polymer.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer",
+            "palette": [
+              "#26313B",
+              "#181F27",
+              "#040405",
+              "#354B63",
+              "#A0B5CE"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_albedo.png",
+                "url": "charcoal-polymer_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_roughness.png",
+                "url": "charcoal-polymer_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_height.png",
+                "url": "charcoal-polymer_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_normal.png",
+                "url": "charcoal-polymer_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_ao.png",
+                "url": "charcoal-polymer_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 320,
+              "sourceHeight": 230,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 320,
+                "height": 230
+              },
+              "mask": {
+                "backgroundColor": "#000000",
+                "backgroundNoise": 0.0,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.6433
+              },
+              "mapStats": {
+                "valueRange": 0.3671,
+                "heightP90Gradient": 0.13571,
+                "roughnessBase": 0.768,
+                "roughnessVariation": 0.205,
+                "normalStrength": 0.315,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#26313B",
+                "#181F27",
+                "#040405",
+                "#354B63",
+                "#A0B5CE"
+              ]
+            },
+            "warnings": [
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "painted-metal",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.5,
+              "clearcoat": 1.0,
+              "clearcoatRoughness": 0.05,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 1.0,
+              "anisotropy": 0.0,
+              "procedural": "flat-clearcoat"
+            },
+            "palette": [
+              "#000000",
+              "#1E2C3C",
+              "#101417",
+              "#0A0C0F",
+              "#050708"
+            ],
+            "paletteHueRisk": [
+              {
+                "stop": "#1E2C3C",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  60,
+                  44,
+                  30
+                ]
+              },
+              {
+                "stop": "#101417",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  23,
+                  20,
+                  16
+                ]
+              },
+              {
+                "stop": "#0A0C0F",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  15,
+                  12,
+                  10
+                ]
+              },
+              {
+                "stop": "#050708",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  8,
+                  7,
+                  5
+                ]
+              }
+            ],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 28.1,
+              "meanSaturation": 0.263,
+              "gradientStrength": 0.612,
+              "mottle": 0.029,
+              "streakRatio": 0.66,
+              "hueSpread": 0.417,
+              "specularFraction": 0.0
+            }
+          }
+        },
+        "profileId": "plastic.matte",
+        "reviewNote": "Skeleton stock reads as molded matte polymer with bounded edge wear and molded relief.",
+        "family": "plastic",
+        "subtype": "generic-polymer",
+        "finish": "matte-polymer",
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/02-charcoal-polymer.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ]
+      },
+      "observations": [
+        "chromatic base-colour response",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/02-charcoal-polymer.png",
+        "bbox": {
+          "x": 18,
+          "y": 382,
+          "width": 320,
+          "height": 230
+        },
+        "sourceWidth": 1672,
+        "sourceHeight": 941,
+        "loaderWarnings": [],
+        "coverage": 0.0468
+      },
+      "textureAnalysis": {
+        "finishClass": "painted-metal",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.5,
+          "clearcoat": 1.0,
+          "clearcoatRoughness": 0.05,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 1.0,
+          "anisotropy": 0.0,
+          "procedural": "flat-clearcoat"
+        },
+        "palette": [
+          "#000000",
+          "#1E2C3C",
+          "#101417",
+          "#0A0C0F",
+          "#050708"
+        ],
+        "paletteHueRisk": [
+          {
+            "stop": "#1E2C3C",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              60,
+              44,
+              30
+            ]
+          },
+          {
+            "stop": "#101417",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              23,
+              20,
+              16
+            ]
+          },
+          {
+            "stop": "#0A0C0F",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              15,
+              12,
+              10
+            ]
+          },
+          {
+            "stop": "#050708",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              8,
+              7,
+              5
+            ]
+          }
+        ],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 28.1,
+          "meanSaturation": 0.263,
+          "gradientStrength": 0.612,
+          "mottle": 0.029,
+          "streakRatio": 0.66,
+          "hueSpread": 0.417,
+          "specularFraction": 0.0
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "materialId": "charcoal-polymer",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/02-charcoal-polymer.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer",
+        "palette": [
+          "#26313B",
+          "#181F27",
+          "#040405",
+          "#354B63",
+          "#A0B5CE"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_albedo.png",
+            "url": "charcoal-polymer_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_roughness.png",
+            "url": "charcoal-polymer_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_height.png",
+            "url": "charcoal-polymer_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_normal.png",
+            "url": "charcoal-polymer_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_ao.png",
+            "url": "charcoal-polymer_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 320,
+          "sourceHeight": 230,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 230
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.6433
+          },
+          "mapStats": {
+            "valueRange": 0.3671,
+            "heightP90Gradient": 0.13571,
+            "roughnessBase": 0.768,
+            "roughnessVariation": 0.205,
+            "normalStrength": 0.315,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#26313B",
+            "#181F27",
+            "#040405",
+            "#354B63",
+            "#A0B5CE"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/02-charcoal-polymer.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_albedo.png",
+            "url": "charcoal-polymer_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_roughness.png",
+            "url": "charcoal-polymer_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_height.png",
+            "url": "charcoal-polymer_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_normal.png",
+            "url": "charcoal-polymer_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_ao.png",
+            "url": "charcoal-polymer_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 320,
+          "sourceHeight": 230,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 230
+          },
+          "mask": {
+            "backgroundColor": "#000000",
+            "backgroundNoise": 0.0,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.6433
+          },
+          "mapStats": {
+            "valueRange": 0.3671,
+            "heightP90Gradient": 0.13571,
+            "roughnessBase": 0.768,
+            "roughnessVariation": 0.205,
+            "normalStrength": 0.315,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#26313B",
+            "#181F27",
+            "#040405",
+            "#354B63",
+            "#A0B5CE"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_albedo.png",
+          "url": "charcoal-polymer_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_roughness.png",
+          "url": "charcoal-polymer_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_height.png",
+          "url": "charcoal-polymer_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_normal.png",
+          "url": "charcoal-polymer_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-02-charcoal-polymer/charcoal-polymer_ao.png",
+          "url": "charcoal-polymer_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    },
+    {
+      "componentId": "handguardVentSystem",
+      "regionId": "cavity-seams",
+      "materialSpecId": "cavity-material",
+      "hypothesis": {
+        "componentId": "handguardVentSystem",
+        "regionId": "cavity-seams",
+        "materialId": null,
+        "family": "plastic",
+        "subtype": "generic-polymer",
+        "finish": "deep-cavity",
+        "aliases": [],
+        "confidence": 0.86,
+        "source": "vision"
+      },
+      "assignment": {
+        "materialId": "plastic.matte",
+        "status": "proceed",
+        "source": "vision+registry-review",
+        "confidence": 0.78,
+        "method": "reference-crop-analysis plus canonical registry mapping",
+        "alternatives": [
+          "plastic.glossy",
+          "plastic.matte"
+        ],
+        "evidence": {
+          "crop": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/03-cavity-seams.png",
+            "bbox": {
+              "x": 900,
+              "y": 410,
+              "width": 260,
+              "height": 62
+            },
+            "sourceWidth": 1672,
+            "sourceHeight": 941,
+            "loaderWarnings": [],
+            "coverage": 0.0102
+          },
+          "pbr": {
+            "ok": true,
+            "verdict": "pass",
+            "confidence": 0.86,
+            "estimatedFidelity": 0.86,
+            "targetThreshold": 0.7,
+            "materialId": "cavity-material",
+            "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/03-cavity-seams.png",
+            "outDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams",
+            "palette": [
+              "#202A3B",
+              "#223969",
+              "#171E2B",
+              "#07090C",
+              "#3C6293"
+            ],
+            "maps": {
+              "albedo": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_albedo.png",
+                "url": "cavity-material_albedo.png",
+                "channel": "albedo",
+                "source": "reference-pixel-extraction"
+              },
+              "roughness": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_roughness.png",
+                "url": "cavity-material_roughness.png",
+                "channel": "roughness",
+                "source": "reference-pixel-extraction"
+              },
+              "height": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_height.png",
+                "url": "cavity-material_height.png",
+                "channel": "height",
+                "source": "reference-pixel-extraction"
+              },
+              "normal": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_normal.png",
+                "url": "cavity-material_normal.png",
+                "channel": "normal",
+                "source": "reference-pixel-extraction"
+              },
+              "ao": {
+                "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_ao.png",
+                "url": "cavity-material_ao.png",
+                "channel": "ao",
+                "source": "reference-pixel-extraction"
+              }
+            },
+            "diagnostics": {
+              "sourceWidth": 260,
+              "sourceHeight": 62,
+              "mapSize": 512,
+              "cropBBoxPixels": {
+                "x": 0,
+                "y": 0,
+                "width": 260,
+                "height": 62
+              },
+              "mask": {
+                "backgroundColor": "#0F171F",
+                "backgroundNoise": 41.413,
+                "transparentPixelFraction": 0.0,
+                "foregroundCoverage": 0.7094
+              },
+              "mapStats": {
+                "valueRange": 0.3444,
+                "heightP90Gradient": 0.12153,
+                "roughnessBase": 0.738,
+                "roughnessVariation": 0.199,
+                "normalStrength": 0.299,
+                "blurRadius": 10
+              },
+              "palette": [
+                "#202A3B",
+                "#223969",
+                "#171E2B",
+                "#07090C",
+                "#3C6293"
+              ]
+            },
+            "warnings": [
+              "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+            ],
+            "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+          },
+          "texture": {
+            "finishClass": "painted-metal",
+            "recipe": {
+              "metalness": 0.0,
+              "roughness": 0.5,
+              "clearcoat": 1.0,
+              "clearcoatRoughness": 0.05,
+              "transmission": 0.0,
+              "ior": 1.5,
+              "envMapIntensity": 1.0,
+              "anisotropy": 0.0,
+              "procedural": "flat-clearcoat"
+            },
+            "palette": [
+              "#223D5E",
+              "#2A3341",
+              "#19222E",
+              "#35424F",
+              "#0E0F0F"
+            ],
+            "paletteHueRisk": [
+              {
+                "stop": "#223D5E",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  94,
+                  61,
+                  34
+                ]
+              },
+              {
+                "stop": "#2A3341",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  65,
+                  51,
+                  42
+                ]
+              },
+              {
+                "stop": "#19222E",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  46,
+                  34,
+                  25
+                ]
+              },
+              {
+                "stop": "#35424F",
+                "hueRisk": "blue-collapse",
+                "suggestedRgb": [
+                  79,
+                  66,
+                  53
+                ]
+              }
+            ],
+            "gradientAxis": "vertical",
+            "stats": {
+              "meanLum": 39.2,
+              "meanSaturation": 0.391,
+              "gradientStrength": 0.245,
+              "mottle": 0.031,
+              "streakRatio": 0.91,
+              "hueSpread": 0.131,
+              "specularFraction": 0.0
+            }
+          }
+        },
+        "profileId": "plastic.matte",
+        "reviewNote": "The crop is a recessed vent/seam region; the canonical family is matte polymer with cavity response carried by AO/roughness and geometry.",
+        "family": "plastic",
+        "subtype": "generic-polymer",
+        "finish": "deep-cavity",
+        "requiredMaps": [
+          "albedo",
+          "roughness",
+          "height",
+          "normal",
+          "ao"
+        ],
+        "optionalMaps": [
+          "clearcoat"
+        ],
+        "validationViews": [
+          "neutral-light",
+          "grazing-light",
+          "reference-matched-broadside",
+          "three-quarter-orbit"
+        ],
+        "sourceRefs": [
+          "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/03-cavity-seams.png",
+          "material-regions.json",
+          "image-analysis.md"
+        ]
+      },
+      "observations": [
+        "chromatic base-colour response",
+        "strong image-space gradient; verify it is material pattern, not lighting",
+        "single-image PBR inference requires controlled render validation",
+        "Canonical registry profile reviewed for implementation; single-image limitation retained."
+      ],
+      "crop": {
+        "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/03-cavity-seams.png",
+        "bbox": {
+          "x": 900,
+          "y": 410,
+          "width": 260,
+          "height": 62
+        },
+        "sourceWidth": 1672,
+        "sourceHeight": 941,
+        "loaderWarnings": [],
+        "coverage": 0.0102
+      },
+      "textureAnalysis": {
+        "finishClass": "painted-metal",
+        "recipe": {
+          "metalness": 0.0,
+          "roughness": 0.5,
+          "clearcoat": 1.0,
+          "clearcoatRoughness": 0.05,
+          "transmission": 0.0,
+          "ior": 1.5,
+          "envMapIntensity": 1.0,
+          "anisotropy": 0.0,
+          "procedural": "flat-clearcoat"
+        },
+        "palette": [
+          "#223D5E",
+          "#2A3341",
+          "#19222E",
+          "#35424F",
+          "#0E0F0F"
+        ],
+        "paletteHueRisk": [
+          {
+            "stop": "#223D5E",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              94,
+              61,
+              34
+            ]
+          },
+          {
+            "stop": "#2A3341",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              65,
+              51,
+              42
+            ]
+          },
+          {
+            "stop": "#19222E",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              46,
+              34,
+              25
+            ]
+          },
+          {
+            "stop": "#35424F",
+            "hueRisk": "blue-collapse",
+            "suggestedRgb": [
+              79,
+              66,
+              53
+            ]
+          }
+        ],
+        "gradientAxis": "vertical",
+        "stats": {
+          "meanLum": 39.2,
+          "meanSaturation": 0.391,
+          "gradientStrength": 0.245,
+          "mottle": 0.031,
+          "streakRatio": 0.91,
+          "hueSpread": 0.131,
+          "specularFraction": 0.0
+        }
+      },
+      "pbrReport": {
+        "ok": true,
+        "verdict": "pass",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "materialId": "cavity-material",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/03-cavity-seams.png",
+        "outDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams",
+        "palette": [
+          "#202A3B",
+          "#223969",
+          "#171E2B",
+          "#07090C",
+          "#3C6293"
+        ],
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_albedo.png",
+            "url": "cavity-material_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_roughness.png",
+            "url": "cavity-material_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_height.png",
+            "url": "cavity-material_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_normal.png",
+            "url": "cavity-material_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_ao.png",
+            "url": "cavity-material_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 260,
+          "sourceHeight": 62,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 260,
+            "height": 62
+          },
+          "mask": {
+            "backgroundColor": "#0F171F",
+            "backgroundNoise": 41.413,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.7094
+          },
+          "mapStats": {
+            "valueRange": 0.3444,
+            "heightP90Gradient": 0.12153,
+            "roughnessBase": 0.738,
+            "roughnessVariation": 0.199,
+            "normalStrength": 0.299,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#202A3B",
+            "#223969",
+            "#171E2B",
+            "#07090C",
+            "#3C6293"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ],
+        "limitation": "single-image PBR extraction is an estimate; 70%+ extraction confidence still needs render screenshot review"
+      },
+      "referencePbr": {
+        "version": "1.0",
+        "sourceImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/03-cavity-seams.png",
+        "extractor": "stage1_intake/extract_pbr_evidence.py",
+        "method": "single-image pixel evidence with de-lighting estimate; not photogrammetry",
+        "usable": true,
+        "verdict": "usable reference-derived approximation",
+        "confidence": 0.86,
+        "estimatedFidelity": 0.86,
+        "targetThreshold": 0.7,
+        "hardLimit": "A single image cannot uniquely recover true albedo/roughness/normal/AO; maps are reference-derived estimates.",
+        "maps": {
+          "albedo": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_albedo.png",
+            "url": "cavity-material_albedo.png",
+            "channel": "albedo",
+            "source": "reference-pixel-extraction"
+          },
+          "roughness": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_roughness.png",
+            "url": "cavity-material_roughness.png",
+            "channel": "roughness",
+            "source": "reference-pixel-extraction"
+          },
+          "height": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_height.png",
+            "url": "cavity-material_height.png",
+            "channel": "height",
+            "source": "reference-pixel-extraction"
+          },
+          "normal": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_normal.png",
+            "url": "cavity-material_normal.png",
+            "channel": "normal",
+            "source": "reference-pixel-extraction"
+          },
+          "ao": {
+            "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_ao.png",
+            "url": "cavity-material_ao.png",
+            "channel": "ao",
+            "source": "reference-pixel-extraction"
+          }
+        },
+        "diagnostics": {
+          "sourceWidth": 260,
+          "sourceHeight": 62,
+          "mapSize": 512,
+          "cropBBoxPixels": {
+            "x": 0,
+            "y": 0,
+            "width": 260,
+            "height": 62
+          },
+          "mask": {
+            "backgroundColor": "#0F171F",
+            "backgroundNoise": 41.413,
+            "transparentPixelFraction": 0.0,
+            "foregroundCoverage": 0.7094
+          },
+          "mapStats": {
+            "valueRange": 0.3444,
+            "heightP90Gradient": 0.12153,
+            "roughnessBase": 0.738,
+            "roughnessVariation": 0.199,
+            "normalStrength": 0.299,
+            "blurRadius": 10
+          },
+          "palette": [
+            "#202A3B",
+            "#223969",
+            "#171E2B",
+            "#07090C",
+            "#3C6293"
+          ]
+        },
+        "warnings": [
+          "single-image inverse rendering cannot prove true physical PBR; confidence is capped"
+        ]
+      },
+      "maps": {
+        "albedo": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_albedo.png",
+          "url": "cavity-material_albedo.png",
+          "channel": "albedo",
+          "source": "reference-pixel-extraction"
+        },
+        "roughness": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_roughness.png",
+          "url": "cavity-material_roughness.png",
+          "channel": "roughness",
+          "source": "reference-pixel-extraction"
+        },
+        "height": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_height.png",
+          "url": "cavity-material_height.png",
+          "channel": "height",
+          "source": "reference-pixel-extraction"
+        },
+        "normal": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_normal.png",
+          "url": "cavity-material_normal.png",
+          "channel": "normal",
+          "source": "reference-pixel-extraction"
+        },
+        "ao": {
+          "path": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-evidence/pbr-03-cavity-seams/cavity-material_ao.png",
+          "url": "cavity-material_ao.png",
+          "channel": "ao",
+          "source": "reference-pixel-extraction"
+        }
+      }
+    }
+  ],
+  "status": "proceed",
+  "limitations": [
+    "PBR extraction is reference-derived inference, not inverse rendering.",
+    "A crop must be checked against the component visible footprint before accepting material scores."
+  ],
+  "artifact": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/material-analysis.json",
+  "analysisReview": {
+    "reviewedBy": "img2threejs staged material gate",
+    "decision": "proceed",
+    "reason": "All four observed source regions have canonical profileId assignments and usable reference-derived map evidence. Cavity and dark-metal identities remain approximations rather than measured scans.",
+    "controlledViewsRequired": [
+      "neutral-light",
+      "grazing-light",
+      "reference-matched-broadside",
+      "three-quarter-orbit"
+    ]
+  }
+}

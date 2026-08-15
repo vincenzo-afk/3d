@@ -1,0 +1,26 @@
+{
+  "referenceAreaFraction": 0.9725439762971257,
+  "angles": [
+    {
+      "path": "guns 3d models/02-assault-rifle/visual-evidence/orbit-three-quarter-v6.png",
+      "areaFraction": 0.9256237751959686,
+      "ratio": 0.9517551882025925,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/02-assault-rifle/visual-evidence/orbit-top-v7.png",
+      "areaFraction": 0.9285370590705487,
+      "ratio": 0.9547507173977577,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/02-assault-rifle/visual-evidence/orbit-side-v8.png",
+      "areaFraction": 0.961182460806271,
+      "ratio": 0.9883177359916282,
+      "degenerate": false
+    }
+  ],
+  "degenerate": false,
+  "collapseRatio": 0.15,
+  "note": "deterministic; zero token; a flat-plane-faking-a-volume collapses in silhouette area when orbited"
+}

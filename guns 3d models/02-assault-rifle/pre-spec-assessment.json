@@ -1,0 +1,459 @@
+{
+  "targetName": "02-assault-rifle",
+  "sourceImage": "guns image models/02-assault-rifle.png",
+  "preSpecAssessment": {
+    "objectClass": {
+      "primaryType": "assault-rifle",
+      "primaryDomain": "object",
+      "formLanguage": [
+        "hard-surface firearm",
+        "AR-pattern modular rifle",
+        "long-axis mechanical assembly"
+      ],
+      "structureKind": [
+        "assembled-solid",
+        "open-slot-shell",
+        "repeated-fastener-system",
+        "rail-and-tube assembly"
+      ],
+      "motionPotential": [
+        "collapsible stock inference",
+        "magazine insertion",
+        "optic/rail attachment",
+        "trigger/foregrip interaction"
+      ],
+      "materialFamilies": [
+        "anodized dark metal",
+        "charcoal polymer",
+        "painted/coated metal",
+        "rubberized grip",
+        "optic glass"
+      ],
+      "notes": "Direct visual inspection identifies a broadside AR-pattern assault rifle with a skeleton stock, receiver, curved magazine, vented handguard, optic, foregrip, barrel, muzzle device, rails, fasteners, and cool marbled coating."
+    },
+    "complexity": {
+      "tier": "ultra-complex",
+      "scores": {
+        "silhouetteComplexity": 3,
+        "componentCount": 3,
+        "hierarchyDepth": 3,
+        "repetitionDensity": 3,
+        "materialLayerCount": 3,
+        "localDetailDensity": 3,
+        "occlusionRisk": 2,
+        "actionReadinessNeed": 3
+      },
+      "estimatedCounts": {
+        "macroComponents": 8,
+        "mesoComponents": 34,
+        "microFeatureGroups": 14,
+        "materialLayers": 6,
+        "repetitionSystems": 5
+      },
+      "reasoning": [
+        "The rifle spans a long shallow silhouette with many mechanically distinct assemblies and attachment points.",
+        "Repeated rail teeth, screws, handguard slots, magazine ribs, grip grooves, and muzzle slots require explicit repetition systems.",
+        "The marbled coating crosses multiple substrates and requires separate albedo, roughness, normal/height, AO, and local-wear evidence.",
+        "A source-matched broadside route plus a real-thickness procedural orbit are required because the source is a single lateral view."
+      ]
+    },
+    "specDepthDecision": {
+      "requiredDepth": "ultra-complex",
+      "minimumComponentLevels": [
+        "macro",
+        "meso",
+        "micro"
+      ],
+      "needsRepetitionSystems": true,
+      "needsMaterialLocalOverrides": true,
+      "needsMultipleReviewViews": true,
+      "needsActionReadyHierarchy": true,
+      "rationale": "Choose simple/moderate/complex/ultra-complex from observed structure, not from a hardcoded domain."
+    },
+    "unknownsToResolveBeforeImplementation": [
+      "backside receiver and stock construction are not visible",
+      "internal bolt, trigger, magazine feed, and barrel bore geometry are inferred only",
+      "exact optic lens glass and reticle construction are not established",
+      "hidden fastener depth and true substrate chemistry under the marbled coating are uncertain",
+      "underside handguard and foregrip attachment details require authored inference"
+    ],
+    "detailInventory": {
+      "scanMethod": "component-zones",
+      "targetMinDetails": 16,
+      "note": "Every visible identity detail is mapped to a component localFeatures or material localOverride before code generation.",
+      "details": [
+        {
+          "id": "stock-brace-cutout",
+          "kind": "contour",
+          "importance": "critical",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "stockAssembly"
+        },
+        {
+          "id": "stock-cheek-ridge",
+          "kind": "ridge",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "stockAssembly"
+        },
+        {
+          "id": "buffer-tube-collar",
+          "kind": "bevel",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "stockAssembly"
+        },
+        {
+          "id": "receiver-split-line",
+          "kind": "seam",
+          "importance": "critical",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "receiverAssembly"
+        },
+        {
+          "id": "receiver-pins",
+          "kind": "fastener",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "receiverHardware"
+        },
+        {
+          "id": "trigger-guard",
+          "kind": "contour",
+          "importance": "critical",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "receiverAssembly"
+        },
+        {
+          "id": "trigger-blade",
+          "kind": "contour",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "triggerAssembly"
+        },
+        {
+          "id": "pistol-grip-grooves",
+          "kind": "linework",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "pistolGripAssembly"
+        },
+        {
+          "id": "magazine-ribs",
+          "kind": "ridge",
+          "importance": "critical",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "magazineAssembly"
+        },
+        {
+          "id": "optic-window",
+          "kind": "contour",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "opticAssembly"
+        },
+        {
+          "id": "top-rail-teeth",
+          "kind": "repetition",
+          "importance": "critical",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "topRailAssembly"
+        },
+        {
+          "id": "rear-iron-sight",
+          "kind": "contour",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "sightSystem"
+        },
+        {
+          "id": "front-iron-sight",
+          "kind": "contour",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "sightSystem"
+        },
+        {
+          "id": "handguard-vent-slots",
+          "kind": "hole",
+          "importance": "critical",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "handguardAssembly"
+        },
+        {
+          "id": "handguard-fasteners",
+          "kind": "fastener",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "handguardHardware"
+        },
+        {
+          "id": "foregrip-rings",
+          "kind": "ridge",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "foregripAssembly"
+        },
+        {
+          "id": "barrel-steps",
+          "kind": "bevel",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "barrelAssembly"
+        },
+        {
+          "id": "muzzle-slots",
+          "kind": "hole",
+          "importance": "critical",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "muzzleDevice"
+        },
+        {
+          "id": "blue-marble-tendrils",
+          "kind": "linework",
+          "importance": "critical",
+          "evidenceRefs": [
+            "material-evidence"
+          ],
+          "mapsTo": "marbled-coating"
+        },
+        {
+          "id": "teal-accent-flecks",
+          "kind": "decal",
+          "importance": "high",
+          "evidenceRefs": [
+            "material-evidence"
+          ],
+          "mapsTo": "marbled-coating"
+        },
+        {
+          "id": "edge-wear-highlights",
+          "kind": "scratch",
+          "importance": "medium",
+          "evidenceRefs": [
+            "material-evidence"
+          ],
+          "mapsTo": "dark-anodized-metal"
+        },
+        {
+          "id": "cavity-occlusion",
+          "kind": "bevel",
+          "importance": "high",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "cavity-material"
+        },
+        {
+          "id": "magazine-catch",
+          "kind": "fastener",
+          "importance": "medium",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "receiverHardware"
+        },
+        {
+          "id": "optic-controls",
+          "kind": "fastener",
+          "importance": "medium",
+          "evidenceRefs": [
+            "full-object"
+          ],
+          "mapsTo": "opticAssembly"
+        }
+      ]
+    },
+    "anatomy": {
+      "applies": false,
+      "styleHeads": 0.0,
+      "proportions": {
+        "headUnit": 0.0,
+        "torso": 0.0,
+        "legs": 0.0,
+        "shoulderWidth": 0.0,
+        "hipWidth": 0.0
+      },
+      "pose": {
+        "type": "unassessed",
+        "jointAngles": {}
+      },
+      "faceLandmarks": {
+        "eyeLine": 0.0,
+        "eyeSpacing": 0.0,
+        "noseBase": 0.0,
+        "mouthLine": 0.0,
+        "hairline": 0.0
+      },
+      "features": [],
+      "confidence": 0.0,
+      "note": "Only meaningful when objectClass.primaryDomain is character or hybrid. Set applies=true and fill from forge/stage1_intake/extract_landmarks.py. See grimoire/character/reconstruction.md and grimoire/character/likeness_maximization.md."
+    },
+    "sourceImage": "guns image models/02-assault-rifle.png"
+  },
+  "qualityContract": {
+    "qualityBar": "ultra-complex",
+    "definitionOfDone": [
+      "The rendered model matches the reference silhouette, primary proportions, visible component hierarchy, material response, and most recognizable local features for the selected fidelity tier."
+    ],
+    "minimumSpecDepth": {
+      "macroComponents": 5,
+      "mesoComponents": 16,
+      "microFeatureGroups": 8,
+      "materialLayers": 4,
+      "repetitionSystems": 2,
+      "reviewViewpoints": 5
+    },
+    "featureGroups": [
+      {
+        "id": "overall-silhouette",
+        "name": "Overall silhouette and proportions",
+        "required": true,
+        "qualityCriteria": [
+          "Bounding shape, dominant curves, negative spaces, and scale relationships are explicitly described."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "model reads as a generic placeholder instead of the reference object",
+          "major proportions are guessed without evidence"
+        ]
+      },
+      {
+        "id": "primary-structure",
+        "name": "Primary structure and hierarchy",
+        "required": true,
+        "qualityCriteria": [
+          "Major parts, joints, seams, contact points, and parent-child relationships are named before code generation."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "large visible parts are merged into one mesh",
+          "component hierarchy is too shallow for the observed complexity"
+        ]
+      },
+      {
+        "id": "attachment-joint-correctness",
+        "name": "Attachment and joint correctness",
+        "required": true,
+        "qualityCriteria": [
+          "Every visible child appendage, branch, limb, handle, connector, tube, cable, horn, wing, leg, or hinged part has an attachment contract with parent socket, localStart/localEnd, contact type, embed/overlap, and gap tolerance."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "child part root floats away from the parent",
+          "branch/limb/tube is centered in space instead of pivoting from its root",
+          "parent-child transform mixes world and local coordinates"
+        ]
+      },
+      {
+        "id": "surface-material-response",
+        "name": "Surface material response",
+        "required": true,
+        "qualityCriteria": [
+          "Albedo zones, roughness, normal/bump/displacement intent, cavity dirt, edge wear, and local overrides are specified where visible.",
+          "Important materials define independent albedo, roughness, height/normal, and AO responses instead of reusing one texture for unrelated PBR channels.",
+          "Surface response is decomposed into macro, meso, and micro frequency bands with scale and amplitude tied to object scale."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "surface looks like flat plastic",
+          "local material variation is missing or not tied to image evidence"
+        ]
+      },
+      {
+        "id": "reference-lookdev",
+        "name": "Reference color, material, and lighting response",
+        "required": true,
+        "qualityCriteria": [
+          "Material-pass names the reference-derived albedo palette, roughness variation, tactile normal/bump/displacement response, and local masks.",
+          "When a source image is available, run reference PBR extraction and require confidence >= 0.7 before treating maps as implementation-ready.",
+          "Lighting-pass names key/fill/rim or environment light, exposure, tone mapping, background, and contact shadow behavior.",
+          "Neutral, grazing-angle, and reference-matched renders prove that surface relief survives relighting and is not painted into albedo."
+        ],
+        "evidenceRefs": [
+          "full-object"
+        ],
+        "failureModes": [
+          "model has acceptable shape but reads as flat shaded or plastic",
+          "colors are a generic average instead of reference-observed local color zones",
+          "lighting is evenly ambient and cannot reproduce the source value range"
+        ]
+      }
+    ],
+    "visualDeltaChecks": [
+      "silhouette and negative-space delta",
+      "component hierarchy depth delta",
+      "repetition density and distribution delta",
+      "material albedo/roughness/normal response delta",
+      "local feature placement and scale delta"
+    ],
+    "antiShallowSpecRules": [
+      "Do not proceed to code if qualityContract.qualityBar is unassessed.",
+      "Do not proceed to code if the spec only contains a root component for a moderate or complex object.",
+      "Do not proceed to code if required featureGroups are not represented by componentTree, materials, or repetitionSystems.",
+      "Do not proceed to code if visible local features are described only in prose and not attached to components/materials/evidenceRefs.",
+      "Do not proceed past structural-pass if attached child parts lack attachment.parentSocket, localStart, localEnd, embedDepth/overlap, and gapTolerance.",
+      "Do not pass material look-dev when albedo is reused as roughness, height, normal, or AO.",
+      "Do not pass material look-dev without macro, meso, and micro surface frequency bands for close-up materials.",
+      "Do not pass reference-fidelity material look-dev from a source image without usable referencePbr maps or an explicit documented limitation.",
+      "Do not patch a spec with extracted PBR maps when extraction confidence is below the target threshold unless the user explicitly accepts lower fidelity.",
+      "Do not place adjacent separate-geometry parts below 0.02 world-unit seam overlap (source: grimoire/build/geometry_patterns.md).",
+      "Do not satisfy raised or recessed relief, fasteners, or grip structure with a map alone when the feature affects form; use geometry or displacement (source: grimoire/build/geometry_patterns.md)."
+    ]
+  },
+  "authoringInstruction": "Fill observed object class, complexity reasoning, featureGroups, visualDeltaChecks, and unknowns before generating or implementing ObjectSculptSpec.",
+  "localSpecSearch": {
+    "collection": "core_3d",
+    "query": "02-assault-rifle",
+    "index": {
+      "status": "hit",
+      "reason": "current",
+      "fingerprint": "6857e5ab528b42ac12f4f411f862610a0bffce8e47aee3610a7603c318072fe8"
+    },
+    "matches": []
+  }
+}

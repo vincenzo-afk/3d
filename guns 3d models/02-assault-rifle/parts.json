@@ -1,0 +1,561 @@
+{
+  "model": "02-assault-rifle",
+  "source": "create02AssaultRifleModel.ts",
+  "codeOnly": true,
+  "parts": [
+    {
+      "name": "stockAssembly",
+      "kind": "part",
+      "module": "stockAssembly",
+      "triangles": 1,
+      "meshNames": [
+        "stockAssembly"
+      ],
+      "foldedInto": null,
+      "selectable": true,
+      "explodeWithParent": false
+    },
+    {
+      "name": "receiverAssembly",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "triangles": 1,
+      "meshNames": [
+        "receiverAssembly"
+      ],
+      "foldedInto": null,
+      "selectable": true,
+      "explodeWithParent": false
+    },
+    {
+      "name": "opticAssembly",
+      "kind": "part",
+      "module": "opticAssembly",
+      "triangles": 1,
+      "meshNames": [
+        "opticAssembly"
+      ],
+      "foldedInto": null,
+      "selectable": true,
+      "explodeWithParent": false
+    },
+    {
+      "name": "magazineAssembly",
+      "kind": "part",
+      "module": "magazineAssembly",
+      "triangles": 1,
+      "meshNames": [
+        "magazineAssembly"
+      ],
+      "foldedInto": null,
+      "selectable": true,
+      "explodeWithParent": false
+    },
+    {
+      "name": "handguardAssembly",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "triangles": 1,
+      "meshNames": [
+        "handguardAssembly"
+      ],
+      "foldedInto": null,
+      "selectable": true,
+      "explodeWithParent": false
+    },
+    {
+      "name": "foregripAssembly",
+      "kind": "part",
+      "module": "foregripAssembly",
+      "triangles": 1,
+      "meshNames": [
+        "foregripAssembly"
+      ],
+      "foldedInto": null,
+      "selectable": true,
+      "explodeWithParent": false
+    },
+    {
+      "name": "barrelMuzzleAssembly",
+      "kind": "part",
+      "module": "barrelMuzzleAssembly",
+      "triangles": 1,
+      "meshNames": [
+        "barrelMuzzleAssembly"
+      ],
+      "foldedInto": null,
+      "selectable": true,
+      "explodeWithParent": false
+    },
+    {
+      "name": "stockBraceRails",
+      "kind": "part",
+      "module": "stockAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "stockAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "stockButtpad",
+      "kind": "part",
+      "module": "stockAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "stockAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "bufferTubeAssembly",
+      "kind": "part",
+      "module": "stockAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "stockAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "upperReceiverShell",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "receiverAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "lowerReceiverShell",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "receiverAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "triggerGuardAssembly",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "receiverAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "pistolGripAssembly",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "receiverAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "receiverFastenerSystem",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "receiverAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "opticHousing",
+      "kind": "part",
+      "module": "opticAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "opticAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "opticWindow",
+      "kind": "part",
+      "module": "opticAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "opticAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "opticMount",
+      "kind": "part",
+      "module": "opticAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "opticAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "magazineBody",
+      "kind": "part",
+      "module": "magazineAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "magazineAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "magazineRibSystem",
+      "kind": "part",
+      "module": "magazineAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "magazineAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "magazineFloorplate",
+      "kind": "part",
+      "module": "magazineAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "magazineAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "handguardShell",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "handguardAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "topPicRail",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "handguardAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "sideRailPanels",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "handguardAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "handguardVentSystem",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "handguardAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "foregripBody",
+      "kind": "part",
+      "module": "foregripAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "foregripAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "foregripGrooves",
+      "kind": "part",
+      "module": "foregripAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "foregripAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "gasBlockAssembly",
+      "kind": "part",
+      "module": "barrelMuzzleAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "barrelMuzzleAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "barrelTube",
+      "kind": "part",
+      "module": "barrelMuzzleAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "barrelMuzzleAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "muzzleBrake",
+      "kind": "part",
+      "module": "barrelMuzzleAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "barrelMuzzleAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "barrelBoreWall",
+      "kind": "part",
+      "module": "barrelMuzzleAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "barrelMuzzleAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "stockPositionNotches",
+      "kind": "detail",
+      "module": "bufferTubeAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "bufferTubeAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "stockRearSlingLoop",
+      "kind": "detail",
+      "module": "stockAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "stockAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "upperRailTeeth",
+      "kind": "detail",
+      "module": "upperReceiverShell",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "upperReceiverShell",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "chargingHandle",
+      "kind": "detail",
+      "module": "upperReceiverShell",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "upperReceiverShell",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "ejectionPortCavity",
+      "kind": "detail",
+      "module": "upperReceiverShell",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "upperReceiverShell",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "takedownPins",
+      "kind": "detail",
+      "module": "receiverFastenerSystem",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "receiverFastenerSystem",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "selectorLever",
+      "kind": "detail",
+      "module": "lowerReceiverShell",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "lowerReceiverShell",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "trigger",
+      "kind": "detail",
+      "module": "triggerGuardAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "triggerGuardAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "opticLensGlow",
+      "kind": "detail",
+      "module": "opticWindow",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "opticWindow",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "opticAdjusterCaps",
+      "kind": "detail",
+      "module": "opticHousing",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "opticHousing",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "magazineWitnessRibs",
+      "kind": "detail",
+      "module": "magazineRibSystem",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "magazineRibSystem",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "magazineCatchNotch",
+      "kind": "detail",
+      "module": "magazineBody",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "magazineBody",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "railCrossSlots",
+      "kind": "detail",
+      "module": "topPicRail",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "topPicRail",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "ventInnerWalls",
+      "kind": "detail",
+      "module": "handguardVentSystem",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "handguardVentSystem",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "coatingMarbleBands",
+      "kind": "detail",
+      "module": "handguardShell",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "handguardShell",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "foregripFingerGrooves",
+      "kind": "detail",
+      "module": "foregripGrooves",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "foregripGrooves",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "frontSightPost",
+      "kind": "detail",
+      "module": "gasBlockAssembly",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "gasBlockAssembly",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "muzzleSlots",
+      "kind": "detail",
+      "module": "muzzleBrake",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "muzzleBrake",
+      "selectable": true,
+      "explodeWithParent": true
+    },
+    {
+      "name": "muzzleBore",
+      "kind": "detail",
+      "module": "barrelBoreWall",
+      "triangles": 0,
+      "meshNames": [],
+      "foldedInto": "barrelBoreWall",
+      "selectable": true,
+      "explodeWithParent": true
+    }
+  ],
+  "unnamedMeshes": 0,
+  "integralMeshes": 134,
+  "runtimeHierarchy": {
+    "root": "assault-rifle-root",
+    "asset": "assault-rifle-geometry",
+    "macroGroups": [
+      "barrelMuzzleAssembly",
+      "foregripAssembly",
+      "handguardAssembly",
+      "magazineAssembly",
+      "opticAssembly",
+      "receiverAssembly",
+      "stockAssembly"
+    ],
+    "sockets": [
+      "stockAssemblySocket",
+      "receiverAssemblySocket",
+      "opticAssemblySocket",
+      "scope-sight-line"
+    ],
+    "colliders": [
+      "barrelMuzzleAssembly",
+      "foregripAssembly",
+      "handguardAssembly",
+      "magazineAssembly",
+      "opticAssembly",
+      "receiverAssembly",
+      "stockAssembly"
+    ],
+    "destructionGroups": [
+      "barrelMuzzleAssembly",
+      "foregripAssembly",
+      "handguardAssembly",
+      "magazineAssembly",
+      "opticAssembly",
+      "receiverAssembly",
+      "stockAssembly"
+    ],
+    "note": "Macro names map to actual factory groups; meso/micro records are semantic folded parts riding their parent shell or assembly, never imported meshes."
+  }
+}

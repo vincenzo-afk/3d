@@ -1,0 +1,60 @@
+{
+  "referenceCamera": {
+    "version": "1.0",
+    "sourceImage": "/home/ubuntu/3d/guns image models/02-assault-rifle.png",
+    "solver": "stage1_intake/solve_camera_pose.py",
+    "method": "heuristic default-guess camera, not solved from image content; image dimensions give an exact aspect ratio, everything else is a starting point for agent refinement",
+    "imageWidth": 1672,
+    "imageHeight": 941,
+    "fovDegrees": {
+      "value": 24.0,
+      "source": "user-supplied",
+      "agentFill": false,
+      "rationale": "default guess for a landscape/square photo (typical phone/short-tele framing)"
+    },
+    "aspect": {
+      "value": 1.7768,
+      "source": "image-dimensions",
+      "agentFill": false
+    },
+    "orientation": {
+      "yawDegrees": {
+        "value": 0.0,
+        "source": "placeholder",
+        "agentFill": true
+      },
+      "pitchDegrees": {
+        "value": 0.0,
+        "source": "placeholder",
+        "agentFill": true
+      },
+      "rollDegrees": {
+        "value": 0.0,
+        "source": "placeholder",
+        "agentFill": true
+      },
+      "note": "0/0/0 assumes a straight-on, level shot; adjust by eye against the reference image."
+    },
+    "position": {
+      "hint": [
+        0.0,
+        0.0,
+        7.2
+      ],
+      "distance": {
+        "value": 7.2,
+        "source": "user-supplied",
+        "agentFill": false
+      },
+      "note": "Position hint assumes the subject is centered at the origin and the camera looks down -Z."
+    },
+    "confidence": 0.35,
+    "limitations": [
+      "no true camera calibration is performed; focal length/FOV/orientation are not recovered from pixels",
+      "fovDegrees is a genre default, not a measurement; wrong FOV distorts perceived proportions under overlay",
+      "orientation and position are placeholders and will almost always need manual/agent adjustment",
+      "this script cannot detect lens distortion, perspective foreshortening, or non-zero roll"
+    ],
+    "note": "Final camera match must be confirmed by overlay review: render the fitted mesh from this camera, place it beside or over the reference image, and adjust fovDegrees/orientation/position until silhouette and landmark alignment match before trusting projected texture bakes."
+  }
+}

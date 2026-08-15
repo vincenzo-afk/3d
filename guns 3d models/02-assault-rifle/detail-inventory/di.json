@@ -1,0 +1,420 @@
+{
+  "sourceImage": "/home/ubuntu/3d/guns image models/02-assault-rifle.png",
+  "zonesDir": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory",
+  "detailInventory": {
+    "scanMethod": "component-zones",
+    "targetMinDetails": 24,
+    "details": [
+      {
+        "id": "stock-brace-cutout",
+        "kind": "hole",
+        "description": "Open skeleton-stock triangular relief and lower brace cutout",
+        "region": {
+          "zone": "stock",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/stock.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "stock-cheek-ridge",
+        "kind": "ridge",
+        "description": "Raised cheek rest and upper stock contour",
+        "region": {
+          "zone": "stock",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/stock.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "buffer-tube-collar",
+        "kind": "bevel",
+        "description": "Stepped rear receiver/buffer-tube collar",
+        "region": {
+          "zone": "stock",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "stockAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/stock.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "receiver-split-line",
+        "kind": "seam",
+        "description": "Upper/lower receiver separation seam",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "receiver-pins",
+        "kind": "fastener",
+        "description": "Visible circular receiver pins and fasteners",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "trigger-guard",
+        "kind": "contour",
+        "description": "Curved trigger guard opening",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "trigger-blade",
+        "kind": "contour",
+        "description": "Trigger blade inside the guard",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "pistol-grip-grooves",
+        "kind": "linework",
+        "description": "Longitudinal grooves and flared grip toe",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "material",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "magazine-catch",
+        "kind": "fastener",
+        "description": "Small magazine-release control",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "receiverAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "magazine-ribs",
+        "kind": "ridge",
+        "description": "Repeated vertical magazine ribs",
+        "region": {
+          "zone": "magazine",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "magazineAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/magazine.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "optic-window",
+        "kind": "contour",
+        "description": "Raised holographic optic window and hood",
+        "region": {
+          "zone": "optic",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/optic.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "optic-controls",
+        "kind": "fastener",
+        "description": "Optic side buttons and housing fasteners",
+        "region": {
+          "zone": "optic",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/optic.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "rear-iron-sight",
+        "kind": "contour",
+        "description": "Rear folding sight block",
+        "region": {
+          "zone": "optic",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "opticAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/optic.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "front-iron-sight",
+        "kind": "contour",
+        "description": "Front sight block on the top rail",
+        "region": {
+          "zone": "handguard",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "handguardAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/handguard.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "top-rail-teeth",
+        "kind": "ridge",
+        "description": "Repeated Picatinny rail teeth",
+        "region": {
+          "zone": "handguard",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "handguardAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/handguard.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "handguard-vent-slots",
+        "kind": "hole",
+        "description": "Long repeated negative-space handguard vents",
+        "region": {
+          "zone": "handguard",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "handguardAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/handguard.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "handguard-fasteners",
+        "kind": "fastener",
+        "description": "Handguard side screws and attachment points",
+        "region": {
+          "zone": "handguard",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "handguardAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/handguard.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "foregrip-rings",
+        "kind": "ridge",
+        "description": "Repeated vertical-grip bands",
+        "region": {
+          "zone": "handguard",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "handguardAssembly"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/handguard.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "barrel-steps",
+        "kind": "bevel",
+        "description": "Concentric barrel and gas-system steps",
+        "region": {
+          "zone": "muzzle",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "muzzleDevice"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/muzzle.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "muzzle-slots",
+        "kind": "hole",
+        "description": "Muzzle-device longitudinal slots",
+        "region": {
+          "zone": "muzzle",
+          "units": "component-crop"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component",
+          "ref": "muzzleDevice"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/muzzle.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "blue-marble-tendrils",
+        "kind": "linework",
+        "description": "Cool blue-violet marbled coating tendrils",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "micro",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material",
+          "ref": "marbled-coating"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "teal-accent-flecks",
+        "kind": "decal",
+        "description": "Small teal flecks within the coating",
+        "region": {
+          "zone": "handguard",
+          "units": "component-crop"
+        },
+        "scale": "micro",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material",
+          "ref": "marbled-coating"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/handguard.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "edge-wear-highlights",
+        "kind": "scratch",
+        "description": "Cool edge highlights and localized wear",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "micro",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material",
+          "ref": "dark-anodized-metal"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "cavity-occlusion",
+        "kind": "bevel",
+        "description": "Dark occlusion in slots, seams, and undercuts",
+        "region": {
+          "zone": "receiver",
+          "units": "component-crop"
+        },
+        "scale": "micro",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material",
+          "ref": "cavity-material"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/detail-inventory/receiver.png",
+        "confidence": 0.86
+      }
+    ],
+    "review": "Direct visual inspection filled all scanner placeholders from the admitted broadside reference; each entry maps to a semantic component or material region."
+  },
+  "authoringInstruction": "Open each zone crop under zonesDir and replace every detail stub's kind, description, scale, affects, mapsTo, and confidence with what is actually observed. Add more detail entries per zone if a single zone contains multiple distinct marks; do not leave stubs unfilled or unlinked (mapsTo must reference a real component.localFeatures or material.localOverrides entry)."
+}

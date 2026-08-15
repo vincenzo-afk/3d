@@ -1,0 +1,14 @@
+{
+  "admitted": true,
+  "reasons": [],
+  "provenance": {
+    "viewpoint": "broadside",
+    "sourcePath": "/home/ubuntu/3d/guns image models/02-assault-rifle.png",
+    "width": 1672,
+    "height": 941,
+    "foregroundCoverage": 0.2536,
+    "largestComponentFraction": 1.0,
+    "pHash": 18266881300539552930,
+    "duplicateOfHash": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "delightReference": {
+    "version": "1.0",
+    "sourceImage": "/home/ubuntu/3d/guns image models/02-assault-rifle.png",
+    "outputImage": "/home/ubuntu/3d/guns 3d models/02-assault-rifle/reference-delit-albedo.png",
+    "method": "per-pixel normalization against a box-blurred luminance proxy; an approximation of de-lighting, not physically based inverse rendering or true light/albedo separation",
+    "strength": 0.55,
+    "confidence": 0.633,
+    "stats": {
+      "targetLuma": 0.0,
+      "blurRadius": 47,
+      "lumaRangeBefore": 0.2207,
+      "meanCorrectionScale": 0.45,
+      "maxCorrectionScale": 0.45,
+      "minCorrectionScale": 0.45
+    },
+    "limitations": [
+      "this is an approximation, not true inverse rendering; it cannot recover ground-truth albedo",
+      "sharp specular highlights and hard shadow edges narrower than the blur radius will remain baked in",
+      "deep occlusion shadows (creases, undercuts) are only partially lifted",
+      "must be reviewed visually next to the source image before use as a projection albedo",
+      "single-image de-lighting cannot separate true albedo from baked light/AO/specular; confidence is capped"
+    ],
+    "note": "If shadows or highlights are still visible in the output, try a larger --strength or a smaller --blur-radius so the correction responds to tighter lighting gradients, then re-review; this script does not know when the correction is visually sufficient."
+  }
+}

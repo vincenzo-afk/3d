@@ -1,0 +1,50 @@
+{
+  "referenceId": "02-assault-rifle",
+  "referenceImage": "../../guns image models/02-assault-rifle.png",
+  "regions": [
+    {
+      "componentId": "receiverAssembly",
+      "regionId": "dark-metal-body",
+      "sourceImage": "../../guns image models/02-assault-rifle.png",
+      "bbox": {"x": 455, "y": 355, "width": 280, "height": 160},
+      "family": "metal",
+      "subtype": "anodized-dark-metal",
+      "finish": "satin-metal",
+      "materialSpecId": "dark-anodized-metal",
+      "notes": "Receiver upper/lower shell crop; near-black cool metal with edge highlights and recessed seam response."
+    },
+    {
+      "componentId": "handguardAssembly",
+      "regionId": "marbled-coating",
+      "sourceImage": "../../guns image models/02-assault-rifle.png",
+      "bbox": {"x": 740, "y": 365, "width": 440, "height": 140},
+      "family": "coating",
+      "subtype": "paint-over-metal",
+      "finish": "satin-gloss-marbled",
+      "materialSpecId": "marbled-coating",
+      "notes": "Vented handguard crop; cool blue-violet and teal tendrils over dark substrate with controlled glossy breakup."
+    },
+    {
+      "componentId": "stockAssembly",
+      "regionId": "charcoal-polymer",
+      "sourceImage": "../../guns image models/02-assault-rifle.png",
+      "bbox": {"x": 18, "y": 382, "width": 320, "height": 230},
+      "family": "plastic",
+      "subtype": "generic-polymer",
+      "finish": "matte-polymer",
+      "materialSpecId": "charcoal-polymer",
+      "notes": "Skeleton stock crop; charcoal molded polymer with moderate roughness and edge-wear highlights."
+    },
+    {
+      "componentId": "handguardVentSystem",
+      "regionId": "cavity-seams",
+      "sourceImage": "../../guns image models/02-assault-rifle.png",
+      "bbox": {"x": 900, "y": 410, "width": 260, "height": 62},
+      "family": "plastic",
+      "subtype": "generic-polymer",
+      "finish": "deep-cavity",
+      "materialSpecId": "cavity-material",
+      "notes": "Vent-slot and seam crop; black recessed walls with high roughness and ambient-occlusion dominance."
+    }
+  ]
+}

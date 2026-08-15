@@ -1,0 +1,21 @@
+{
+  "targetName": "02 Assault Rifle Deep Rebuild",
+  "passGateMode": "locked-sequential",
+  "currentPass": "structural-pass",
+  "completedPasses": [
+    "blockout"
+  ],
+  "nextRequiredEvidence": [
+    "Macro, meso, and repeated structures meet qualityContract.minimumSpecDepth.",
+    "Parent-child relations, joints, seams, sockets, and contact points are explicit.",
+    "Every attached child appendage/connector has parentSocket, localStart/localEnd, contactType, embedDepth or overlap, and gapTolerance.",
+    "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
+    "attachment contracts for child appendages/connectors",
+    "no floating child roots/joints in the browser screenshot",
+    "browser render screenshot from your agent's browser/screenshot tool",
+    "side-by-side reference/render comparison sheet for AI vision review",
+    "AI vision score at or above the visual acceptance threshold",
+    "all critical semantic feature scores from the shared image pair at or above their thresholds",
+    "self-correction review appended with action=continue before the next pass"
+  ]
+}

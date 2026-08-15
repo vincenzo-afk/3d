@@ -1,0 +1,5 @@
+# Tier-1 Calibration Notes
+
+The reference image’s black canvas caused the diagnostic mask to treat the full frame as foreground, so a deterministic isolated reference was created by preserving the admitted bounds `(18,257)-(1545,666)` and whitening pixels outside that rectangle. The browser harness now hides its status badge and floor for diagnostic captures, renders a light background, disables generated maps, and uses an orthographic frustum calibrated from the source/render mask bboxes. The current v13 capture visibly retains the complete rifle silhouette while making the object large enough for mask extraction.
+
+The prior v12 run used the isolated reference but still measured render bbox `(3,96,199,126)` against reference `(3,62,205,97)` because the authored vertical envelope had been over-compressed. The code has since been restored to `asset.scale.y = 0.94` and the orthographic frustum tightened to `3.10`, with the status badge hidden; v13 is the first clean capture after those changes and must be rerun through tier-1.

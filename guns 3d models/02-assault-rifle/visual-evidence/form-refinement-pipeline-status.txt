@@ -1,0 +1,23 @@
+STATUS pass=material-pass completed=3 blocked=none next=forge/stage3_build/orchestrate_passes.py status /home/ubuntu/3d/guns 3d models/02-assault-rifle/object-sculpt-spec.json
+currentPass: material-pass
+completedPasses: blockout, structural-pass, form-refinement
+required: Reference-derived albedo palette records dominant, secondary, and accent colors per visible material.
+required: Each important material defines roughness variation and at least one normal/bump/displacement response.
+required: Local material overrides, dirt/wear/stains/moss/chips/scratches or equivalent masks are tied to evidenceRefs.
+required: Thin, transparent, reflective, wet, or fibrous materials document alpha/transmission/clearcoat/metalness/fiber response when relevant.
+required: Generated preview uses procedural albedo/roughness/bump texture or vertex color variation instead of one flat color.
+required: Generated preview uses independent PBR maps at 1024px or higher for the quality-first tier.
+required: If source pixels are available, referencePbr extraction passed at confidence >= 0.7 or the pass is stopped/requesting better references.
+required: Macro, meso, and micro surface frequency bands are visible at the intended review distance without obvious tiling.
+required: AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.
+required: reference-derived albedo palette with dominant, secondary, and accent colors
+required: independent albedo, roughness, height/normal, and AO maps
+required: macro, meso, and micro surface-frequency response at 1024px or higher
+required: local material masks: AO, dirt, wear, stains, moss, chips, scratches, wetness, or equivalent
+required: neutral, grazing-light close-up, and reference-matched browser screenshots
+required: AI vision comparison sheet score meeting the visual acceptance threshold
+required: browser render screenshot from your agent's browser/screenshot tool
+required: side-by-side reference/render comparison sheet for AI vision review
+required: AI vision score at or above the visual acceptance threshold
+required: all critical semantic feature scores from the shared image pair at or above their thresholds
+required: self-correction review appended with action=continue before the next pass

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "negative-spaces",
+    "score": 0.82,
+    "visible": true,
+    "note": "Stock cutout, trigger opening, handguard vents, and muzzle slots remain open or recessed in the structural render."
+  },
+  {
+    "id": "repetition-density",
+    "score": 0.81,
+    "visible": true,
+    "note": "Picatinny teeth, vent slots, magazine ribs, grip grooves, and muzzle slots are procedurally repeated with stable spacing."
+  }
+]

@@ -1,0 +1,12 @@
+Query: guns image models/02-assault-rifle.png
+Collection: cs2
+Index: hit (current) b9e0deef4005f9d7ee8dff76a37547fcabb6c8394cf9bcc2b0912fa915c9f319
+1. cs2.json.docs/cs2/3D_Vocabulary_CS2.json#categories.rendering_optimization.terms.lod.def  score=9.479608
+   source: docs/cs2/3D_Vocabulary_CS2.json :: categories.rendering_optimization.terms.lod.def
+   Lower-poly models at distance
+2. cs2.markdown.docs/cs2/distill.md#30  score=6.691851
+   source: docs/cs2/distill.md :: CSGO-API Metadata
+   - `weapon_id`, `paint_index`, `min_float`, `max_float` from ByMykel/CSGO-API - CDN image URL for reference screenshots
+3. cs2.markdown.docs/cs2/3D_Vocabulary_CS2_Dictionary.md#36  score=5.081434
+   source: docs/cs2/3D_Vocabulary_CS2_Dictionary.md :: Loaders & Export
+   ... | FBXLoader | Loads FBX files. | | **OBJLoader** | OBJLoader | Loads OBJ files. | | **TextureLoader** | TextureLoader | Loads image files as textures. | | **GLTFExporter** | GLTFExporter | Exports Three.js scene to glTF/GLB format. |

@@ -1,0 +1,24 @@
+{
+  "targetName": "02 Assault Rifle Deep Rebuild",
+  "passGateMode": "locked-sequential",
+  "currentPass": "interaction-pass",
+  "completedPasses": [
+    "blockout",
+    "structural-pass",
+    "form-refinement",
+    "material-pass",
+    "surface-pass",
+    "lighting-pass"
+  ],
+  "nextRequiredEvidence": [
+    "Macro and movable meso components have stable pivot nodes.",
+    "Sockets, collider proxies, and destruction metadata are present for future runtime actions.",
+    "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
+    "browser render screenshot from your agent's browser/screenshot tool",
+    "side-by-side reference/render comparison sheet for AI vision review",
+    "AI vision score at or above the visual acceptance threshold",
+    "all critical semantic feature scores from the shared image pair at or above their thresholds",
+    "self-correction review appended with action=continue before the next pass"
+  ]
+}
+STATUS pass=interaction-pass completed=6 blocked=none next=forge/stage3_build/orchestrate_passes.py sync /home/ubuntu/3d/guns 3d models/02-assault-rifle/object-sculpt-spec.json

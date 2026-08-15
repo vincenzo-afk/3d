@@ -1,0 +1,1 @@
+{"status": "active", "currentStep": "await-pass-transition", "currentPass": "optimization-pass", "loop": {"passCount": 0, "maxPerPass": 3, "totalCount": 1, "maxTotal": 6}, "nextCommand": "python3 forge/next.py --state .img2threejs/state.json 'guns 3d models/02-assault-rifle/object-sculpt-spec.json'", "stopReason": null, "pending": ["part-coverage", "action-ready"]}

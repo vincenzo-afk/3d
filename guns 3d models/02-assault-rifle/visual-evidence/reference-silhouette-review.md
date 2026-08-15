@@ -1,0 +1,5 @@
+# Reference Silhouette Review
+
+The full reference confirms the rifle is substantially longer and shallower than the first procedural calibration assumed. The visible subject spans approximately x=18–1545 and y=257–666 at 1672x941, with a skeletonized collapsible stock, compact receiver, high optic, long vented/marbled handguard, curved magazine, vertical foregrip, thin barrel, and slotted muzzle brake. The raw photo’s near-black background is inseparable from large portions of the near-black object under the generic corner-distance mask, so a source-grounded silhouette segmentation artifact is used for the deterministic blockout diagnostic.
+
+The overlay shows the current factory’s overall macro placement is close, but the handguard, receiver, stock, magazine, and grip voids are represented differently from the manually traced segmentation. This is a limitation of using the generic tier-1 mask for a dark-on-dark source, not a reason to overclaim pixel fidelity; the silhouette/proportion and three-quarter reviews remain the visual authority for this photo reconstruction.

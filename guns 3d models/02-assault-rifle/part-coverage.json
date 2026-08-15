@@ -1,0 +1,46 @@
+{
+  "model": "02-assault-rifle",
+  "specifiedComponents": 50,
+  "builtParts": 50,
+  "errors": 0,
+  "warnings": 6,
+  "result": "pass",
+  "findings": [
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "barrel-steps",
+      "detail": "mapsTo 'muzzleDevice' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "muzzle-slots",
+      "detail": "mapsTo 'muzzleDevice' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "blue-marble-tendrils",
+      "detail": "mapsTo 'marbled-coating' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "teal-accent-flecks",
+      "detail": "mapsTo 'marbled-coating' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "edge-wear-highlights",
+      "detail": "mapsTo 'dark-anodized-metal' matches no component, localFeature or localOverride"
+    },
+    {
+      "check": "detail-dangling",
+      "severity": "warning",
+      "subject": "cavity-occlusion",
+      "detail": "mapsTo 'cavity-material' matches no component, localFeature or localOverride"
+    }
+  ]
+}

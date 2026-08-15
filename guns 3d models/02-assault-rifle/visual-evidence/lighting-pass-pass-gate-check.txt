@@ -1,0 +1,3 @@
+STATUS pass=lighting-pass completed=5 blocked=none next=forge/stage3_build/orchestrate_passes.py check /home/ubuntu/3d/guns 3d models/02-assault-rifle/object-sculpt-spec.json
+FAIL
+Tier 1 diagnostics have not passed for this render — run diagnose_render.py first
