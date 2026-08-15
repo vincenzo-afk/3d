@@ -1,0 +1,95 @@
+{
+  "projectedTextureBake": {
+    "version": "1.0",
+    "generator": "stage3_build/bake_projected_texture.py",
+    "status": "descriptor-only; no pixels are baked or rasterized by this script",
+    "targetMeshId": "shotgun-root",
+    "projectionMode": "orthographic-front-projection",
+    "textureSize": 1024,
+    "camera": {
+      "version": "1.0",
+      "sourceImage": "/home/ubuntu/3d/guns 3d models/04-shotgun/reference-source.png",
+      "solver": "stage1_intake/solve_camera_pose.py",
+      "method": "heuristic default-guess camera, not solved from image content; image dimensions give an exact aspect ratio, everything else is a starting point for agent refinement",
+      "imageWidth": 1672,
+      "imageHeight": 941,
+      "fovDegrees": {
+        "value": 18.0,
+        "source": "user-supplied",
+        "agentFill": false,
+        "rationale": "default guess for a landscape/square photo (typical phone/short-tele framing)"
+      },
+      "aspect": {
+        "value": 1.7768,
+        "source": "image-dimensions",
+        "agentFill": false
+      },
+      "orientation": {
+        "yawDegrees": {
+          "value": 0.0,
+          "source": "placeholder",
+          "agentFill": true
+        },
+        "pitchDegrees": {
+          "value": 0.0,
+          "source": "placeholder",
+          "agentFill": true
+        },
+        "rollDegrees": {
+          "value": 0.0,
+          "source": "placeholder",
+          "agentFill": true
+        },
+        "note": "0/0/0 assumes a straight-on, level shot; adjust by eye against the reference image."
+      },
+      "position": {
+        "hint": [
+          0.0,
+          0.0,
+          8.0
+        ],
+        "distance": {
+          "value": 8.0,
+          "source": "user-supplied",
+          "agentFill": false
+        },
+        "note": "Position hint assumes the subject is centered at the origin and the camera looks down -Z."
+      },
+      "confidence": 0.35,
+      "limitations": [
+        "no true camera calibration is performed; focal length/FOV/orientation are not recovered from pixels",
+        "fovDegrees is a genre default, not a measurement; wrong FOV distorts perceived proportions under overlay",
+        "orientation and position are placeholders and will almost always need manual/agent adjustment",
+        "this script cannot detect lens distortion, perspective foreshortening, or non-zero roll"
+      ],
+      "note": "Final camera match must be confirmed by overlay review: render the fitted mesh from this camera, place it beside or over the reference image, and adjust fovDegrees/orientation/position until silhouette and landmark alignment match before trusting projected texture bakes."
+    },
+    "sourceImages": {
+      "reference": "guns 3d models/04-shotgun/reference-source.png",
+      "delit": "guns 3d models/04-shotgun/reference-delit-albedo.png"
+    },
+    "unseenRegionStrategy": {
+      "mode": "palette-continue",
+      "confidence": 0.3,
+      "note": "Regions the reference camera never saw (back, occluded folds, underside) are inferred, not observed."
+    },
+    "runtimeApproach": "actual projective texturing and UV bake happen in the Three.js runtime via a projective ShaderMaterial (the three-projected-material approach) or an equivalent camera-space projection shader; this descriptor only records the plan for that step",
+    "bakeSteps": [
+      "load the fitted mesh identified by targetMeshId and its UV layout",
+      "load sourceImages.delit if present, otherwise sourceImages.reference, as the projection source texture",
+      "construct a projection camera in the Three.js scene from the camera block (fovDegrees, aspect, orientation, position)",
+      "apply orthographic-front-projection to project the source texture onto mesh surfaces facing the projection camera within tolerance",
+      "for surfaces outside the camera's view frustum or facing away, apply the 'palette-continue' strategy",
+      "rasterize the resulting camera-space projection into a 1024x1024 UV-space texture",
+      "flag any UV texels that received no projected sample (fully unseen regions) in the bake output metadata",
+      "hand the baked texture back to the material pipeline as the projected albedo input"
+    ],
+    "limitations": [
+      "this script performs no image sampling, projection math, or UV rasterization",
+      "camera accuracy is inherited from whatever produced the camera block; an unrefined camera will misalign the projection",
+      "unseen-region inference is a heuristic guess, not observed geometry or texture",
+      "the resulting bake still needs a rendered overlay review against the reference image before being trusted"
+    ],
+    "note": "Feed this descriptor to the Three.js generator/agent to run the actual projection and bake, then re-render and visually compare the baked mesh against the reference image before accepting the result as final."
+  }
+}

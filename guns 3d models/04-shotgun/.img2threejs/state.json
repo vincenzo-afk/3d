@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active",
   "profile": "generic",
-  "currentStep": "projection-route",
+  "currentStep": "spec-authoring",
   "currentPass": "",
   "checklist": [
     {
@@ -72,8 +72,12 @@
     {
       "id": "projection-route",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/04-shotgun/reference-camera.json",
+        "guns 3d models/04-shotgun/reference-delit-albedo.png",
+        "guns 3d models/04-shotgun/projection-descriptor.json"
+      ],
       "reason": "",
       "command": "Record whether projection is required; if required run solve_camera_pose.py, delight_albedo.py, and bake_projected_texture.py, otherwise skip with a reason"
     },
