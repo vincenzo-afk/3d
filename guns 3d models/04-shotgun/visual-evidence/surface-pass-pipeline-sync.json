@@ -1,0 +1,27 @@
+{
+  "targetName": "04 Shotgun Procedural Rebuild",
+  "passGateMode": "locked-sequential",
+  "currentPass": "lighting-pass",
+  "completedPasses": [
+    "blockout",
+    "structural-pass",
+    "form-refinement",
+    "material-pass",
+    "surface-pass"
+  ],
+  "nextRequiredEvidence": [
+    "lightingFromPhoto identifies key light direction/color/intensity, fill light, rim or environment light, and ambient color.",
+    "Exposure, tone mapping, background color/gradient, shadow softness, and contact shadow behavior are specified.",
+    "Lighting does not hide geometry/material gaps and screenshots can be compared fairly to the reference.",
+    "Neutral, grazing, and reference-matched lighting checks distinguish material errors from lighting errors.",
+    "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
+    "lightingFromPhoto with key/fill/rim or environment light",
+    "exposure, tone mapping, background, shadow softness, and contact shadow behavior",
+    "browser render screenshot from your agent's browser/screenshot tool",
+    "side-by-side reference/render comparison sheet for AI vision review",
+    "AI vision score at or above the visual acceptance threshold",
+    "all critical semantic feature scores from the shared image pair at or above their thresholds",
+    "self-correction review appended with action=continue before the next pass"
+  ]
+}
+STATUS pass=lighting-pass completed=5 blocked=none next=forge/stage3_build/orchestrate_passes.py sync /home/ubuntu/3d/guns 3d models/04-shotgun/object-sculpt-spec.json
