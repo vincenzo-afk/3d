@@ -1,0 +1,22 @@
+{
+  "targetName": "04 Shotgun Procedural Rebuild",
+  "passGateMode": "locked-sequential",
+  "currentPass": "form-refinement",
+  "completedPasses": [
+    "blockout",
+    "structural-pass"
+  ],
+  "nextRequiredEvidence": [
+    "Important visible forms are represented in component geometryDescriptor, deformations, localFeatures, or repetitionSystems.",
+    "Endpoint-based child parts are rooted at their attachment sockets and do not visibly float away from parents.",
+    "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
+    "attachment contracts for child appendages/connectors",
+    "no floating child roots/joints in the browser screenshot",
+    "browser render screenshot from your agent's browser/screenshot tool",
+    "side-by-side reference/render comparison sheet for AI vision review",
+    "AI vision score at or above the visual acceptance threshold",
+    "all critical semantic feature scores from the shared image pair at or above their thresholds",
+    "self-correction review appended with action=continue before the next pass"
+  ]
+}
+STATUS pass=form-refinement completed=2 blocked=none next=forge/stage3_build/orchestrate_passes.py sync /home/ubuntu/3d/guns 3d models/04-shotgun/object-sculpt-spec.json

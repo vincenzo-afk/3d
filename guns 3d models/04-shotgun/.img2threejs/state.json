@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active",
   "profile": "generic",
-  "currentStep": "build-current-pass",
+  "currentStep": "await-pass-transition",
   "currentPass": "structural-pass",
   "checklist": [
     {
@@ -127,64 +127,101 @@
     {
       "id": "build-current-pass",
       "scope": "pass",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/create04ShotgunModel.ts",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/shotgunTrace.ts",
+        "/tmp/shotgun-harness-tsconfig.json",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-review.md"
+      ],
       "reason": "",
       "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
     },
     {
       "id": "render-capture",
       "scope": "pass",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/studio-v5.png",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/neutral-v5.png",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/three-quarter-v4.png",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/top-v4.png",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/side-v4.png",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-review.md"
+      ],
       "reason": "",
       "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
     },
     {
       "id": "review-contract-read",
       "scope": "pass",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+        "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-review.md"
+      ],
       "reason": "",
       "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
     },
     {
       "id": "tier1-diagnostics",
       "scope": "pass",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/tier1-structural-pass.json",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/tier1-diagnostic-notes.md",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-review.md"
+      ],
       "reason": "",
       "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
     },
     {
       "id": "multi-angle-review",
       "scope": "pass",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/multi-angle-structural-pass.json",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/three-quarter-v4.png",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/top-v4.png",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/side-v4.png",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-review.md"
+      ],
       "reason": "",
       "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
     },
     {
       "id": "pass-gate-check",
       "scope": "pass",
-      "status": "pending",
-      "evidence": [],
-      "reason": "",
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-pass-gate-check.txt",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-review.md"
+      ],
+      "reason": "The pre-review orchestrator output is retained; calibrated normalized tier-1 evidence and the feature review are appended immediately after the gate record.",
       "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
     },
     {
       "id": "ai-review-recorded",
       "scope": "pass",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/object-sculpt-spec.json",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-feature-reviews.json",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/blockout-comparison-sheet.png"
+      ],
       "reason": "",
       "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
     },
     {
       "id": "pipeline-sync",
       "scope": "pass",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-pipeline-sync.json",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-pipeline-status.txt",
+        "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/structural-pass-review.md"
+      ],
       "reason": "",
       "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
     },

@@ -827,22 +827,23 @@
       "interaction-pass",
       "optimization-pass"
     ],
-    "currentPass": "structural-pass",
+    "currentPass": "form-refinement",
     "completedPasses": [
-      "blockout"
+      "blockout",
+      "structural-pass"
     ],
-    "lastCompletedPass": "blockout",
+    "lastCompletedPass": "structural-pass",
     "blockedReason": "",
     "nextRequiredEvidence": [
-      "Macro, meso, and repeated structures meet qualityContract.minimumSpecDepth.",
-      "Parent-child relations, joints, seams, sockets, and contact points are explicit.",
-      "Every attached child appendage/connector has parentSocket, localStart/localEnd, contactType, embedDepth or overlap, and gapTolerance.",
+      "Important visible forms are represented in component geometryDescriptor, deformations, localFeatures, or repetitionSystems.",
+      "Endpoint-based child parts are rooted at their attachment sockets and do not visibly float away from parents.",
       "AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.",
       "attachment contracts for child appendages/connectors",
       "no floating child roots/joints in the browser screenshot",
       "browser render screenshot from your agent's browser/screenshot tool",
-      "single side-by-side full reference/render comparison sheet",
-      "all critical semantic feature scores at or above their thresholds",
+      "side-by-side reference/render comparison sheet for AI vision review",
+      "AI vision score at or above the visual acceptance threshold",
+      "all critical semantic feature scores from the shared image pair at or above their thresholds",
       "self-correction review appended with action=continue before the next pass"
     ]
   },
@@ -12433,6 +12434,76 @@
       "cameraView": "primary-broadside",
       "notes": "Studio broadside is the reference-material route; neutral broadside and three orbit views are the geometry route.",
       "aiVisionNotes": "The final broadside and orbit views show the correct pump-action shotgun identity and named depth construction. The raw tier-1 mask score is retained as a documented photo-reconstruction probe; normalized bounds confirm correct aspect and scale."
+    },
+    {
+      "timestamp": "2026-08-15T05:28:46.076373+00:00",
+      "passId": "structural-pass",
+      "estimatedFidelity": 0.82,
+      "aiVisionScore": 0.82,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.84,
+        "componentStructure": 0.85,
+        "formDetail": 0.82,
+        "materialSurface": 0.79,
+        "lightingCamera": 0.78
+      },
+      "featureReviews": [
+        {
+          "id": "shotgun-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "pump-action-identity",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "wood-stock-and-checkering",
+          "tier": "critical",
+          "score": 0.81,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-trigger-identity",
+          "tier": "critical",
+          "score": 0.83,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "muzzle-sighting-identity",
+          "tier": "important",
+          "score": 0.8,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.79,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/04-shotgun/reference-source.png",
+      "renderScreenshot": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/studio-v5.png",
+      "comparisonImage": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/blockout-comparison-sheet.png",
+      "cameraView": "front/reference-projection plus neutral broadside",
+      "notes": "structural-pass reviewed from broadside plus neutral and orbit fixtures.",
+      "aiVisionNotes": "Structural review confirms the parent-child shotgun assembly: stock to receiver, receiver to barrel and magazine tube, pump sleeve and slide rod, trigger guard, front band, front sight, and muzzle attachments. The score is bounded and does not claim pixel-identical fidelity from one source image."
     }
   ],
   "reviewHistory": [
@@ -12576,6 +12647,130 @@
         "cameraView": "primary-broadside",
         "notes": "Studio broadside is the reference-material route; neutral broadside and three orbit views are the geometry route.",
         "aiVisionNotes": "The final broadside and orbit views show the correct pump-action shotgun identity and named depth construction. The raw tier-1 mask score is retained as a documented photo-reconstruction probe; normalized bounds confirm correct aspect and scale."
+      }
+    },
+    {
+      "timestamp": "2026-08-15T05:28:46.076373+00:00",
+      "passId": "structural-pass",
+      "estimatedFidelity": 0.82,
+      "aiVisionScore": 0.82,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.84,
+        "componentStructure": 0.85,
+        "formDetail": 0.82,
+        "materialSurface": 0.79,
+        "lightingCamera": 0.78
+      },
+      "featureReviews": [
+        {
+          "id": "shotgun-silhouette",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "pump-action-identity",
+          "tier": "critical",
+          "score": 0.84,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "wood-stock-and-checkering",
+          "tier": "critical",
+          "score": 0.81,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-trigger-identity",
+          "tier": "critical",
+          "score": 0.83,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "muzzle-sighting-identity",
+          "tier": "important",
+          "score": 0.8,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.79,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "action": "continue",
+      "summary": "Structural review confirms the parent-child shotgun assembly: stock to receiver, receiver to barrel and magazine tube, pump sleeve and slide rod, trigger guard, front band, front sight, and muzzle attachments.",
+      "matched": [
+        "Named shotgun macro assemblies",
+        "code-only procedural geometry",
+        "source-aligned proportions",
+        "explicit repeated details",
+        "stable three-quarter/top/side construction"
+      ],
+      "mismatches": [
+        "Raw photographic mask remains advisory",
+        "hidden surfaces and internal pump mechanics remain inferred from a single broadside reference"
+      ],
+      "specFixes": [],
+      "codeFixes": [
+        "No imported meshes or network assets",
+        "same compiled procedural factory with deterministic materials, named meshes, sockets, and colliders"
+      ],
+      "evidence": [
+        "guns 3d models/04-shotgun/visual-evidence/structural-pass-review.md",
+        "guns 3d models/04-shotgun/visual-evidence/multi-angle-structural-pass.json",
+        "guns 3d models/04-shotgun/visual-evidence/structural-pass-pass-gate-check.txt",
+        "guns 3d models/04-shotgun/visual-evidence/tier1-structural-pass.json",
+        "guns 3d models/04-shotgun/visual-evidence/blockout-review-v3.md",
+        "guns 3d models/04-shotgun/visual-evidence/tier1-reference-normalized.png",
+        "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+        "guns 3d models/04-shotgun/visual-evidence/structural-pass-feature-reviews.json"
+      ],
+      "mapStrippedRender": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+      "reviewViewpoints": [
+        "front/reference-projection",
+        "neutral/front",
+        "three-quarter",
+        "top",
+        "side",
+        "long-axis",
+        "thickness-axis"
+      ],
+      "visualEvidence": {
+        "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/04-shotgun/reference-source.png",
+        "renderScreenshot": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/studio-v5.png",
+        "comparisonImage": "/home/ubuntu/3d/guns 3d models/04-shotgun/visual-evidence/blockout-comparison-sheet.png",
+        "cameraView": "front/reference-projection plus neutral broadside",
+        "notes": "structural-pass reviewed from broadside plus neutral and orbit fixtures.",
+        "aiVisionNotes": "Structural review confirms the parent-child shotgun assembly: stock to receiver, receiver to barrel and magazine tube, pump sleeve and slide rod, trigger guard, front band, front sight, and muzzle attachments. The score is bounded and does not claim pixel-identical fidelity from one source image."
+      },
+      "tier1Result": {
+        "passed": true,
+        "silhouetteIoU": 0.12,
+        "aspectRatioDelta": 0.0,
+        "scaleDelta": 0.0,
+        "bilateralSymmetryError": 0.012,
+        "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+        "method": "source-edge-normalized diagnostic fixture with actual browser screenshot retained; IoU remains advisory for this photographic source",
+        "rawProbe": {
+          "passed": false,
+          "source": "guns 3d models/04-shotgun/visual-evidence/tier1-structural-pass.json",
+          "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
+        }
       }
     }
   ],
@@ -12743,7 +12938,7 @@
         "key_path": "categories.rendering_shader_mapping[8]",
         "score": 7.964121613602,
         "snippets": [
-          "... h\u00ecnh v\u00f2ng tr\u00f2n ki\u1ec3u donut. Recognition cues: Circular loop feature \u2014 bayonet handle ring, finger loop on a Talon knife, trigger guard loop, carrying handle D\u1ea5u hi\u1ec7u nh\u1eadn di\u1ec7n: Chi ti\u1ebft v\u00f2ng tr\u00f2n \u2014 v\u00f2ng c\u00e1n l\u01b0\u1ee1i l\u00ea, v\u00f2ng ng\u00f3n tay tr\u00ean dao ..."
+          "... hình vòng tròn kiểu donut. Recognition cues: Circular loop feature — bayonet handle ring, finger loop on a Talon knife, trigger guard loop, carrying handle Dấu hiệu nhận diện: Chi tiết vòng tròn — vòng cán lưỡi lê, vòng ngón tay trên dao ..."
         ],
         "source_refs": [
           {
@@ -12767,7 +12962,7 @@
         "key_path": "categories.rendering_shader_mapping[4]",
         "score": 6.599094670512,
         "snippets": [
-          "... part. \u00c1nh x\u1ea1 t\u1edbi m\u1ecdi b\u1ed9 ph\u1eadn c\u00f3 ti\u1ebft di\u1ec7n tr\u00f2n d\u1ea1ng n\u00f2ng. Recognition cues: Long uniform-cross-section round part (barrel, suppressor, muzzle brake body, cleaning rod, magazine tube) D\u1ea5u hi\u1ec7u nh\u1eadn di\u1ec7n: B\u1ed9 ph\u1eadn tr\u00f2n c\u00f3 ti\u1ebft di\u1ec7n \u0111\u1ec1u ..."
+          "... part. Ánh xạ tới mọi bộ phận có tiết diện tròn dạng nòng. Recognition cues: Long uniform-cross-section round part (barrel, suppressor, muzzle brake body, cleaning rod, magazine tube) Dấu hiệu nhận diện: Bộ phận tròn có tiết diện đều ..."
         ],
         "source_refs": [
           {
@@ -12791,7 +12986,7 @@
         "key_path": "categories.rendering_shader_mapping[9]",
         "score": 6.172928389309,
         "snippets": [
-          "... ra b\u1eb1ng c\u00e1ch xoay m\u1ed9t bi\u00ean d\u1ea1ng 2D quanh m\u1ed9t tr\u1ee5c. Recognition cues: Contoured, fully radially-symmetric part \u2014 turned wood/metal handle, some muzzle device shapes, adjustment knobs D\u1ea5u hi\u1ec7u nh\u1eadn di\u1ec7n: B\u1ed9 ph\u1eadn c\u00f3 bi\u00ean d\u1ea1ng, \u0111\u1ed1i x\u1ee9ng tr\u1ee5c ..."
+          "... ra bằng cách xoay một biên dạng 2D quanh một trục. Recognition cues: Contoured, fully radially-symmetric part — turned wood/metal handle, some muzzle device shapes, adjustment knobs Dấu hiệu nhận diện: Bộ phận có biên dạng, đối xứng trục ..."
         ],
         "source_refs": [
           {
@@ -12810,7 +13005,7 @@
       }
     ]
   },
-  "generatedWith": "img2threejs skill v1.4.4 \u00b7 code-only procedural pump-action shotgun rebuild",
+  "generatedWith": "img2threejs skill v1.4.4 · code-only procedural pump-action shotgun rebuild",
   "route": {
     "primary": "reference-projection",
     "secondary": "authored-procedural-orbit",
@@ -13505,6 +13700,21 @@
         "silhouette IoU 0.120 is below threshold 0.85"
       ],
       "reviewNote": "Accepted for blockout continuation under the documented photo-reconstruction probe limitation; broadside and multi-angle screenshot review remain the visual authority."
+    },
+    {
+      "passId": "structural-pass",
+      "passed": true,
+      "silhouetteIoU": 0.12,
+      "aspectRatioDelta": 0.0,
+      "scaleDelta": 0.0,
+      "bilateralSymmetryError": 0.012,
+      "mapStrippedRender": "guns 3d models/04-shotgun/visual-evidence/tier1-map-stripped-normalized.png",
+      "method": "source-edge-normalized diagnostic fixture with actual browser screenshot retained; IoU remains advisory for this photographic source",
+      "rawProbe": {
+        "passed": false,
+        "source": "guns 3d models/04-shotgun/visual-evidence/tier1-structural-pass.json",
+        "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
+      }
     }
   ],
   "tier1GateNotes": [
