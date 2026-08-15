@@ -249,7 +249,7 @@ function addStock(group: THREE.Group, runtime: ShotgunRuntime, materials: Materi
   grip.position.z = 0.02;
   for (let i = 0; i < 7; i += 1) {
     const check = addMesh(group, `gripCheckering${i + 1}`, roundedBox(0.10, 0.018, 0.026, 0.004), materials['polished-action-metal'], runtime, shadows);
-    check.position.set(-1.43 + (i % 4) * 0.09, -0.05 - Math.floor(i / 4) * 0.11, FRONT_Z + 0.08);
+    check.position.set(-1.43 + (i % 4) * 0.09, -0.05 - Math.floor(i / 4) * 0.11, FRONT_Z * 0.82);
     check.rotation.z = i % 2 ? -0.62 : 0.62;
   }
   const buttpad = addMesh(group, 'buttpad', roundedBox(0.16, 0.84, 0.54, 0.03), materials['rubber-and-cavity'], runtime, shadows);
@@ -332,8 +332,10 @@ function addPump(group: THREE.Group, runtime: ShotgunRuntime, materials: Materia
   }
   for (const [i, x] of [0.42, 1.25].entries()) {
     const motif = addMesh(group, `pumpChevronCarving${i + 1}`, extrude([[x - 0.10, 0.10], [x, 0.28], [x + 0.10, 0.10], [x, 0.14]], 0.025), materials['rubber-and-cavity'], runtime, shadows);
-    motif.position.z = FRONT_Z * 0.98;
+    motif.position.z = FRONT_Z * 0.82;
   }
+  const slideRod = addMesh(group, 'pumpSlideRod', cylinderX(0.028, 1.10, 20), materials['blued-barrel-metal'], runtime, shadows);
+  slideRod.position.set(0.84, -0.03, 0);
   runtime.pumpSlide = { start: [0.26, 0.17, 0], end: [1.46, 0.17, 0] };
   addSocket(group, 'pumpForeEndAssemblySocket', [0.26, 0.17, 0], runtime, [1, 0, 0]);
   addCollider('pump-collider', sleeve, runtime);
@@ -346,7 +348,7 @@ function addFrontBand(group: THREE.Group, runtime: ShotgunRuntime, materials: Ma
   lower.position.set(1.57, 0.10, 0);
   const bridge = addMesh(group, 'frontBandBridge', roundedBox(0.10, 0.34, 0.36, 0.015), materials['band-edge-metal'], runtime, shadows);
   bridge.position.set(1.57, 0.25, 0);
-  addFastener(group, 'frontBandFastener', [1.57, 0.25, FRONT_Z * 0.98], materials['polished-action-metal'], runtime, shadows, 0.026);
+  addFastener(group, 'frontBandFastener', [1.57, 0.25, FRONT_Z * 0.78], materials['polished-action-metal'], runtime, shadows, 0.026);
   addSocket(group, 'frontBandAssemblySocket', [1.57, 0.25, 0], runtime, [1, 0, 0]);
   addCollider('front-band-collider', bridge, runtime);
 }
@@ -358,7 +360,7 @@ function addMuzzle(group: THREE.Group, runtime: ShotgunRuntime, materials: Mater
   cap.position.set(2.10, 0.10, 0);
   for (let i = 0; i < 18; i += 1) {
     const ridge = addMesh(group, `muzzleKnurl${i + 1}`, roundedBox(0.018, 0.17, 0.035, 0.004), materials['band-edge-metal'], runtime, shadows);
-    ridge.position.set(2.10, 0.10, FRONT_Z * 0.90);
+    ridge.position.set(2.10, 0.10, FRONT_Z * 0.72);
     ridge.rotation.z = (i % 2 ? -1 : 1) * 0.42;
     ridge.rotation.y = (i / 18) * Math.PI * 2;
   }
@@ -376,7 +378,7 @@ function addSight(group: THREE.Group, runtime: ShotgunRuntime, materials: Materi
   const post = addMesh(group, 'frontSightPost', roundedBox(0.05, 0.13, 0.10, 0.008), materials['polished-action-metal'], runtime, shadows);
   post.position.set(1.88, 0.63, 0);
   const notch = addMesh(group, 'frontSightNotch', roundedBox(0.024, 0.035, 0.12, 0.003), materials['cavity-material'], runtime, shadows);
-  notch.position.set(1.88, 0.67, FRONT_Z * 0.96);
+  notch.position.set(1.88, 0.67, FRONT_Z * 0.78);
   addSocket(group, 'sightingAssemblySocket', [1.88, 0.54, 0], runtime, [0, 1, 0]);
 }
 

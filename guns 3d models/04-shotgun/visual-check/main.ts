@@ -39,16 +39,16 @@ scene.add(lights);
 const root = create04ShotgunModel({ shadows: true, noTextures: diagnostic, disableIdle: staticFrame });
 if (neutral || diagnostic) {
   const neutralColors: Record<string, string> = {
-    '593526': '#8b684f',
-    '6a3e28': '#9b6f50',
-    '1e2730': '#70859a',
-    '172028': '#61768a',
-    '18212a': '#5e7488',
-    '7f8e99': '#c1cfda',
-    '3a4853': '#8fa3b1',
-    '080a0c': '#1d2731',
-    '020304': '#0b1219',
-    '9aa6ad': '#d5e0e5',
+    '744832': '#9b7458',
+    '845638': '#ad7650',
+    '30404b': '#718696',
+    '2b3943': '#667d8f',
+    '2b3740': '#64798a',
+    '9faeb8': '#c1ced7',
+    '607380': '#93a6b2',
+    '171c20': '#2b343c',
+    '05080b': '#0d151c',
+    'bdcad1': '#d5e1e7',
   };
   root.traverse((object) => {
     const mesh = object as THREE.Mesh;
