@@ -240,12 +240,12 @@ function addFastener(group: THREE.Group, name: string, position: V3, material: T
 
 function addStock(group: THREE.Group, runtime: ShotgunRuntime, materials: MaterialSet, shadows: boolean): void {
   const shell = addMesh(group, 'stockWoodShell', extrude([
-    [-2.18, 0.22], [-2.08, 0.42], [-1.56, 0.50], [-1.18, 0.46], [-0.90, 0.30], [-0.72, 0.18], [-0.80, -0.10], [-1.05, -0.23], [-1.32, -0.47], [-2.10, -0.42],
+    [-2.18, 0.10], [-2.06, 0.34], [-1.66, 0.39], [-1.32, 0.34], [-1.00, 0.24], [-0.82, 0.12], [-0.96, 0.02], [-1.32, -0.02], [-1.62, -0.28], [-2.12, -0.25],
   ], 0.54), materials['wood-stock'], runtime, shadows);
   shell.userData.feature = 'organic-hardwood-stock-profile';
-  const cheek = addMesh(group, 'stockCheekRest', extrude([[-1.56, 0.40], [-1.22, 0.48], [-0.92, 0.35], [-1.10, 0.24], [-1.50, 0.27]], 0.40), materials['wood-stock'], runtime, shadows);
+  const cheek = addMesh(group, 'stockCheekRest', extrude([[-1.64, 0.31], [-1.34, 0.39], [-1.05, 0.28], [-1.18, 0.18], [-1.55, 0.20]], 0.40), materials['wood-stock'], runtime, shadows);
   cheek.position.z = 0.01;
-  const grip = addMesh(group, 'gripTransition', extrude([[-1.47, 0.20], [-1.06, 0.22], [-1.10, -0.12], [-1.30, -0.32], [-1.54, -0.15]], 0.48), materials['wood-stock'], runtime, shadows);
+  const grip = addMesh(group, 'gripTransition', extrude([[-1.40, 0.10], [-1.06, 0.16], [-1.10, -0.10], [-1.24, -0.36], [-1.46, -0.29], [-1.56, -0.07]], 0.48), materials['wood-stock'], runtime, shadows);
   grip.position.z = 0.02;
   for (let i = 0; i < 7; i += 1) {
     const check = addMesh(group, `gripCheckering${i + 1}`, roundedBox(0.10, 0.018, 0.026, 0.004), materials['polished-action-metal'], runtime, shadows);
@@ -269,15 +269,15 @@ function addStock(group: THREE.Group, runtime: ShotgunRuntime, materials: Materi
 
 function addReceiver(group: THREE.Group, runtime: ShotgunRuntime, materials: MaterialSet, shadows: boolean): void {
   const shell = addMesh(group, 'receiverShell', extrude([
-    [-0.82, 0.02], [-0.72, 0.34], [-0.52, 0.46], [0.28, 0.46], [0.42, 0.34], [0.42, -0.12], [0.22, -0.24], [-0.58, -0.24],
+    [-0.82, 0.00], [-0.72, 0.28], [-0.52, 0.38], [0.18, 0.38], [0.32, 0.28], [0.32, -0.08], [0.15, -0.18], [-0.58, -0.18],
   ], 0.62), materials['blued-receiver-metal'], runtime, shadows);
   shell.userData.feature = 'rounded-pump-action-receiver';
   const topCrown = addMesh(group, 'receiverTopCrown', roundedBox(0.82, 0.08, 0.58, 0.012), materials['band-edge-metal'], runtime, shadows);
-  topCrown.position.set(-0.12, 0.48, 0);
+  topCrown.position.set(-0.16, 0.40, 0);
   const ejection = addMesh(group, 'ejectionPortCavity', roundedBox(0.38, 0.13, 0.05, 0.018), materials['cavity-material'], runtime, shadows);
-  ejection.position.set(-0.18, 0.31, FRONT_Z * 0.96);
+  ejection.position.set(-0.18, 0.25, FRONT_Z * 0.96);
   const ejectionLip = addMesh(group, 'ejectionPortLip', roundedBox(0.42, 0.025, 0.06, 0.006), materials['polished-action-metal'], runtime, shadows);
-  ejectionLip.position.set(-0.18, 0.39, FRONT_Z * 0.98);
+  ejectionLip.position.set(-0.18, 0.33, FRONT_Z * 0.98);
   const actionBar = addMesh(group, 'actionSeam', roundedBox(0.76, 0.025, 0.025, 0.004), materials['polished-action-metal'], runtime, shadows);
   actionBar.position.set(-0.28, -0.08, FRONT_Z * 0.96);
   for (let i = 0; i < 4; i += 1) {
@@ -323,21 +323,21 @@ function addMagazineTube(group: THREE.Group, runtime: ShotgunRuntime, materials:
 
 function addPump(group: THREE.Group, runtime: ShotgunRuntime, materials: MaterialSet, shadows: boolean): void {
   const sleeve = addMesh(group, 'pumpWoodSleeve', extrude([
-    [0.28, 0.00], [1.42, 0.00], [1.46, 0.15], [1.34, 0.34], [0.36, 0.34], [0.26, 0.20],
+    [0.40, 0.00], [1.26, 0.00], [1.30, 0.12], [1.22, 0.29], [0.46, 0.29], [0.38, 0.17],
   ], 0.54), materials['wood-pump-fore-end'], runtime, shadows);
   sleeve.userData.feature = 'sliding-ribbed-hardwood-pump';
-  for (let i = 0; i < 12; i += 1) {
-    const rib = addMesh(group, `pumpRib${i + 1}`, roundedBox(0.042, 0.29, 0.05, 0.008), materials['wood-pump-fore-end'], runtime, shadows);
-    rib.position.set(0.40 + i * 0.086, 0.18, FRONT_Z * 0.90);
+  for (let i = 0; i < 10; i += 1) {
+    const rib = addMesh(group, `pumpRib${i + 1}`, roundedBox(0.036, 0.24, 0.05, 0.008), materials['wood-pump-fore-end'], runtime, shadows);
+    rib.position.set(0.50 + i * 0.076, 0.15, FRONT_Z * 0.90);
   }
-  for (const [i, x] of [0.42, 1.25].entries()) {
+  for (const [i, x] of [0.46, 1.20].entries()) {
     const motif = addMesh(group, `pumpChevronCarving${i + 1}`, extrude([[x - 0.10, 0.10], [x, 0.28], [x + 0.10, 0.10], [x, 0.14]], 0.025), materials['rubber-and-cavity'], runtime, shadows);
-    motif.position.z = FRONT_Z * 0.82;
+    motif.position.z = FRONT_Z * 0.80;
   }
-  const slideRod = addMesh(group, 'pumpSlideRod', cylinderX(0.028, 1.10, 20), materials['blued-barrel-metal'], runtime, shadows);
-  slideRod.position.set(0.84, -0.03, 0);
-  runtime.pumpSlide = { start: [0.26, 0.17, 0], end: [1.46, 0.17, 0] };
-  addSocket(group, 'pumpForeEndAssemblySocket', [0.26, 0.17, 0], runtime, [1, 0, 0]);
+  const slideRod = addMesh(group, 'pumpSlideRod', cylinderX(0.026, 0.82, 20), materials['blued-barrel-metal'], runtime, shadows);
+  slideRod.position.set(0.83, -0.03, 0);
+  runtime.pumpSlide = { start: [0.38, 0.15, 0], end: [1.30, 0.15, 0] };
+  addSocket(group, 'pumpForeEndAssemblySocket', [0.38, 0.15, 0], runtime, [1, 0, 0]);
   addCollider('pump-collider', sleeve, runtime);
 }
 
