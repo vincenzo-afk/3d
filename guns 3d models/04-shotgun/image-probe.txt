@@ -1,0 +1,11 @@
+{
+  "path": "/home/ubuntu/3d/guns 3d models/04-shotgun/reference-source.png",
+  "type": "png",
+  "bytes": 533772,
+  "width": 1672,
+  "height": 941,
+  "aspectRatio": 1.7768331562167907,
+  "technicalSuitability": "pass",
+  "warnings": [],
+  "note": "This is only technical image probing. Semantic object suitability still requires visual inspection."
+}
