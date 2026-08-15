@@ -1,0 +1,11 @@
+STATUS pass=interaction-pass completed=6 blocked=none next=forge/stage3_build/orchestrate_passes.py status /home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/object-sculpt-spec.json
+currentPass: interaction-pass
+completedPasses: blockout, structural-pass, form-refinement, material-pass, surface-pass, lighting-pass
+required: Macro and movable meso components have stable pivot nodes.
+required: Sockets, collider proxies, and destruction metadata are present for future runtime actions.
+required: AI vision comparison score meets selfCorrectLoop.visualAcceptance.threshold.
+required: browser render screenshot from your agent's browser/screenshot tool
+required: side-by-side reference/render comparison sheet for AI vision review
+required: AI vision score at or above the visual acceptance threshold
+required: all critical semantic feature scores from the shared image pair at or above their thresholds
+required: self-correction review appended with action=continue before the next pass
