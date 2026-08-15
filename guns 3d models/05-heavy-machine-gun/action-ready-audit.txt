@@ -1,0 +1,58 @@
+/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/action-ready-audit.json
+{
+  "model": "05-heavy-machine-gun",
+  "checks": {
+    "rootUserDataSculptRuntime": true,
+    "sourceTraceAttached": true,
+    "codeOnlyProvenance": true,
+    "macroGroups": true,
+    "namedMeshes": true,
+    "selectableParts": true,
+    "sockets": true,
+    "colliders": true,
+    "destructionGroups": true,
+    "interactionSystems": true,
+    "inspectRoutes": true,
+    "manifestIntegralMeshes": true,
+    "runtimeSummaryCounts": true
+  },
+  "parts": 78,
+  "runtimeMeshCount": 259,
+  "integralMeshes": 259,
+  "requiredGroups": [
+    "stockGripAssembly",
+    "receiverAssembly",
+    "feedSystem",
+    "ammunitionBoxAssembly",
+    "barrelAssembly",
+    "handguardAssembly",
+    "bipodAssembly",
+    "controlAssembly",
+    "muzzleAssembly",
+    "sightingAssembly",
+    "carryHandleAssembly",
+    "chargingSystem"
+  ],
+  "requiredSockets": [
+    "stockGripAssemblySocket",
+    "receiverAssemblySocket",
+    "feedSystemSocket",
+    "ammunitionBoxAssemblySocket",
+    "barrelAssemblySocket",
+    "handguardAssemblySocket",
+    "bipodAssemblySocket",
+    "controlAssemblySocket",
+    "muzzleAssemblySocket",
+    "sightingAssemblySocket",
+    "carryHandleAssemblySocket",
+    "chargingSystemSocket",
+    "rootSocket"
+  ],
+  "actionReady": true,
+  "notes": [
+    "Twelve macro groups are stable transform pivots for the authored heavy machine gun assemblies.",
+    "Every authored mesh receives a stable name, runtime ID, selectable flag, and destruction-group membership; relief patches are marked explodeWithParent.",
+    "Sockets, colliders, feed-cover/charging/bipod/ammunition-box interaction metadata, source-trace/projection metadata, and runtime summary counts are exposed under sculptRuntime/root.userData.",
+    "The audit validates the authored runtime contract statically; it does not claim a physics engine is installed."
+  ]
+}

@@ -1,0 +1,1114 @@
+{
+  "model": "05-heavy-machine-gun",
+  "sourceFactory": "create05HeavyMachineGunModel.ts",
+  "runtimeMeshCount": 259,
+  "parts": [
+    {
+      "name": "receiverAssembly",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "runtimeIds": [
+        "receiverAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "feedSystem",
+      "kind": "part",
+      "module": "feedSystem",
+      "runtimeIds": [
+        "feedSystem"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "ammunitionBoxAssembly",
+      "kind": "part",
+      "module": "ammunitionBoxAssembly",
+      "runtimeIds": [
+        "ammunitionBoxAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "barrelAssembly",
+      "kind": "part",
+      "module": "barrelAssembly",
+      "runtimeIds": [
+        "barrelAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "handguardAssembly",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "runtimeIds": [
+        "handguardAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "bipodAssembly",
+      "kind": "part",
+      "module": "bipodAssembly",
+      "runtimeIds": [
+        "bipodAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockGripAssembly",
+      "kind": "part",
+      "module": "stockGripAssembly",
+      "runtimeIds": [
+        "stockGripAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "controlAssembly",
+      "kind": "part",
+      "module": "controlAssembly",
+      "runtimeIds": [
+        "controlAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleAssembly",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "sightingAssembly",
+      "kind": "part",
+      "module": "sightingAssembly",
+      "runtimeIds": [
+        "sightingAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "carryHandleAssembly",
+      "kind": "part",
+      "module": "carryHandleAssembly",
+      "runtimeIds": [
+        "carryHandleAssembly"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "chargingSystem",
+      "kind": "part",
+      "module": "chargingSystem",
+      "runtimeIds": [
+        "chargingSystem"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverShell",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "runtimeIds": [
+        "receiverShell"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverSidePlate",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "runtimeIds": [
+        "receiverSidePlate"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverActionCavity",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "runtimeIds": [
+        "receiverActionCavity"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverFasteners",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "runtimeIds": [
+        "receiverFastener1",
+        "receiverFastener2",
+        "receiverFastener3",
+        "receiverFastener4",
+        "receiverFastener5",
+        "receiverFastener6",
+        "receiverFastener7",
+        "receiverFastener8",
+        "receiverFastener9",
+        "receiverFastener10"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverSeams",
+      "kind": "part",
+      "module": "receiverAssembly",
+      "runtimeIds": [
+        "receiverSeam",
+        "receiverRearSeam"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "feedCover",
+      "kind": "part",
+      "module": "feedSystem",
+      "runtimeIds": [
+        "feedCover"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "feedTray",
+      "kind": "part",
+      "module": "feedSystem",
+      "runtimeIds": [
+        "feedTray"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "cartridgeLinkRun",
+      "kind": "part",
+      "module": "feedSystem",
+      "runtimeIds": [
+        "cartridge1",
+        "cartridge2",
+        "cartridge3",
+        "cartridge4",
+        "cartridge5",
+        "cartridge6",
+        "cartridge7",
+        "cartridge8",
+        "beltLink1",
+        "beltLink2",
+        "beltLink3",
+        "beltLink4",
+        "beltLink5",
+        "beltLink6",
+        "beltLink7",
+        "beltLink8"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "feedGuide",
+      "kind": "part",
+      "module": "feedSystem",
+      "runtimeIds": [
+        "feedGuide",
+        "feedGuideHinge"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "ammoBoxShell",
+      "kind": "part",
+      "module": "ammunitionBoxAssembly",
+      "runtimeIds": [
+        "ammoBoxShell"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "ammoBoxFrame",
+      "kind": "part",
+      "module": "ammunitionBoxAssembly",
+      "runtimeIds": [
+        "ammoBoxFrame",
+        "ammoBoxLid"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "ammoBoxHardware",
+      "kind": "part",
+      "module": "ammunitionBoxAssembly",
+      "runtimeIds": [
+        "ammoBoxHinge",
+        "ammoBoxCornerFastener1",
+        "ammoBoxCornerFastener2",
+        "ammoBoxCornerFastener3",
+        "ammoBoxCornerFastener4"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "barrelRoot",
+      "kind": "part",
+      "module": "barrelAssembly",
+      "runtimeIds": [
+        "barrelRoot"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "barrelTube",
+      "kind": "part",
+      "module": "barrelAssembly",
+      "runtimeIds": [
+        "barrelTube"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "gasBlock",
+      "kind": "part",
+      "module": "barrelAssembly",
+      "runtimeIds": [
+        "gasBlock"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "barrelCollars",
+      "kind": "part",
+      "module": "barrelAssembly",
+      "runtimeIds": [
+        "barrelCollar1",
+        "barrelCollar2",
+        "barrelCollar3",
+        "barrelCollar4"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "handguardShell",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "runtimeIds": [
+        "handguardShell"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "handguardVentSystem",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "runtimeIds": [
+        "handguardVent1",
+        "handguardVent2",
+        "handguardVent3",
+        "handguardVent4",
+        "handguardVent5",
+        "handguardVent6",
+        "handguardVent7",
+        "handguardVent8"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "handguardRail",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "runtimeIds": [
+        "forwardRailTooth1",
+        "forwardRailTooth2",
+        "forwardRailTooth3",
+        "forwardRailTooth4",
+        "forwardRailTooth5",
+        "forwardRailTooth6",
+        "forwardRailTooth7",
+        "forwardRailTooth8",
+        "forwardRailTooth9",
+        "forwardRailTooth10",
+        "forwardRailTooth11",
+        "forwardRailTooth12",
+        "forwardRailTooth13",
+        "forwardRailTooth14",
+        "forwardRailTooth15",
+        "forwardRailTooth16",
+        "forwardRailTooth17",
+        "forwardRailTooth18",
+        "forwardRailTooth19",
+        "forwardRailTooth20",
+        "forwardRailTooth21",
+        "forwardRailTooth22",
+        "forwardRailTooth23",
+        "forwardRailTooth24",
+        "forwardRailTooth25",
+        "forwardRailTooth26",
+        "forwardRailTooth27",
+        "forwardRailTooth28"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "handguardLug",
+      "kind": "part",
+      "module": "handguardAssembly",
+      "runtimeIds": [
+        "handguardLug"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "bipodHinge",
+      "kind": "part",
+      "module": "bipodAssembly",
+      "runtimeIds": [
+        "bipodHinge"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "leftBipodLeg",
+      "kind": "part",
+      "module": "bipodAssembly",
+      "runtimeIds": [
+        "leftBipodLeg"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "rightBipodLeg",
+      "kind": "part",
+      "module": "bipodAssembly",
+      "runtimeIds": [
+        "rightBipodLeg"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "bipodFeet",
+      "kind": "part",
+      "module": "bipodAssembly",
+      "runtimeIds": [
+        "bipodFeet"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockShell",
+      "kind": "part",
+      "module": "stockGripAssembly",
+      "runtimeIds": [
+        "stockShell"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockSupport",
+      "kind": "part",
+      "module": "stockGripAssembly",
+      "runtimeIds": [
+        "stockSupport"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockButtpad",
+      "kind": "part",
+      "module": "stockGripAssembly",
+      "runtimeIds": [
+        "stockButtpad"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "pistolGripShell",
+      "kind": "part",
+      "module": "controlAssembly",
+      "runtimeIds": [
+        "pistolGripShell"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "gripRelief",
+      "kind": "part",
+      "module": "controlAssembly",
+      "runtimeIds": [
+        "gripDiagonalRelief1",
+        "gripDiagonalRelief2",
+        "gripDiagonalRelief3",
+        "gripDiagonalRelief4",
+        "gripDiagonalRelief5",
+        "gripDiagonalRelief6",
+        "gripDiagonalRelief7"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "triggerGuard",
+      "kind": "part",
+      "module": "controlAssembly",
+      "runtimeIds": [
+        "triggerGuard"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "triggerBlade",
+      "kind": "part",
+      "module": "controlAssembly",
+      "runtimeIds": [
+        "triggerBlade"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleCollar",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleCollar"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleBrakeBody",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleBrakeBody"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzlePortSystem",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzlePort1",
+        "muzzlePort2",
+        "muzzlePort3",
+        "muzzlePort4",
+        "muzzlePort5",
+        "muzzlePort6"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleBore",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleBore"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "topRail",
+      "kind": "part",
+      "module": "sightingAssembly",
+      "runtimeIds": [
+        "topRail"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "frontSightTower",
+      "kind": "part",
+      "module": "sightingAssembly",
+      "runtimeIds": [
+        "frontSightTower"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "sightInset",
+      "kind": "part",
+      "module": "sightingAssembly",
+      "runtimeIds": [
+        "sightInset"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "carryHandleUprights",
+      "kind": "part",
+      "module": "carryHandleAssembly",
+      "runtimeIds": [
+        "carryHandleLeftUpright",
+        "carryHandleRightUpright"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "carryHandleGrip",
+      "kind": "part",
+      "module": "carryHandleAssembly",
+      "runtimeIds": [
+        "carryHandleGrip"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "chargingHandleBody",
+      "kind": "part",
+      "module": "chargingSystem",
+      "runtimeIds": [
+        "chargingHandleBody"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverPinCrowns",
+      "kind": "part",
+      "module": "receiverFasteners",
+      "runtimeIds": [
+        "receiverFastener1",
+        "receiverFastener2",
+        "receiverFastener3",
+        "receiverFastener4",
+        "receiverFastener5",
+        "receiverFastener6",
+        "receiverFastener7",
+        "receiverFastener8",
+        "receiverFastener9",
+        "receiverFastener10"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverPaintTendrils",
+      "kind": "part",
+      "module": "receiverSidePlate",
+      "runtimeIds": [
+        "receiverPaintTendril1",
+        "receiverPaintTendril2",
+        "receiverPaintTendril3",
+        "receiverPaintTendril4",
+        "receiverPaintTendril5",
+        "receiverPaintTendril6",
+        "receiverPaintTendril7",
+        "receiverPaintTendril8",
+        "receiverPaintTendril9",
+        "receiverBroadCoatingPatch",
+        "receiverLowerCoatingPatch"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "feedCoverLatch",
+      "kind": "part",
+      "module": "feedCover",
+      "runtimeIds": [
+        "feedCoverLatch"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "cartridgeRims",
+      "kind": "part",
+      "module": "cartridgeLinkRun",
+      "runtimeIds": [
+        "cartridgeRim1",
+        "cartridgeRim2",
+        "cartridgeRim3",
+        "cartridgeRim4",
+        "cartridgeRim5",
+        "cartridgeRim6",
+        "cartridgeRim7",
+        "cartridgeRim8"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "cartridgeTips",
+      "kind": "part",
+      "module": "cartridgeLinkRun",
+      "runtimeIds": [
+        "cartridgeTip1",
+        "cartridgeTip2",
+        "cartridgeTip3",
+        "cartridgeTip4",
+        "cartridgeTip5",
+        "cartridgeTip6",
+        "cartridgeTip7",
+        "cartridgeTip8"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "beltLinkHinges",
+      "kind": "part",
+      "module": "cartridgeLinkRun",
+      "runtimeIds": [
+        "feedGuideHinge"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "ammoBoxPaintTendrils",
+      "kind": "part",
+      "module": "ammoBoxShell",
+      "runtimeIds": [
+        "ammoBoxPaintTendril1",
+        "ammoBoxPaintTendril2",
+        "ammoBoxPaintTendril3",
+        "ammoBoxPaintTendril4",
+        "ammoBoxPaintTendril5",
+        "ammoBoxBroadCoatingPatch"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "ammoBoxCornerFasteners",
+      "kind": "part",
+      "module": "ammoBoxHardware",
+      "runtimeIds": [
+        "ammoBoxCornerFastener1",
+        "ammoBoxCornerFastener2",
+        "ammoBoxCornerFastener3",
+        "ammoBoxCornerFastener4"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "barrelHighlightBands",
+      "kind": "part",
+      "module": "barrelTube",
+      "runtimeIds": [
+        "barrelHighlightBand"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "handguardPaintTendrils",
+      "kind": "part",
+      "module": "handguardShell",
+      "runtimeIds": [
+        "handguardPaintTendril1",
+        "handguardPaintTendril2",
+        "handguardPaintTendril3",
+        "handguardPaintTendril4",
+        "handguardPaintTendril5",
+        "handguardPaintTendril6",
+        "handguardPaintTendril7",
+        "handguardPaintTendril8",
+        "handguardBroadCoatingPatch",
+        "handguardLowerCoatingPatch"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "handguardVentLips",
+      "kind": "part",
+      "module": "handguardVentSystem",
+      "runtimeIds": [
+        "handguardVent1",
+        "handguardVent2",
+        "handguardVent3",
+        "handguardVent4",
+        "handguardVent5",
+        "handguardVent6",
+        "handguardVent7",
+        "handguardVent8"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "railTeeth",
+      "kind": "part",
+      "module": "handguardRail",
+      "runtimeIds": [
+        "forwardRailTooth1",
+        "forwardRailTooth2",
+        "forwardRailTooth3",
+        "forwardRailTooth4",
+        "forwardRailTooth5",
+        "forwardRailTooth6",
+        "forwardRailTooth7",
+        "forwardRailTooth8",
+        "forwardRailTooth9",
+        "forwardRailTooth10",
+        "forwardRailTooth11",
+        "forwardRailTooth12",
+        "forwardRailTooth13",
+        "forwardRailTooth14",
+        "forwardRailTooth15",
+        "forwardRailTooth16",
+        "forwardRailTooth17",
+        "forwardRailTooth18",
+        "forwardRailTooth19",
+        "forwardRailTooth20",
+        "forwardRailTooth21",
+        "forwardRailTooth22",
+        "forwardRailTooth23",
+        "forwardRailTooth24",
+        "forwardRailTooth25",
+        "forwardRailTooth26",
+        "forwardRailTooth27",
+        "forwardRailTooth28"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "bipodPivotCaps",
+      "kind": "part",
+      "module": "bipodHinge",
+      "runtimeIds": [
+        "leftBipodPivotCap",
+        "rightBipodPivotCap"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "bipodPerforations",
+      "kind": "part",
+      "module": "leftBipodLeg",
+      "runtimeIds": [
+        "leftBipodPerforation1",
+        "leftBipodPerforation2",
+        "leftBipodPerforation3",
+        "leftBipodPerforation4",
+        "leftBipodPerforation5",
+        "rightBipodPerforation1",
+        "rightBipodPerforation2",
+        "rightBipodPerforation3",
+        "rightBipodPerforation4",
+        "rightBipodPerforation5"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "bipodFootGrooves",
+      "kind": "part",
+      "module": "bipodFeet",
+      "runtimeIds": [
+        "bipodFootGroove1",
+        "bipodFootGroove2",
+        "bipodFootGroove3",
+        "bipodFootGroove4"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockPaintTendrils",
+      "kind": "part",
+      "module": "stockShell",
+      "runtimeIds": [
+        "stockBroadCoatingPatch",
+        "stockLowerCoatingPatch",
+        "stockPaintMark1",
+        "stockPaintMark2",
+        "stockPaintMark3",
+        "stockPaintMark4",
+        "stockPaintMark5",
+        "stockPaintMark6",
+        "stockPaintMark7"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockEdgeBevels",
+      "kind": "part",
+      "module": "stockShell",
+      "runtimeIds": [
+        "stockCheekRest",
+        "stockSupport"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "gripPaintTendrils",
+      "kind": "part",
+      "module": "pistolGripShell",
+      "runtimeIds": [
+        "gripPaintTendril1",
+        "gripPaintTendril2",
+        "gripPaintTendril3",
+        "gripPaintTendril4"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "gripDiagonalRelief",
+      "kind": "part",
+      "module": "gripRelief",
+      "runtimeIds": [
+        "gripDiagonalRelief1",
+        "gripDiagonalRelief2",
+        "gripDiagonalRelief3",
+        "gripDiagonalRelief4",
+        "gripDiagonalRelief5",
+        "gripDiagonalRelief6",
+        "gripDiagonalRelief7"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "triggerPivotPin",
+      "kind": "part",
+      "module": "triggerBlade",
+      "runtimeIds": [
+        "triggerPivotPin"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzlePortEdges",
+      "kind": "part",
+      "module": "muzzlePortSystem",
+      "runtimeIds": [
+        "muzzlePort1",
+        "muzzlePort2",
+        "muzzlePort3",
+        "muzzlePort4",
+        "muzzlePort5",
+        "muzzlePort6"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleBoreCrown",
+      "kind": "part",
+      "module": "muzzleBore",
+      "runtimeIds": [
+        "muzzleBoreCrown"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "frontSightAperture",
+      "kind": "part",
+      "module": "frontSightTower",
+      "runtimeIds": [
+        "frontSightAperture"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "carryGripRibs",
+      "kind": "part",
+      "module": "carryHandleGrip",
+      "runtimeIds": [
+        "carryGripRib1",
+        "carryGripRib2",
+        "carryGripRib3",
+        "carryGripRib4",
+        "carryGripRib5",
+        "carryGripRib6",
+        "carryGripRib7",
+        "carryGripRib8",
+        "carryGripRib9",
+        "carryGripRib10"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "chargeHandleGrip",
+      "kind": "part",
+      "module": "chargingHandleBody",
+      "runtimeIds": [
+        "chargeHandleGrip"
+      ],
+      "triangles": 1,
+      "selectable": true
+    }
+  ],
+  "unnamedMeshes": 0,
+  "integralMeshes": 259,
+  "runtimeContract": {
+    "factory": "create05HeavyMachineGunModel",
+    "rootName": "heavy-machine-gun-root",
+    "namedComponents": [
+      "root",
+      "receiverAssembly",
+      "feedSystem",
+      "ammunitionBoxAssembly",
+      "barrelAssembly",
+      "handguardAssembly",
+      "bipodAssembly",
+      "stockGripAssembly",
+      "controlAssembly",
+      "muzzleAssembly",
+      "sightingAssembly",
+      "carryHandleAssembly",
+      "chargingSystem",
+      "receiverShell",
+      "receiverSidePlate",
+      "receiverActionCavity",
+      "receiverFasteners",
+      "receiverSeams",
+      "feedCover",
+      "feedTray",
+      "cartridgeLinkRun",
+      "feedGuide",
+      "ammoBoxShell",
+      "ammoBoxFrame",
+      "ammoBoxHardware",
+      "barrelRoot",
+      "barrelTube",
+      "gasBlock",
+      "barrelCollars",
+      "handguardShell",
+      "handguardVentSystem",
+      "handguardRail",
+      "handguardLug",
+      "bipodHinge",
+      "leftBipodLeg",
+      "rightBipodLeg",
+      "bipodFeet",
+      "stockShell",
+      "stockSupport",
+      "stockButtpad",
+      "pistolGripShell",
+      "gripRelief",
+      "triggerGuard",
+      "triggerBlade",
+      "muzzleCollar",
+      "muzzleBrakeBody",
+      "muzzlePortSystem",
+      "muzzleBore",
+      "topRail",
+      "frontSightTower",
+      "sightInset",
+      "carryHandleUprights",
+      "carryHandleGrip",
+      "chargingHandleBody",
+      "receiverPinCrowns",
+      "receiverPaintTendrils",
+      "feedCoverLatch",
+      "cartridgeRims",
+      "cartridgeTips",
+      "beltLinkHinges",
+      "ammoBoxPaintTendrils",
+      "ammoBoxCornerFasteners",
+      "barrelHighlightBands",
+      "handguardPaintTendrils",
+      "handguardVentLips",
+      "railTeeth",
+      "bipodPivotCaps",
+      "bipodPerforations",
+      "bipodFootGrooves",
+      "stockPaintTendrils",
+      "stockEdgeBevels",
+      "gripPaintTendrils",
+      "gripDiagonalRelief",
+      "triggerPivotPin",
+      "muzzlePortEdges",
+      "muzzleBoreCrown",
+      "frontSightAperture",
+      "carryGripRibs",
+      "chargeHandleGrip"
+    ],
+    "requiredSockets": [
+      "receiverAssemblySocket",
+      "feedSystemSocket",
+      "ammunitionBoxAssemblySocket",
+      "barrelAssemblySocket",
+      "handguardAssemblySocket",
+      "bipodAssemblySocket",
+      "stockGripAssemblySocket",
+      "controlAssemblySocket",
+      "muzzleAssemblySocket",
+      "sightingAssemblySocket",
+      "carryHandleAssemblySocket",
+      "chargingSystemSocket"
+    ],
+    "interactionModes": [
+      "orbit",
+      "selectable-parts",
+      "isolate-part",
+      "feed-cover-open",
+      "charging-handle-pull",
+      "bipod-deploy",
+      "ammo-box-detach",
+      "projection-camera"
+    ],
+    "codeOnly": true,
+    "runtimeNetworkAssets": false
+  },
+  "notes": [
+    "Each componentTree entry is represented as a named selectable part; repeated details are mapped to representative runtime mesh IDs.",
+    "Macro assembly groups remain transform pivots while surface relief meshes carry explodeWithParent metadata.",
+    "The runtime count is from root.userData.runtimeSummary/runtime.sculptRuntime after the refined factory build."
+  ]
+}

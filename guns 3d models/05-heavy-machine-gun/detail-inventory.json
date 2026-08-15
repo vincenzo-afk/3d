@@ -19,8 +19,8 @@
         "scale": "micro",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "receiverAssembly:top-rail-teeth"
+          "type": "component",
+          "ref": "receiverAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c0.png",
         "confidence": 0.96
@@ -39,8 +39,8 @@
         "scale": "micro",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "receiverAssembly:side-fastener-row"
+          "type": "component",
+          "ref": "receiverAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c0.png",
         "confidence": 0.94
@@ -59,8 +59,8 @@
         "scale": "meso",
         "affects": "material",
         "mapsTo": {
-          "type": "material.localOverrides",
-          "ref": "stockAssembly:coating-pattern"
+          "type": "component",
+          "ref": "stockGripAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c0.png",
         "confidence": 0.93
@@ -79,8 +79,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "stockAssembly:perimeter-bevel"
+          "type": "component",
+          "ref": "stockGripAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c0.png",
         "confidence": 0.9
@@ -99,8 +99,8 @@
         "scale": "micro",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "carryHandleAssembly:grip-ribs"
+          "type": "component",
+          "ref": "carryHandleAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r0c0.png",
         "confidence": 0.95
@@ -119,8 +119,8 @@
         "scale": "micro",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "carryHandleAssembly:hinge-seams"
+          "type": "component",
+          "ref": "carryHandleAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r0c1.png",
         "confidence": 0.88
@@ -139,8 +139,8 @@
         "scale": "micro",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "sightingAssembly:forward-rail-teeth"
+          "type": "component",
+          "ref": "sightingAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c2.png",
         "confidence": 0.94
@@ -159,8 +159,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "handguardAssembly:vent-apertures"
+          "type": "component",
+          "ref": "handguardAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c2.png",
         "confidence": 0.96
@@ -179,8 +179,8 @@
         "scale": "meso",
         "affects": "material",
         "mapsTo": {
-          "type": "material.localOverrides",
-          "ref": "receiverAssembly:coating-pattern"
+          "type": "component",
+          "ref": "receiverAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
         "confidence": 0.95
@@ -199,8 +199,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "receiverAssembly:lower-panel-seam"
+          "type": "component",
+          "ref": "receiverAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
         "confidence": 0.91
@@ -219,8 +219,8 @@
         "scale": "micro",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "receiverAssembly:plate-fasteners"
+          "type": "component",
+          "ref": "receiverAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
         "confidence": 0.9
@@ -239,8 +239,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "feedSystem:cartridge-link-run"
+          "type": "component",
+          "ref": "feedSystem"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
         "confidence": 0.97
@@ -259,8 +259,8 @@
         "scale": "meso",
         "affects": "material",
         "mapsTo": {
-          "type": "material.localOverrides",
-          "ref": "controlAssembly:coating-pattern"
+          "type": "component",
+          "ref": "controlAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c0.png",
         "confidence": 0.9
@@ -279,8 +279,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "controlAssembly:trigger-guard-opening"
+          "type": "component",
+          "ref": "controlAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c0.png",
         "confidence": 0.96
@@ -299,8 +299,8 @@
         "scale": "micro",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "controlAssembly:grip-relief"
+          "type": "component",
+          "ref": "controlAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c0.png",
         "confidence": 0.87
@@ -319,8 +319,8 @@
         "scale": "meso",
         "affects": "material",
         "mapsTo": {
-          "type": "material.localOverrides",
-          "ref": "ammunitionBoxAssembly:coating-pattern"
+          "type": "component",
+          "ref": "ammunitionBoxAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c1.png",
         "confidence": 0.95
@@ -339,8 +339,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "ammunitionBoxAssembly:frame-and-bevel"
+          "type": "component",
+          "ref": "ammunitionBoxAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c1.png",
         "confidence": 0.94
@@ -359,8 +359,8 @@
         "scale": "micro",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "ammunitionBoxAssembly:lid-hardware"
+          "type": "component",
+          "ref": "ammunitionBoxAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c1.png",
         "confidence": 0.89
@@ -379,8 +379,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "bipodAssembly:leg-perforations"
+          "type": "component",
+          "ref": "bipodAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c2.png",
         "confidence": 0.96
@@ -399,8 +399,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "bipodAssembly:feet-and-pads"
+          "type": "component",
+          "ref": "bipodAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c2.png",
         "confidence": 0.94
@@ -419,8 +419,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "muzzleAssembly:ports-and-collars"
+          "type": "component",
+          "ref": "muzzleAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c2.png",
         "confidence": 0.96
@@ -439,8 +439,8 @@
         "scale": "meso",
         "affects": "geometry",
         "mapsTo": {
-          "type": "component.localFeatures",
-          "ref": "sightingAssembly:front-sight-tower"
+          "type": "component",
+          "ref": "sightingAssembly"
         },
         "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r0c2.png",
         "confidence": 0.93

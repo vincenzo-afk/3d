@@ -1,0 +1,2 @@
+
+check_part_coverage: 78 specified, 78 built, 0 error(s), 0 warning(s)

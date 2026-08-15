@@ -1243,7 +1243,7 @@
         "units": "normalized"
       },
       "observations": [
-        "3×3 zone inventory covering receiver, feed, coating, grip, ammunition box, handguard, muzzle, sight, and bipod"
+        "3\u00d73 zone inventory covering receiver, feed, coating, grip, ammunition box, handguard, muzzle, sight, and bipod"
       ],
       "confidence": 0.94,
       "evidenceRefs": [
@@ -15427,6 +15427,24 @@
             "detail-inventory.json",
             "image-analysis.md"
           ]
+        },
+        {
+          "id": "surfacePattern:painted-clearcoat",
+          "mask": "detail-inventory evidence-linked surface pattern",
+          "response": "localized clearcoat and lower roughness on painted tendril crests",
+          "evidenceRefs": [
+            "detail-inventory.json",
+            "material-analysis.json"
+          ]
+        },
+        {
+          "id": "surfacePattern:edge-wear-and-cavity-bias",
+          "mask": "detail-inventory evidence-linked surface pattern",
+          "response": "directional edge wear and cavity-biased darkening on hard shell surfaces",
+          "evidenceRefs": [
+            "detail-inventory.json",
+            "material-analysis.json"
+          ]
         }
       ],
       "shaderNotes": [
@@ -20358,7 +20376,7 @@
         "key_path": "categories.rendering_shader_mapping[4]",
         "score": 10.631792135673,
         "snippets": [
-          "... part. Ánh xạ tới mọi bộ phận có tiết diện tròn dạng nòng. Recognition cues: Long uniform-cross-section round part (barrel, suppressor, muzzle brake body, cleaning rod, magazine tube) Dấu hiệu nhận diện: Bộ phận tròn có tiết diện đều ..."
+          "... part. \u00c1nh x\u1ea1 t\u1edbi m\u1ecdi b\u1ed9 ph\u1eadn c\u00f3 ti\u1ebft di\u1ec7n tr\u00f2n d\u1ea1ng n\u00f2ng. Recognition cues: Long uniform-cross-section round part (barrel, suppressor, muzzle brake body, cleaning rod, magazine tube) D\u1ea5u hi\u1ec7u nh\u1eadn di\u1ec7n: B\u1ed9 ph\u1eadn tr\u00f2n c\u00f3 ti\u1ebft di\u1ec7n \u0111\u1ec1u ..."
         ],
         "source_refs": [
           {
@@ -20410,7 +20428,7 @@
         "key_path": "categories.material_pbr[5]",
         "score": 8.847170046277,
         "snippets": [
-          "... vật liệu điện môi mờ đục, ánh sáng xuyên vào và tán xạ bên trong trước khi thoát ra (da, sáp, đá cẩm thạch, một số nhựa polymer). Recognition cues: Edges/thin sections of the material glow softly when backlit rather than showing a hard ..."
+          "... v\u1eadt li\u1ec7u \u0111i\u1ec7n m\u00f4i m\u1edd \u0111\u1ee5c, \u00e1nh s\u00e1ng xuy\u00ean v\u00e0o v\u00e0 t\u00e1n x\u1ea1 b\u00ean trong tr\u01b0\u1edbc khi tho\u00e1t ra (da, s\u00e1p, \u0111\u00e1 c\u1ea9m th\u1ea1ch, m\u1ed9t s\u1ed1 nh\u1ef1a polymer). Recognition cues: Edges/thin sections of the material glow softly when backlit rather than showing a hard ..."
         ],
         "source_refs": [
           {
@@ -20429,7 +20447,7 @@
       }
     ]
   },
-  "generatedWith": "img2threejs skill v1.4.4 · code-only procedural heavy machine gun rebuild",
+  "generatedWith": "img2threejs skill v1.4.4 \u00b7 code-only procedural heavy machine gun rebuild",
   "route": {
     "primary": "authored-procedural-pbr",
     "secondary": "authored-procedural-orbit",

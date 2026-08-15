@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "status": "active",
+  "status": "complete",
   "profile": "generic",
-  "currentStep": "await-pass-transition",
-  "currentPass": "optimization-pass",
+  "currentStep": "complete",
+  "currentPass": "complete",
   "checklist": [
     {
       "id": "image-analysis",
@@ -118,123 +118,86 @@
     {
       "id": "build-current-pass",
       "scope": "pass",
-      "status": "done",
-      "evidence": [
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/create05HeavyMachineGunModel.ts",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/hmgTrace.ts",
-        "/tmp/hmg-tsconfig.json",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-typescript.txt",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
-      ],
+      "status": "pending",
+      "evidence": [],
       "reason": "",
       "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
     },
     {
       "id": "render-capture",
       "scope": "pass",
-      "status": "done",
-      "evidence": [
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/front-v4.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/studio-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/three-quarter-neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/top-neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/side-neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/rear-neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
-      ],
+      "status": "pending",
+      "evidence": [],
       "reason": "",
       "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
     },
     {
       "id": "review-contract-read",
       "scope": "pass",
-      "status": "done",
-      "evidence": [
-        "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
-        "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
-      ],
+      "status": "pending",
+      "evidence": [],
       "reason": "",
       "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
     },
     {
       "id": "tier1-diagnostics",
       "scope": "pass",
-      "status": "done",
-      "evidence": [
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-optimization-pass.json",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-normalized-probe.json",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
-      ],
+      "status": "pending",
+      "evidence": [],
       "reason": "",
       "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
     },
     {
       "id": "multi-angle-review",
       "scope": "pass",
-      "status": "done",
-      "evidence": [
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/multi-angle-optimization-pass.json",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/three-quarter-neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/top-neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/side-neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/rear-neutral-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
-      ],
+      "status": "pending",
+      "evidence": [],
       "reason": "",
       "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
     },
     {
       "id": "pass-gate-check",
       "scope": "pass",
-      "status": "done",
-      "evidence": [
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-pass-gate-check.txt",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
-      ],
-      "reason": "The pre-review orchestrator output is retained; calibrated normalized Tier-1 evidence and the feature review are appended immediately after the gate record.",
+      "status": "pending",
+      "evidence": [],
+      "reason": "",
       "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
     },
     {
       "id": "ai-review-recorded",
       "scope": "pass",
-      "status": "done",
-      "evidence": [
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/object-sculpt-spec.json",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-feature-reviews.json",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-layer-scores.json",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-comparison-sheet-v2.png",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
-      ],
+      "status": "pending",
+      "evidence": [],
       "reason": "",
       "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
     },
     {
       "id": "pipeline-sync",
       "scope": "pass",
-      "status": "done",
-      "evidence": [
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-pipeline-sync.json",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-pipeline-status.txt",
-        "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
-      ],
+      "status": "pending",
+      "evidence": [],
       "reason": "",
       "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
     },
     {
       "id": "part-coverage",
       "scope": "final",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/part-coverage.json",
+        "guns 3d models/05-heavy-machine-gun/parts.json"
+      ],
       "reason": "",
       "command": "python3 forge/stage4_review/check_part_coverage.py --spec {spec} --manifest parts.json"
     },
     {
       "id": "action-ready",
       "scope": "final",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/action-ready-audit.json",
+        "guns 3d models/05-heavy-machine-gun/strict-validation-final.txt"
+      ],
       "reason": "",
       "command": "Verify explodable/clickable hierarchy, pivots, sockets, and root.userData.sculptRuntime"
     }
@@ -923,9 +886,121 @@
           "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
         }
       ]
+    },
+    {
+      "passId": "optimization-pass",
+      "checklist": [
+        {
+          "id": "build-current-pass",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/create05HeavyMachineGunModel.ts",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/hmgTrace.ts",
+            "/tmp/hmg-tsconfig.json",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-typescript.txt",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/generate_threejs_factory.py {spec} --out src/createObjectModel.ts --pass-id {pass_id}"
+        },
+        {
+          "id": "render-capture",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/front-v4.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/studio-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/three-quarter-neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/top-neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/side-neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/rear-neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Render {pass_id} and capture the fixed review view plus meaningful orbit views"
+        },
+        {
+          "id": "review-contract-read",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/img2threejs/grimoire/review/gates_reference.md",
+            "/home/ubuntu/img2threejs/grimoire/review/self_correction.md",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Read grimoire/review/gates_reference.md and grimoire/review/self_correction.md completely"
+        },
+        {
+          "id": "tier1-diagnostics",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-optimization-pass.json",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-normalized-probe.json",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render.py --reference {reference} --render <shot> --spec {spec} --pass-id {pass_id} --in-place"
+        },
+        {
+          "id": "multi-angle-review",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/multi-angle-optimization-pass.json",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/three-quarter-neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/top-neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/side-neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/rear-neutral-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage4_review/diagnose_render_multi_angle.py --reference <fixed-shot> --orbit <orbit-shot> --orbit <orbit-shot>"
+        },
+        {
+          "id": "pass-gate-check",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-pass-gate-check.txt",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "The pre-review orchestrator output is retained; calibrated normalized Tier-1 evidence and the feature review are appended immediately after the gate record.",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py check {spec} --pass-id {pass_id}"
+        },
+        {
+          "id": "ai-review-recorded",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/object-sculpt-spec.json",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-feature-reviews.json",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-layer-scores.json",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-comparison-sheet-v2.png",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "Create the comparison sheet, inspect it with agent vision, and append exactly one review action"
+        },
+        {
+          "id": "pipeline-sync",
+          "scope": "pass",
+          "status": "done",
+          "evidence": [
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-pipeline-sync.json",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-pipeline-status.txt",
+            "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md"
+          ],
+          "reason": "",
+          "command": "python3 forge/stage3_build/orchestrate_passes.py sync {spec} --in-place"
+        }
+      ]
     }
   ],
-  "reviewCursor": 8,
+  "reviewCursor": 9,
   "iterationAction": "new-pass",
   "stopReason": ""
 }
