@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active",
   "profile": "generic",
-  "currentStep": "local-spec-search",
+  "currentStep": "detail-inventory",
   "currentPass": "",
   "checklist": [
     {
@@ -41,16 +41,20 @@
     {
       "id": "local-spec-search",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/04-shotgun/local-spec-search.json"
+      ],
       "reason": "",
       "command": "Run the local evidence search before authoring the assessment"
     },
     {
       "id": "pre-spec-assessment",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/04-shotgun/pre-spec-assessment.json"
+      ],
       "reason": "",
       "command": "python3 forge/stage2_spec/new_pre_spec_assessment.py \"<name>\" --image {reference} --out assessment.json"
     },
