@@ -1,0 +1,565 @@
+{
+  "model": "04-shotgun",
+  "sourceFactory": "create04ShotgunModel.ts",
+  "runtimeMeshCount": 90,
+  "parts": [
+    {
+      "name": "root",
+      "kind": "part",
+      "module": "shotgun-root",
+      "runtimeIds": "shotgun-root",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockAssembly",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": "stockAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverActionAssembly",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": "receiverActionAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "triggerAssembly",
+      "kind": "part",
+      "module": "triggerAssembly",
+      "runtimeIds": "triggerAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "upperBarrelAssembly",
+      "kind": "part",
+      "module": "upperBarrelAssembly",
+      "runtimeIds": "upperBarrelAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "lowerMagazineTubeAssembly",
+      "kind": "part",
+      "module": "lowerMagazineTubeAssembly",
+      "runtimeIds": "lowerMagazineTubeAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "pumpForeEndAssembly",
+      "kind": "part",
+      "module": "pumpForeEndAssembly",
+      "runtimeIds": "pumpForeEndAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "frontBandAssembly",
+      "kind": "part",
+      "module": "frontBandAssembly",
+      "runtimeIds": "frontBandAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleAssembly",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": "muzzleAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "sightingAssembly",
+      "kind": "part",
+      "module": "sightingAssembly",
+      "runtimeIds": "sightingAssembly",
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockWoodShell",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockWoodShell"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockCheekRest",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "stockCheekRest"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "gripTransition",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "gripTransition"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "gripCheckering",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "gripCheckering1",
+        "gripCheckering2",
+        "gripCheckering3",
+        "gripCheckering4",
+        "gripCheckering5",
+        "gripCheckering6",
+        "gripCheckering7"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "buttpad",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "buttpad"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "slingLoop",
+      "kind": "part",
+      "module": "stockAssembly",
+      "runtimeIds": [
+        "slingLoop"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverShell",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverShell"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "ejectionPortCavity",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "ejectionPortCavity"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverFasteners",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "receiverPin1",
+        "receiverPin2",
+        "receiverPin3",
+        "receiverPin4"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "actionSeam",
+      "kind": "part",
+      "module": "receiverActionAssembly",
+      "runtimeIds": [
+        "actionSeam"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "triggerGuardSystem",
+      "kind": "part",
+      "module": "triggerAssembly",
+      "runtimeIds": [
+        "triggerGuardSystem"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "triggerBlade",
+      "kind": "part",
+      "module": "triggerAssembly",
+      "runtimeIds": [
+        "triggerBlade"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "barrelTube",
+      "kind": "part",
+      "module": "upperBarrelAssembly",
+      "runtimeIds": [
+        "upperBarrelTube"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "barrelRootShoulder",
+      "kind": "part",
+      "module": "upperBarrelAssembly",
+      "runtimeIds": [
+        "upperBarrelRootShoulder"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "magazineTube",
+      "kind": "part",
+      "module": "lowerMagazineTubeAssembly",
+      "runtimeIds": [
+        "lowerMagazineTube"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "magazineCap",
+      "kind": "part",
+      "module": "lowerMagazineTubeAssembly",
+      "runtimeIds": [
+        "magazineTubeCap"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "pumpWoodSleeve",
+      "kind": "part",
+      "module": "pumpForeEndAssembly",
+      "runtimeIds": [
+        "pumpWoodSleeve"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "pumpRibSystem",
+      "kind": "part",
+      "module": "pumpForeEndAssembly",
+      "runtimeIds": [
+        "pumpRib1",
+        "pumpRib2",
+        "pumpRib3",
+        "pumpRib4",
+        "pumpRib5",
+        "pumpRib6",
+        "pumpRib7",
+        "pumpRib8",
+        "pumpRib9",
+        "pumpRib10"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "pumpCarvedMotifs",
+      "kind": "part",
+      "module": "pumpForeEndAssembly",
+      "runtimeIds": [
+        "pumpChevronCarving1",
+        "pumpChevronCarving2"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "frontBand",
+      "kind": "part",
+      "module": "frontBandAssembly",
+      "runtimeIds": [
+        "frontBandBridge"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleCollar",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleCollar"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleKnurledCap",
+      "kind": "part",
+      "module": "muzzleAssembly",
+      "runtimeIds": [
+        "muzzleKnurledCap"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "frontSight",
+      "kind": "part",
+      "module": "sightingAssembly",
+      "runtimeIds": [
+        "frontSightPost"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "stockGrain",
+      "kind": "part",
+      "module": "stockWoodShell",
+      "runtimeIds": [
+        "stockWoodShell"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "cheekBevel",
+      "kind": "part",
+      "module": "stockCheekRest",
+      "runtimeIds": [
+        "stockCheekRest"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "buttpadTraction",
+      "kind": "part",
+      "module": "buttpad",
+      "runtimeIds": [
+        "buttpadTraction1",
+        "buttpadTraction2",
+        "buttpadTraction3",
+        "buttpadTraction4",
+        "buttpadTraction5"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "receiverPinCrowns",
+      "kind": "part",
+      "module": "receiverFasteners",
+      "runtimeIds": [
+        "receiverPin1",
+        "receiverPin2",
+        "receiverPin3",
+        "receiverPin4"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "ejectionPortLip",
+      "kind": "part",
+      "module": "ejectionPortCavity",
+      "runtimeIds": [
+        "ejectionPortLip"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "triggerPivot",
+      "kind": "part",
+      "module": "triggerBlade",
+      "runtimeIds": [
+        "triggerPivot"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "pumpRibEnds",
+      "kind": "part",
+      "module": "pumpRibSystem",
+      "runtimeIds": [
+        "pumpRib1",
+        "pumpRib2",
+        "pumpRib3",
+        "pumpRib4",
+        "pumpRib5",
+        "pumpRib6",
+        "pumpRib7",
+        "pumpRib8",
+        "pumpRib9",
+        "pumpRib10"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "pumpChevronCarving",
+      "kind": "part",
+      "module": "pumpCarvedMotifs",
+      "runtimeIds": [
+        "pumpChevronCarving1",
+        "pumpChevronCarving2"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "frontBandFastener",
+      "kind": "part",
+      "module": "frontBand",
+      "runtimeIds": [
+        "frontBandFastener"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleKnurlRows",
+      "kind": "part",
+      "module": "muzzleKnurledCap",
+      "runtimeIds": [
+        "muzzleKnurl1",
+        "muzzleKnurl2",
+        "muzzleKnurl3",
+        "muzzleKnurl4",
+        "muzzleKnurl5",
+        "muzzleKnurl6",
+        "muzzleKnurl7",
+        "muzzleKnurl8",
+        "muzzleKnurl9",
+        "muzzleKnurl10",
+        "muzzleKnurl11",
+        "muzzleKnurl12",
+        "muzzleKnurl13",
+        "muzzleKnurl14",
+        "muzzleKnurl15",
+        "muzzleKnurl16",
+        "muzzleKnurl17",
+        "muzzleKnurl18"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "muzzleBore",
+      "kind": "part",
+      "module": "muzzleKnurledCap",
+      "runtimeIds": [
+        "muzzleBore"
+      ],
+      "triangles": 1,
+      "selectable": true
+    },
+    {
+      "name": "sightNotch",
+      "kind": "part",
+      "module": "frontSight",
+      "runtimeIds": [
+        "frontSightNotch"
+      ],
+      "triangles": 1,
+      "selectable": true
+    }
+  ],
+  "unnamedMeshes": 0,
+  "integralMeshes": 90,
+  "runtimeContract": {
+    "factory": "create04ShotgunModel",
+    "rootName": "shotgun-root",
+    "namedComponents": [
+      "root",
+      "stockAssembly",
+      "receiverActionAssembly",
+      "triggerAssembly",
+      "upperBarrelAssembly",
+      "lowerMagazineTubeAssembly",
+      "pumpForeEndAssembly",
+      "frontBandAssembly",
+      "muzzleAssembly",
+      "sightingAssembly",
+      "stockWoodShell",
+      "stockCheekRest",
+      "gripTransition",
+      "gripCheckering",
+      "buttpad",
+      "slingLoop",
+      "receiverShell",
+      "ejectionPortCavity",
+      "receiverFasteners",
+      "actionSeam",
+      "triggerGuardSystem",
+      "triggerBlade",
+      "barrelTube",
+      "barrelRootShoulder",
+      "magazineTube",
+      "magazineCap",
+      "pumpWoodSleeve",
+      "pumpRibSystem",
+      "pumpCarvedMotifs",
+      "frontBand",
+      "muzzleCollar",
+      "muzzleKnurledCap",
+      "frontSight",
+      "stockGrain",
+      "cheekBevel",
+      "buttpadTraction",
+      "receiverPinCrowns",
+      "ejectionPortLip",
+      "triggerPivot",
+      "pumpRibEnds",
+      "pumpChevronCarving",
+      "frontBandFastener",
+      "muzzleKnurlRows",
+      "muzzleBore",
+      "sightNotch"
+    ],
+    "requiredSockets": [
+      "stockAssemblySocket",
+      "receiverActionAssemblySocket",
+      "triggerAssemblySocket",
+      "upperBarrelAssemblySocket",
+      "lowerMagazineTubeAssemblySocket",
+      "pumpForeEndAssemblySocket",
+      "frontBandAssemblySocket",
+      "muzzleAssemblySocket",
+      "sightingAssemblySocket",
+      "pump-slide-line"
+    ],
+    "interactionModes": [
+      "orbit",
+      "selectable-parts",
+      "isolate-part",
+      "pump-slide",
+      "trigger-pull",
+      "projection-camera"
+    ],
+    "codeOnly": true,
+    "runtimeNetworkAssets": false
+  }
+}
