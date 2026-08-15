@@ -3,7 +3,7 @@
   "status": "active",
   "profile": "generic",
   "currentStep": "build-current-pass",
-  "currentPass": "",
+  "currentPass": "structural-pass",
   "checklist": [
     {
       "id": "image-analysis",
@@ -197,17 +197,19 @@
     }
   ],
   "loops": {
-    "perPass": {},
-    "total": 0,
+    "perPass": {
+      "blockout": 1
+    },
+    "total": 1,
     "maxPerPass": 3,
     "maxTotal": 6
   },
   "artifacts": {
     "reference": "guns 3d models/05-heavy-machine-gun/reference-source.png",
-    "spec": ""
+    "spec": "guns 3d models/05-heavy-machine-gun/object-sculpt-spec.json"
   },
   "passHistory": [],
-  "reviewCursor": 0,
+  "reviewCursor": 2,
   "iterationAction": "initial",
   "stopReason": ""
 }

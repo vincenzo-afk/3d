@@ -1,0 +1,7 @@
+# Heavy Machine Gun Broadside Review — v2
+
+The second render corrected the gross framing: the weapon now occupies the expected horizontal span and the carry handle, stock, receiver, feed belt, ammunition box, handguard, muzzle, and bipod are within the review frame. The factory reports 248 named parts. The brass belt and blue/violet coating are legible, and the repeated rail/coating structures are visible.
+
+The render is still too black for a high-quality pass. The receiver shell, stock volume, ammunition-box frame, handguard vent cutouts, and bipod leg perforations collapse into the background except where edge lights catch them. The reference is dark, but its broadside source retains readable mid-value body planes and clearly separated components. The current rig overemphasizes narrow blue edge highlights and underprovides broad cool key/fill response. The next refinement should lift dark substrate values in the reference-matched route without flattening the neutral/diagnostic route. The side-plate pattern is currently represented by raised blue tendrils and reads more like sparse tubes than a broad painted hydro-dip field; material-pass review should address this after silhouette/structure are stable.
+
+Action: refine-code. Increase material base/emissive readability for dark metal and painted composite, add a broad front-facing soft fill, and keep a dedicated neutral-light render for geometry inspection. Preserve the explicit single-image patterned-coating approximation note.

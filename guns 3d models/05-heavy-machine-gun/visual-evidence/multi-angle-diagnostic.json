@@ -1,0 +1,32 @@
+{
+  "referenceAreaFraction": 0.9832122754475794,
+  "angles": [
+    {
+      "path": "guns 3d models/05-heavy-machine-gun/visual-evidence/three-quarter-neutral-v1.png",
+      "areaFraction": 0.9985940844769639,
+      "ratio": 1.0156444436399885,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/05-heavy-machine-gun/visual-evidence/top-neutral-v1.png",
+      "areaFraction": 0.9996853850886515,
+      "ratio": 1.0167543775158556,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/05-heavy-machine-gun/visual-evidence/side-neutral-v1.png",
+      "areaFraction": 0.9999720342301024,
+      "ratio": 1.0170459210091671,
+      "degenerate": false
+    },
+    {
+      "path": "guns 3d models/05-heavy-machine-gun/visual-evidence/rear-neutral-v1.png",
+      "areaFraction": 0.9984853993257707,
+      "ratio": 1.0155339027589323,
+      "degenerate": false
+    }
+  ],
+  "degenerate": false,
+  "collapseRatio": 0.15,
+  "note": "deterministic; zero token; a flat-plane-faking-a-volume collapses in silhouette area when orbited"
+}

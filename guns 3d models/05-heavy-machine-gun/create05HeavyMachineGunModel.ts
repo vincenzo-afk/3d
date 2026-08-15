@@ -179,13 +179,13 @@ function createTexture(kind: MaterialKind, size: number): THREE.CanvasTexture {
 
 function makeMaterial(kind: MaterialKind | 'hidden', options: HeavyMachineGunModelOptions): THREE.MeshPhysicalMaterial {
   const colors: Record<MaterialKind | 'hidden', string> = {
-    'dark-blued-metal': '#182635',
-    'painted-composite': '#0B1827',
-    'polymer-grip': '#121D25',
+    'dark-blued-metal': '#2B3A4A',
+    'painted-composite': '#162A3D',
+    'polymer-grip': '#253642',
     'feed-belt-brass': '#B17B36',
-    'belt-link-metal': '#40505B',
-    'bipod-metal': '#2B3A45',
-    'muzzle-metal': '#4A5E6B',
+    'belt-link-metal': '#536671',
+    'bipod-metal': '#536774',
+    'muzzle-metal': '#657A88',
     cavity: '#020406',
     'glass-optic': '#0B2030',
     'painted-accent': '#1D5FA6',
@@ -236,11 +236,21 @@ function makeMaterial(kind: MaterialKind | 'hidden', options: HeavyMachineGunMod
   return material;
 }
 
+function addPaintPatch(group: THREE.Group, name: string, points: Array<[number, number]>, material: THREE.Material, runtime: HeavyMachineGunRuntime, shadows: boolean, z = FRONT_Z * 1.025, depth = 0.028): THREE.Mesh {
+  const patch = addMesh(group, name, extrude(points, depth), material, runtime, shadows);
+  patch.position.z = z;
+  patch.userData.feature = 'broad-irregular-procedural-coating-patch';
+  patch.userData.explodeWithParent = true;
+  return patch;
+}
+
 function addStock(group: THREE.Group, runtime: HeavyMachineGunRuntime, materials: MaterialSet, shadows: boolean): void {
   const shell = addMesh(group, 'stockShell', extrude([
     [-2.86, 0.10], [-2.76, 0.48], [-2.38, 0.54], [-1.98, 0.46], [-1.72, 0.30], [-1.42, 0.22], [-1.52, 0.02], [-1.84, -0.02], [-2.12, -0.32], [-2.56, -0.38], [-2.83, -0.28],
   ], 0.62), materials['painted-composite'], runtime, shadows);
   shell.userData.feature = 'painted-composite-skeletal-stock';
+  addPaintPatch(group, 'stockBroadCoatingPatch', [[-2.72, 0.18], [-2.48, 0.42], [-2.12, 0.38], [-1.86, 0.24], [-2.12, 0.06], [-2.48, 0.08]], materials['painted-accent'], runtime, shadows, FRONT_Z * 1.01, 0.024);
+  addPaintPatch(group, 'stockLowerCoatingPatch', [[-2.54, -0.16], [-2.26, -0.24], [-1.98, -0.16], [-2.18, -0.34], [-2.50, -0.30]], materials['painted-accent'], runtime, shadows, FRONT_Z * 1.01, 0.022);
   const cheek = addMesh(group, 'stockCheekRest', extrude([[-2.62, 0.36], [-2.28, 0.50], [-1.94, 0.44], [-2.03, 0.26], [-2.45, 0.22]], 0.48), materials['painted-composite'], runtime, shadows);
   cheek.position.z = 0.02;
   const support = addMesh(group, 'stockSupport', extrude([[-2.40, -0.02], [-2.03, 0.05], [-1.80, -0.28], [-2.18, -0.40], [-2.52, -0.30]], 0.48), materials['bipod-metal'], runtime, shadows);
@@ -273,6 +283,8 @@ function addReceiver(group: THREE.Group, runtime: HeavyMachineGunRuntime, materi
     [-1.14, -0.10], [-1.05, 0.34], [-0.78, 0.42], [0.28, 0.36], [0.40, 0.16], [0.34, -0.16], [-0.80, -0.24],
   ], 0.06), materials['painted-composite'], runtime, shadows);
   sidePlate.position.z = FRONT_Z * 0.98;
+  addPaintPatch(group, 'receiverBroadCoatingPatch', [[-1.02, 0.20], [-0.76, 0.38], [-0.34, 0.34], [-0.08, 0.18], [-0.30, 0.06], [-0.72, 0.10]], materials['painted-accent'], runtime, shadows, FRONT_Z * 1.025, 0.026);
+  addPaintPatch(group, 'receiverLowerCoatingPatch', [[-0.96, -0.04], [-0.62, 0.00], [-0.20, -0.06], [-0.48, -0.18], [-0.88, -0.16]], materials['painted-accent'], runtime, shadows, FRONT_Z * 1.025, 0.022);
   const upperPlate = addMesh(group, 'receiverUpperPlate', roundedBox(1.42, 0.10, 0.82, 0.018), materials['dark-blued-metal'], runtime, shadows);
   upperPlate.position.set(-0.38, 0.54, 0);
   const cavity = addMesh(group, 'receiverActionCavity', extrude([
@@ -336,6 +348,7 @@ function addFeedSystem(group: THREE.Group, runtime: HeavyMachineGunRuntime, mate
 function addAmmunitionBox(group: THREE.Group, runtime: HeavyMachineGunRuntime, materials: MaterialSet, shadows: boolean): void {
   const box = addMesh(group, 'ammoBoxShell', extrude([[-0.12, -0.26], [0.08, -0.98], [0.72, -0.98], [0.94, -0.78], [0.88, -0.22], [0.58, -0.12], [0.10, -0.14]], 0.62), materials['painted-composite'], runtime, shadows);
   box.userData.feature = 'detachable-painted-ammunition-box';
+  addPaintPatch(group, 'ammoBoxBroadCoatingPatch', [[0.04, -0.34], [0.28, -0.24], [0.64, -0.32], [0.78, -0.58], [0.60, -0.78], [0.18, -0.72]], materials['painted-accent'], runtime, shadows, FRONT_Z * 1.025, 0.024);
   const frame = addMesh(group, 'ammoBoxFrame', extrude([[-0.08, -0.20], [0.06, -0.94], [0.68, -0.94], [0.86, -0.76], [0.80, -0.22], [0.54, -0.15], [0.10, -0.16]], 0.08), materials['bipod-metal'], runtime, shadows);
   frame.position.z = FRONT_Z * 0.98;
   const lid = addMesh(group, 'ammoBoxLid', roundedBox(0.70, 0.08, 0.66, 0.012), materials['bipod-metal'], runtime, shadows);
@@ -380,6 +393,12 @@ function addHandguard(group: THREE.Group, runtime: HeavyMachineGunRuntime, mater
     [0.44, -0.18], [0.56, 0.45], [1.76, 0.47], [1.94, 0.32], [1.88, -0.25], [1.68, -0.34], [0.62, -0.30],
   ], 0.68), materials['painted-composite'], runtime, shadows);
   shell.userData.feature = 'ventilated-painted-handguard';
+  addPaintPatch(group, 'handguardBroadCoatingPatch', [[0.60, 0.24], [0.86, 0.42], [1.22, 0.39], [1.60, 0.27], [1.80, 0.36], [1.64, 0.12], [1.18, 0.08], [0.78, 0.14]], materials['painted-accent'], runtime, shadows, FRONT_Z * 1.025, 0.025);
+  addPaintPatch(group, 'handguardLowerCoatingPatch', [[0.72, -0.14], [1.02, -0.24], [1.42, -0.20], [1.72, -0.10], [1.48, 0.02], [0.96, -0.02]], materials['painted-accent'], runtime, shadows, FRONT_Z * 1.025, 0.022);
+  const rearCollar = addMesh(group, 'handguardRearCollar', torusX(0.29, 0.034, 28), materials['bipod-metal'], runtime, shadows);
+  rearCollar.position.set(0.48, 0.10, 0);
+  const frontCollar = addMesh(group, 'handguardFrontCollar', torusX(0.30, 0.034, 28), materials['bipod-metal'], runtime, shadows);
+  frontCollar.position.set(1.86, 0.10, 0);
   for (let i = 0; i < 8; i += 1) {
     const vent = addMesh(group, `handguardVent${i + 1}`, extrude([[-0.10, -0.035], [0.04, -0.06], [0.18, 0.0], [0.04, 0.06], [-0.10, 0.035]], 0.04), materials['cavity'], runtime, shadows);
     vent.position.set(0.70 + i * 0.14, 0.12 + (i % 2) * 0.04, FRONT_Z * 1.03);
@@ -419,6 +438,10 @@ function addBipod(group: THREE.Group, runtime: HeavyMachineGunRuntime, materials
   }
   const feet = addMesh(group, 'bipodFeet', roundedBox(0.20, 0.08, 0.72, 0.018), materials['bipod-metal'], runtime, shadows);
   feet.position.set(1.62, -1.06, 0);
+  const bipodBrace = addMesh(group, 'bipodBraceBar', roundedBox(0.10, 0.14, 0.58, 0.018), materials['bipod-metal'], runtime, shadows);
+  bipodBrace.position.set(1.62, -0.76, 0);
+  const bipodBraceFastener = addFastener(group, 'bipodBraceFastener', [1.62, -0.76, FRONT_Z * 0.56], materials['muzzle-metal'], runtime, shadows, 0.028);
+  bipodBraceFastener.rotation.y = Math.PI / 2;
   for (let i = 0; i < 4; i += 1) {
     const groove = addMesh(group, `bipodFootGroove${i + 1}`, roundedBox(0.018, 0.018, 0.10, 0.002), materials['cavity'], runtime, shadows);
     groove.position.set(1.52 + i * 0.07, -1.11, FRONT_Z * 0.58);
@@ -601,17 +624,20 @@ export function create05HeavyMachineGunModel(options: HeavyMachineGunModelOption
 export function createHeavyMachineGunLookDevLights(): THREE.Group {
   const lights = new THREE.Group();
   lights.name = 'heavy-machine-gun-lookdev-lights';
-  const key = new THREE.DirectionalLight(0xB7D4FF, 1.52);
+  const key = new THREE.DirectionalLight(0xB7D4FF, 2.35);
   key.position.set(-4.0, 4.8, 5.2);
   key.castShadow = true;
   key.shadow.mapSize.set(2048, 2048);
-  const fill = new THREE.DirectionalLight(0x6C88A6, 0.46);
+  const fill = new THREE.DirectionalLight(0x6C88A6, 0.82);
   fill.position.set(3.8, 0.6, 3.4);
-  const rim = new THREE.DirectionalLight(0x6A77C5, 0.58);
+  const rim = new THREE.DirectionalLight(0x6A77C5, 0.86);
   rim.position.set(2.8, 3.0, -4.6);
-  const brass = new THREE.PointLight(0xE2A55A, 0.18, 6.0);
+  const brass = new THREE.PointLight(0xE2A55A, 0.32, 6.0);
   brass.position.set(0.6, -0.15, 2.0);
-  lights.add(key, fill, rim, brass);
+  const ambient = new THREE.AmbientLight(0x7897B7, 1.18);
+  const frontFill = new THREE.DirectionalLight(0xC4D9F5, 1.08);
+  frontFill.position.set(0.0, 1.6, 6.5);
+  lights.add(key, fill, rim, brass, ambient, frontFill);
   return lights;
 }
 

@@ -1,0 +1,7 @@
+[
+  {"id":"hmg-silhouette","tier":1,"score":0.79,"status":"provisional-pass","note":"Major stock, receiver, feed, handguard, barrel, muzzle, and bipod order is present; stock and handguard remain angular."},
+  {"id":"feed-system-identity","tier":1,"score":0.84,"status":"pass","note":"Exposed brass cartridges, dark links, feed cover, tray, and hanging ammunition box are distinct."},
+  {"id":"receiver-action-identity","tier":1,"score":0.80,"status":"provisional-pass","note":"Deep receiver, carry handle, top rail, side cavity, charging handle, trigger opening, and fasteners are present."},
+  {"id":"barrel-bipod-identity","tier":1,"score":0.78,"status":"provisional-pass","note":"Long barrel, gas block, sight tower, slotted muzzle, hinge, two legs, and feet are visible."},
+  {"id":"orbit-construction","tier":1,"score":0.82,"status":"pass","note":"Neutral three-quarter, top, side, and rear renders preserve volume and attachment continuity."}
+]

@@ -24,7 +24,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setSize(width, height);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = diagnostic ? 1.86 : neutral ? 2.16 : studio ? 2.28 : 1.78;
+renderer.toneMappingExposure = diagnostic ? 2.10 : neutral ? 2.42 : studio ? 2.60 : 2.18;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 stage.appendChild(renderer.domElement);
@@ -77,7 +77,7 @@ scene.add(root);
 
 const target = new THREE.Vector3(0.0, 0.06, 0);
 const camera: THREE.Camera = projection
-  ? new THREE.OrthographicCamera(-3.18 * aspect, 3.18 * aspect, 3.18, -3.18, 0.1, 80)
+  ? new THREE.OrthographicCamera(-1.34 * aspect, 1.34 * aspect, 1.34, -1.34, 0.1, 80)
   : new THREE.PerspectiveCamera(34, aspect, 0.1, 80);
 if (['front', 'reference', 'neutral', 'studio'].includes(view)) {
   camera.position.set(target.x, target.y, 10.6);

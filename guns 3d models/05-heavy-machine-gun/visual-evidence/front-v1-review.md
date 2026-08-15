@@ -1,0 +1,5 @@
+# Heavy Machine Gun Broadside Review — v1
+
+The first fixed broadside render proves that the procedural factory loads and exposes 248 named parts, but it is not yet review-ready. The subject occupies too little of the frame because the orthographic half-height is 3.18 while the source foreground height is approximately 0.50 of the image. The dark metal substrate is also substantially underexposed against the black background; only the blue/violet edge response and a few brass highlights are legible. The visible identity systems are present in the correct broadside order—stock, receiver, carry handle, feed belt, ammunition box, handguard, muzzle, and bipod—but the lighting/camera gate must be refined before structural judgment.
+
+Action: refine-code. Camera framing will use the trace calibration half-height of 1.34 and the light rig will gain controlled cool ambient/fill energy while retaining a black background. The reference's dark-on-black presentation remains the target, but major silhouette edges and material zones must remain readable.

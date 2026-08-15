@@ -1,0 +1,7 @@
+[
+  {"id":"hmg-silhouette","tier":1,"score":0.84,"status":"pass","note":"Refined panel proportions and coating breakup improve the broadside read; the overall silhouette order remains correct."},
+  {"id":"feed-system-identity","tier":1,"score":0.88,"status":"pass","note":"Feed cover, tray, brass cartridge run, dark links, hanging box, box frame, and lid remain clearly separated."},
+  {"id":"receiver-action-identity","tier":1,"score":0.84,"status":"pass","note":"Receiver side plate, cavity, carry handle, top rail, charging handle, fasteners, and trigger assembly read as an integrated action."},
+  {"id":"barrel-bipod-identity","tier":1,"score":0.82,"status":"pass","note":"Long barrel, gas block, collars, sight tower, slotted muzzle, bipod hinge, brace, legs, and feet are structurally readable."},
+  {"id":"orbit-construction","tier":1,"score":0.86,"status":"pass","note":"Refined neutral three-quarter, top, side, and rear captures retain real volume and attached relief."}
+]
