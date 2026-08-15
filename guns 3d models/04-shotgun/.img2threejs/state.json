@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active",
   "profile": "generic",
-  "currentStep": "spec-authoring",
+  "currentStep": "material-evidence",
   "currentPass": "",
   "checklist": [
     {
@@ -84,8 +84,10 @@
     {
       "id": "spec-authoring",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/04-shotgun/object-sculpt-spec.json"
+      ],
       "reason": "",
       "command": "python3 forge/stage2_spec/new_sculpt_spec.py \"<name>\" --image {reference} --assessment assessment.json --out object-sculpt-spec.json"
     },
