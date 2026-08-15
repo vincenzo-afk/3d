@@ -2,30 +2,36 @@
   "schemaVersion": 1,
   "status": "active",
   "profile": "generic",
-  "currentStep": "image-analysis",
+  "currentStep": "local-spec-search",
   "currentPass": "",
   "checklist": [
     {
       "id": "image-analysis",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/image-analysis.md"
+      ],
       "reason": "",
       "command": "Read grimoire/intake/image_analysis.md and analyze {reference}"
     },
     {
       "id": "reference-suitability",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/reference-suitability.md"
+      ],
       "reason": "",
       "command": "Read grimoire/intake/validation_rubric.md and record a pass, conditional, or reject verdict for {reference}"
     },
     {
       "id": "reference-admission",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/reference-admission.json"
+      ],
       "reason": "",
       "command": "python3 forge/stage1_intake/check_reference_admission.py {reference}"
     },

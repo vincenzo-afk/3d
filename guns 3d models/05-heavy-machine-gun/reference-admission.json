@@ -1,0 +1,14 @@
+{
+  "admitted": true,
+  "reasons": [],
+  "provenance": {
+    "viewpoint": "broadside",
+    "sourcePath": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/reference-source.png",
+    "width": 1672,
+    "height": 941,
+    "foregroundCoverage": 0.2839,
+    "largestComponentFraction": 1.0,
+    "pHash": 17690391840940668060,
+    "duplicateOfHash": null
+  }
+}
