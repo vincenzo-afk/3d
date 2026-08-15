@@ -46,7 +46,7 @@ function createTexture(kind: MaterialKind, size: number): THREE.CanvasTexture {
   if (!ctx) throw new Error('Canvas 2D context unavailable');
   const wood = kind === 'wood-stock' || kind === 'wood-pump-fore-end';
   const metal = kind.includes('metal') || kind.includes('barrel') || kind.includes('magazine');
-  const base = wood ? (kind === 'wood-pump-fore-end' ? '#6A3E28' : '#593526') : (metal ? '#1E2730' : '#101419');
+  const base = wood ? (kind === 'wood-pump-fore-end' ? '#845638' : '#744832') : (metal ? '#30404B' : '#17212A');
   ctx.fillStyle = base;
   ctx.fillRect(0, 0, size, size);
   if (wood) {
@@ -91,16 +91,16 @@ function createTexture(kind: MaterialKind, size: number): THREE.CanvasTexture {
 
 function makeMaterial(kind: MaterialKind | 'hidden', options: ShotgunRifleModelOptions): THREE.MeshPhysicalMaterial {
   const colors: Record<MaterialKind | 'hidden', string> = {
-    'wood-stock': '#593526',
-    'wood-pump-fore-end': '#6A3E28',
-    'blued-receiver-metal': '#1E2730',
-    'blued-barrel-metal': '#172028',
-    'magazine-tube-metal': '#18212A',
-    'band-edge-metal': '#7F8E99',
-    'muzzle-knurled-metal': '#3A4853',
-    'rubber-and-cavity': '#080A0C',
-    'cavity-material': '#020304',
-    'polished-action-metal': '#9AA6AD',
+    'wood-stock': '#744832',
+    'wood-pump-fore-end': '#845638',
+    'blued-receiver-metal': '#30404B',
+    'blued-barrel-metal': '#2B3943',
+    'magazine-tube-metal': '#2B3740',
+    'band-edge-metal': '#9FAEB8',
+    'muzzle-knurled-metal': '#607380',
+    'rubber-and-cavity': '#171C20',
+    'cavity-material': '#05080B',
+    'polished-action-metal': '#BDCAD1',
     hidden: '#000000',
   };
   const roughness: Record<MaterialKind | 'hidden', number> = {
