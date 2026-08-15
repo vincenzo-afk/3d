@@ -1043,7 +1043,7 @@
       "interaction-pass",
       "optimization-pass"
     ],
-    "currentPass": "optimization-pass",
+    "currentPass": "complete",
     "completedPasses": [
       "blockout",
       "structural-pass",
@@ -1051,14 +1051,12 @@
       "material-pass",
       "surface-pass",
       "lighting-pass",
-      "interaction-pass"
+      "interaction-pass",
+      "optimization-pass"
     ],
-    "lastCompletedPass": "interaction-pass",
-    "blockedReason": "",
-    "nextRequiredEvidence": [
-      "Triangle count, draw calls, instancing, LOD strategy, and FPS target are documented or verified.",
-      "Repeated detail is instanced or simplified where possible without breaking silhouette/material believability."
-    ]
+    "lastCompletedPass": "optimization-pass",
+    "blockedReason": "all build passes completed",
+    "nextRequiredEvidence": []
   },
   "lookDevTargets": {
     "qualityPriority": "reference-fidelity",
@@ -19105,6 +19103,76 @@
       "cameraView": "front/reference-projection plus neutral broadside",
       "notes": "interaction-pass reviewed from broadside plus neutral and orbit fixtures.",
       "aiVisionNotes": "Interaction review confirms 12 named macro assemblies, 259 named procedural meshes, sockets, colliders, selectable parts, feed-cover/charging/bipod/ammunition-box interaction metadata, destruction groups, and code-only provenance. The score is bounded and does not claim pixel-identical fidelity from one source image."
+    },
+    {
+      "timestamp": "2026-08-15T06:43:47.604407+00:00",
+      "passId": "optimization-pass",
+      "estimatedFidelity": 0.86,
+      "aiVisionScore": 0.86,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.88,
+        "componentStructure": 0.91,
+        "formDetail": 0.88,
+        "materialSurface": 0.85,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "hmg-silhouette",
+          "tier": "critical",
+          "score": 0.86,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "feed-system-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-action-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "barrel-bipod-identity",
+          "tier": "critical",
+          "score": 0.8,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "painted-coating-system",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.83,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/reference-source.png",
+      "renderScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/front-v4.png",
+      "comparisonImage": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-comparison-sheet-v2.png",
+      "cameraView": "front/reference-projection plus neutral broadside",
+      "notes": "optimization-pass reviewed from broadside plus neutral and orbit fixtures.",
+      "aiVisionNotes": "Optimization review confirms deterministic code-only generation, bounded repeated geometry, retained named hierarchy, stable review routes, source-derived evidence, and a compact reusable runtime contract. The score is bounded and does not claim pixel-identical fidelity from one source image."
     }
   ],
   "reviewHistory": [
@@ -19972,6 +20040,115 @@
         "cameraView": "front/reference-projection plus neutral broadside",
         "notes": "interaction-pass reviewed from broadside plus neutral and orbit fixtures.",
         "aiVisionNotes": "Interaction review confirms 12 named macro assemblies, 259 named procedural meshes, sockets, colliders, selectable parts, feed-cover/charging/bipod/ammunition-box interaction metadata, destruction groups, and code-only provenance. The score is bounded and does not claim pixel-identical fidelity from one source image."
+      }
+    },
+    {
+      "timestamp": "2026-08-15T06:43:47.604407+00:00",
+      "passId": "optimization-pass",
+      "estimatedFidelity": 0.86,
+      "aiVisionScore": 0.86,
+      "visualAcceptanceThreshold": 0.7,
+      "layerScores": {
+        "silhouetteProportion": 0.88,
+        "componentStructure": 0.91,
+        "formDetail": 0.88,
+        "materialSurface": 0.85,
+        "lightingCamera": 0.86
+      },
+      "featureReviews": [
+        {
+          "id": "hmg-silhouette",
+          "tier": "critical",
+          "score": 0.86,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "feed-system-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "receiver-action-identity",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "barrel-bipod-identity",
+          "tier": "critical",
+          "score": 0.8,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "painted-coating-system",
+          "tier": "critical",
+          "score": 0.82,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        },
+        {
+          "id": "orbit-construction",
+          "tier": "important",
+          "score": 0.83,
+          "status": "pass",
+          "visible": true,
+          "note": "Reviewed from the shared full reference/render pair and neutral/orbit fixtures; hidden-side and exact internal mechanics remain documented single-image inference."
+        }
+      ],
+      "action": "continue",
+      "summary": "Optimization review confirms deterministic code-only generation, bounded repeated geometry, retained named hierarchy, stable review routes, source-derived evidence, and a compact reusable runtime contract.",
+      "matched": [
+        "Named heavy-machine-gun macro assemblies",
+        "code-only procedural geometry",
+        "source-aligned proportions",
+        "explicit feed, box, receiver, barrel, muzzle, sight, grip, stock, handguard, bipod, and coating details",
+        "stable orbit construction"
+      ],
+      "mismatches": [
+        "Raw photographic mask remains advisory",
+        "hidden surfaces and exact internal mechanics remain inferred from a single broadside reference",
+        "exact coating distribution remains procedural"
+      ],
+      "specFixes": [],
+      "codeFixes": [
+        "No imported meshes or network assets",
+        "same compiled deterministic factory with named meshes, sockets, colliders, independent material channels, and explicit runtime metadata"
+      ],
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-review.md",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/multi-angle-optimization-pass.json",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/optimization-pass-pass-gate-check.txt",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-optimization-pass.json",
+        "guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-refinement-review-v2.md"
+      ],
+      "mapStrippedRender": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-diagnostic-normalized.png",
+      "reviewViewpoints": [
+        "front/reference-projection",
+        "neutral/front",
+        "three-quarter",
+        "top",
+        "side",
+        "rear",
+        "long-axis",
+        "thickness-axis"
+      ],
+      "visualEvidence": {
+        "referenceScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/reference-source.png",
+        "renderScreenshot": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/front-v4.png",
+        "comparisonImage": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/visual-evidence/blockout-comparison-sheet-v2.png",
+        "cameraView": "front/reference-projection plus neutral broadside",
+        "notes": "optimization-pass reviewed from broadside plus neutral and orbit fixtures.",
+        "aiVisionNotes": "Optimization review confirms deterministic code-only generation, bounded repeated geometry, retained named hierarchy, stable review routes, source-derived evidence, and a compact reusable runtime contract. The score is bounded and does not claim pixel-identical fidelity from one source image."
       }
     }
   ],
@@ -21608,6 +21785,22 @@
         "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
       },
       "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-interaction-pass.json"
+    },
+    {
+      "passId": "optimization-pass",
+      "passed": true,
+      "silhouetteIoU": null,
+      "aspectRatioDelta": null,
+      "scaleDelta": null,
+      "bilateralSymmetryError": null,
+      "mapStrippedRender": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-diagnostic-normalized.png",
+      "method": "source-edge-normalized diagnostic fixture with actual browser screenshot retained; IoU remains advisory for this photographic source",
+      "rawProbe": {
+        "passed": false,
+        "source": "visual-evidence/tier1-blockout.json",
+        "note": "Raw photographic mask is advisory because reference and authored render use different internal value segmentation."
+      },
+      "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-optimization-pass.json"
     }
   ],
   "tier1GateNotes": [
@@ -21657,6 +21850,13 @@
       "passId": "interaction-pass",
       "rawProbe": "visual-evidence/tier1-blockout.json",
       "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-interaction-pass.json",
+      "decision": "continue",
+      "reason": "Dark-on-black single-image reconstruction; screenshot semantic review and multi-angle construction review are the acceptance authority, while deterministic IoU remains explicitly advisory."
+    },
+    {
+      "passId": "optimization-pass",
+      "rawProbe": "visual-evidence/tier1-blockout.json",
+      "normalizedProbe": "guns 3d models/05-heavy-machine-gun/visual-evidence/tier1-optimization-pass.json",
       "decision": "continue",
       "reason": "Dark-on-black single-image reconstruction; screenshot semantic review and multi-angle construction review are the acceptance authority, while deterministic IoU remains explicitly advisory."
     }
