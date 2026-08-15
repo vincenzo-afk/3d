@@ -1,0 +1,5 @@
+# Projection Route — 05 Heavy Machine Gun
+
+**Decision: skipped with reason.** The source contains a visible blue/teal/violet patterned coating, but only one broadside image is available and it is not a clean de-lit albedo capture. The pattern is also interrupted by hardware and partially hidden by the feed system. A projection bake would risk treating baked highlights and shadows as albedo and would overclaim coverage on the far side.
+
+The implementation route is therefore **authored procedural geometry plus a bounded procedural painted-pattern material approximation**. The visible broadside pattern is represented with layered canvas marks/material local overrides over stock, receiver, handguard, pistol grip, and ammunition-box substrates. The approximation is explicit, and review will judge silhouette, pattern placement, color grouping, and gloss response without claiming exact texture identity. `referenceCamera` remains required for broadside framing but no projection texture bake is admitted.

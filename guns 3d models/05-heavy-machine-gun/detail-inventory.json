@@ -1,0 +1,491 @@
+{
+  "sourceImage": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/reference-source.png",
+  "zonesDir": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory",
+  "detailInventory": {
+    "scanMethod": "grid-3x3",
+    "targetMinDetails": 16,
+    "details": [
+      {
+        "id": "hmg-detail-01",
+        "kind": "ridge",
+        "description": "Repeated transverse rail teeth along the receiver-top rail.",
+        "region": {
+          "x": 0.24,
+          "y": 0.27,
+          "width": 0.31,
+          "height": 0.11,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "receiverAssembly:top-rail-teeth"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c0.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "hmg-detail-02",
+        "kind": "fastener",
+        "description": "Circular receiver side fastener row and pivot caps.",
+        "region": {
+          "x": 0.22,
+          "y": 0.38,
+          "width": 0.24,
+          "height": 0.2,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "receiverAssembly:side-fastener-row"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c0.png",
+        "confidence": 0.94
+      },
+      {
+        "id": "hmg-detail-03",
+        "kind": "linework",
+        "description": "Blue/teal/violet flowing painted tendrils across the stock side panel.",
+        "region": {
+          "x": 0.0,
+          "y": 0.38,
+          "width": 0.2,
+          "height": 0.2,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "stockAssembly:coating-pattern"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c0.png",
+        "confidence": 0.93
+      },
+      {
+        "id": "hmg-detail-04",
+        "kind": "bevel",
+        "description": "Stock buttpad and cheek shell perimeter bevels catching the edge light.",
+        "region": {
+          "x": 0.0,
+          "y": 0.4,
+          "width": 0.18,
+          "height": 0.21,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "stockAssembly:perimeter-bevel"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c0.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "hmg-detail-05",
+        "kind": "ridge",
+        "description": "Carry-handle central grip ribbing and repeated end bands.",
+        "region": {
+          "x": 0.3,
+          "y": 0.2,
+          "width": 0.26,
+          "height": 0.1,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "carryHandleAssembly:grip-ribs"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r0c0.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "hmg-detail-06",
+        "kind": "seam",
+        "description": "Carry-handle upright hinge and brace seam at the upper receiver.",
+        "region": {
+          "x": 0.45,
+          "y": 0.27,
+          "width": 0.12,
+          "height": 0.09,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "carryHandleAssembly:hinge-seams"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r0c1.png",
+        "confidence": 0.88
+      },
+      {
+        "id": "hmg-detail-07",
+        "kind": "ridge",
+        "description": "Repeated top rail teeth continue across the forward support.",
+        "region": {
+          "x": 0.52,
+          "y": 0.3,
+          "width": 0.22,
+          "height": 0.1,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "sightingAssembly:forward-rail-teeth"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c2.png",
+        "confidence": 0.94
+      },
+      {
+        "id": "hmg-detail-08",
+        "kind": "hole",
+        "description": "Longitudinal rounded ventilation apertures cut through the handguard shell.",
+        "region": {
+          "x": 0.53,
+          "y": 0.4,
+          "width": 0.22,
+          "height": 0.14,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "handguardAssembly:vent-apertures"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c2.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "hmg-detail-09",
+        "kind": "linework",
+        "description": "Large irregular blue/teal/violet coating motif on the receiver side plate.",
+        "region": {
+          "x": 0.24,
+          "y": 0.39,
+          "width": 0.24,
+          "height": 0.16,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "receiverAssembly:coating-pattern"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "hmg-detail-10",
+        "kind": "seam",
+        "description": "Receiver lower side panel seam and recessed horizontal channel.",
+        "region": {
+          "x": 0.24,
+          "y": 0.5,
+          "width": 0.24,
+          "height": 0.07,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "receiverAssembly:lower-panel-seam"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
+        "confidence": 0.91
+      },
+      {
+        "id": "hmg-detail-11",
+        "kind": "fastener",
+        "description": "Small repeated screw heads around the feed-cover and receiver plates.",
+        "region": {
+          "x": 0.34,
+          "y": 0.42,
+          "width": 0.18,
+          "height": 0.15,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "receiverAssembly:plate-fasteners"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "hmg-detail-12",
+        "kind": "fastener",
+        "description": "Alternating brass cartridges and dark belt links at the feed throat.",
+        "region": {
+          "x": 0.41,
+          "y": 0.45,
+          "width": 0.1,
+          "height": 0.25,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "feedSystem:cartridge-link-run"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
+        "confidence": 0.97
+      },
+      {
+        "id": "hmg-detail-13",
+        "kind": "linework",
+        "description": "Painted blue/teal tendrils crossing the pistol-grip shell and receiver underside.",
+        "region": {
+          "x": 0.21,
+          "y": 0.58,
+          "width": 0.2,
+          "height": 0.17,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "controlAssembly:coating-pattern"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c0.png",
+        "confidence": 0.9
+      },
+      {
+        "id": "hmg-detail-14",
+        "kind": "groove",
+        "description": "Trigger guard opening and recessed trigger clearance geometry.",
+        "region": {
+          "x": 0.27,
+          "y": 0.55,
+          "width": 0.1,
+          "height": 0.13,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "controlAssembly:trigger-guard-opening"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c0.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "hmg-detail-15",
+        "kind": "ridge",
+        "description": "Grip panel diagonal relief and small inset texture blocks.",
+        "region": {
+          "x": 0.23,
+          "y": 0.62,
+          "width": 0.12,
+          "height": 0.13,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "controlAssembly:grip-relief"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c0.png",
+        "confidence": 0.87
+      },
+      {
+        "id": "hmg-detail-16",
+        "kind": "linework",
+        "description": "Large blue/teal/violet coating motif on the ammunition-box side panel.",
+        "region": {
+          "x": 0.38,
+          "y": 0.7,
+          "width": 0.16,
+          "height": 0.2,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "ammunitionBoxAssembly:coating-pattern"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c1.png",
+        "confidence": 0.95
+      },
+      {
+        "id": "hmg-detail-17",
+        "kind": "bevel",
+        "description": "Ammunition-box framed border, top lid line, and lower corner bevels.",
+        "region": {
+          "x": 0.37,
+          "y": 0.66,
+          "width": 0.19,
+          "height": 0.28,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "ammunitionBoxAssembly:frame-and-bevel"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c1.png",
+        "confidence": 0.94
+      },
+      {
+        "id": "hmg-detail-18",
+        "kind": "fastener",
+        "description": "Ammunition-box lid hinges/latches and feed-entry fastener caps.",
+        "region": {
+          "x": 0.4,
+          "y": 0.64,
+          "width": 0.13,
+          "height": 0.08,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "ammunitionBoxAssembly:lid-hardware"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c1.png",
+        "confidence": 0.89
+      },
+      {
+        "id": "hmg-detail-19",
+        "kind": "hole",
+        "description": "Bipod leg perforation rows through both deployed struts.",
+        "region": {
+          "x": 0.73,
+          "y": 0.66,
+          "width": 0.16,
+          "height": 0.27,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "bipodAssembly:leg-perforations"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c2.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "hmg-detail-20",
+        "kind": "bevel",
+        "description": "Bipod flared feet with flat rubberized contact pads.",
+        "region": {
+          "x": 0.73,
+          "y": 0.82,
+          "width": 0.16,
+          "height": 0.12,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "bipodAssembly:feet-and-pads"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c2.png",
+        "confidence": 0.94
+      },
+      {
+        "id": "hmg-detail-21",
+        "kind": "groove",
+        "description": "Muzzle device longitudinal ports and stepped collar grooves.",
+        "region": {
+          "x": 0.83,
+          "y": 0.42,
+          "width": 0.17,
+          "height": 0.1,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "muzzleAssembly:ports-and-collars"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r2c2.png",
+        "confidence": 0.96
+      },
+      {
+        "id": "hmg-detail-22",
+        "kind": "ridge",
+        "description": "Front sight tower post and protective ears above the barrel axis.",
+        "region": {
+          "x": 0.77,
+          "y": 0.31,
+          "width": 0.08,
+          "height": 0.18,
+          "units": "normalized"
+        },
+        "scale": "meso",
+        "affects": "geometry",
+        "mapsTo": {
+          "type": "component.localFeatures",
+          "ref": "sightingAssembly:front-sight-tower"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r0c2.png",
+        "confidence": 0.93
+      },
+      {
+        "id": "hmg-detail-23",
+        "kind": "gloss",
+        "description": "Localized low-roughness clearcoat response on painted tendril crests.",
+        "region": {
+          "x": 0.25,
+          "y": 0.39,
+          "width": 0.55,
+          "height": 0.28,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "surfacePattern:painted-clearcoat"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
+        "confidence": 0.86
+      },
+      {
+        "id": "hmg-detail-24",
+        "kind": "scratch",
+        "description": "Subtle directional edge-wear and darkened recess variation on hard shells.",
+        "region": {
+          "x": 0.2,
+          "y": 0.36,
+          "width": 0.62,
+          "height": 0.32,
+          "units": "normalized"
+        },
+        "scale": "micro",
+        "affects": "material",
+        "mapsTo": {
+          "type": "material.localOverrides",
+          "ref": "surfacePattern:edge-wear-and-cavity-bias"
+        },
+        "evidenceRef": "/home/ubuntu/3d/guns 3d models/05-heavy-machine-gun/detail-inventory/zone-r1c1.png",
+        "confidence": 0.78
+      }
+    ]
+  },
+  "authoringInstruction": "Every populated detail maps to a planned component.localFeatures or material.localOverrides entry in object-sculpt-spec.json; preserve evidenceRef and confidence when the spec is authored."
+}

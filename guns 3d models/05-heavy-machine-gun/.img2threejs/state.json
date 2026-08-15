@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "status": "active",
   "profile": "generic",
-  "currentStep": "local-spec-search",
+  "currentStep": "spec-authoring",
   "currentPass": "",
   "checklist": [
     {
@@ -38,33 +38,41 @@
     {
       "id": "local-spec-search",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/pre-spec-assessment.json"
+      ],
       "reason": "",
       "command": "Run the local evidence search before authoring the assessment"
     },
     {
       "id": "pre-spec-assessment",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/pre-spec-assessment.json"
+      ],
       "reason": "",
       "command": "python3 forge/stage2_spec/new_pre_spec_assessment.py \"<name>\" --image {reference} --out assessment.json"
     },
     {
       "id": "detail-inventory",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/detail-inventory.json"
+      ],
       "reason": "",
       "command": "python3 forge/stage1_intake/build_detail_inventory.py {reference} --mode grid-3x3 --out-dir detail-inventory --out di.json"
     },
     {
       "id": "projection-route",
       "scope": "setup",
-      "status": "pending",
-      "evidence": [],
-      "reason": "",
+      "status": "skipped",
+      "evidence": [
+        "guns 3d models/05-heavy-machine-gun/projection-route.md"
+      ],
+      "reason": "Single stylized broadside image is not a clean de-lit albedo source and cannot provide reliable hidden-side projection coverage; use authored procedural painted-pattern approximation.",
       "command": "Record whether projection is required; if required run solve_camera_pose.py, delight_albedo.py, and bake_projected_texture.py, otherwise skip with a reason"
     },
     {
