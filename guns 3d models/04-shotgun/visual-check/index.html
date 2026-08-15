@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04 Shotgun Review Harness</title>
+    <style>
+      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+      html, body { margin: 0; min-height: 100%; background: #010203; overflow: hidden; }
+      #stage { width: 100vw; height: 100vh; position: relative; }
+      #status { position: fixed; left: 14px; bottom: 14px; z-index: 10; padding: 8px 10px; color: #d7e4ef; background: rgba(2, 5, 9, .82); border: 1px solid rgba(170, 190, 208, .35); font: 12px/1.25 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .02em; }
+    </style>
+  </head>
+  <body>
+    <div id="stage"></div>
+    <div id="status">loading shotgun review harness…</div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
