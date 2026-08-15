@@ -1,0 +1,51 @@
+/home/ubuntu/3d/guns 3d models/04-shotgun/action-ready-audit.json
+{
+  "model": "04-shotgun",
+  "checks": {
+    "rootUserDataSculptRuntime": true,
+    "sourceTraceAttached": true,
+    "codeOnlyProvenance": true,
+    "macroGroups": true,
+    "namedMeshes": true,
+    "selectableParts": true,
+    "sockets": true,
+    "colliders": true,
+    "destructionGroups": true,
+    "inspectRoutes": true,
+    "manifestIntegralMeshes": true,
+    "pumpSlideContract": true
+  },
+  "parts": 45,
+  "runtimeMeshCount": 90,
+  "integralMeshes": 90,
+  "requiredGroups": [
+    "stockAssembly",
+    "receiverActionAssembly",
+    "triggerAssembly",
+    "upperBarrelAssembly",
+    "lowerMagazineTubeAssembly",
+    "pumpForeEndAssembly",
+    "frontBandAssembly",
+    "muzzleAssembly",
+    "sightingAssembly"
+  ],
+  "requiredSockets": [
+    "stockAssemblySocket",
+    "receiverActionAssemblySocket",
+    "triggerAssemblySocket",
+    "upperBarrelAssemblySocket",
+    "lowerMagazineTubeAssemblySocket",
+    "pumpForeEndAssemblySocket",
+    "frontBandAssemblySocket",
+    "muzzleAssemblySocket",
+    "sightingAssemblySocket",
+    "pump-slide-line"
+  ],
+  "actionReady": true,
+  "notes": [
+    "Nine macro groups are stable transform pivots for the authored shotgun assemblies.",
+    "Every authored mesh receives a stable name, runtime ID, selectable flag, and destruction-group membership.",
+    "Sockets, colliders, pump-slide metadata, sight-line metadata, and source-trace/projection metadata are exposed under sculptRuntime/root.userData.",
+    "The audit validates the authored runtime contract statically; it does not claim a physics engine is installed."
+  ]
+}
